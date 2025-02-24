@@ -1,4 +1,4 @@
-# ReadNest - Aplikasi Manajemen Perpustakaan Pribadi
+# ReadNest - Aplikasi Manajemen Buku Pribadi
 
 ## 📖 Deskripsi
 ReadNest adalah aplikasi desktop berbasis **VB.NET** yang dirancang untuk membantu pengguna mengelola koleksi buku pribadi mereka. Aplikasi ini memungkinkan pengguna untuk menyimpan daftar buku, melacak status bacaan, mencatat waktu membaca, dan membuat koleksi favorit/wishlist.
@@ -10,6 +10,7 @@ ReadNest adalah aplikasi desktop berbasis **VB.NET** yang dirancang untuk memban
 ✅ **Fitur Koleksi** - Simpan buku sebagai **favorit** atau **wishlist**.  
 ✅ **Timer Bacaan** - Catat durasi membaca dengan timer otomatis.  
 ✅ **Manajemen Peminjaman** - Tambah data peminjam secara manual.  
+✅ **Fitur Login,Logout,Create Account.
 
 ## 🛠️ Teknologi yang Digunakan
 - **Bahasa Pemrograman**: VB.NET  
