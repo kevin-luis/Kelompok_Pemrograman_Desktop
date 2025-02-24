@@ -10,7 +10,7 @@ ReadNest adalah aplikasi desktop berbasis **VB.NET** yang dirancang untuk memban
 ✅ **Fitur Koleksi** - Simpan buku sebagai **favorit** atau **wishlist**.  
 ✅ **Timer Bacaan** - Catat durasi membaca dengan timer otomatis.  
 ✅ **Manajemen Peminjaman** - Tambah data peminjam secara manual.  
-✅ **Fitur Login,Logout,Create Account.
+✅ **Manajemen User** - Fitur Login, Logout, Create Account.
 
 ## 🛠️ Teknologi yang Digunakan
 - **Bahasa Pemrograman**: VB.NET  
