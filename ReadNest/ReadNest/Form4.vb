@@ -15,7 +15,7 @@
 
     End Sub
 
-    Private Sub lblMyLibrary_Click(sender As Object, e As EventArgs) Handles lblMyLibrary.Click
+    Private Sub lblMyLibrary_Click(sender As Object, e As EventArgs)
 
     End Sub
 
