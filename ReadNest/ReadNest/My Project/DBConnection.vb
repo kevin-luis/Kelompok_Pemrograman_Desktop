@@ -1,5 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
-Module DBConnection
+Module DBConnectionClass
     Public conn As MySqlConnection
     Public cmd As MySqlCommand
     Public rd As MySqlDataReader

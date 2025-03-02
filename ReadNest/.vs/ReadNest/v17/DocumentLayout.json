@@ -1,22 +1,54 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\",
+  "WorkspaceRootPath": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\project readnest\\kelompok_pemrograman_desktop\\readnest\\readnest\\form10.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\form10.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\kevin luis\\documents\\ukdw\\semester 8\\progdesk\\kelompok_pemrograman_desktop\\readnest\\readnest\\loginform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\loginform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\project readnest\\kelompok_pemrograman_desktop\\readnest\\readnest\\form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\kevin luis\\documents\\ukdw\\semester 8\\progdesk\\kelompok_pemrograman_desktop\\readnest\\readnest\\dbconnection.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\dbconnection.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\project readnest\\kelompok_pemrograman_desktop\\readnest\\readnest\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\kevin luis\\documents\\ukdw\\semester 8\\progdesk\\kelompok_pemrograman_desktop\\readnest\\readnest\\loginform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\loginform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\kevin luis\\documents\\ukdw\\semester 8\\progdesk\\kelompok_pemrograman_desktop\\readnest\\readnest\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\project readnest\\kelompok_pemrograman_desktop\\readnest\\readnest\\form7.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\kevin luis\\documents\\ukdw\\semester 8\\progdesk\\kelompok_pemrograman_desktop\\readnest\\readnest\\form7.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\form7.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\kevin luis\\documents\\ukdw\\semester 8\\progdesk\\kelompok_pemrograman_desktop\\readnest\\readnest\\form3.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\form3.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\kevin luis\\documents\\ukdw\\semester 8\\progdesk\\kelompok_pemrograman_desktop\\readnest\\readnest\\form4.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\form4.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\kevin luis\\documents\\ukdw\\semester 8\\progdesk\\kelompok_pemrograman_desktop\\readnest\\readnest\\form5.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\form5.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\kevin luis\\documents\\ukdw\\semester 8\\progdesk\\kelompok_pemrograman_desktop\\readnest\\readnest\\form6.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\form6.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\kevin luis\\documents\\ukdw\\semester 8\\progdesk\\kelompok_pemrograman_desktop\\readnest\\readnest\\form9.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\form9.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\kevin luis\\documents\\ukdw\\semester 8\\progdesk\\kelompok_pemrograman_desktop\\readnest\\readnest\\form8.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\form8.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\kevin luis\\documents\\ukdw\\semester 8\\progdesk\\kelompok_pemrograman_desktop\\readnest\\readnest\\form10.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\form10.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,19 +58,108 @@
       "DocumentGroups": [
         {
           "DockedWidth": 757,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginForm.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\LoginForm.vb",
+              "RelativeDocumentMoniker": "ReadNest\\LoginForm.vb",
+              "ToolTip": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\LoginForm.vb [Design]",
+              "RelativeToolTip": "ReadNest\\LoginForm.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-02-26T11:35:28.152Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginForm.vb",
+              "DocumentMoniker": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\LoginForm.vb",
+              "RelativeDocumentMoniker": "ReadNest\\LoginForm.vb",
+              "ToolTip": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\LoginForm.vb",
+              "RelativeToolTip": "ReadNest\\LoginForm.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-03-02T20:08:00.215Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DBConnection.vb",
+              "DocumentMoniker": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\DBConnection.vb",
+              "RelativeDocumentMoniker": "ReadNest\\DBConnection.vb",
+              "ToolTip": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\DBConnection.vb",
+              "RelativeToolTip": "ReadNest\\DBConnection.vb",
+              "ViewState": "AgIAADoAAAAAAAAAAAAcwAwAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-03-02T19:53:19.19Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
+              "Title": "Form6.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form6.vb",
+              "RelativeDocumentMoniker": "ReadNest\\Form6.vb",
+              "ToolTip": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form6.vb [Design]",
+              "RelativeToolTip": "ReadNest\\Form6.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-02-27T07:42:39.679Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Form5.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form5.vb",
+              "RelativeDocumentMoniker": "ReadNest\\Form5.vb",
+              "ToolTip": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form5.vb [Design]",
+              "RelativeToolTip": "ReadNest\\Form5.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-02-27T07:42:37.945Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Form4.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form4.vb",
+              "RelativeDocumentMoniker": "ReadNest\\Form4.vb",
+              "ToolTip": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form4.vb [Design]",
+              "RelativeToolTip": "ReadNest\\Form4.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-02-27T07:42:37.217Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form3.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form3.vb",
+              "RelativeDocumentMoniker": "ReadNest\\Form3.vb",
+              "ToolTip": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form3.vb [Design]",
+              "RelativeToolTip": "ReadNest\\Form3.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-02-27T07:42:35.198Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Form7.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form7.vb",
+              "DocumentMoniker": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form7.vb",
               "RelativeDocumentMoniker": "ReadNest\\Form7.vb",
-              "ToolTip": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form7.vb [Design]",
+              "ToolTip": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form7.vb [Design]",
               "RelativeToolTip": "ReadNest\\Form7.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-02-26T11:40:50.376Z",
@@ -46,11 +167,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Form1.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form1.vb",
+              "DocumentMoniker": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form1.vb",
               "RelativeDocumentMoniker": "ReadNest\\Form1.vb",
-              "ToolTip": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form1.vb [Design]",
+              "ToolTip": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form1.vb [Design]",
               "RelativeToolTip": "ReadNest\\Form1.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-02-26T11:39:57.208Z",
@@ -58,23 +179,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form2.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form2.vb",
-              "RelativeDocumentMoniker": "ReadNest\\Form2.vb",
-              "ToolTip": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form2.vb [Design]",
-              "RelativeToolTip": "ReadNest\\Form2.vb [Design]",
+              "DocumentIndex": 9,
+              "Title": "Form9.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form9.vb",
+              "RelativeDocumentMoniker": "ReadNest\\Form9.vb",
+              "ToolTip": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form9.vb [Design]",
+              "RelativeToolTip": "ReadNest\\Form9.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-02-26T11:35:28.152Z",
+              "WhenOpened": "2025-03-02T19:34:34.213Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 10,
+              "Title": "Form8.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form8.vb",
+              "RelativeDocumentMoniker": "ReadNest\\Form8.vb",
+              "ToolTip": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form8.vb [Design]",
+              "RelativeToolTip": "ReadNest\\Form8.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-03-02T19:34:31.415Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "Form10.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form10.vb",
+              "DocumentMoniker": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form10.vb",
               "RelativeDocumentMoniker": "ReadNest\\Form10.vb",
-              "ToolTip": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form10.vb [Design]",
+              "ToolTip": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\Form10.vb [Design]",
               "RelativeToolTip": "ReadNest\\Form10.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-02-26T11:35:11.098Z",
