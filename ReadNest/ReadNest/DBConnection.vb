@@ -80,4 +80,23 @@ Public Class DBConnection
         Return False
     End Function
 
+    Public Function TambahAkun(email As String, username As String, password As String) As Boolean
+        Try
+            Dim query As String = "INSERT INTO users (email, username, password) VALUES (@email, @username, @password)"
+            Using cmd As New MySqlCommand(query, BukaKoneksi())
+                cmd.Parameters.AddWithValue("@email", email)
+                cmd.Parameters.AddWithValue("@username", username)
+                cmd.Parameters.AddWithValue("@password", password)
+                Dim hasil As Integer = cmd.ExecuteNonQuery()
+                Return hasil > 0 ' True jika berhasil
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Registrasi Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            TutupKoneksi()
+        End Try
+        Return False
+    End Function
+
+
 End Class
