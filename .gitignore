@@ -1,0 +1,17 @@
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+packages/
+project.lock.json
+*.nupkg
