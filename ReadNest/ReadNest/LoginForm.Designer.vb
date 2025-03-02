@@ -34,6 +34,7 @@ Partial Class LoginForm
         Label6 = New Label()
         Label7 = New Label()
         btnLoginaAccount = New Button()
+        chkPassword = New CheckBox()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -80,7 +81,7 @@ Partial Class LoginForm
         txtloginusername.Name = "txtloginusername"
         txtloginusername.PlaceholderText = "Enter your username here"
         txtloginusername.Size = New Size(190, 27)
-        txtloginusername.TabIndex = 11
+        txtloginusername.TabIndex = 0
         ' 
         ' txtloginpassword
         ' 
@@ -89,7 +90,8 @@ Partial Class LoginForm
         txtloginpassword.Name = "txtloginpassword"
         txtloginpassword.PlaceholderText = "Enter your password here"
         txtloginpassword.Size = New Size(190, 27)
-        txtloginpassword.TabIndex = 12
+        txtloginpassword.TabIndex = 1
+        txtloginpassword.UseSystemPasswordChar = True
         ' 
         ' Label4
         ' 
@@ -114,7 +116,7 @@ Partial Class LoginForm
         ' linkCreateAccount
         ' 
         linkCreateAccount.AutoSize = True
-        linkCreateAccount.Location = New Point(642, 327)
+        linkCreateAccount.Location = New Point(642, 347)
         linkCreateAccount.Name = "linkCreateAccount"
         linkCreateAccount.Size = New Size(59, 15)
         linkCreateAccount.TabIndex = 15
@@ -124,7 +126,7 @@ Partial Class LoginForm
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(524, 327)
+        Label6.Location = New Point(524, 347)
         Label6.Name = "Label6"
         Label6.Size = New Size(112, 15)
         Label6.TabIndex = 16
@@ -144,12 +146,22 @@ Partial Class LoginForm
         ' 
         btnLoginaAccount.AutoSize = True
         btnLoginaAccount.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        btnLoginaAccount.Location = New Point(728, 261)
+        btnLoginaAccount.Location = New Point(728, 279)
         btnLoginaAccount.Name = "btnLoginaAccount"
         btnLoginaAccount.Size = New Size(75, 30)
-        btnLoginaAccount.TabIndex = 18
+        btnLoginaAccount.TabIndex = 2
         btnLoginaAccount.Text = "Login"
         btnLoginaAccount.UseVisualStyleBackColor = True
+        ' 
+        ' chkPassword
+        ' 
+        chkPassword.AutoSize = True
+        chkPassword.Location = New Point(613, 248)
+        chkPassword.Name = "chkPassword"
+        chkPassword.Size = New Size(108, 19)
+        chkPassword.TabIndex = 18
+        chkPassword.Text = "Show Password"
+        chkPassword.UseVisualStyleBackColor = True
         ' 
         ' LoginForm
         ' 
@@ -157,6 +169,7 @@ Partial Class LoginForm
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         ClientSize = New Size(934, 486)
+        Controls.Add(chkPassword)
         Controls.Add(btnLoginaAccount)
         Controls.Add(Label7)
         Controls.Add(Label6)
@@ -169,6 +182,7 @@ Partial Class LoginForm
         Controls.Add(Label1)
         Controls.Add(PictureBox1)
         Name = "LoginForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "ReadNest, Your Personal Library "
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
@@ -186,4 +200,5 @@ Partial Class LoginForm
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents btnLoginaAccount As Button
+    Friend WithEvents chkPassword As CheckBox
 End Class
