@@ -79,7 +79,7 @@ Partial Class FavoriteForm
         Label4.BackColor = SystemColors.Info
         Label4.Font = New Font("UD Digi Kyokasho NP-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label4.ImageAlign = ContentAlignment.TopRight
-        Label4.Location = New Point(44, 264)
+        Label4.Location = New Point(44, 262)
         Label4.Name = "Label4"
         Label4.Size = New Size(131, 17)
         Label4.TabIndex = 54

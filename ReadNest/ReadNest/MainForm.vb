@@ -39,13 +39,13 @@
     End Sub
 
     Private Sub lblNotes_Click(sender As Object, e As EventArgs) Handles lblNotes.Click
-        Dim formBaru As New MyNotesForm()
+        Dim formBaru As New MyNotes()
         formBaru.Show()
         Me.Hide()
     End Sub
 
     Private Sub pbNotes_Click(sender As Object, e As EventArgs) Handles pbNotes.Click
-        Dim formBaru As New MyNotesForm()
+        Dim formBaru As New MyNotes()
         formBaru.Show()
         Me.Hide()
     End Sub
