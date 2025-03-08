@@ -115,7 +115,6 @@ C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Proje
 C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.Form4.resources
 C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.Form5.resources
 C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.Form6.resources
-C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.Form7.resources
 C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.LoginForm.resources
 C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.MainForm.resources
 C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.Resources.resources
@@ -133,3 +132,5 @@ C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Proje
 C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ref\ReadNest.dll
 C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.FavoriteForm.resources
 C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.MyNotesForm.resources
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.CategoryForm.resources
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.BorrowForm.resources
