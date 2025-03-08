@@ -182,7 +182,7 @@ Partial Class MainForm
         ' 
         pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
         pbProfile.BackgroundImageLayout = ImageLayout.Stretch
-        pbProfile.Location = New Point(773, 23)
+        pbProfile.Location = New Point(773, 22)
         pbProfile.Name = "pbProfile"
         pbProfile.Size = New Size(28, 28)
         pbProfile.TabIndex = 17
