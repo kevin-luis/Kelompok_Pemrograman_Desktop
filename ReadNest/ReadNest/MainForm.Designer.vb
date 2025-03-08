@@ -23,87 +23,73 @@ Partial Class MainForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
-        PictureBox3 = New PictureBox()
-        PictureBox4 = New PictureBox()
-        PictureBox5 = New PictureBox()
-        PictureBox6 = New PictureBox()
+        pbCategory = New PictureBox()
+        pbNotes = New PictureBox()
+        pbFavorite = New PictureBox()
         Label1 = New Label()
         lblCategory = New Label()
-        lblMyLibrary = New Label()
+        lblNotes = New Label()
         lblFavorite = New Label()
-        lblLogout = New Label()
         lblMenu = New Label()
         btnSearch = New Button()
         txtSearchBook = New TextBox()
         pbProfile = New PictureBox()
         lblUsername = New Label()
         Label2 = New Label()
-        PictureBox1 = New PictureBox()
+        pbDiscover = New PictureBox()
         lblDiscover = New Label()
         PictureBox2 = New PictureBox()
-        PictureBox8 = New PictureBox()
-        Label3 = New Label()
+        pbStatistic = New PictureBox()
+        lblstatistic = New Label()
         btnAddNewBook = New Button()
         pbAddNewBook = New PictureBox()
-        Label4 = New Label()
-        PictureBox10 = New PictureBox()
+        lblBB = New Label()
+        pbBB = New PictureBox()
         Label5 = New Label()
         lvBooklist = New ListView()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbCategory, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbNotes, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbFavorite, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbProfile, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbDiscover, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbStatistic, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbAddNewBook, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox10, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbBB, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' PictureBox3
+        ' pbCategory
         ' 
-        PictureBox3.BackColor = SystemColors.Info
-        PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), Image)
-        PictureBox3.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox3.Location = New Point(12, 148)
-        PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(28, 28)
-        PictureBox3.TabIndex = 2
-        PictureBox3.TabStop = False
+        pbCategory.BackColor = SystemColors.Info
+        pbCategory.BackgroundImage = CType(resources.GetObject("pbCategory.BackgroundImage"), Image)
+        pbCategory.BackgroundImageLayout = ImageLayout.Stretch
+        pbCategory.Location = New Point(12, 148)
+        pbCategory.Name = "pbCategory"
+        pbCategory.Size = New Size(28, 28)
+        pbCategory.TabIndex = 2
+        pbCategory.TabStop = False
         ' 
-        ' PictureBox4
+        ' pbNotes
         ' 
-        PictureBox4.BackColor = SystemColors.Info
-        PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), Image)
-        PictureBox4.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox4.Location = New Point(12, 182)
-        PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(28, 28)
-        PictureBox4.TabIndex = 3
-        PictureBox4.TabStop = False
+        pbNotes.BackColor = SystemColors.Info
+        pbNotes.BackgroundImage = CType(resources.GetObject("pbNotes.BackgroundImage"), Image)
+        pbNotes.BackgroundImageLayout = ImageLayout.Stretch
+        pbNotes.Location = New Point(12, 182)
+        pbNotes.Name = "pbNotes"
+        pbNotes.Size = New Size(28, 28)
+        pbNotes.TabIndex = 3
+        pbNotes.TabStop = False
         ' 
-        ' PictureBox5
+        ' pbFavorite
         ' 
-        PictureBox5.BackColor = SystemColors.Info
-        PictureBox5.BackgroundImage = CType(resources.GetObject("PictureBox5.BackgroundImage"), Image)
-        PictureBox5.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox5.Location = New Point(12, 435)
-        PictureBox5.Name = "PictureBox5"
-        PictureBox5.Size = New Size(28, 28)
-        PictureBox5.TabIndex = 4
-        PictureBox5.TabStop = False
-        ' 
-        ' PictureBox6
-        ' 
-        PictureBox6.BackColor = SystemColors.Info
-        PictureBox6.BackgroundImage = CType(resources.GetObject("PictureBox6.BackgroundImage"), Image)
-        PictureBox6.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox6.Location = New Point(12, 218)
-        PictureBox6.Name = "PictureBox6"
-        PictureBox6.Size = New Size(28, 28)
-        PictureBox6.TabIndex = 5
-        PictureBox6.TabStop = False
+        pbFavorite.BackColor = SystemColors.Info
+        pbFavorite.BackgroundImage = CType(resources.GetObject("pbFavorite.BackgroundImage"), Image)
+        pbFavorite.BackgroundImageLayout = ImageLayout.Stretch
+        pbFavorite.Location = New Point(12, 218)
+        pbFavorite.Name = "pbFavorite"
+        pbFavorite.Size = New Size(28, 28)
+        pbFavorite.TabIndex = 5
+        pbFavorite.TabStop = False
         ' 
         ' Label1
         ' 
@@ -124,23 +110,23 @@ Partial Class MainForm
         lblCategory.BackColor = SystemColors.Info
         lblCategory.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblCategory.ImageAlign = ContentAlignment.TopRight
-        lblCategory.Location = New Point(46, 159)
+        lblCategory.Location = New Point(46, 156)
         lblCategory.Name = "lblCategory"
         lblCategory.Size = New Size(76, 18)
         lblCategory.TabIndex = 7
         lblCategory.Text = "Category"
         ' 
-        ' lblMyLibrary
+        ' lblNotes
         ' 
-        lblMyLibrary.AutoSize = True
-        lblMyLibrary.BackColor = SystemColors.Info
-        lblMyLibrary.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        lblMyLibrary.ImageAlign = ContentAlignment.TopRight
-        lblMyLibrary.Location = New Point(46, 193)
-        lblMyLibrary.Name = "lblMyLibrary"
-        lblMyLibrary.Size = New Size(80, 18)
-        lblMyLibrary.TabIndex = 8
-        lblMyLibrary.Text = "My Notes"
+        lblNotes.AutoSize = True
+        lblNotes.BackColor = SystemColors.Info
+        lblNotes.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        lblNotes.ImageAlign = ContentAlignment.TopRight
+        lblNotes.Location = New Point(46, 191)
+        lblNotes.Name = "lblNotes"
+        lblNotes.Size = New Size(80, 18)
+        lblNotes.TabIndex = 8
+        lblNotes.Text = "My Notes"
         ' 
         ' lblFavorite
         ' 
@@ -148,23 +134,11 @@ Partial Class MainForm
         lblFavorite.BackColor = SystemColors.Info
         lblFavorite.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblFavorite.ImageAlign = ContentAlignment.TopRight
-        lblFavorite.Location = New Point(46, 229)
+        lblFavorite.Location = New Point(46, 227)
         lblFavorite.Name = "lblFavorite"
         lblFavorite.Size = New Size(69, 18)
         lblFavorite.TabIndex = 9
         lblFavorite.Text = "Favorite"
-        ' 
-        ' lblLogout
-        ' 
-        lblLogout.AutoSize = True
-        lblLogout.BackColor = SystemColors.Info
-        lblLogout.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        lblLogout.ImageAlign = ContentAlignment.TopRight
-        lblLogout.Location = New Point(46, 446)
-        lblLogout.Name = "lblLogout"
-        lblLogout.Size = New Size(60, 18)
-        lblLogout.TabIndex = 10
-        lblLogout.Text = "Logout"
         ' 
         ' lblMenu
         ' 
@@ -172,7 +146,7 @@ Partial Class MainForm
         lblMenu.BackColor = SystemColors.Info
         lblMenu.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblMenu.ImageAlign = ContentAlignment.TopRight
-        lblMenu.Location = New Point(12, 83)
+        lblMenu.Location = New Point(12, 85)
         lblMenu.Name = "lblMenu"
         lblMenu.Size = New Size(49, 18)
         lblMenu.TabIndex = 13
@@ -231,16 +205,16 @@ Partial Class MainForm
         Label2.TabIndex = 19
         Label2.Text = "Discover your book"
         ' 
-        ' PictureBox1
+        ' pbDiscover
         ' 
-        PictureBox1.BackColor = SystemColors.Info
-        PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), Image)
-        PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox1.Location = New Point(12, 114)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(28, 28)
-        PictureBox1.TabIndex = 20
-        PictureBox1.TabStop = False
+        pbDiscover.BackColor = SystemColors.Info
+        pbDiscover.BackgroundImage = CType(resources.GetObject("pbDiscover.BackgroundImage"), Image)
+        pbDiscover.BackgroundImageLayout = ImageLayout.Stretch
+        pbDiscover.Location = New Point(12, 114)
+        pbDiscover.Name = "pbDiscover"
+        pbDiscover.Size = New Size(28, 28)
+        pbDiscover.TabIndex = 20
+        pbDiscover.TabStop = False
         ' 
         ' lblDiscover
         ' 
@@ -248,7 +222,7 @@ Partial Class MainForm
         lblDiscover.BackColor = SystemColors.Info
         lblDiscover.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblDiscover.ImageAlign = ContentAlignment.TopRight
-        lblDiscover.Location = New Point(46, 125)
+        lblDiscover.Location = New Point(46, 122)
         lblDiscover.Name = "lblDiscover"
         lblDiscover.Size = New Size(75, 18)
         lblDiscover.TabIndex = 21
@@ -264,28 +238,28 @@ Partial Class MainForm
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
         ' 
-        ' PictureBox8
+        ' pbStatistic
         ' 
-        PictureBox8.BackColor = SystemColors.Info
-        PictureBox8.BackgroundImage = CType(resources.GetObject("PictureBox8.BackgroundImage"), Image)
-        PictureBox8.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox8.Location = New Point(12, 286)
-        PictureBox8.Name = "PictureBox8"
-        PictureBox8.Size = New Size(28, 28)
-        PictureBox8.TabIndex = 23
-        PictureBox8.TabStop = False
+        pbStatistic.BackColor = SystemColors.Info
+        pbStatistic.BackgroundImage = CType(resources.GetObject("pbStatistic.BackgroundImage"), Image)
+        pbStatistic.BackgroundImageLayout = ImageLayout.Stretch
+        pbStatistic.Location = New Point(12, 286)
+        pbStatistic.Name = "pbStatistic"
+        pbStatistic.Size = New Size(28, 28)
+        pbStatistic.TabIndex = 23
+        pbStatistic.TabStop = False
         ' 
-        ' Label3
+        ' lblstatistic
         ' 
-        Label3.AutoSize = True
-        Label3.BackColor = SystemColors.Info
-        Label3.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label3.ImageAlign = ContentAlignment.TopRight
-        Label3.Location = New Point(46, 297)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(96, 18)
-        Label3.TabIndex = 24
-        Label3.Text = "My Statistic"
+        lblstatistic.AutoSize = True
+        lblstatistic.BackColor = SystemColors.Info
+        lblstatistic.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        lblstatistic.ImageAlign = ContentAlignment.TopRight
+        lblstatistic.Location = New Point(46, 294)
+        lblstatistic.Name = "lblstatistic"
+        lblstatistic.Size = New Size(96, 18)
+        lblstatistic.TabIndex = 24
+        lblstatistic.Text = "My Statistic"
         ' 
         ' btnAddNewBook
         ' 
@@ -308,28 +282,28 @@ Partial Class MainForm
         pbAddNewBook.TabIndex = 27
         pbAddNewBook.TabStop = False
         ' 
-        ' Label4
+        ' lblBB
         ' 
-        Label4.AutoSize = True
-        Label4.BackColor = SystemColors.Info
-        Label4.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label4.ImageAlign = ContentAlignment.TopRight
-        Label4.Location = New Point(46, 263)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(130, 18)
-        Label4.TabIndex = 28
-        Label4.Text = "Book Borrowing"
+        lblBB.AutoSize = True
+        lblBB.BackColor = SystemColors.Info
+        lblBB.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        lblBB.ImageAlign = ContentAlignment.TopRight
+        lblBB.Location = New Point(46, 260)
+        lblBB.Name = "lblBB"
+        lblBB.Size = New Size(130, 18)
+        lblBB.TabIndex = 28
+        lblBB.Text = "Book Borrowing"
         ' 
-        ' PictureBox10
+        ' pbBB
         ' 
-        PictureBox10.BackColor = SystemColors.Info
-        PictureBox10.BackgroundImage = CType(resources.GetObject("PictureBox10.BackgroundImage"), Image)
-        PictureBox10.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox10.Location = New Point(12, 252)
-        PictureBox10.Name = "PictureBox10"
-        PictureBox10.Size = New Size(28, 28)
-        PictureBox10.TabIndex = 29
-        PictureBox10.TabStop = False
+        pbBB.BackColor = SystemColors.Info
+        pbBB.BackgroundImage = CType(resources.GetObject("pbBB.BackgroundImage"), Image)
+        pbBB.BackgroundImageLayout = ImageLayout.Stretch
+        pbBB.Location = New Point(12, 252)
+        pbBB.Name = "pbBB"
+        pbBB.Size = New Size(28, 28)
+        pbBB.TabIndex = 29
+        pbBB.TabStop = False
         ' 
         ' Label5
         ' 
@@ -361,70 +335,65 @@ Partial Class MainForm
         ClientSize = New Size(934, 486)
         Controls.Add(lvBooklist)
         Controls.Add(Label5)
-        Controls.Add(PictureBox10)
-        Controls.Add(Label4)
+        Controls.Add(pbBB)
+        Controls.Add(lblBB)
         Controls.Add(pbAddNewBook)
         Controls.Add(btnAddNewBook)
-        Controls.Add(Label3)
-        Controls.Add(PictureBox8)
+        Controls.Add(lblstatistic)
+        Controls.Add(pbStatistic)
         Controls.Add(lblDiscover)
-        Controls.Add(PictureBox1)
+        Controls.Add(pbDiscover)
         Controls.Add(Label2)
         Controls.Add(lblUsername)
         Controls.Add(pbProfile)
         Controls.Add(btnSearch)
         Controls.Add(lblMenu)
-        Controls.Add(lblLogout)
         Controls.Add(lblFavorite)
-        Controls.Add(lblMyLibrary)
+        Controls.Add(lblNotes)
         Controls.Add(lblCategory)
         Controls.Add(Label1)
-        Controls.Add(PictureBox6)
-        Controls.Add(PictureBox5)
-        Controls.Add(PictureBox4)
-        Controls.Add(PictureBox3)
+        Controls.Add(pbFavorite)
+        Controls.Add(pbNotes)
+        Controls.Add(pbCategory)
         Controls.Add(txtSearchBook)
         Controls.Add(PictureBox2)
         Name = "MainForm"
         StartPosition = FormStartPosition.CenterScreen
         Text = "ReadNest, Your Personal Library "
-        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbCategory, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbNotes, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbFavorite, ComponentModel.ISupportInitialize).EndInit()
         CType(pbProfile, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbDiscover, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbStatistic, ComponentModel.ISupportInitialize).EndInit()
         CType(pbAddNewBook, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox10, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbBB, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents pbCategory As PictureBox
+    Friend WithEvents pbNotes As PictureBox
+    Friend WithEvents pbFavorite As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents lblCategory As Label
-    Friend WithEvents lblMyLibrary As Label
+    Friend WithEvents lblNotes As Label
     Friend WithEvents lblFavorite As Label
-    Friend WithEvents lblLogout As Label
     Friend WithEvents lblMenu As Label
     Friend WithEvents btnSearch As Button
     Friend WithEvents txtSearchBook As TextBox
     Friend WithEvents pbProfile As PictureBox
     Friend WithEvents lblUsername As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents pbDiscover As PictureBox
     Friend WithEvents lblDiscover As Label
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox8 As PictureBox
-    Friend WithEvents Label3 As Label
+    Friend WithEvents pbStatistic As PictureBox
+    Friend WithEvents lblstatistic As Label
     Friend WithEvents btnAddNewBook As Button
     Friend WithEvents pbAddNewBook As PictureBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents PictureBox10 As PictureBox
+    Friend WithEvents lblBB As Label
+    Friend WithEvents pbBB As PictureBox
     Friend WithEvents Label5 As Label
     Friend WithEvents lvBooklist As ListView
 

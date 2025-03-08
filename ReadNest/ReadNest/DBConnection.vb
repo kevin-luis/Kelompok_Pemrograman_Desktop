@@ -3,7 +3,7 @@ Imports MySql.Data.MySqlClient
 
 Public Class DBConnection
     Private conn As MySqlConnection
-    Private ReadOnly strConn As String = "server=localhost;userid=root;password=;database=readnestdb"
+    Private ReadOnly strConn As String = "server=localhost;userid=root;password=;database=readnest"
 
     Public Sub New()
         conn = New MySqlConnection(strConn)

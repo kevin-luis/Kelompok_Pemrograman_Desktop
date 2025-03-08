@@ -1,3 +1,3 @@
-﻿Public Class Form9
+﻿Public Class MyNotesForm
 
 End Class
