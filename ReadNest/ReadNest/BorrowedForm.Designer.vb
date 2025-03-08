@@ -30,13 +30,11 @@ Partial Class BorrowForm
         lblDiscover = New Label()
         PictureBox1 = New PictureBox()
         lblMenu = New Label()
-        lblLogout = New Label()
         lblFavorite = New Label()
         lblMyLibrary = New Label()
         lblCategory = New Label()
         Label1 = New Label()
         PictureBox6 = New PictureBox()
-        PictureBox5 = New PictureBox()
         PictureBox4 = New PictureBox()
         PictureBox3 = New PictureBox()
         PictureBox2 = New PictureBox()
@@ -63,7 +61,6 @@ Partial Class BorrowForm
         CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
@@ -153,18 +150,6 @@ Partial Class BorrowForm
         lblMenu.TabIndex = 39
         lblMenu.Text = "Menu"
         ' 
-        ' lblLogout
-        ' 
-        lblLogout.AutoSize = True
-        lblLogout.BackColor = SystemColors.Info
-        lblLogout.Font = New Font("UD Digi Kyokasho NP-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        lblLogout.ImageAlign = ContentAlignment.TopRight
-        lblLogout.Location = New Point(43, 449)
-        lblLogout.Name = "lblLogout"
-        lblLogout.Size = New Size(63, 17)
-        lblLogout.TabIndex = 38
-        lblLogout.Text = "Logout"
-        ' 
         ' lblFavorite
         ' 
         lblFavorite.AutoSize = True
@@ -224,17 +209,6 @@ Partial Class BorrowForm
         PictureBox6.Size = New Size(28, 28)
         PictureBox6.TabIndex = 33
         PictureBox6.TabStop = False
-        ' 
-        ' PictureBox5
-        ' 
-        PictureBox5.BackColor = SystemColors.Info
-        PictureBox5.BackgroundImage = CType(resources.GetObject("PictureBox5.BackgroundImage"), Image)
-        PictureBox5.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox5.Location = New Point(9, 438)
-        PictureBox5.Name = "PictureBox5"
-        PictureBox5.Size = New Size(28, 28)
-        PictureBox5.TabIndex = 32
-        PictureBox5.TabStop = False
         ' 
         ' PictureBox4
         ' 
@@ -497,13 +471,11 @@ Partial Class BorrowForm
         Controls.Add(lblDiscover)
         Controls.Add(PictureBox1)
         Controls.Add(lblMenu)
-        Controls.Add(lblLogout)
         Controls.Add(lblFavorite)
         Controls.Add(lblMyLibrary)
         Controls.Add(lblCategory)
         Controls.Add(Label1)
         Controls.Add(PictureBox6)
-        Controls.Add(PictureBox5)
         Controls.Add(PictureBox4)
         Controls.Add(PictureBox3)
         Controls.Add(PictureBox2)
@@ -513,7 +485,6 @@ Partial Class BorrowForm
         CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
@@ -531,13 +502,11 @@ Partial Class BorrowForm
     Friend WithEvents lblDiscover As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents lblMenu As Label
-    Friend WithEvents lblLogout As Label
     Friend WithEvents lblFavorite As Label
     Friend WithEvents lblMyLibrary As Label
     Friend WithEvents lblCategory As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox6 As PictureBox
-    Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox

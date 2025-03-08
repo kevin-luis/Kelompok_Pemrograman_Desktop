@@ -35,13 +35,11 @@ Partial Class FavoriteForm
         pbProfile = New PictureBox()
         btnSearchFavoriteBook = New Button()
         lblMenu = New Label()
-        lblLogout = New Label()
         lblFavorite = New Label()
         lblMyLibrary = New Label()
         lblCategory = New Label()
         Label1 = New Label()
         PictureBox6 = New PictureBox()
-        PictureBox5 = New PictureBox()
         PictureBox4 = New PictureBox()
         PictureBox3 = New PictureBox()
         txtSearchFavoriteBook = New TextBox()
@@ -51,7 +49,6 @@ Partial Class FavoriteForm
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbProfile, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
@@ -190,18 +187,6 @@ Partial Class FavoriteForm
         lblMenu.TabIndex = 41
         lblMenu.Text = "Menu"
         ' 
-        ' lblLogout
-        ' 
-        lblLogout.AutoSize = True
-        lblLogout.BackColor = SystemColors.Info
-        lblLogout.Font = New Font("UD Digi Kyokasho NP-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        lblLogout.ImageAlign = ContentAlignment.TopRight
-        lblLogout.Location = New Point(44, 447)
-        lblLogout.Name = "lblLogout"
-        lblLogout.Size = New Size(63, 17)
-        lblLogout.TabIndex = 40
-        lblLogout.Text = "Logout"
-        ' 
         ' lblFavorite
         ' 
         lblFavorite.AutoSize = True
@@ -262,17 +247,6 @@ Partial Class FavoriteForm
         PictureBox6.TabIndex = 35
         PictureBox6.TabStop = False
         ' 
-        ' PictureBox5
-        ' 
-        PictureBox5.BackColor = SystemColors.Info
-        PictureBox5.BackgroundImage = CType(resources.GetObject("PictureBox5.BackgroundImage"), Image)
-        PictureBox5.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox5.Location = New Point(10, 436)
-        PictureBox5.Name = "PictureBox5"
-        PictureBox5.Size = New Size(28, 28)
-        PictureBox5.TabIndex = 34
-        PictureBox5.TabStop = False
-        ' 
         ' PictureBox4
         ' 
         PictureBox4.BackColor = SystemColors.Info
@@ -332,13 +306,11 @@ Partial Class FavoriteForm
         Controls.Add(pbProfile)
         Controls.Add(btnSearchFavoriteBook)
         Controls.Add(lblMenu)
-        Controls.Add(lblLogout)
         Controls.Add(lblFavorite)
         Controls.Add(lblMyLibrary)
         Controls.Add(lblCategory)
         Controls.Add(Label1)
         Controls.Add(PictureBox6)
-        Controls.Add(PictureBox5)
         Controls.Add(PictureBox4)
         Controls.Add(PictureBox3)
         Controls.Add(txtSearchFavoriteBook)
@@ -351,7 +323,6 @@ Partial Class FavoriteForm
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(pbProfile, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
@@ -371,13 +342,11 @@ Partial Class FavoriteForm
     Friend WithEvents pbProfile As PictureBox
     Friend WithEvents btnSearchFavoriteBook As Button
     Friend WithEvents lblMenu As Label
-    Friend WithEvents lblLogout As Label
     Friend WithEvents lblFavorite As Label
     Friend WithEvents lblMyLibrary As Label
     Friend WithEvents lblCategory As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox6 As PictureBox
-    Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents txtSearchFavoriteBook As TextBox

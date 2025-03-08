@@ -34,7 +34,6 @@ Partial Class MainForm
         btnSearch = New Button()
         txtSearchBook = New TextBox()
         pbProfile = New PictureBox()
-        lblUsername = New Label()
         Label2 = New Label()
         pbDiscover = New PictureBox()
         lblDiscover = New Label()
@@ -47,6 +46,7 @@ Partial Class MainForm
         pbBB = New PictureBox()
         Label5 = New Label()
         lvBooklist = New ListView()
+        cbProfile = New ComboBox()
         CType(pbCategory, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbNotes, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbFavorite, ComponentModel.ISupportInitialize).BeginInit()
@@ -176,21 +176,11 @@ Partial Class MainForm
         ' 
         pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
         pbProfile.BackgroundImageLayout = ImageLayout.Stretch
-        pbProfile.Location = New Point(816, 15)
+        pbProfile.Location = New Point(773, 23)
         pbProfile.Name = "pbProfile"
         pbProfile.Size = New Size(28, 28)
         pbProfile.TabIndex = 17
         pbProfile.TabStop = False
-        ' 
-        ' lblUsername
-        ' 
-        lblUsername.AutoSize = True
-        lblUsername.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        lblUsername.Location = New Point(850, 25)
-        lblUsername.Name = "lblUsername"
-        lblUsername.Size = New Size(57, 18)
-        lblUsername.TabIndex = 18
-        lblUsername.Text = "Profile"
         ' 
         ' Label2
         ' 
@@ -326,6 +316,18 @@ Partial Class MainForm
         lvBooklist.TabIndex = 31
         lvBooklist.UseCompatibleStateImageBehavior = False
         ' 
+        ' cbProfile
+        ' 
+        cbProfile.FlatStyle = FlatStyle.Flat
+        cbProfile.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        cbProfile.FormattingEnabled = True
+        cbProfile.Items.AddRange(New Object() {"View Profile", "Logout"})
+        cbProfile.Location = New Point(807, 23)
+        cbProfile.Name = "cbProfile"
+        cbProfile.Size = New Size(97, 26)
+        cbProfile.TabIndex = 32
+        cbProfile.Text = "Profile"
+        ' 
         ' MainForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -333,6 +335,7 @@ Partial Class MainForm
         BackColor = Color.White
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(934, 486)
+        Controls.Add(cbProfile)
         Controls.Add(lvBooklist)
         Controls.Add(Label5)
         Controls.Add(pbBB)
@@ -344,7 +347,6 @@ Partial Class MainForm
         Controls.Add(lblDiscover)
         Controls.Add(pbDiscover)
         Controls.Add(Label2)
-        Controls.Add(lblUsername)
         Controls.Add(pbProfile)
         Controls.Add(btnSearch)
         Controls.Add(lblMenu)
@@ -383,7 +385,6 @@ Partial Class MainForm
     Friend WithEvents btnSearch As Button
     Friend WithEvents txtSearchBook As TextBox
     Friend WithEvents pbProfile As PictureBox
-    Friend WithEvents lblUsername As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents pbDiscover As PictureBox
     Friend WithEvents lblDiscover As Label
@@ -396,5 +397,6 @@ Partial Class MainForm
     Friend WithEvents pbBB As PictureBox
     Friend WithEvents Label5 As Label
     Friend WithEvents lvBooklist As ListView
+    Friend WithEvents cbProfile As ComboBox
 
 End Class
