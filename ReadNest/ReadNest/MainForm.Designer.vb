@@ -47,6 +47,8 @@ Partial Class MainForm
         Label5 = New Label()
         lvBooklist = New ListView()
         cbProfile = New ComboBox()
+        SplitContainer1 = New SplitContainer()
+        Splitter1 = New Splitter()
         CType(pbCategory, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbNotes, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbFavorite, ComponentModel.ISupportInitialize).BeginInit()
@@ -56,6 +58,10 @@ Partial Class MainForm
         CType(pbStatistic, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbAddNewBook, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbBB, ComponentModel.ISupportInitialize).BeginInit()
+        CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
+        SplitContainer1.Panel1.SuspendLayout()
+        SplitContainer1.Panel2.SuspendLayout()
+        SplitContainer1.SuspendLayout()
         SuspendLayout()
         ' 
         ' pbCategory
@@ -222,9 +228,10 @@ Partial Class MainForm
         ' 
         PictureBox2.BackColor = SystemColors.Info
         PictureBox2.BorderStyle = BorderStyle.FixedSingle
-        PictureBox2.Location = New Point(0, -9)
+        PictureBox2.Dock = DockStyle.Fill
+        PictureBox2.Location = New Point(0, 0)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(180, 498)
+        PictureBox2.Size = New Size(186, 486)
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
         ' 
@@ -328,6 +335,31 @@ Partial Class MainForm
         cbProfile.TabIndex = 32
         cbProfile.Text = "Profile"
         ' 
+        ' SplitContainer1
+        ' 
+        SplitContainer1.Dock = DockStyle.Fill
+        SplitContainer1.Location = New Point(0, 0)
+        SplitContainer1.Name = "SplitContainer1"
+        ' 
+        ' SplitContainer1.Panel1
+        ' 
+        SplitContainer1.Panel1.Controls.Add(PictureBox2)
+        ' 
+        ' SplitContainer1.Panel2
+        ' 
+        SplitContainer1.Panel2.Controls.Add(Splitter1)
+        SplitContainer1.Size = New Size(934, 486)
+        SplitContainer1.SplitterDistance = 186
+        SplitContainer1.TabIndex = 33
+        ' 
+        ' Splitter1
+        ' 
+        Splitter1.Location = New Point(0, 0)
+        Splitter1.Name = "Splitter1"
+        Splitter1.Size = New Size(3, 486)
+        Splitter1.TabIndex = 0
+        Splitter1.TabStop = False
+        ' 
         ' MainForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -358,7 +390,7 @@ Partial Class MainForm
         Controls.Add(pbNotes)
         Controls.Add(pbCategory)
         Controls.Add(txtSearchBook)
-        Controls.Add(PictureBox2)
+        Controls.Add(SplitContainer1)
         Name = "MainForm"
         StartPosition = FormStartPosition.CenterScreen
         Text = "ReadNest, Your Personal Library "
@@ -371,6 +403,10 @@ Partial Class MainForm
         CType(pbStatistic, ComponentModel.ISupportInitialize).EndInit()
         CType(pbAddNewBook, ComponentModel.ISupportInitialize).EndInit()
         CType(pbBB, ComponentModel.ISupportInitialize).EndInit()
+        SplitContainer1.Panel1.ResumeLayout(False)
+        SplitContainer1.Panel2.ResumeLayout(False)
+        CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
+        SplitContainer1.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -398,5 +434,7 @@ Partial Class MainForm
     Friend WithEvents Label5 As Label
     Friend WithEvents lvBooklist As ListView
     Friend WithEvents cbProfile As ComboBox
+    Friend WithEvents SplitContainer1 As SplitContainer
+    Friend WithEvents Splitter1 As Splitter
 
 End Class

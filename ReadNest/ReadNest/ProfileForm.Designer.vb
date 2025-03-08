@@ -39,13 +39,17 @@ Partial Class ProfileForm
         PictureBox3 = New PictureBox()
         PictureBox2 = New PictureBox()
         Label7 = New Label()
-        Label5 = New Label()
-        Label2 = New Label()
-        txtProfilePassword = New TextBox()
-        txtProfileUsername = New TextBox()
         PictureBox9 = New PictureBox()
         lblLogout = New Label()
         PictureBox5 = New PictureBox()
+        Label2 = New Label()
+        txtConfirmPassword = New TextBox()
+        Label5 = New Label()
+        txtCreateUsername = New TextBox()
+        Label6 = New Label()
+        Label8 = New Label()
+        txtCreatePassword = New TextBox()
+        txtCreateEmail = New TextBox()
         CType(PictureBox10, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -235,59 +239,19 @@ Partial Class ProfileForm
         Label7.AutoSize = True
         Label7.BackColor = Color.Cornsilk
         Label7.Font = New Font("UD Digi Kyokasho NK-B", 13.25F, FontStyle.Bold)
-        Label7.Location = New Point(373, 161)
+        Label7.Location = New Point(337, 81)
         Label7.Name = "Label7"
         Label7.Size = New Size(74, 21)
         Label7.TabIndex = 51
         Label7.Text = "Profile"
         ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.BackColor = Color.Cornsilk
-        Label5.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label5.Location = New Point(376, 260)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(83, 17)
-        Label5.TabIndex = 50
-        Label5.Text = "Password"
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.BackColor = Color.Cornsilk
-        Label2.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label2.Location = New Point(373, 216)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(86, 17)
-        Label2.TabIndex = 49
-        Label2.Text = "Username"
-        ' 
-        ' txtProfilePassword
-        ' 
-        txtProfilePassword.Font = New Font("Segoe UI", 11F)
-        txtProfilePassword.Location = New Point(465, 260)
-        txtProfilePassword.Name = "txtProfilePassword"
-        txtProfilePassword.PlaceholderText = "Enter your password here"
-        txtProfilePassword.Size = New Size(190, 27)
-        txtProfilePassword.TabIndex = 48
-        ' 
-        ' txtProfileUsername
-        ' 
-        txtProfileUsername.Font = New Font("Segoe UI", 11F)
-        txtProfileUsername.Location = New Point(465, 210)
-        txtProfileUsername.Name = "txtProfileUsername"
-        txtProfileUsername.PlaceholderText = "Enter your username here"
-        txtProfileUsername.Size = New Size(190, 27)
-        txtProfileUsername.TabIndex = 47
-        ' 
         ' PictureBox9
         ' 
         PictureBox9.BackColor = Color.Cornsilk
         PictureBox9.BorderStyle = BorderStyle.FixedSingle
-        PictureBox9.Location = New Point(345, 127)
+        PictureBox9.Location = New Point(297, 63)
         PictureBox9.Name = "PictureBox9"
-        PictureBox9.Size = New Size(359, 248)
+        PictureBox9.Size = New Size(409, 378)
         PictureBox9.TabIndex = 80
         PictureBox9.TabStop = False
         ' 
@@ -297,7 +261,7 @@ Partial Class ProfileForm
         lblLogout.BackColor = SystemColors.Info
         lblLogout.Font = New Font("UD Digi Kyokasho NP-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblLogout.ImageAlign = ContentAlignment.TopRight
-        lblLogout.Location = New Point(597, 334)
+        lblLogout.Location = New Point(607, 393)
         lblLogout.Name = "lblLogout"
         lblLogout.Size = New Size(63, 17)
         lblLogout.TabIndex = 82
@@ -308,11 +272,89 @@ Partial Class ProfileForm
         PictureBox5.BackColor = SystemColors.Info
         PictureBox5.BackgroundImage = CType(resources.GetObject("PictureBox5.BackgroundImage"), Image)
         PictureBox5.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox5.Location = New Point(563, 323)
+        PictureBox5.Location = New Point(573, 382)
         PictureBox5.Name = "PictureBox5"
         PictureBox5.Size = New Size(28, 28)
         PictureBox5.TabIndex = 81
         PictureBox5.TabStop = False
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label2.Location = New Point(337, 309)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(148, 18)
+        Label2.TabIndex = 90
+        Label2.Text = "Confirm Password"
+        ' 
+        ' txtConfirmPassword
+        ' 
+        txtConfirmPassword.Font = New Font("Segoe UI", 11F)
+        txtConfirmPassword.Location = New Point(340, 330)
+        txtConfirmPassword.Name = "txtConfirmPassword"
+        txtConfirmPassword.PlaceholderText = "Enter your confirm password here"
+        txtConfirmPassword.Size = New Size(262, 27)
+        txtConfirmPassword.TabIndex = 86
+        txtConfirmPassword.UseSystemPasswordChar = True
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label5.Location = New Point(340, 126)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(50, 18)
+        Label5.TabIndex = 89
+        Label5.Text = "Email"
+        ' 
+        ' txtCreateUsername
+        ' 
+        txtCreateUsername.Font = New Font("Segoe UI", 11F)
+        txtCreateUsername.Location = New Point(340, 209)
+        txtCreateUsername.Name = "txtCreateUsername"
+        txtCreateUsername.PlaceholderText = "Enter your email here"
+        txtCreateUsername.Size = New Size(262, 27)
+        txtCreateUsername.TabIndex = 84
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label6.Location = New Point(340, 251)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(83, 18)
+        Label6.TabIndex = 88
+        Label6.Text = "Password"
+        ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label8.Location = New Point(337, 188)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(85, 18)
+        Label8.TabIndex = 87
+        Label8.Text = "Username"
+        ' 
+        ' txtCreatePassword
+        ' 
+        txtCreatePassword.Font = New Font("Segoe UI", 11F)
+        txtCreatePassword.Location = New Point(340, 272)
+        txtCreatePassword.Name = "txtCreatePassword"
+        txtCreatePassword.PlaceholderText = "Enter your password here"
+        txtCreatePassword.Size = New Size(262, 27)
+        txtCreatePassword.TabIndex = 85
+        txtCreatePassword.UseSystemPasswordChar = True
+        ' 
+        ' txtCreateEmail
+        ' 
+        txtCreateEmail.Font = New Font("Segoe UI", 11F)
+        txtCreateEmail.Location = New Point(340, 147)
+        txtCreateEmail.Name = "txtCreateEmail"
+        txtCreateEmail.PlaceholderText = "Enter your username here"
+        txtCreateEmail.Size = New Size(262, 27)
+        txtCreateEmail.TabIndex = 83
         ' 
         ' ProfileForm
         ' 
@@ -320,13 +362,17 @@ Partial Class ProfileForm
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         ClientSize = New Size(934, 486)
+        Controls.Add(Label2)
+        Controls.Add(txtConfirmPassword)
+        Controls.Add(Label5)
+        Controls.Add(txtCreateUsername)
+        Controls.Add(Label6)
+        Controls.Add(Label8)
+        Controls.Add(txtCreatePassword)
+        Controls.Add(txtCreateEmail)
         Controls.Add(lblLogout)
         Controls.Add(PictureBox5)
         Controls.Add(Label7)
-        Controls.Add(Label5)
-        Controls.Add(Label2)
-        Controls.Add(txtProfilePassword)
-        Controls.Add(txtProfileUsername)
         Controls.Add(PictureBox10)
         Controls.Add(Label4)
         Controls.Add(Label3)
@@ -375,11 +421,15 @@ Partial Class ProfileForm
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents txtProfilePassword As TextBox
-    Friend WithEvents txtProfileUsername As TextBox
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents lblLogout As Label
     Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtConfirmPassword As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtCreateUsername As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents txtCreatePassword As TextBox
+    Friend WithEvents txtCreateEmail As TextBox
 End Class
