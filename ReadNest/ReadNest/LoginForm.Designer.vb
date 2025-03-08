@@ -35,7 +35,10 @@ Partial Class LoginForm
         Label7 = New Label()
         btnLoginaAccount = New Button()
         chkPassword = New CheckBox()
+        Panel1 = New Panel()
+        MySqlCommand1 = New MySql.Data.MySqlClient.MySqlCommand()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Label1
@@ -53,9 +56,10 @@ Partial Class LoginForm
         ' 
         ' PictureBox1
         ' 
+        PictureBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), Image)
         PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox1.Location = New Point(-2, -2)
+        PictureBox1.Location = New Point(0, 0)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(475, 490)
         PictureBox1.TabIndex = 8
@@ -163,10 +167,27 @@ Partial Class LoginForm
         chkPassword.Text = "Show Password"
         chkPassword.UseVisualStyleBackColor = True
         ' 
+        ' Panel1
+        ' 
+        Panel1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Panel1.Controls.Add(PictureBox1)
+        Panel1.Location = New Point(0, 0)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(934, 486)
+        Panel1.TabIndex = 19
+        ' 
+        ' MySqlCommand1
+        ' 
+        MySqlCommand1.CacheAge = 0
+        MySqlCommand1.Connection = Nothing
+        MySqlCommand1.EnableCaching = False
+        MySqlCommand1.Transaction = Nothing
+        ' 
         ' LoginForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        AutoSize = True
         BackColor = Color.White
         ClientSize = New Size(934, 486)
         Controls.Add(chkPassword)
@@ -180,11 +201,12 @@ Partial Class LoginForm
         Controls.Add(txtloginusername)
         Controls.Add(Label2)
         Controls.Add(Label1)
-        Controls.Add(PictureBox1)
+        Controls.Add(Panel1)
         Name = "LoginForm"
         StartPosition = FormStartPosition.CenterScreen
         Text = "ReadNest, Your Personal Library "
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -201,4 +223,6 @@ Partial Class LoginForm
     Friend WithEvents Label7 As Label
     Friend WithEvents btnLoginaAccount As Button
     Friend WithEvents chkPassword As CheckBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents MySqlCommand1 As MySql.Data.MySqlClient.MySqlCommand
 End Class

@@ -1,37 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="AddNewBookForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="BorrowedForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="CategoryForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form7.vb">
+    <Compile Update="FavoriteForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form8.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Form9.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="MainForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Form10.vb">
+    <Compile Update="NotesForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="LoginForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="MainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="CreateAccountForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form4.vb">
+    <Compile Update="StatisticForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form5.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Form6.vb">
+    <Compile Update="ProfileForm.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

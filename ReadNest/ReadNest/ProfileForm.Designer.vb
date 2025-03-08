@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class CategoryForm
+Partial Class ProfileForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,18 +22,13 @@ Partial Class CategoryForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CategoryForm))
-        lvCategoryBooks = New ListView()
-        Label5 = New Label()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ProfileForm))
         PictureBox10 = New PictureBox()
         Label4 = New Label()
         Label3 = New Label()
         PictureBox8 = New PictureBox()
         lblDiscover = New Label()
         PictureBox1 = New PictureBox()
-        lblUsername = New Label()
-        pbProfile = New PictureBox()
-        btnSearch = New Button()
         lblMenu = New Label()
         lblLogout = New Label()
         lblFavorite = New Label()
@@ -44,50 +39,33 @@ Partial Class CategoryForm
         PictureBox5 = New PictureBox()
         PictureBox4 = New PictureBox()
         PictureBox3 = New PictureBox()
-        txtSearchBook = New TextBox()
         PictureBox2 = New PictureBox()
-        cbCategoryBooks = New ComboBox()
+        Label7 = New Label()
+        Label5 = New Label()
+        Label2 = New Label()
+        txtProfilePassword = New TextBox()
+        txtProfileUsername = New TextBox()
+        PictureBox9 = New PictureBox()
         CType(PictureBox10, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(pbProfile, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' lvCategoryBooks
-        ' 
-        lvCategoryBooks.Location = New Point(208, 125)
-        lvCategoryBooks.Name = "lvCategoryBooks"
-        lvCategoryBooks.Size = New Size(696, 339)
-        lvCategoryBooks.TabIndex = 57
-        lvCategoryBooks.UseCompatibleStateImageBehavior = False
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.BackColor = Color.Transparent
-        Label5.Font = New Font("UD Digi Kyokasho NP-B", 13.2F, FontStyle.Bold)
-        Label5.ForeColor = SystemColors.ControlText
-        Label5.ImageAlign = ContentAlignment.TopRight
-        Label5.Location = New Point(208, 63)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(158, 21)
-        Label5.TabIndex = 56
-        Label5.Text = "Category Books"
         ' 
         ' PictureBox10
         ' 
         PictureBox10.BackColor = SystemColors.Info
         PictureBox10.BackgroundImage = CType(resources.GetObject("PictureBox10.BackgroundImage"), Image)
         PictureBox10.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox10.Location = New Point(12, 253)
+        PictureBox10.Location = New Point(13, 254)
         PictureBox10.Name = "PictureBox10"
         PictureBox10.Size = New Size(28, 28)
-        PictureBox10.TabIndex = 55
+        PictureBox10.TabIndex = 46
         PictureBox10.TabStop = False
         ' 
         ' Label4
@@ -96,10 +74,10 @@ Partial Class CategoryForm
         Label4.BackColor = SystemColors.Info
         Label4.Font = New Font("UD Digi Kyokasho NP-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label4.ImageAlign = ContentAlignment.TopRight
-        Label4.Location = New Point(46, 264)
+        Label4.Location = New Point(47, 265)
         Label4.Name = "Label4"
         Label4.Size = New Size(131, 17)
-        Label4.TabIndex = 54
+        Label4.TabIndex = 45
         Label4.Text = "Book Borrowing"
         ' 
         ' Label3
@@ -108,10 +86,10 @@ Partial Class CategoryForm
         Label3.BackColor = SystemColors.Info
         Label3.Font = New Font("UD Digi Kyokasho NP-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label3.ImageAlign = ContentAlignment.TopRight
-        Label3.Location = New Point(46, 298)
+        Label3.Location = New Point(47, 299)
         Label3.Name = "Label3"
         Label3.Size = New Size(103, 17)
-        Label3.TabIndex = 51
+        Label3.TabIndex = 44
         Label3.Text = "My Statistic"
         ' 
         ' PictureBox8
@@ -119,10 +97,10 @@ Partial Class CategoryForm
         PictureBox8.BackColor = SystemColors.Info
         PictureBox8.BackgroundImage = CType(resources.GetObject("PictureBox8.BackgroundImage"), Image)
         PictureBox8.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox8.Location = New Point(12, 287)
+        PictureBox8.Location = New Point(13, 288)
         PictureBox8.Name = "PictureBox8"
         PictureBox8.Size = New Size(28, 28)
-        PictureBox8.TabIndex = 50
+        PictureBox8.TabIndex = 43
         PictureBox8.TabStop = False
         ' 
         ' lblDiscover
@@ -131,10 +109,10 @@ Partial Class CategoryForm
         lblDiscover.BackColor = SystemColors.Info
         lblDiscover.Font = New Font("UD Digi Kyokasho NP-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblDiscover.ImageAlign = ContentAlignment.TopRight
-        lblDiscover.Location = New Point(46, 126)
+        lblDiscover.Location = New Point(47, 127)
         lblDiscover.Name = "lblDiscover"
         lblDiscover.Size = New Size(74, 17)
-        lblDiscover.TabIndex = 48
+        lblDiscover.TabIndex = 41
         lblDiscover.Text = "Discover"
         ' 
         ' PictureBox1
@@ -142,42 +120,11 @@ Partial Class CategoryForm
         PictureBox1.BackColor = SystemColors.Info
         PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), Image)
         PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox1.Location = New Point(12, 115)
+        PictureBox1.Location = New Point(13, 116)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(28, 28)
-        PictureBox1.TabIndex = 47
+        PictureBox1.TabIndex = 40
         PictureBox1.TabStop = False
-        ' 
-        ' lblUsername
-        ' 
-        lblUsername.AutoSize = True
-        lblUsername.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        lblUsername.Location = New Point(850, 26)
-        lblUsername.Name = "lblUsername"
-        lblUsername.Size = New Size(61, 17)
-        lblUsername.TabIndex = 45
-        lblUsername.Text = "Profile"
-        ' 
-        ' pbProfile
-        ' 
-        pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
-        pbProfile.BackgroundImageLayout = ImageLayout.Stretch
-        pbProfile.Location = New Point(816, 16)
-        pbProfile.Name = "pbProfile"
-        pbProfile.Size = New Size(28, 28)
-        pbProfile.TabIndex = 44
-        pbProfile.TabStop = False
-        ' 
-        ' btnSearch
-        ' 
-        btnSearch.AutoSize = True
-        btnSearch.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        btnSearch.Location = New Point(612, 92)
-        btnSearch.Name = "btnSearch"
-        btnSearch.Size = New Size(75, 27)
-        btnSearch.TabIndex = 42
-        btnSearch.Text = "Search"
-        btnSearch.UseVisualStyleBackColor = True
         ' 
         ' lblMenu
         ' 
@@ -185,10 +132,10 @@ Partial Class CategoryForm
         lblMenu.BackColor = SystemColors.Info
         lblMenu.Font = New Font("UD Digi Kyokasho NP-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblMenu.ImageAlign = ContentAlignment.TopRight
-        lblMenu.Location = New Point(12, 84)
+        lblMenu.Location = New Point(13, 85)
         lblMenu.Name = "lblMenu"
         lblMenu.Size = New Size(51, 17)
-        lblMenu.TabIndex = 41
+        lblMenu.TabIndex = 39
         lblMenu.Text = "Menu"
         ' 
         ' lblLogout
@@ -197,10 +144,10 @@ Partial Class CategoryForm
         lblLogout.BackColor = SystemColors.Info
         lblLogout.Font = New Font("UD Digi Kyokasho NP-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblLogout.ImageAlign = ContentAlignment.TopRight
-        lblLogout.Location = New Point(46, 447)
+        lblLogout.Location = New Point(47, 448)
         lblLogout.Name = "lblLogout"
         lblLogout.Size = New Size(63, 17)
-        lblLogout.TabIndex = 40
+        lblLogout.TabIndex = 38
         lblLogout.Text = "Logout"
         ' 
         ' lblFavorite
@@ -209,10 +156,10 @@ Partial Class CategoryForm
         lblFavorite.BackColor = SystemColors.Info
         lblFavorite.Font = New Font("UD Digi Kyokasho NP-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblFavorite.ImageAlign = ContentAlignment.TopRight
-        lblFavorite.Location = New Point(46, 230)
+        lblFavorite.Location = New Point(47, 231)
         lblFavorite.Name = "lblFavorite"
         lblFavorite.Size = New Size(73, 17)
-        lblFavorite.TabIndex = 39
+        lblFavorite.TabIndex = 37
         lblFavorite.Text = "Favorite"
         ' 
         ' lblMyLibrary
@@ -221,10 +168,10 @@ Partial Class CategoryForm
         lblMyLibrary.BackColor = SystemColors.Info
         lblMyLibrary.Font = New Font("UD Digi Kyokasho NP-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblMyLibrary.ImageAlign = ContentAlignment.TopRight
-        lblMyLibrary.Location = New Point(46, 194)
+        lblMyLibrary.Location = New Point(47, 195)
         lblMyLibrary.Name = "lblMyLibrary"
         lblMyLibrary.Size = New Size(81, 17)
-        lblMyLibrary.TabIndex = 38
+        lblMyLibrary.TabIndex = 36
         lblMyLibrary.Text = "My Notes"
         ' 
         ' lblCategory
@@ -233,10 +180,10 @@ Partial Class CategoryForm
         lblCategory.BackColor = SystemColors.Info
         lblCategory.Font = New Font("UD Digi Kyokasho NP-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblCategory.ImageAlign = ContentAlignment.TopRight
-        lblCategory.Location = New Point(46, 160)
+        lblCategory.Location = New Point(47, 161)
         lblCategory.Name = "lblCategory"
         lblCategory.Size = New Size(80, 17)
-        lblCategory.TabIndex = 37
+        lblCategory.TabIndex = 35
         lblCategory.Text = "Category"
         ' 
         ' Label1
@@ -246,10 +193,10 @@ Partial Class CategoryForm
         Label1.Font = New Font("UD Digi Kyokasho NP-B", 20.25F, FontStyle.Bold)
         Label1.ForeColor = SystemColors.ControlText
         Label1.ImageAlign = ContentAlignment.TopRight
-        Label1.Location = New Point(12, 26)
+        Label1.Location = New Point(13, 27)
         Label1.Name = "Label1"
         Label1.Size = New Size(148, 31)
-        Label1.TabIndex = 36
+        Label1.TabIndex = 34
         Label1.Text = "ReadNest"
         ' 
         ' PictureBox6
@@ -257,10 +204,10 @@ Partial Class CategoryForm
         PictureBox6.BackColor = SystemColors.Info
         PictureBox6.BackgroundImage = CType(resources.GetObject("PictureBox6.BackgroundImage"), Image)
         PictureBox6.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox6.Location = New Point(12, 219)
+        PictureBox6.Location = New Point(13, 220)
         PictureBox6.Name = "PictureBox6"
         PictureBox6.Size = New Size(28, 28)
-        PictureBox6.TabIndex = 35
+        PictureBox6.TabIndex = 33
         PictureBox6.TabStop = False
         ' 
         ' PictureBox5
@@ -268,10 +215,10 @@ Partial Class CategoryForm
         PictureBox5.BackColor = SystemColors.Info
         PictureBox5.BackgroundImage = CType(resources.GetObject("PictureBox5.BackgroundImage"), Image)
         PictureBox5.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox5.Location = New Point(12, 436)
+        PictureBox5.Location = New Point(13, 437)
         PictureBox5.Name = "PictureBox5"
         PictureBox5.Size = New Size(28, 28)
-        PictureBox5.TabIndex = 34
+        PictureBox5.TabIndex = 32
         PictureBox5.TabStop = False
         ' 
         ' PictureBox4
@@ -279,10 +226,10 @@ Partial Class CategoryForm
         PictureBox4.BackColor = SystemColors.Info
         PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), Image)
         PictureBox4.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox4.Location = New Point(12, 183)
+        PictureBox4.Location = New Point(13, 184)
         PictureBox4.Name = "PictureBox4"
         PictureBox4.Size = New Size(28, 28)
-        PictureBox4.TabIndex = 33
+        PictureBox4.TabIndex = 31
         PictureBox4.TabStop = False
         ' 
         ' PictureBox3
@@ -290,57 +237,100 @@ Partial Class CategoryForm
         PictureBox3.BackColor = SystemColors.Info
         PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), Image)
         PictureBox3.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox3.Location = New Point(12, 149)
+        PictureBox3.Location = New Point(13, 150)
         PictureBox3.Name = "PictureBox3"
         PictureBox3.Size = New Size(28, 28)
-        PictureBox3.TabIndex = 32
+        PictureBox3.TabIndex = 30
         PictureBox3.TabStop = False
-        ' 
-        ' txtSearchBook
-        ' 
-        txtSearchBook.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        txtSearchBook.Location = New Point(208, 92)
-        txtSearchBook.Name = "txtSearchBook"
-        txtSearchBook.PlaceholderText = "Find your book here"
-        txtSearchBook.Size = New Size(398, 25)
-        txtSearchBook.TabIndex = 43
         ' 
         ' PictureBox2
         ' 
         PictureBox2.BackColor = SystemColors.Info
         PictureBox2.BorderStyle = BorderStyle.FixedSingle
-        PictureBox2.Location = New Point(0, -8)
+        PictureBox2.Location = New Point(1, -7)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(180, 498)
-        PictureBox2.TabIndex = 49
+        PictureBox2.TabIndex = 42
         PictureBox2.TabStop = False
         ' 
-        ' cbCategoryBooks
+        ' Label7
         ' 
-        cbCategoryBooks.FormattingEnabled = True
-        cbCategoryBooks.Location = New Point(693, 93)
-        cbCategoryBooks.Name = "cbCategoryBooks"
-        cbCategoryBooks.Size = New Size(121, 23)
-        cbCategoryBooks.TabIndex = 58
+        Label7.AutoSize = True
+        Label7.BackColor = Color.Cornsilk
+        Label7.Font = New Font("UD Digi Kyokasho NK-B", 13.25F, FontStyle.Bold)
+        Label7.Location = New Point(373, 161)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(74, 21)
+        Label7.TabIndex = 51
+        Label7.Text = "Profile"
         ' 
-        ' Form6
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.BackColor = Color.Cornsilk
+        Label5.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label5.Location = New Point(376, 260)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(83, 17)
+        Label5.TabIndex = 50
+        Label5.Text = "Password"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.BackColor = Color.Cornsilk
+        Label2.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label2.Location = New Point(373, 216)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(86, 17)
+        Label2.TabIndex = 49
+        Label2.Text = "Username"
+        ' 
+        ' txtProfilePassword
+        ' 
+        txtProfilePassword.Font = New Font("Segoe UI", 11F)
+        txtProfilePassword.Location = New Point(465, 260)
+        txtProfilePassword.Name = "txtProfilePassword"
+        txtProfilePassword.PlaceholderText = "Enter your password here"
+        txtProfilePassword.Size = New Size(190, 27)
+        txtProfilePassword.TabIndex = 48
+        ' 
+        ' txtProfileUsername
+        ' 
+        txtProfileUsername.Font = New Font("Segoe UI", 11F)
+        txtProfileUsername.Location = New Point(465, 210)
+        txtProfileUsername.Name = "txtProfileUsername"
+        txtProfileUsername.PlaceholderText = "Enter your username here"
+        txtProfileUsername.Size = New Size(190, 27)
+        txtProfileUsername.TabIndex = 47
+        ' 
+        ' PictureBox9
+        ' 
+        PictureBox9.BackColor = Color.Cornsilk
+        PictureBox9.BorderStyle = BorderStyle.FixedSingle
+        PictureBox9.Location = New Point(345, 127)
+        PictureBox9.Name = "PictureBox9"
+        PictureBox9.Size = New Size(359, 248)
+        PictureBox9.TabIndex = 80
+        PictureBox9.TabStop = False
+        ' 
+        ' Form10
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         ClientSize = New Size(934, 486)
-        Controls.Add(cbCategoryBooks)
-        Controls.Add(lvCategoryBooks)
+        Controls.Add(Label7)
         Controls.Add(Label5)
+        Controls.Add(Label2)
+        Controls.Add(txtProfilePassword)
+        Controls.Add(txtProfileUsername)
         Controls.Add(PictureBox10)
         Controls.Add(Label4)
         Controls.Add(Label3)
         Controls.Add(PictureBox8)
         Controls.Add(lblDiscover)
         Controls.Add(PictureBox1)
-        Controls.Add(lblUsername)
-        Controls.Add(pbProfile)
-        Controls.Add(btnSearch)
         Controls.Add(lblMenu)
         Controls.Add(lblLogout)
         Controls.Add(lblFavorite)
@@ -351,34 +341,29 @@ Partial Class CategoryForm
         Controls.Add(PictureBox5)
         Controls.Add(PictureBox4)
         Controls.Add(PictureBox3)
-        Controls.Add(txtSearchBook)
         Controls.Add(PictureBox2)
-        Name = "Form6"
-        Text = "Form6"
+        Controls.Add(PictureBox9)
+        Name = "Form10"
+        Text = "Form10"
         CType(PictureBox10, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        CType(pbProfile, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents lvCategoryBooks As ListView
-    Friend WithEvents Label5 As Label
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents lblDiscover As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents lblUsername As Label
-    Friend WithEvents pbProfile As PictureBox
-    Friend WithEvents btnSearch As Button
     Friend WithEvents lblMenu As Label
     Friend WithEvents lblLogout As Label
     Friend WithEvents lblFavorite As Label
@@ -389,7 +374,11 @@ Partial Class CategoryForm
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents txtSearchBook As TextBox
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents cbCategoryBooks As ComboBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtProfilePassword As TextBox
+    Friend WithEvents txtProfileUsername As TextBox
+    Friend WithEvents PictureBox9 As PictureBox
 End Class
