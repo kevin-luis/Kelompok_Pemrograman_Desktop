@@ -27,8 +27,9 @@ Public Class LoginForm
     End Sub
 
     Private Sub linkCreateAccount_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linkCreateAccount.LinkClicked
+        Dim formBaru As New CreateAccountForm()
+        formBaru.Show()
         Me.Hide()
-        CreateAccountForm.Show()
     End Sub
 
     Private Sub chkPassword_CheckedChanged(sender As Object, e As EventArgs) Handles chkPassword.CheckedChanged
