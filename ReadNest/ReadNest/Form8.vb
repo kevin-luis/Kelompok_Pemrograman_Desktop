@@ -1,3 +1,3 @@
-﻿Public Class Form8
+﻿Public Class FavoriteForm
 
 End Class

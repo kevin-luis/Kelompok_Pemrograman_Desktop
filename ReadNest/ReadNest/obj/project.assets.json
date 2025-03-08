@@ -1608,23 +1608,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kevin Luis\\.nuget\\packages\\": {},
+    "C:\\Users\\LENOVO_THINKPAD\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\ReadNest.vbproj",
+      "projectUniqueName": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\ReadNest.vbproj",
       "projectName": "ReadNest",
-      "projectPath": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\ReadNest.vbproj",
-      "packagesPath": "C:\\Users\\Kevin Luis\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kevin Luis\\Documents\\UKDW\\Semester 8\\ProgDesk\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\obj\\",
+      "projectPath": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\ReadNest.vbproj",
+      "packagesPath": "C:\\Users\\LENOVO_THINKPAD\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Kevin Luis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\LENOVO_THINKPAD\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1649,9 +1649,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -1681,7 +1681,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

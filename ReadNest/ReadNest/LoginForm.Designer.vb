@@ -42,12 +42,12 @@ Partial Class LoginForm
         ' 
         Label1.AutoSize = True
         Label1.BackColor = SystemColors.Info
-        Label1.Font = New Font("Microsoft Sans Serif", 30.25F, FontStyle.Bold)
+        Label1.Font = New Font("UD Digi Kyokasho NK-B", 30F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label1.ForeColor = SystemColors.ControlText
         Label1.ImageAlign = ContentAlignment.TopRight
-        Label1.Location = New Point(233, 30)
+        Label1.Location = New Point(224, 30)
         Label1.Name = "Label1"
-        Label1.Size = New Size(212, 47)
+        Label1.Size = New Size(221, 46)
         Label1.TabIndex = 7
         Label1.Text = "ReadNest"
         ' 
@@ -65,12 +65,12 @@ Partial Class LoginForm
         ' 
         Label2.AutoSize = True
         Label2.BackColor = SystemColors.Info
-        Label2.Font = New Font("Microsoft Sans Serif", 25.25F, FontStyle.Bold)
+        Label2.Font = New Font("UD Digi Kyokasho NK-B", 26.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label2.ForeColor = SystemColors.ControlText
         Label2.ImageAlign = ContentAlignment.TopRight
         Label2.Location = New Point(12, 30)
         Label2.Name = "Label2"
-        Label2.Size = New Size(206, 39)
+        Label2.Size = New Size(223, 41)
         Label2.TabIndex = 9
         Label2.Text = "Welcome to"
         ' 
