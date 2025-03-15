@@ -101,12 +101,12 @@ Partial Class MainForm
         ' 
         Label1.AutoSize = True
         Label1.BackColor = SystemColors.Info
-        Label1.Font = New Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold)
+        Label1.Font = New Font("UD Digi Kyokasho NK-B", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label1.ForeColor = SystemColors.ControlText
         Label1.ImageAlign = ContentAlignment.TopRight
         Label1.Location = New Point(12, 25)
         Label1.Name = "Label1"
-        Label1.Size = New Size(144, 31)
+        Label1.Size = New Size(148, 31)
         Label1.TabIndex = 6
         Label1.Text = "ReadNest"
         ' 
@@ -114,11 +114,11 @@ Partial Class MainForm
         ' 
         lblCategory.AutoSize = True
         lblCategory.BackColor = SystemColors.Info
-        lblCategory.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        lblCategory.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
         lblCategory.ImageAlign = ContentAlignment.TopRight
         lblCategory.Location = New Point(46, 156)
         lblCategory.Name = "lblCategory"
-        lblCategory.Size = New Size(76, 18)
+        lblCategory.Size = New Size(80, 17)
         lblCategory.TabIndex = 7
         lblCategory.Text = "Category"
         ' 
@@ -126,11 +126,11 @@ Partial Class MainForm
         ' 
         lblNotes.AutoSize = True
         lblNotes.BackColor = SystemColors.Info
-        lblNotes.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        lblNotes.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
         lblNotes.ImageAlign = ContentAlignment.TopRight
         lblNotes.Location = New Point(46, 191)
         lblNotes.Name = "lblNotes"
-        lblNotes.Size = New Size(80, 18)
+        lblNotes.Size = New Size(81, 17)
         lblNotes.TabIndex = 8
         lblNotes.Text = "My Notes"
         ' 
@@ -138,11 +138,11 @@ Partial Class MainForm
         ' 
         lblFavorite.AutoSize = True
         lblFavorite.BackColor = SystemColors.Info
-        lblFavorite.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        lblFavorite.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
         lblFavorite.ImageAlign = ContentAlignment.TopRight
         lblFavorite.Location = New Point(46, 227)
         lblFavorite.Name = "lblFavorite"
-        lblFavorite.Size = New Size(69, 18)
+        lblFavorite.Size = New Size(73, 17)
         lblFavorite.TabIndex = 9
         lblFavorite.Text = "Favorite"
         ' 
@@ -216,11 +216,11 @@ Partial Class MainForm
         ' 
         lblDiscover.AutoSize = True
         lblDiscover.BackColor = SystemColors.Info
-        lblDiscover.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        lblDiscover.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
         lblDiscover.ImageAlign = ContentAlignment.TopRight
         lblDiscover.Location = New Point(46, 122)
         lblDiscover.Name = "lblDiscover"
-        lblDiscover.Size = New Size(75, 18)
+        lblDiscover.Size = New Size(74, 17)
         lblDiscover.TabIndex = 21
         lblDiscover.Text = "Discover"
         ' 
@@ -250,11 +250,11 @@ Partial Class MainForm
         ' 
         lblstatistic.AutoSize = True
         lblstatistic.BackColor = SystemColors.Info
-        lblstatistic.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        lblstatistic.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
         lblstatistic.ImageAlign = ContentAlignment.TopRight
         lblstatistic.Location = New Point(46, 294)
         lblstatistic.Name = "lblstatistic"
-        lblstatistic.Size = New Size(96, 18)
+        lblstatistic.Size = New Size(103, 17)
         lblstatistic.TabIndex = 24
         lblstatistic.Text = "My Statistic"
         ' 
@@ -283,11 +283,11 @@ Partial Class MainForm
         ' 
         lblBB.AutoSize = True
         lblBB.BackColor = SystemColors.Info
-        lblBB.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        lblBB.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
         lblBB.ImageAlign = ContentAlignment.TopRight
         lblBB.Location = New Point(46, 260)
         lblBB.Name = "lblBB"
-        lblBB.Size = New Size(130, 18)
+        lblBB.Size = New Size(131, 17)
         lblBB.TabIndex = 28
         lblBB.Text = "Book Borrowing"
         ' 
@@ -326,12 +326,12 @@ Partial Class MainForm
         ' cbProfile
         ' 
         cbProfile.FlatStyle = FlatStyle.Flat
-        cbProfile.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        cbProfile.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
         cbProfile.FormattingEnabled = True
         cbProfile.Items.AddRange(New Object() {"View Profile", "Logout"})
         cbProfile.Location = New Point(807, 23)
         cbProfile.Name = "cbProfile"
-        cbProfile.Size = New Size(97, 26)
+        cbProfile.Size = New Size(97, 25)
         cbProfile.TabIndex = 32
         cbProfile.Text = "Profile"
         ' 
@@ -364,6 +364,7 @@ Partial Class MainForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        AutoSize = True
         BackColor = Color.White
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(934, 486)
@@ -423,7 +424,6 @@ Partial Class MainForm
     Friend WithEvents pbProfile As PictureBox
     Friend WithEvents Label2 As Label
     Friend WithEvents pbDiscover As PictureBox
-    Friend WithEvents lblDiscover As Label
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents pbStatistic As PictureBox
     Friend WithEvents lblstatistic As Label
@@ -436,5 +436,6 @@ Partial Class MainForm
     Friend WithEvents cbProfile As ComboBox
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents Splitter1 As Splitter
+    Public WithEvents lblDiscover As Label
 
 End Class
