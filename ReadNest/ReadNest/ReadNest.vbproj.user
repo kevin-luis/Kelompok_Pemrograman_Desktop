@@ -16,10 +16,10 @@
     <Compile Update="LoginForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="MainForm.vb">
+    <Compile Update="CreateAccountForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="CreateAccountForm.vb">
+    <Compile Update="MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="MyNotes.vb">
