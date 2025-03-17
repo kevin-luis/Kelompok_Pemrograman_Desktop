@@ -98,5 +98,36 @@ Public Class DBConnection
         Return False
     End Function
 
+    Public Function CekEmailTerdaftar(email As String) As Boolean
+        Try
+            Dim query As String = "SELECT COUNT(*) FROM users WHERE email = @email"
+            Using cmd As New MySqlCommand(query, BukaKoneksi())
+                cmd.Parameters.AddWithValue("@email", email)
+                Dim count = Convert.ToInt32(cmd.ExecuteScalar())
+                Return count > 0
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
+        Finally
+            TutupKoneksi()
+        End Try
+    End Function
+
+    Public Function CekUsernameTerdaftar(username As String) As Boolean
+        Try
+            Dim query As String = "SELECT COUNT(*) FROM users WHERE username = @username"
+            Using cmd As New MySqlCommand(query, BukaKoneksi())
+                cmd.Parameters.AddWithValue("@username", username)
+                Dim count = Convert.ToInt32(cmd.ExecuteScalar())
+                Return count > 0
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
+        Finally
+            TutupKoneksi()
+        End Try
+    End Function
 
 End Class
