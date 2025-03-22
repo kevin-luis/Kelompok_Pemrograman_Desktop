@@ -111,4 +111,9 @@
         End Select
     End Sub
 
+    Private Sub btnAddNewBook_Click(sender As Object, e As EventArgs) Handles btnAddNewBook.Click
+        Dim addnewBook As New AddNewBookForm()
+        addnewBook.Show()
+        Me.Hide()
+    End Sub
 End Class
