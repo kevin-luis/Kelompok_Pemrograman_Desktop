@@ -39,11 +39,11 @@ Partial Class Mynotes
         pbCategory = New PictureBox()
         SplitContainer1 = New SplitContainer()
         PictureBox2 = New PictureBox()
-        Splitter1 = New Splitter()
-        pbProfile = New PictureBox()
-        cbProfile = New ComboBox()
-        Label5 = New Label()
         TextBox1 = New TextBox()
+        Label5 = New Label()
+        pbProfile = New PictureBox()
+        Splitter1 = New Splitter()
+        cbProfile = New ComboBox()
         CType(pbBB, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbDiscover, ComponentModel.ISupportInitialize).BeginInit()
@@ -253,13 +253,28 @@ Partial Class Mynotes
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
         ' 
-        ' Splitter1
+        ' TextBox1
         ' 
-        Splitter1.Location = New Point(0, 0)
-        Splitter1.Name = "Splitter1"
-        Splitter1.Size = New Size(3, 486)
-        Splitter1.TabIndex = 0
-        Splitter1.TabStop = False
+        TextBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        TextBox1.Location = New Point(9, 90)
+        TextBox1.Multiline = True
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(723, 384)
+        TextBox1.TabIndex = 124
+        ' 
+        ' Label5
+        ' 
+        Label5.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        Label5.AutoSize = True
+        Label5.BackColor = Color.Transparent
+        Label5.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
+        Label5.ForeColor = SystemColors.ControlText
+        Label5.ImageAlign = ContentAlignment.TopRight
+        Label5.Location = New Point(9, 65)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(93, 22)
+        Label5.TabIndex = 123
+        Label5.Text = "My Notes"
         ' 
         ' pbProfile
         ' 
@@ -271,6 +286,14 @@ Partial Class Mynotes
         pbProfile.Size = New Size(28, 28)
         pbProfile.TabIndex = 121
         pbProfile.TabStop = False
+        ' 
+        ' Splitter1
+        ' 
+        Splitter1.Location = New Point(0, 0)
+        Splitter1.Name = "Splitter1"
+        Splitter1.Size = New Size(3, 486)
+        Splitter1.TabIndex = 0
+        Splitter1.TabStop = False
         ' 
         ' cbProfile
         ' 
@@ -285,31 +308,11 @@ Partial Class Mynotes
         cbProfile.TabIndex = 122
         cbProfile.Text = "Profile"
         ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.BackColor = Color.Transparent
-        Label5.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
-        Label5.ForeColor = SystemColors.ControlText
-        Label5.ImageAlign = ContentAlignment.TopRight
-        Label5.Location = New Point(9, 65)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(93, 22)
-        Label5.TabIndex = 123
-        Label5.Text = "My Notes"
-        ' 
-        ' TextBox1
-        ' 
-        TextBox1.Location = New Point(9, 90)
-        TextBox1.Multiline = True
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(723, 384)
-        TextBox1.TabIndex = 124
-        ' 
         ' Mynotes
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        AutoSize = True
         BackColor = Color.White
         ClientSize = New Size(934, 486)
         Controls.Add(pbBB)
@@ -328,6 +331,7 @@ Partial Class Mynotes
         Controls.Add(pbCategory)
         Controls.Add(SplitContainer1)
         Name = "Mynotes"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Mynotes"
         CType(pbBB, ComponentModel.ISupportInitialize).EndInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).EndInit()

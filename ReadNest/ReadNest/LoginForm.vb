@@ -6,17 +6,17 @@ Public Class LoginForm
     End Sub
 
     Private Sub btnLoginaAccount_Click(sender As Object, e As EventArgs) Handles btnLoginaAccount.Click
-        Dim db As New DBConnection()
-        Dim username As String = txtloginusername.Text.Trim()
-        Dim password As String = txtloginpassword.Text.Trim()
+        Dim db As New DBConnection
+        Dim username = txtloginusername.Text.Trim
+        Dim password = txtloginpassword.Text.Trim
 
         If username = "" Or password = "" Then
             MsgBox("Silahkan Masukkan Username atau Password!")
         Else
             If db.CekLogin(username, password) Then
                 MessageBox.Show("Login Berhasil!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Me.Hide()
-                MainForm.Show()
+                Hide
+                MainForm.Show
             Else
                 MessageBox.Show("Username atau Password salah", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
@@ -27,9 +27,9 @@ Public Class LoginForm
     End Sub
 
     Private Sub linkCreateAccount_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linkCreateAccount.LinkClicked
-        Dim formBaru As New CreateAccountForm()
-        formBaru.Show()
-        Me.Hide()
+        Dim formBaru As New CreateAccountForm
+        formBaru.Show
+        Hide
     End Sub
 
     Private Sub chkPassword_CheckedChanged(sender As Object, e As EventArgs) Handles chkPassword.CheckedChanged
@@ -50,5 +50,7 @@ Public Class LoginForm
         End If
     End Sub
 
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
 
+    End Sub
 End Class

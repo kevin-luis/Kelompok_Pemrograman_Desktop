@@ -1,6 +1,14 @@
-﻿Public Class MainForm
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+
+Public Class MainForm
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         StartPosition = FormStartPosition.CenterScreen
+
+        cbProfile.Items.Clear() ' Clear existing items
+        cbProfile.Items.Add("Profile") ' Add placeholder
+        cbProfile.Items.Add("View Profile")
+        cbProfile.Items.Add("Logout")
+        cbProfile.SelectedIndex = 0 ' Set placeholder as default
     End Sub
 
     Private Sub MainForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -39,13 +47,13 @@
     End Sub
 
     Private Sub lblNotes_Click(sender As Object, e As EventArgs) Handles lblNotes.Click
-        Dim formBaru As New MyNotes()
+        Dim formBaru As New Mynotes()
         formBaru.Show()
         Me.Hide()
     End Sub
 
     Private Sub pbNotes_Click(sender As Object, e As EventArgs) Handles pbNotes.Click
-        Dim formBaru As New MyNotes()
+        Dim formBaru As New Mynotes()
         formBaru.Show()
         Me.Hide()
     End Sub
@@ -87,6 +95,7 @@
     End Sub
 
     Private Sub cbProfile_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProfile.SelectedIndexChanged
+
         ' Pastikan ada item yang dipilih dan bukan pemilihan pertama kali saat load
         If cbProfile.SelectedIndex = -1 Then Exit Sub
 
