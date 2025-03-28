@@ -394,6 +394,8 @@ Partial Class ProfileForm
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         ClientSize = New Size(934, 486)
+        Controls.Add(lblLogout)
+        Controls.Add(PictureBox5)
         Controls.Add(pbBB)
         Controls.Add(lblBB)
         Controls.Add(lblstatistic)
@@ -416,8 +418,6 @@ Partial Class ProfileForm
         Controls.Add(Label8)
         Controls.Add(txtCreatePassword)
         Controls.Add(txtCreateEmail)
-        Controls.Add(lblLogout)
-        Controls.Add(PictureBox5)
         Controls.Add(Label7)
         Controls.Add(PictureBox9)
         Controls.Add(SplitContainer1)
