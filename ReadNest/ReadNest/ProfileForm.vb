@@ -26,13 +26,13 @@
     End Sub
 
     Private Sub lblNotes_Click(sender As Object, e As EventArgs) Handles lblNotes.Click
-        Dim formBaru As New MyNotes()
+        Dim formBaru As New Mynotes()
         formBaru.Show()
         Me.Hide()
     End Sub
 
     Private Sub pbNotes_Click(sender As Object, e As EventArgs) Handles pbNotes.Click
-        Dim formBaru As New MyNotes()
+        Dim formBaru As New Mynotes()
         formBaru.Show()
         Me.Hide()
     End Sub
@@ -71,9 +71,5 @@
         Dim formBaru As New StatisticForm()
         formBaru.Show()
         Me.Hide()
-    End Sub
-
-    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
-
     End Sub
 End Class

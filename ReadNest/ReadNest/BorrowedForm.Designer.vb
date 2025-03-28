@@ -32,7 +32,6 @@ Partial Class BorrowForm
         txtBBTitle = New TextBox()
         txtBBWriter = New TextBox()
         Label6 = New Label()
-        PictureBox9 = New PictureBox()
         txtBBCategory = New TextBox()
         BtnAddNewBook = New Button()
         txtSearchBook = New TextBox()
@@ -58,9 +57,9 @@ Partial Class BorrowForm
         pbCategory = New PictureBox()
         SplitContainer1 = New SplitContainer()
         PictureBox2 = New PictureBox()
-        Splitter1 = New Splitter()
+        Panel1 = New Panel()
+        Panel2 = New Panel()
         CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbProfile, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbBB, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).BeginInit()
@@ -73,11 +72,13 @@ Partial Class BorrowForm
         SplitContainer1.Panel2.SuspendLayout()
         SplitContainer1.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
+        Panel2.SuspendLayout()
         SuspendLayout()
         ' 
         ' PictureBox7
         ' 
-        PictureBox7.Location = New Point(630, 199)
+        PictureBox7.Location = New Point(397, 111)
         PictureBox7.Name = "PictureBox7"
         PictureBox7.Size = New Size(166, 209)
         PictureBox7.TabIndex = 86
@@ -86,7 +87,7 @@ Partial Class BorrowForm
         ' txtBBPages
         ' 
         txtBBPages.Font = New Font("Segoe UI", 11F)
-        txtBBPages.Location = New Point(406, 309)
+        txtBBPages.Location = New Point(174, 249)
         txtBBPages.Name = "txtBBPages"
         txtBBPages.PlaceholderText = "Enter Number of pages"
         txtBBPages.ReadOnly = True
@@ -98,7 +99,7 @@ Partial Class BorrowForm
         Label8.AutoSize = True
         Label8.BackColor = Color.Cornsilk
         Label8.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label8.Location = New Point(300, 319)
+        Label8.Location = New Point(68, 259)
         Label8.Name = "Label8"
         Label8.Size = New Size(56, 17)
         Label8.TabIndex = 84
@@ -109,7 +110,7 @@ Partial Class BorrowForm
         Label7.AutoSize = True
         Label7.BackColor = Color.Cornsilk
         Label7.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label7.Location = New Point(300, 286)
+        Label7.Location = New Point(68, 226)
         Label7.Name = "Label7"
         Label7.Size = New Size(80, 17)
         Label7.TabIndex = 82
@@ -120,7 +121,7 @@ Partial Class BorrowForm
         Label5.AutoSize = True
         Label5.BackColor = Color.Cornsilk
         Label5.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label5.Location = New Point(300, 252)
+        Label5.Location = New Point(68, 192)
         Label5.Name = "Label5"
         Label5.Size = New Size(100, 17)
         Label5.TabIndex = 80
@@ -131,7 +132,7 @@ Partial Class BorrowForm
         Label2.AutoSize = True
         Label2.BackColor = Color.Cornsilk
         Label2.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label2.Location = New Point(300, 219)
+        Label2.Location = New Point(68, 159)
         Label2.Name = "Label2"
         Label2.Size = New Size(87, 17)
         Label2.TabIndex = 78
@@ -140,7 +141,7 @@ Partial Class BorrowForm
         ' txtBBTitle
         ' 
         txtBBTitle.Font = New Font("Segoe UI", 11F)
-        txtBBTitle.Location = New Point(406, 209)
+        txtBBTitle.Location = New Point(174, 149)
         txtBBTitle.Name = "txtBBTitle"
         txtBBTitle.PlaceholderText = "Enter Book Title here"
         txtBBTitle.ReadOnly = True
@@ -150,7 +151,7 @@ Partial Class BorrowForm
         ' txtBBWriter
         ' 
         txtBBWriter.Font = New Font("Segoe UI", 11F)
-        txtBBWriter.Location = New Point(406, 242)
+        txtBBWriter.Location = New Point(174, 182)
         txtBBWriter.Name = "txtBBWriter"
         txtBBWriter.PlaceholderText = "Enter Book Writer here"
         txtBBWriter.ReadOnly = True
@@ -160,30 +161,20 @@ Partial Class BorrowForm
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.BackColor = Color.Transparent
+        Label6.BackColor = Color.Cornsilk
         Label6.Font = New Font("UD Digi Kyokasho NP-B", 16.2F, FontStyle.Bold)
         Label6.ForeColor = SystemColors.ControlText
         Label6.ImageAlign = ContentAlignment.TopRight
-        Label6.Location = New Point(252, 80)
+        Label6.Location = New Point(34, 14)
         Label6.Name = "Label6"
         Label6.Size = New Size(186, 25)
         Label6.TabIndex = 75
         Label6.Text = "Borrowing book"
         ' 
-        ' PictureBox9
-        ' 
-        PictureBox9.BackColor = Color.Cornsilk
-        PictureBox9.BorderStyle = BorderStyle.FixedSingle
-        PictureBox9.Location = New Point(252, 151)
-        PictureBox9.Name = "PictureBox9"
-        PictureBox9.Size = New Size(573, 289)
-        PictureBox9.TabIndex = 79
-        PictureBox9.TabStop = False
-        ' 
         ' txtBBCategory
         ' 
         txtBBCategory.Font = New Font("Segoe UI", 11F)
-        txtBBCategory.Location = New Point(406, 275)
+        txtBBCategory.Location = New Point(174, 215)
         txtBBCategory.Name = "txtBBCategory"
         txtBBCategory.PlaceholderText = "Enter Book Category Here"
         txtBBCategory.ReadOnly = True
@@ -194,7 +185,7 @@ Partial Class BorrowForm
         ' 
         BtnAddNewBook.AutoSize = True
         BtnAddNewBook.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        BtnAddNewBook.Location = New Point(465, 351)
+        BtnAddNewBook.Location = New Point(233, 291)
         BtnAddNewBook.Name = "BtnAddNewBook"
         BtnAddNewBook.Size = New Size(131, 27)
         BtnAddNewBook.TabIndex = 81
@@ -204,7 +195,7 @@ Partial Class BorrowForm
         ' txtSearchBook
         ' 
         txtSearchBook.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        txtSearchBook.Location = New Point(252, 117)
+        txtSearchBook.Location = New Point(40, 58)
         txtSearchBook.Name = "txtSearchBook"
         txtSearchBook.PlaceholderText = "find the book your friend wants to borrow here"
         txtSearchBook.Size = New Size(398, 25)
@@ -215,7 +206,7 @@ Partial Class BorrowForm
         Label9.AutoSize = True
         Label9.BackColor = Color.Cornsilk
         Label9.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label9.Location = New Point(272, 186)
+        Label9.Location = New Point(40, 126)
         Label9.Name = "Label9"
         Label9.Size = New Size(128, 17)
         Label9.TabIndex = 90
@@ -224,7 +215,7 @@ Partial Class BorrowForm
         ' txtBorrowerName
         ' 
         txtBorrowerName.Font = New Font("Segoe UI", 11F)
-        txtBorrowerName.Location = New Point(406, 176)
+        txtBorrowerName.Location = New Point(174, 116)
         txtBorrowerName.Name = "txtBorrowerName"
         txtBorrowerName.PlaceholderText = "Enter Borrower Name"
         txtBorrowerName.Size = New Size(190, 27)
@@ -232,6 +223,7 @@ Partial Class BorrowForm
         ' 
         ' pbProfile
         ' 
+        pbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
         pbProfile.BackgroundImageLayout = ImageLayout.Stretch
         pbProfile.Location = New Point(816, 15)
@@ -242,6 +234,7 @@ Partial Class BorrowForm
         ' 
         ' lblUsername
         ' 
+        lblUsername.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         lblUsername.AutoSize = True
         lblUsername.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblUsername.Location = New Point(850, 25)
@@ -253,11 +246,12 @@ Partial Class BorrowForm
         ' lbListBorrower
         ' 
         lbListBorrower.AutoSize = True
-        lbListBorrower.BackColor = Color.Transparent
+        lbListBorrower.BackColor = Color.Cornsilk
+        lbListBorrower.BorderStyle = BorderStyle.FixedSingle
         lbListBorrower.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        lbListBorrower.Location = New Point(682, 80)
+        lbListBorrower.Location = New Point(444, 14)
         lbListBorrower.Name = "lbListBorrower"
-        lbListBorrower.Size = New Size(143, 17)
+        lbListBorrower.Size = New Size(145, 19)
         lbListBorrower.TabIndex = 94
         lbListBorrower.Text = "List of Borrowers"
         ' 
@@ -265,7 +259,7 @@ Partial Class BorrowForm
         ' 
         Button1.AutoSize = True
         Button1.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Button1.Location = New Point(656, 117)
+        Button1.Location = New Point(444, 57)
         Button1.Name = "Button1"
         Button1.Size = New Size(75, 27)
         Button1.TabIndex = 88
@@ -447,7 +441,7 @@ Partial Class BorrowForm
         ' 
         ' SplitContainer1.Panel2
         ' 
-        SplitContainer1.Panel2.Controls.Add(Splitter1)
+        SplitContainer1.Panel2.Controls.Add(Panel1)
         SplitContainer1.Size = New Size(934, 486)
         SplitContainer1.SplitterDistance = 186
         SplitContainer1.TabIndex = 109
@@ -463,13 +457,39 @@ Partial Class BorrowForm
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
         ' 
-        ' Splitter1
+        ' Panel1
         ' 
-        Splitter1.Location = New Point(0, 0)
-        Splitter1.Name = "Splitter1"
-        Splitter1.Size = New Size(3, 486)
-        Splitter1.TabIndex = 0
-        Splitter1.TabStop = False
+        Panel1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Panel1.Controls.Add(Panel2)
+        Panel1.Location = New Point(0, 0)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(744, 486)
+        Panel1.TabIndex = 0
+        ' 
+        ' Panel2
+        ' 
+        Panel2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Panel2.BackColor = Color.Cornsilk
+        Panel2.Controls.Add(lbListBorrower)
+        Panel2.Controls.Add(PictureBox7)
+        Panel2.Controls.Add(txtSearchBook)
+        Panel2.Controls.Add(Button1)
+        Panel2.Controls.Add(Label6)
+        Panel2.Controls.Add(Label9)
+        Panel2.Controls.Add(txtBBWriter)
+        Panel2.Controls.Add(txtBBTitle)
+        Panel2.Controls.Add(Label2)
+        Panel2.Controls.Add(Label5)
+        Panel2.Controls.Add(BtnAddNewBook)
+        Panel2.Controls.Add(Label7)
+        Panel2.Controls.Add(Label8)
+        Panel2.Controls.Add(txtBBPages)
+        Panel2.Controls.Add(txtBBCategory)
+        Panel2.Controls.Add(txtBorrowerName)
+        Panel2.Location = New Point(48, 65)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(606, 352)
+        Panel2.TabIndex = 95
         ' 
         ' BorrowForm
         ' 
@@ -491,31 +511,13 @@ Partial Class BorrowForm
         Controls.Add(pbFavorite)
         Controls.Add(pbNotes)
         Controls.Add(pbCategory)
-        Controls.Add(lbListBorrower)
         Controls.Add(lblUsername)
         Controls.Add(pbProfile)
-        Controls.Add(txtBorrowerName)
-        Controls.Add(Label9)
-        Controls.Add(Button1)
-        Controls.Add(txtSearchBook)
-        Controls.Add(txtBBCategory)
-        Controls.Add(PictureBox7)
-        Controls.Add(txtBBPages)
-        Controls.Add(Label8)
-        Controls.Add(Label7)
-        Controls.Add(BtnAddNewBook)
-        Controls.Add(Label5)
-        Controls.Add(Label2)
-        Controls.Add(txtBBTitle)
-        Controls.Add(txtBBWriter)
-        Controls.Add(Label6)
-        Controls.Add(PictureBox9)
         Controls.Add(SplitContainer1)
         Name = "BorrowForm"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Form7"
         CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
         CType(pbProfile, ComponentModel.ISupportInitialize).EndInit()
         CType(pbBB, ComponentModel.ISupportInitialize).EndInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).EndInit()
@@ -528,6 +530,9 @@ Partial Class BorrowForm
         CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.ResumeLayout(False)
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
+        Panel2.ResumeLayout(False)
+        Panel2.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -540,7 +545,6 @@ Partial Class BorrowForm
     Friend WithEvents txtBBTitle As TextBox
     Friend WithEvents txtBBWriter As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents txtBBCategory As TextBox
     Friend WithEvents BtnAddNewBook As Button
     Friend WithEvents txtSearchBook As TextBox
@@ -566,5 +570,6 @@ Partial Class BorrowForm
     Friend WithEvents pbCategory As PictureBox
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Splitter1 As Splitter
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
 End Class

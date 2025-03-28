@@ -49,7 +49,6 @@ Partial Class MainForm
         cbProfile = New ComboBox()
         SplitContainer1 = New SplitContainer()
         panelRight = New Panel()
-        Splitter1 = New Splitter()
         CType(pbCategory, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbNotes, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbFavorite, ComponentModel.ISupportInitialize).BeginInit()
@@ -165,7 +164,7 @@ Partial Class MainForm
         btnSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnSearch.AutoSize = True
         btnSearch.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        btnSearch.Location = New Point(428, 56)
+        btnSearch.Location = New Point(431, 56)
         btnSearch.Name = "btnSearch"
         btnSearch.Size = New Size(86, 28)
         btnSearch.TabIndex = 14
@@ -179,7 +178,7 @@ Partial Class MainForm
         txtSearchBook.Location = New Point(14, 57)
         txtSearchBook.Name = "txtSearchBook"
         txtSearchBook.PlaceholderText = "Find your book here"
-        txtSearchBook.Size = New Size(398, 24)
+        txtSearchBook.Size = New Size(401, 24)
         txtSearchBook.TabIndex = 15
         ' 
         ' pbProfile
@@ -187,7 +186,7 @@ Partial Class MainForm
         pbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
         pbProfile.BackgroundImageLayout = ImageLayout.Stretch
-        pbProfile.Location = New Point(573, 22)
+        pbProfile.Location = New Point(576, 22)
         pbProfile.Name = "pbProfile"
         pbProfile.Size = New Size(28, 28)
         pbProfile.TabIndex = 17
@@ -268,7 +267,7 @@ Partial Class MainForm
         btnAddNewBook.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnAddNewBook.AutoSize = True
         btnAddNewBook.Font = New Font("Microsoft Sans Serif", 10F, FontStyle.Bold)
-        btnAddNewBook.Location = New Point(550, 91)
+        btnAddNewBook.Location = New Point(553, 91)
         btnAddNewBook.Name = "btnAddNewBook"
         btnAddNewBook.Size = New Size(122, 27)
         btnAddNewBook.TabIndex = 26
@@ -280,7 +279,7 @@ Partial Class MainForm
         pbAddNewBook.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         pbAddNewBook.BackgroundImage = CType(resources.GetObject("pbAddNewBook.BackgroundImage"), Image)
         pbAddNewBook.BackgroundImageLayout = ImageLayout.Stretch
-        pbAddNewBook.Location = New Point(673, 91)
+        pbAddNewBook.Location = New Point(676, 91)
         pbAddNewBook.Name = "pbAddNewBook"
         pbAddNewBook.Size = New Size(26, 26)
         pbAddNewBook.TabIndex = 27
@@ -327,22 +326,22 @@ Partial Class MainForm
         lvBooklist.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         lvBooklist.Location = New Point(14, 124)
         lvBooklist.Name = "lvBooklist"
-        lvBooklist.Size = New Size(696, 339)
+        lvBooklist.Size = New Size(699, 339)
         lvBooklist.TabIndex = 31
         lvBooklist.UseCompatibleStateImageBehavior = False
         ' 
         ' cbProfile
         ' 
         cbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        cbProfile.DropDownStyle = ComboBoxStyle.DropDownList
         cbProfile.FlatStyle = FlatStyle.Flat
         cbProfile.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         cbProfile.FormattingEnabled = True
-        cbProfile.Items.AddRange(New Object() {"View Profile", "Logout"})
-        cbProfile.Location = New Point(607, 23)
+        cbProfile.Items.AddRange(New Object() {"Profile", "View Profile", "Logout"})
+        cbProfile.Location = New Point(610, 23)
         cbProfile.Name = "cbProfile"
         cbProfile.Size = New Size(97, 26)
         cbProfile.TabIndex = 32
-        cbProfile.Text = "Profile"
         ' 
         ' SplitContainer1
         ' 
@@ -373,7 +372,6 @@ Partial Class MainForm
         ' SplitContainer1.Panel2
         ' 
         SplitContainer1.Panel2.Controls.Add(panelRight)
-        SplitContainer1.Panel2.Controls.Add(Splitter1)
         SplitContainer1.Size = New Size(934, 486)
         SplitContainer1.SplitterDistance = 186
         SplitContainer1.TabIndex = 33
@@ -390,19 +388,11 @@ Partial Class MainForm
         panelRight.Controls.Add(pbAddNewBook)
         panelRight.Controls.Add(lvBooklist)
         panelRight.Dock = DockStyle.Fill
-        panelRight.Location = New Point(3, 0)
+        panelRight.Location = New Point(0, 0)
         panelRight.Name = "panelRight"
-        panelRight.Padding = New Padding(10, 10, 10, 10)
-        panelRight.Size = New Size(741, 486)
+        panelRight.Padding = New Padding(10)
+        panelRight.Size = New Size(744, 486)
         panelRight.TabIndex = 1
-        ' 
-        ' Splitter1
-        ' 
-        Splitter1.Location = New Point(0, 0)
-        Splitter1.Name = "Splitter1"
-        Splitter1.Size = New Size(3, 486)
-        Splitter1.TabIndex = 0
-        Splitter1.TabStop = False
         ' 
         ' MainForm
         ' 
@@ -459,7 +449,6 @@ Partial Class MainForm
     Friend WithEvents lvBooklist As ListView
     Friend WithEvents cbProfile As ComboBox
     Friend WithEvents SplitContainer1 As SplitContainer
-    Friend WithEvents Splitter1 As Splitter
     Public WithEvents lblDiscover As Label
     Friend WithEvents panelRight As Panel
 
