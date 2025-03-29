@@ -235,7 +235,7 @@ Partial Class MainForm
         PictureBox2.Dock = DockStyle.Fill
         PictureBox2.Location = New Point(0, 0)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(186, 486)
+        PictureBox2.Size = New Size(186, 490)
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
         ' 
@@ -326,7 +326,7 @@ Partial Class MainForm
         lvBooklist.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         lvBooklist.Location = New Point(14, 124)
         lvBooklist.Name = "lvBooklist"
-        lvBooklist.Size = New Size(699, 339)
+        lvBooklist.Size = New Size(699, 343)
         lvBooklist.TabIndex = 31
         lvBooklist.UseCompatibleStateImageBehavior = False
         ' 
@@ -348,6 +348,7 @@ Partial Class MainForm
         SplitContainer1.Dock = DockStyle.Fill
         SplitContainer1.FixedPanel = FixedPanel.Panel1
         SplitContainer1.Location = New Point(0, 0)
+        SplitContainer1.MinimumSize = New Size(920, 490)
         SplitContainer1.Name = "SplitContainer1"
         ' 
         ' SplitContainer1.Panel1
@@ -372,7 +373,7 @@ Partial Class MainForm
         ' SplitContainer1.Panel2
         ' 
         SplitContainer1.Panel2.Controls.Add(panelRight)
-        SplitContainer1.Size = New Size(934, 486)
+        SplitContainer1.Size = New Size(934, 490)
         SplitContainer1.SplitterDistance = 186
         SplitContainer1.TabIndex = 33
         ' 
@@ -391,7 +392,7 @@ Partial Class MainForm
         panelRight.Location = New Point(0, 0)
         panelRight.Name = "panelRight"
         panelRight.Padding = New Padding(10)
-        panelRight.Size = New Size(744, 486)
+        panelRight.Size = New Size(744, 490)
         panelRight.TabIndex = 1
         ' 
         ' MainForm

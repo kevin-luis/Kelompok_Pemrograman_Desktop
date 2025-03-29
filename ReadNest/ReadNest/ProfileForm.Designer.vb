@@ -63,6 +63,7 @@ Partial Class ProfileForm
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        Panel2.SuspendLayout()
         SuspendLayout()
         ' 
         ' pbBB
@@ -242,7 +243,6 @@ Partial Class ProfileForm
         ' 
         ' SplitContainer1.Panel2
         ' 
-        SplitContainer1.Panel2.Controls.Add(Panel1)
         SplitContainer1.Panel2.Controls.Add(Panel2)
         SplitContainer1.Size = New Size(934, 486)
         SplitContainer1.SplitterDistance = 186
@@ -273,7 +273,7 @@ Partial Class ProfileForm
         Panel1.Controls.Add(Label4)
         Panel1.Controls.Add(Label3)
         Panel1.Controls.Add(Label2)
-        Panel1.Location = New Point(199, 85)
+        Panel1.Location = New Point(130, 85)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(383, 312)
         Panel1.TabIndex = 1
@@ -388,6 +388,7 @@ Partial Class ProfileForm
         ' 
         ' Panel2
         ' 
+        Panel2.Controls.Add(Panel1)
         Panel2.Dock = DockStyle.Fill
         Panel2.Location = New Point(0, 0)
         Panel2.Name = "Panel2"
@@ -432,6 +433,7 @@ Partial Class ProfileForm
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        Panel2.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
