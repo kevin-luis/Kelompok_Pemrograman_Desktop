@@ -27,36 +27,22 @@ Partial Class CreateAccountForm
         leftPanel = New Panel()
         PictureBox1 = New PictureBox()
         Label2 = New Label()
-        rightPanel = New TableLayoutPanel()
-        headerPanel = New Panel()
-        Label7 = New Label()
-        emailPanel = New Panel()
-        Label1 = New Label()
+        Panel1 = New Panel()
+        btnCreateAccount = New Button()
         txtCreateEmail = New TextBox()
-        usernamePanel = New Panel()
+        Label7 = New Label()
+        chkPassword = New CheckBox()
+        Label1 = New Label()
+        txtConfirmPassword = New TextBox()
+        txtCreatePassword = New TextBox()
+        Label5 = New Label()
+        Label3 = New Label()
         Label4 = New Label()
         txtCreateUsername = New TextBox()
-        passwordPanel = New Panel()
-        Label5 = New Label()
-        txtCreatePassword = New TextBox()
-        confirmPasswordPanel = New Panel()
-        Label3 = New Label()
-        txtConfirmPassword = New TextBox()
-        showPasswordPanel = New Panel()
-        chkPassword = New CheckBox()
-        createButtonPanel = New Panel()
-        btnCreateAccount = New Button()
         mainTableLayoutPanel.SuspendLayout()
         leftPanel.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        rightPanel.SuspendLayout()
-        headerPanel.SuspendLayout()
-        emailPanel.SuspendLayout()
-        usernamePanel.SuspendLayout()
-        passwordPanel.SuspendLayout()
-        confirmPasswordPanel.SuspendLayout()
-        showPasswordPanel.SuspendLayout()
-        createButtonPanel.SuspendLayout()
+        Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' mainTableLayoutPanel
@@ -65,7 +51,7 @@ Partial Class CreateAccountForm
         mainTableLayoutPanel.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
         mainTableLayoutPanel.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
         mainTableLayoutPanel.Controls.Add(leftPanel, 0, 0)
-        mainTableLayoutPanel.Controls.Add(rightPanel, 1, 0)
+        mainTableLayoutPanel.Controls.Add(Panel1, 1, 0)
         mainTableLayoutPanel.Dock = DockStyle.Fill
         mainTableLayoutPanel.Location = New Point(0, 0)
         mainTableLayoutPanel.Margin = New Padding(3, 2, 3, 2)
@@ -110,99 +96,124 @@ Partial Class CreateAccountForm
         Label2.TabIndex = 1
         Label2.Text = "Create Your ReadNest Account"
         ' 
-        ' rightPanel
+        ' Panel1
         ' 
-        rightPanel.ColumnCount = 1
-        rightPanel.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
-        rightPanel.Controls.Add(headerPanel, 0, 0)
-        rightPanel.Controls.Add(emailPanel, 0, 1)
-        rightPanel.Controls.Add(usernamePanel, 0, 2)
-        rightPanel.Controls.Add(passwordPanel, 0, 3)
-        rightPanel.Controls.Add(confirmPasswordPanel, 0, 4)
-        rightPanel.Controls.Add(showPasswordPanel, 0, 5)
-        rightPanel.Controls.Add(createButtonPanel, 0, 6)
-        rightPanel.Dock = DockStyle.Fill
-        rightPanel.Location = New Point(470, 2)
-        rightPanel.Margin = New Padding(3, 2, 3, 2)
-        rightPanel.Name = "rightPanel"
-        rightPanel.RowCount = 7
-        rightPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 15F))
-        rightPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 14F))
-        rightPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 14F))
-        rightPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 14F))
-        rightPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 14F))
-        rightPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 14F))
-        rightPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 15F))
-        rightPanel.Size = New Size(461, 482)
-        rightPanel.TabIndex = 1
+        Panel1.Controls.Add(btnCreateAccount)
+        Panel1.Controls.Add(txtCreateEmail)
+        Panel1.Controls.Add(Label7)
+        Panel1.Controls.Add(chkPassword)
+        Panel1.Controls.Add(Label1)
+        Panel1.Controls.Add(txtConfirmPassword)
+        Panel1.Controls.Add(txtCreatePassword)
+        Panel1.Controls.Add(Label5)
+        Panel1.Controls.Add(Label3)
+        Panel1.Controls.Add(Label4)
+        Panel1.Controls.Add(txtCreateUsername)
+        Panel1.Dock = DockStyle.Fill
+        Panel1.Location = New Point(470, 3)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(461, 480)
+        Panel1.TabIndex = 1
         ' 
-        ' headerPanel
+        ' btnCreateAccount
         ' 
-        headerPanel.Controls.Add(Label7)
-        headerPanel.Dock = DockStyle.Fill
-        headerPanel.Location = New Point(3, 2)
-        headerPanel.Margin = New Padding(3, 2, 3, 2)
-        headerPanel.Name = "headerPanel"
-        headerPanel.Size = New Size(455, 68)
-        headerPanel.TabIndex = 0
+        btnCreateAccount.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnCreateAccount.AutoSize = True
+        btnCreateAccount.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        btnCreateAccount.Location = New Point(377, 328)
+        btnCreateAccount.Name = "btnCreateAccount"
+        btnCreateAccount.Size = New Size(75, 30)
+        btnCreateAccount.TabIndex = 0
+        btnCreateAccount.Text = "Create"
+        btnCreateAccount.UseVisualStyleBackColor = True
+        ' 
+        ' txtCreateEmail
+        ' 
+        txtCreateEmail.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        txtCreateEmail.Font = New Font("Segoe UI", 11F)
+        txtCreateEmail.Location = New Point(160, 190)
+        txtCreateEmail.Name = "txtCreateEmail"
+        txtCreateEmail.PlaceholderText = "Enter your email here"
+        txtCreateEmail.Size = New Size(292, 27)
+        txtCreateEmail.TabIndex = 1
         ' 
         ' Label7
         ' 
         Label7.AutoSize = True
         Label7.Font = New Font("Microsoft Sans Serif", 13.25F, FontStyle.Bold)
-        Label7.Location = New Point(18, 30)
+        Label7.Location = New Point(71, 117)
         Label7.Name = "Label7"
         Label7.Size = New Size(206, 22)
         Label7.TabIndex = 0
         Label7.Text = "Create Your Acccount"
         ' 
-        ' emailPanel
+        ' chkPassword
         ' 
-        emailPanel.Controls.Add(Label1)
-        emailPanel.Controls.Add(txtCreateEmail)
-        emailPanel.Dock = DockStyle.Fill
-        emailPanel.Location = New Point(3, 74)
-        emailPanel.Margin = New Padding(3, 2, 3, 2)
-        emailPanel.Name = "emailPanel"
-        emailPanel.Size = New Size(455, 63)
-        emailPanel.TabIndex = 1
+        chkPassword.AutoSize = True
+        chkPassword.Location = New Point(160, 289)
+        chkPassword.Name = "chkPassword"
+        chkPassword.Size = New Size(108, 19)
+        chkPassword.TabIndex = 0
+        chkPassword.Text = "Show Password"
+        chkPassword.UseVisualStyleBackColor = True
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label1.Location = New Point(18, 11)
+        Label1.Location = New Point(104, 194)
         Label1.Name = "Label1"
         Label1.Size = New Size(50, 18)
         Label1.TabIndex = 0
         Label1.Text = "Email"
         ' 
-        ' txtCreateEmail
+        ' txtConfirmPassword
         ' 
-        txtCreateEmail.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        txtCreateEmail.Font = New Font("Segoe UI", 11F)
-        txtCreateEmail.Location = New Point(18, 33)
-        txtCreateEmail.Name = "txtCreateEmail"
-        txtCreateEmail.PlaceholderText = "Enter your email here"
-        txtCreateEmail.Size = New Size(418, 27)
-        txtCreateEmail.TabIndex = 1
+        txtConfirmPassword.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        txtConfirmPassword.Font = New Font("Segoe UI", 11F)
+        txtConfirmPassword.Location = New Point(160, 256)
+        txtConfirmPassword.Name = "txtConfirmPassword"
+        txtConfirmPassword.PlaceholderText = "Enter your confirm password here"
+        txtConfirmPassword.Size = New Size(292, 27)
+        txtConfirmPassword.TabIndex = 1
+        txtConfirmPassword.UseSystemPasswordChar = True
         ' 
-        ' usernamePanel
+        ' txtCreatePassword
         ' 
-        usernamePanel.Controls.Add(Label4)
-        usernamePanel.Controls.Add(txtCreateUsername)
-        usernamePanel.Dock = DockStyle.Fill
-        usernamePanel.Location = New Point(3, 141)
-        usernamePanel.Margin = New Padding(3, 2, 3, 2)
-        usernamePanel.Name = "usernamePanel"
-        usernamePanel.Size = New Size(455, 63)
-        usernamePanel.TabIndex = 2
+        txtCreatePassword.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        txtCreatePassword.Font = New Font("Segoe UI", 11F)
+        txtCreatePassword.Location = New Point(160, 223)
+        txtCreatePassword.Name = "txtCreatePassword"
+        txtCreatePassword.PlaceholderText = "Enter your password here"
+        txtCreatePassword.Size = New Size(292, 27)
+        txtCreatePassword.TabIndex = 1
+        txtCreatePassword.UseSystemPasswordChar = True
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label5.Location = New Point(71, 227)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(83, 18)
+        Label5.TabIndex = 0
+        Label5.Text = "Password"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label3.Location = New Point(6, 261)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(148, 18)
+        Label3.TabIndex = 0
+        Label3.Text = "Confirm Password"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label4.Location = New Point(18, 11)
+        Label4.Location = New Point(69, 161)
         Label4.Name = "Label4"
         Label4.Size = New Size(85, 18)
         Label4.TabIndex = 0
@@ -210,119 +221,13 @@ Partial Class CreateAccountForm
         ' 
         ' txtCreateUsername
         ' 
-        txtCreateUsername.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        txtCreateUsername.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         txtCreateUsername.Font = New Font("Segoe UI", 11F)
-        txtCreateUsername.Location = New Point(18, 33)
+        txtCreateUsername.Location = New Point(160, 157)
         txtCreateUsername.Name = "txtCreateUsername"
         txtCreateUsername.PlaceholderText = "Enter your username here"
-        txtCreateUsername.Size = New Size(418, 27)
+        txtCreateUsername.Size = New Size(292, 27)
         txtCreateUsername.TabIndex = 1
-        ' 
-        ' passwordPanel
-        ' 
-        passwordPanel.Controls.Add(Label5)
-        passwordPanel.Controls.Add(txtCreatePassword)
-        passwordPanel.Dock = DockStyle.Fill
-        passwordPanel.Location = New Point(3, 208)
-        passwordPanel.Margin = New Padding(3, 2, 3, 2)
-        passwordPanel.Name = "passwordPanel"
-        passwordPanel.Size = New Size(455, 63)
-        passwordPanel.TabIndex = 3
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label5.Location = New Point(18, 11)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(83, 18)
-        Label5.TabIndex = 0
-        Label5.Text = "Password"
-        ' 
-        ' txtCreatePassword
-        ' 
-        txtCreatePassword.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        txtCreatePassword.Font = New Font("Segoe UI", 11F)
-        txtCreatePassword.Location = New Point(18, 33)
-        txtCreatePassword.Name = "txtCreatePassword"
-        txtCreatePassword.PlaceholderText = "Enter your password here"
-        txtCreatePassword.Size = New Size(418, 27)
-        txtCreatePassword.TabIndex = 1
-        txtCreatePassword.UseSystemPasswordChar = True
-        ' 
-        ' confirmPasswordPanel
-        ' 
-        confirmPasswordPanel.Controls.Add(Label3)
-        confirmPasswordPanel.Controls.Add(txtConfirmPassword)
-        confirmPasswordPanel.Dock = DockStyle.Fill
-        confirmPasswordPanel.Location = New Point(3, 275)
-        confirmPasswordPanel.Margin = New Padding(3, 2, 3, 2)
-        confirmPasswordPanel.Name = "confirmPasswordPanel"
-        confirmPasswordPanel.Size = New Size(455, 63)
-        confirmPasswordPanel.TabIndex = 4
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label3.Location = New Point(18, 11)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(148, 18)
-        Label3.TabIndex = 0
-        Label3.Text = "Confirm Password"
-        ' 
-        ' txtConfirmPassword
-        ' 
-        txtConfirmPassword.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        txtConfirmPassword.Font = New Font("Segoe UI", 11F)
-        txtConfirmPassword.Location = New Point(18, 33)
-        txtConfirmPassword.Name = "txtConfirmPassword"
-        txtConfirmPassword.PlaceholderText = "Enter your confirm password here"
-        txtConfirmPassword.Size = New Size(418, 27)
-        txtConfirmPassword.TabIndex = 1
-        txtConfirmPassword.UseSystemPasswordChar = True
-        ' 
-        ' showPasswordPanel
-        ' 
-        showPasswordPanel.Controls.Add(chkPassword)
-        showPasswordPanel.Dock = DockStyle.Fill
-        showPasswordPanel.Location = New Point(3, 342)
-        showPasswordPanel.Margin = New Padding(3, 2, 3, 2)
-        showPasswordPanel.Name = "showPasswordPanel"
-        showPasswordPanel.Size = New Size(455, 63)
-        showPasswordPanel.TabIndex = 5
-        ' 
-        ' chkPassword
-        ' 
-        chkPassword.AutoSize = True
-        chkPassword.Location = New Point(18, 19)
-        chkPassword.Name = "chkPassword"
-        chkPassword.Size = New Size(108, 19)
-        chkPassword.TabIndex = 0
-        chkPassword.Text = "Show Password"
-        chkPassword.UseVisualStyleBackColor = True
-        ' 
-        ' createButtonPanel
-        ' 
-        createButtonPanel.Controls.Add(btnCreateAccount)
-        createButtonPanel.Dock = DockStyle.Fill
-        createButtonPanel.Location = New Point(3, 409)
-        createButtonPanel.Margin = New Padding(3, 2, 3, 2)
-        createButtonPanel.Name = "createButtonPanel"
-        createButtonPanel.Size = New Size(455, 71)
-        createButtonPanel.TabIndex = 6
-        ' 
-        ' btnCreateAccount
-        ' 
-        btnCreateAccount.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        btnCreateAccount.AutoSize = True
-        btnCreateAccount.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        btnCreateAccount.Location = New Point(360, 15)
-        btnCreateAccount.Name = "btnCreateAccount"
-        btnCreateAccount.Size = New Size(75, 30)
-        btnCreateAccount.TabIndex = 0
-        btnCreateAccount.Text = "Create"
-        btnCreateAccount.UseVisualStyleBackColor = True
         ' 
         ' CreateAccountForm
         ' 
@@ -340,38 +245,16 @@ Partial Class CreateAccountForm
         leftPanel.ResumeLayout(False)
         leftPanel.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        rightPanel.ResumeLayout(False)
-        headerPanel.ResumeLayout(False)
-        headerPanel.PerformLayout()
-        emailPanel.ResumeLayout(False)
-        emailPanel.PerformLayout()
-        usernamePanel.ResumeLayout(False)
-        usernamePanel.PerformLayout()
-        passwordPanel.ResumeLayout(False)
-        passwordPanel.PerformLayout()
-        confirmPasswordPanel.ResumeLayout(False)
-        confirmPasswordPanel.PerformLayout()
-        showPasswordPanel.ResumeLayout(False)
-        showPasswordPanel.PerformLayout()
-        createButtonPanel.ResumeLayout(False)
-        createButtonPanel.PerformLayout()
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents mainTableLayoutPanel As TableLayoutPanel
     Friend WithEvents leftPanel As Panel
-    Friend WithEvents rightPanel As TableLayoutPanel
-    Friend WithEvents headerPanel As Panel
-    Friend WithEvents emailPanel As Panel
-    Friend WithEvents usernamePanel As Panel
-    Friend WithEvents passwordPanel As Panel
-    Friend WithEvents confirmPasswordPanel As Panel
-    Friend WithEvents showPasswordPanel As Panel
-    Friend WithEvents createButtonPanel As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btnCreateAccount As Button
-    Friend WithEvents Label7 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents txtCreatePassword As TextBox
@@ -381,4 +264,6 @@ Partial Class CreateAccountForm
     Friend WithEvents Label3 As Label
     Friend WithEvents txtConfirmPassword As TextBox
     Friend WithEvents chkPassword As CheckBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Panel1 As Panel
 End Class
