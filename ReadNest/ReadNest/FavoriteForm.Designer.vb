@@ -45,7 +45,6 @@ Partial Class FavoriteForm
         pbCategory = New PictureBox()
         SplitContainer1 = New SplitContainer()
         PictureBox2 = New PictureBox()
-        Splitter1 = New Splitter()
         CType(pbProfile, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbBB, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).BeginInit()
@@ -55,7 +54,6 @@ Partial Class FavoriteForm
         CType(pbCategory, ComponentModel.ISupportInitialize).BeginInit()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer1.Panel1.SuspendLayout()
-        SplitContainer1.Panel2.SuspendLayout()
         SplitContainer1.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -287,16 +285,14 @@ Partial Class FavoriteForm
         ' SplitContainer1
         ' 
         SplitContainer1.Dock = DockStyle.Fill
+        SplitContainer1.FixedPanel = FixedPanel.Panel1
         SplitContainer1.Location = New Point(0, 0)
         SplitContainer1.Name = "SplitContainer1"
         ' 
         ' SplitContainer1.Panel1
         ' 
         SplitContainer1.Panel1.Controls.Add(PictureBox2)
-        ' 
-        ' SplitContainer1.Panel2
-        ' 
-        SplitContainer1.Panel2.Controls.Add(Splitter1)
+        SplitContainer1.Panel1MinSize = 186
         SplitContainer1.Size = New Size(934, 486)
         SplitContainer1.SplitterDistance = 186
         SplitContainer1.TabIndex = 72
@@ -311,14 +307,6 @@ Partial Class FavoriteForm
         PictureBox2.Size = New Size(186, 486)
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
-        ' 
-        ' Splitter1
-        ' 
-        Splitter1.Location = New Point(0, 0)
-        Splitter1.Name = "Splitter1"
-        Splitter1.Size = New Size(3, 486)
-        Splitter1.TabIndex = 0
-        Splitter1.TabStop = False
         ' 
         ' FavoriteForm
         ' 
@@ -358,7 +346,6 @@ Partial Class FavoriteForm
         CType(pbNotes, ComponentModel.ISupportInitialize).EndInit()
         CType(pbCategory, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.Panel1.ResumeLayout(False)
-        SplitContainer1.Panel2.ResumeLayout(False)
         CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.ResumeLayout(False)
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
@@ -388,5 +375,4 @@ Partial Class FavoriteForm
     Friend WithEvents pbCategory As PictureBox
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Splitter1 As Splitter
 End Class
