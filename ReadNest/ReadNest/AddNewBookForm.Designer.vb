@@ -1,9 +1,11 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿Imports Mysqlx
+
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class AddNewBookForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +22,7 @@ Partial Class AddNewBookForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddNewBookForm))
         Label2 = New Label()
@@ -53,8 +55,12 @@ Partial Class AddNewBookForm
         pbNotes = New PictureBox()
         pbCategory = New PictureBox()
         SplitContainer1 = New SplitContainer()
+        panelSidebar = New Panel()
         PictureBox2 = New PictureBox()
-        Splitter1 = New Splitter()
+        panelContent = New Panel()
+        panelForm = New Panel()
+        tableLayoutPanel1 = New TableLayoutPanel()
+        panelHeader = New Panel()
         CType(pbProfile, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
@@ -68,160 +74,190 @@ Partial Class AddNewBookForm
         SplitContainer1.Panel1.SuspendLayout()
         SplitContainer1.Panel2.SuspendLayout()
         SplitContainer1.SuspendLayout()
+        panelSidebar.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        panelContent.SuspendLayout()
+        panelForm.SuspendLayout()
+        tableLayoutPanel1.SuspendLayout()
+        panelHeader.SuspendLayout()
         SuspendLayout()
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
         Label2.BackColor = Color.Transparent
-        Label2.Font = New Font("UD Digi Kyokasho NP-B", 16.2F, FontStyle.Bold)
+        Label2.Font = New Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold)
         Label2.ForeColor = SystemColors.ControlText
         Label2.ImageAlign = ContentAlignment.TopRight
-        Label2.Location = New Point(239, 80)
+        Label2.Location = New Point(23, 20)
         Label2.Name = "Label2"
-        Label2.Size = New Size(172, 25)
+        Label2.Size = New Size(212, 32)
         Label2.TabIndex = 42
         Label2.Text = "Add New Book"
         ' 
         ' lblUsername
         ' 
+        lblUsername.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         lblUsername.AutoSize = True
-        lblUsername.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        lblUsername.Location = New Point(831, 23)
+        lblUsername.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        lblUsername.Location = New Point(755, 20)
         lblUsername.Name = "lblUsername"
-        lblUsername.Size = New Size(61, 17)
+        lblUsername.Size = New Size(69, 24)
         lblUsername.TabIndex = 44
         lblUsername.Text = "Profile"
         ' 
         ' pbProfile
         ' 
+        pbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
         pbProfile.BackgroundImageLayout = ImageLayout.Stretch
-        pbProfile.Location = New Point(797, 12)
+        pbProfile.Location = New Point(717, 13)
+        pbProfile.Margin = New Padding(3, 4, 3, 4)
         pbProfile.Name = "pbProfile"
-        pbProfile.Size = New Size(28, 28)
+        pbProfile.Size = New Size(32, 37)
         pbProfile.TabIndex = 43
         pbProfile.TabStop = False
         ' 
         ' txtAddBookWriter
         ' 
-        txtAddBookWriter.Font = New Font("Segoe UI", 11F)
-        txtAddBookWriter.Location = New Point(384, 163)
+        txtAddBookWriter.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        txtAddBookWriter.Font = New Font("Segoe UI", 11.0F)
+        txtAddBookWriter.Location = New Point(175, 63)
+        txtAddBookWriter.Margin = New Padding(3, 4, 3, 4)
         txtAddBookWriter.Name = "txtAddBookWriter"
         txtAddBookWriter.PlaceholderText = "Enter Book Writer here"
-        txtAddBookWriter.Size = New Size(190, 27)
+        txtAddBookWriter.Size = New Size(407, 32)
         txtAddBookWriter.TabIndex = 45
         ' 
         ' txtAddBookTitle
         ' 
-        txtAddBookTitle.Font = New Font("Segoe UI", 11F)
-        txtAddBookTitle.Location = New Point(384, 130)
+        txtAddBookTitle.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        txtAddBookTitle.Font = New Font("Segoe UI", 11.0F)
+        txtAddBookTitle.Location = New Point(175, 10)
+        txtAddBookTitle.Margin = New Padding(3, 4, 3, 4)
         txtAddBookTitle.Name = "txtAddBookTitle"
         txtAddBookTitle.PlaceholderText = "Enter Book Title here"
-        txtAddBookTitle.Size = New Size(190, 27)
+        txtAddBookTitle.Size = New Size(407, 32)
         txtAddBookTitle.TabIndex = 46
         ' 
         ' Label4
         ' 
+        Label4.Anchor = AnchorStyles.Left
         Label4.AutoSize = True
         Label4.BackColor = Color.Cornsilk
-        Label4.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label4.Location = New Point(278, 140)
+        Label4.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label4.Location = New Point(3, 14)
         Label4.Name = "Label4"
-        Label4.Size = New Size(87, 17)
+        Label4.Size = New Size(103, 24)
         Label4.TabIndex = 47
         Label4.Text = "Book Title"
         ' 
         ' PictureBox9
         ' 
+        PictureBox9.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         PictureBox9.BackColor = Color.Cornsilk
         PictureBox9.BorderStyle = BorderStyle.FixedSingle
-        PictureBox9.Location = New Point(239, 108)
+        PictureBox9.Location = New Point(11, 13)
+        PictureBox9.Margin = New Padding(3, 4, 3, 4)
         PictureBox9.Name = "PictureBox9"
-        PictureBox9.Size = New Size(573, 279)
+        PictureBox9.Size = New Size(799, 457)
         PictureBox9.TabIndex = 48
         PictureBox9.TabStop = False
         ' 
         ' Label5
         ' 
+        Label5.Anchor = AnchorStyles.Left
         Label5.AutoSize = True
         Label5.BackColor = Color.Cornsilk
-        Label5.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label5.Location = New Point(278, 173)
+        Label5.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label5.Location = New Point(3, 67)
         Label5.Name = "Label5"
-        Label5.Size = New Size(100, 17)
+        Label5.Size = New Size(118, 24)
         Label5.TabIndex = 49
         Label5.Text = "Book Writer"
         ' 
         ' BtnAddNewBook
         ' 
+        BtnAddNewBook.Anchor = AnchorStyles.Right
         BtnAddNewBook.AutoSize = True
-        BtnAddNewBook.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        BtnAddNewBook.Location = New Point(499, 263)
+        BtnAddNewBook.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        BtnAddNewBook.Location = New Point(496, 221)
+        BtnAddNewBook.Margin = New Padding(3, 4, 3, 4)
         BtnAddNewBook.Name = "BtnAddNewBook"
-        BtnAddNewBook.Size = New Size(75, 27)
+        BtnAddNewBook.Size = New Size(86, 36)
         BtnAddNewBook.TabIndex = 50
         BtnAddNewBook.Text = "Add"
         BtnAddNewBook.UseVisualStyleBackColor = True
         ' 
         ' Label7
         ' 
+        Label7.Anchor = AnchorStyles.Left
         Label7.AutoSize = True
         Label7.BackColor = Color.Cornsilk
-        Label7.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label7.Location = New Point(278, 207)
+        Label7.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label7.Location = New Point(3, 120)
         Label7.Name = "Label7"
-        Label7.Size = New Size(80, 17)
+        Label7.Size = New Size(93, 24)
         Label7.TabIndex = 68
         Label7.Text = "Category"
         ' 
         ' cbAddCategory
         ' 
-        cbAddCategory.Font = New Font("Segoe UI", 11F)
+        cbAddCategory.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        cbAddCategory.Font = New Font("Segoe UI", 11.0F)
         cbAddCategory.FormattingEnabled = True
-        cbAddCategory.Location = New Point(384, 196)
+        cbAddCategory.Location = New Point(175, 116)
+        cbAddCategory.Margin = New Padding(3, 4, 3, 4)
         cbAddCategory.Name = "cbAddCategory"
-        cbAddCategory.Size = New Size(190, 28)
+        cbAddCategory.Size = New Size(407, 33)
         cbAddCategory.TabIndex = 69
         ' 
         ' Label8
         ' 
+        Label8.Anchor = AnchorStyles.Left
         Label8.AutoSize = True
         Label8.BackColor = Color.Cornsilk
-        Label8.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label8.Location = New Point(278, 240)
+        Label8.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label8.Location = New Point(3, 173)
         Label8.Name = "Label8"
-        Label8.Size = New Size(56, 17)
+        Label8.Size = New Size(68, 24)
         Label8.TabIndex = 70
         Label8.Text = "Pages"
         ' 
         ' txtAddPages
         ' 
-        txtAddPages.Font = New Font("Segoe UI", 11F)
-        txtAddPages.Location = New Point(384, 230)
+        txtAddPages.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        txtAddPages.Font = New Font("Segoe UI", 11.0F)
+        txtAddPages.Location = New Point(175, 169)
+        txtAddPages.Margin = New Padding(3, 4, 3, 4)
         txtAddPages.Name = "txtAddPages"
         txtAddPages.PlaceholderText = "Enter Number of pages"
-        txtAddPages.Size = New Size(190, 27)
+        txtAddPages.Size = New Size(407, 32)
         txtAddPages.TabIndex = 71
         ' 
         ' PictureBox7
         ' 
-        PictureBox7.Location = New Point(608, 120)
+        PictureBox7.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        PictureBox7.BorderStyle = BorderStyle.FixedSingle
+        PictureBox7.Location = New Point(640, 53)
+        PictureBox7.Margin = New Padding(3, 4, 3, 4)
         PictureBox7.Name = "PictureBox7"
-        PictureBox7.Size = New Size(166, 209)
+        PictureBox7.Size = New Size(150, 201)
+        PictureBox7.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox7.TabIndex = 73
         PictureBox7.TabStop = False
         ' 
         ' btnUploadBook
         ' 
+        btnUploadBook.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnUploadBook.AutoSize = True
-        btnUploadBook.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        btnUploadBook.Location = New Point(608, 335)
+        btnUploadBook.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        btnUploadBook.Location = New Point(640, 274)
+        btnUploadBook.Margin = New Padding(3, 4, 3, 4)
         btnUploadBook.Name = "btnUploadBook"
-        btnUploadBook.Size = New Size(166, 27)
+        btnUploadBook.Size = New Size(150, 39)
         btnUploadBook.TabIndex = 74
-        btnUploadBook.Text = "Upload Book Cover"
+        btnUploadBook.Text = "Upload Cover"
         btnUploadBook.UseVisualStyleBackColor = True
         ' 
         ' pbBB
@@ -229,9 +265,10 @@ Partial Class AddNewBookForm
         pbBB.BackColor = SystemColors.Info
         pbBB.BackgroundImage = CType(resources.GetObject("pbBB.BackgroundImage"), Image)
         pbBB.BackgroundImageLayout = ImageLayout.Stretch
-        pbBB.Location = New Point(12, 252)
+        pbBB.Location = New Point(14, 336)
+        pbBB.Margin = New Padding(3, 4, 3, 4)
         pbBB.Name = "pbBB"
-        pbBB.Size = New Size(28, 28)
+        pbBB.Size = New Size(32, 37)
         pbBB.TabIndex = 88
         pbBB.TabStop = False
         ' 
@@ -239,11 +276,11 @@ Partial Class AddNewBookForm
         ' 
         lblBB.AutoSize = True
         lblBB.BackColor = SystemColors.Info
-        lblBB.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
+        lblBB.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblBB.ImageAlign = ContentAlignment.TopRight
-        lblBB.Location = New Point(46, 260)
+        lblBB.Location = New Point(53, 347)
         lblBB.Name = "lblBB"
-        lblBB.Size = New Size(131, 17)
+        lblBB.Size = New Size(158, 24)
         lblBB.TabIndex = 87
         lblBB.Text = "Book Borrowing"
         ' 
@@ -251,11 +288,11 @@ Partial Class AddNewBookForm
         ' 
         lblstatistic.AutoSize = True
         lblstatistic.BackColor = SystemColors.Info
-        lblstatistic.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
+        lblstatistic.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblstatistic.ImageAlign = ContentAlignment.TopRight
-        lblstatistic.Location = New Point(46, 294)
+        lblstatistic.Location = New Point(53, 392)
         lblstatistic.Name = "lblstatistic"
-        lblstatistic.Size = New Size(103, 17)
+        lblstatistic.Size = New Size(113, 24)
         lblstatistic.TabIndex = 86
         lblstatistic.Text = "My Statistic"
         ' 
@@ -264,9 +301,10 @@ Partial Class AddNewBookForm
         pbStatistic.BackColor = SystemColors.Info
         pbStatistic.BackgroundImage = CType(resources.GetObject("pbStatistic.BackgroundImage"), Image)
         pbStatistic.BackgroundImageLayout = ImageLayout.Stretch
-        pbStatistic.Location = New Point(12, 286)
+        pbStatistic.Location = New Point(14, 381)
+        pbStatistic.Margin = New Padding(3, 4, 3, 4)
         pbStatistic.Name = "pbStatistic"
-        pbStatistic.Size = New Size(28, 28)
+        pbStatistic.Size = New Size(32, 37)
         pbStatistic.TabIndex = 85
         pbStatistic.TabStop = False
         ' 
@@ -274,11 +312,11 @@ Partial Class AddNewBookForm
         ' 
         lblDiscover.AutoSize = True
         lblDiscover.BackColor = SystemColors.Info
-        lblDiscover.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
+        lblDiscover.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblDiscover.ImageAlign = ContentAlignment.TopRight
-        lblDiscover.Location = New Point(46, 122)
+        lblDiscover.Location = New Point(53, 163)
         lblDiscover.Name = "lblDiscover"
-        lblDiscover.Size = New Size(74, 17)
+        lblDiscover.Size = New Size(91, 24)
         lblDiscover.TabIndex = 84
         lblDiscover.Text = "Discover"
         ' 
@@ -287,9 +325,10 @@ Partial Class AddNewBookForm
         pbDiscover.BackColor = SystemColors.Info
         pbDiscover.BackgroundImage = CType(resources.GetObject("pbDiscover.BackgroundImage"), Image)
         pbDiscover.BackgroundImageLayout = ImageLayout.Stretch
-        pbDiscover.Location = New Point(12, 114)
+        pbDiscover.Location = New Point(14, 152)
+        pbDiscover.Margin = New Padding(3, 4, 3, 4)
         pbDiscover.Name = "pbDiscover"
-        pbDiscover.Size = New Size(28, 28)
+        pbDiscover.Size = New Size(32, 37)
         pbDiscover.TabIndex = 83
         pbDiscover.TabStop = False
         ' 
@@ -299,9 +338,9 @@ Partial Class AddNewBookForm
         lblMenu.BackColor = SystemColors.Info
         lblMenu.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblMenu.ImageAlign = ContentAlignment.TopRight
-        lblMenu.Location = New Point(12, 85)
+        lblMenu.Location = New Point(14, 113)
         lblMenu.Name = "lblMenu"
-        lblMenu.Size = New Size(49, 18)
+        lblMenu.Size = New Size(63, 24)
         lblMenu.TabIndex = 82
         lblMenu.Text = "Menu"
         ' 
@@ -309,11 +348,11 @@ Partial Class AddNewBookForm
         ' 
         lblFavorite.AutoSize = True
         lblFavorite.BackColor = SystemColors.Info
-        lblFavorite.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
+        lblFavorite.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblFavorite.ImageAlign = ContentAlignment.TopRight
-        lblFavorite.Location = New Point(46, 227)
+        lblFavorite.Location = New Point(53, 303)
         lblFavorite.Name = "lblFavorite"
-        lblFavorite.Size = New Size(73, 17)
+        lblFavorite.Size = New Size(85, 24)
         lblFavorite.TabIndex = 81
         lblFavorite.Text = "Favorite"
         ' 
@@ -321,11 +360,11 @@ Partial Class AddNewBookForm
         ' 
         lblNotes.AutoSize = True
         lblNotes.BackColor = SystemColors.Info
-        lblNotes.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
+        lblNotes.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblNotes.ImageAlign = ContentAlignment.TopRight
-        lblNotes.Location = New Point(46, 191)
+        lblNotes.Location = New Point(53, 255)
         lblNotes.Name = "lblNotes"
-        lblNotes.Size = New Size(81, 17)
+        lblNotes.Size = New Size(97, 24)
         lblNotes.TabIndex = 80
         lblNotes.Text = "My Notes"
         ' 
@@ -333,11 +372,11 @@ Partial Class AddNewBookForm
         ' 
         lblCategory.AutoSize = True
         lblCategory.BackColor = SystemColors.Info
-        lblCategory.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
+        lblCategory.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblCategory.ImageAlign = ContentAlignment.TopRight
-        lblCategory.Location = New Point(46, 156)
+        lblCategory.Location = New Point(53, 208)
         lblCategory.Name = "lblCategory"
-        lblCategory.Size = New Size(80, 17)
+        lblCategory.Size = New Size(93, 24)
         lblCategory.TabIndex = 79
         lblCategory.Text = "Category"
         ' 
@@ -345,12 +384,12 @@ Partial Class AddNewBookForm
         ' 
         Label1.AutoSize = True
         Label1.BackColor = SystemColors.Info
-        Label1.Font = New Font("UD Digi Kyokasho NK-B", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label1.Font = New Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label1.ForeColor = SystemColors.ControlText
         Label1.ImageAlign = ContentAlignment.TopRight
-        Label1.Location = New Point(12, 25)
+        Label1.Location = New Point(14, 33)
         Label1.Name = "Label1"
-        Label1.Size = New Size(148, 31)
+        Label1.Size = New Size(177, 39)
         Label1.TabIndex = 78
         Label1.Text = "ReadNest"
         ' 
@@ -359,9 +398,10 @@ Partial Class AddNewBookForm
         pbFavorite.BackColor = SystemColors.Info
         pbFavorite.BackgroundImage = CType(resources.GetObject("pbFavorite.BackgroundImage"), Image)
         pbFavorite.BackgroundImageLayout = ImageLayout.Stretch
-        pbFavorite.Location = New Point(12, 218)
+        pbFavorite.Location = New Point(14, 291)
+        pbFavorite.Margin = New Padding(3, 4, 3, 4)
         pbFavorite.Name = "pbFavorite"
-        pbFavorite.Size = New Size(28, 28)
+        pbFavorite.Size = New Size(32, 37)
         pbFavorite.TabIndex = 77
         pbFavorite.TabStop = False
         ' 
@@ -370,9 +410,10 @@ Partial Class AddNewBookForm
         pbNotes.BackColor = SystemColors.Info
         pbNotes.BackgroundImage = CType(resources.GetObject("pbNotes.BackgroundImage"), Image)
         pbNotes.BackgroundImageLayout = ImageLayout.Stretch
-        pbNotes.Location = New Point(12, 182)
+        pbNotes.Location = New Point(14, 243)
+        pbNotes.Margin = New Padding(3, 4, 3, 4)
         pbNotes.Name = "pbNotes"
-        pbNotes.Size = New Size(28, 28)
+        pbNotes.Size = New Size(32, 37)
         pbNotes.TabIndex = 76
         pbNotes.TabStop = False
         ' 
@@ -381,28 +422,57 @@ Partial Class AddNewBookForm
         pbCategory.BackColor = SystemColors.Info
         pbCategory.BackgroundImage = CType(resources.GetObject("pbCategory.BackgroundImage"), Image)
         pbCategory.BackgroundImageLayout = ImageLayout.Stretch
-        pbCategory.Location = New Point(12, 148)
+        pbCategory.Location = New Point(14, 197)
+        pbCategory.Margin = New Padding(3, 4, 3, 4)
         pbCategory.Name = "pbCategory"
-        pbCategory.Size = New Size(28, 28)
+        pbCategory.Size = New Size(32, 37)
         pbCategory.TabIndex = 75
         pbCategory.TabStop = False
         ' 
         ' SplitContainer1
         ' 
         SplitContainer1.Dock = DockStyle.Fill
+        SplitContainer1.FixedPanel = FixedPanel.Panel1
         SplitContainer1.Location = New Point(0, 0)
+        SplitContainer1.Margin = New Padding(3, 4, 3, 4)
         SplitContainer1.Name = "SplitContainer1"
         ' 
         ' SplitContainer1.Panel1
         ' 
-        SplitContainer1.Panel1.Controls.Add(PictureBox2)
+        SplitContainer1.Panel1.Controls.Add(panelSidebar)
+        SplitContainer1.Panel1MinSize = 186
         ' 
         ' SplitContainer1.Panel2
         ' 
-        SplitContainer1.Panel2.Controls.Add(Splitter1)
-        SplitContainer1.Size = New Size(934, 486)
-        SplitContainer1.SplitterDistance = 186
+        SplitContainer1.Panel2.Controls.Add(panelContent)
+        SplitContainer1.Size = New Size(1067, 648)
+        SplitContainer1.SplitterDistance = 213
+        SplitContainer1.SplitterWidth = 5
         SplitContainer1.TabIndex = 89
+        ' 
+        ' panelSidebar
+        ' 
+        panelSidebar.Controls.Add(Label1)
+        panelSidebar.Controls.Add(lblMenu)
+        panelSidebar.Controls.Add(pbDiscover)
+        panelSidebar.Controls.Add(lblDiscover)
+        panelSidebar.Controls.Add(pbCategory)
+        panelSidebar.Controls.Add(lblCategory)
+        panelSidebar.Controls.Add(pbNotes)
+        panelSidebar.Controls.Add(lblNotes)
+        panelSidebar.Controls.Add(pbFavorite)
+        panelSidebar.Controls.Add(lblFavorite)
+        panelSidebar.Controls.Add(pbBB)
+        panelSidebar.Controls.Add(lblBB)
+        panelSidebar.Controls.Add(pbStatistic)
+        panelSidebar.Controls.Add(lblstatistic)
+        panelSidebar.Controls.Add(PictureBox2)
+        panelSidebar.Dock = DockStyle.Fill
+        panelSidebar.Location = New Point(0, 0)
+        panelSidebar.Margin = New Padding(3, 4, 3, 4)
+        panelSidebar.Name = "panelSidebar"
+        panelSidebar.Size = New Size(213, 648)
+        panelSidebar.TabIndex = 0
         ' 
         ' PictureBox2
         ' 
@@ -410,57 +480,89 @@ Partial Class AddNewBookForm
         PictureBox2.BorderStyle = BorderStyle.FixedSingle
         PictureBox2.Dock = DockStyle.Fill
         PictureBox2.Location = New Point(0, 0)
+        PictureBox2.Margin = New Padding(3, 4, 3, 4)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(186, 486)
+        PictureBox2.Size = New Size(213, 648)
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
         ' 
-        ' Splitter1
+        ' panelContent
         ' 
-        Splitter1.Location = New Point(0, 0)
-        Splitter1.Name = "Splitter1"
-        Splitter1.Size = New Size(3, 486)
-        Splitter1.TabIndex = 0
-        Splitter1.TabStop = False
+        panelContent.Controls.Add(panelForm)
+        panelContent.Controls.Add(panelHeader)
+        panelContent.Dock = DockStyle.Fill
+        panelContent.Location = New Point(0, 0)
+        panelContent.Margin = New Padding(3, 4, 3, 4)
+        panelContent.Name = "panelContent"
+        panelContent.Padding = New Padding(11, 13, 11, 13)
+        panelContent.Size = New Size(849, 648)
+        panelContent.TabIndex = 0
+        ' 
+        ' panelForm
+        ' 
+        panelForm.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        panelForm.Controls.Add(btnUploadBook)
+        panelForm.Controls.Add(PictureBox7)
+        panelForm.Controls.Add(tableLayoutPanel1)
+        panelForm.Controls.Add(PictureBox9)
+        panelForm.Location = New Point(11, 80)
+        panelForm.Margin = New Padding(3, 4, 3, 4)
+        panelForm.Name = "panelForm"
+        panelForm.Size = New Size(827, 555)
+        panelForm.TabIndex = 0
+        ' 
+        ' tableLayoutPanel1
+        ' 
+        tableLayoutPanel1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        tableLayoutPanel1.BackColor = Color.Cornsilk
+        tableLayoutPanel1.ColumnCount = 2
+        tableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 29.4017086F))
+        tableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 70.59829F))
+        tableLayoutPanel1.Controls.Add(Label4, 0, 0)
+        tableLayoutPanel1.Controls.Add(txtAddBookTitle, 1, 0)
+        tableLayoutPanel1.Controls.Add(Label5, 0, 1)
+        tableLayoutPanel1.Controls.Add(txtAddBookWriter, 1, 1)
+        tableLayoutPanel1.Controls.Add(Label7, 0, 2)
+        tableLayoutPanel1.Controls.Add(cbAddCategory, 1, 2)
+        tableLayoutPanel1.Controls.Add(Label8, 0, 3)
+        tableLayoutPanel1.Controls.Add(txtAddPages, 1, 3)
+        tableLayoutPanel1.Controls.Add(BtnAddNewBook, 1, 4)
+        tableLayoutPanel1.Location = New Point(34, 53)
+        tableLayoutPanel1.Margin = New Padding(3, 4, 3, 4)
+        tableLayoutPanel1.Name = "tableLayoutPanel1"
+        tableLayoutPanel1.RowCount = 5
+        tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
+        tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
+        tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
+        tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
+        tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
+        tableLayoutPanel1.Size = New Size(585, 267)
+        tableLayoutPanel1.TabIndex = 49
+        ' 
+        ' panelHeader
+        ' 
+        panelHeader.Controls.Add(Label2)
+        panelHeader.Controls.Add(lblUsername)
+        panelHeader.Controls.Add(pbProfile)
+        panelHeader.Dock = DockStyle.Top
+        panelHeader.Location = New Point(11, 13)
+        panelHeader.Margin = New Padding(3, 4, 3, 4)
+        panelHeader.Name = "panelHeader"
+        panelHeader.Size = New Size(827, 67)
+        panelHeader.TabIndex = 1
         ' 
         ' AddNewBookForm
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
-        ClientSize = New Size(934, 486)
-        Controls.Add(pbBB)
-        Controls.Add(lblBB)
-        Controls.Add(lblstatistic)
-        Controls.Add(pbStatistic)
-        Controls.Add(lblDiscover)
-        Controls.Add(pbDiscover)
-        Controls.Add(lblMenu)
-        Controls.Add(lblFavorite)
-        Controls.Add(lblNotes)
-        Controls.Add(lblCategory)
-        Controls.Add(Label1)
-        Controls.Add(pbFavorite)
-        Controls.Add(pbNotes)
-        Controls.Add(pbCategory)
-        Controls.Add(btnUploadBook)
-        Controls.Add(PictureBox7)
-        Controls.Add(txtAddPages)
-        Controls.Add(Label8)
-        Controls.Add(cbAddCategory)
-        Controls.Add(Label7)
-        Controls.Add(BtnAddNewBook)
-        Controls.Add(Label5)
-        Controls.Add(Label4)
-        Controls.Add(txtAddBookTitle)
-        Controls.Add(txtAddBookWriter)
-        Controls.Add(lblUsername)
-        Controls.Add(pbProfile)
-        Controls.Add(Label2)
-        Controls.Add(PictureBox9)
+        ClientSize = New Size(1067, 648)
         Controls.Add(SplitContainer1)
+        Margin = New Padding(3, 4, 3, 4)
+        MinimumSize = New Size(912, 684)
         Name = "AddNewBookForm"
-        Text = "Form4"
+        StartPosition = FormStartPosition.CenterScreen
+        Text = "ReadNest - Add New Book"
         CType(pbProfile, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
@@ -474,9 +576,17 @@ Partial Class AddNewBookForm
         SplitContainer1.Panel2.ResumeLayout(False)
         CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.ResumeLayout(False)
+        panelSidebar.ResumeLayout(False)
+        panelSidebar.PerformLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        panelContent.ResumeLayout(False)
+        panelForm.ResumeLayout(False)
+        panelForm.PerformLayout()
+        tableLayoutPanel1.ResumeLayout(False)
+        tableLayoutPanel1.PerformLayout()
+        panelHeader.ResumeLayout(False)
+        panelHeader.PerformLayout()
         ResumeLayout(False)
-        PerformLayout()
     End Sub
     Friend WithEvents Label2 As Label
     Friend WithEvents lblUsername As Label
@@ -497,7 +607,7 @@ Partial Class AddNewBookForm
     Friend WithEvents lblBB As Label
     Friend WithEvents lblstatistic As Label
     Friend WithEvents pbStatistic As PictureBox
-    Public WithEvents lblDiscover As Label
+    Friend WithEvents lblDiscover As Label
     Friend WithEvents pbDiscover As PictureBox
     Friend WithEvents lblMenu As Label
     Friend WithEvents lblFavorite As Label
@@ -508,6 +618,10 @@ Partial Class AddNewBookForm
     Friend WithEvents pbNotes As PictureBox
     Friend WithEvents pbCategory As PictureBox
     Friend WithEvents SplitContainer1 As SplitContainer
+    Friend WithEvents panelSidebar As Panel
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Splitter1 As Splitter
+    Friend WithEvents panelContent As Panel
+    Friend WithEvents panelForm As Panel
+    Friend WithEvents tableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents panelHeader As Panel
 End Class
