@@ -1,4 +1,6 @@
-﻿Public Class AddNewBookForm
+﻿Imports System.IO
+
+Public Class AddNewBookForm
 
     'Untuk Tombol navigasi di menu'
     Private Sub lblDiscover_Click(sender As Object, e As EventArgs) Handles lblDiscover.Click
@@ -26,13 +28,13 @@
     End Sub
 
     Private Sub lblNotes_Click(sender As Object, e As EventArgs) Handles lblNotes.Click
-        Dim formBaru As New MyNotes()
+        Dim formBaru As New Mynotes()
         formBaru.Show()
         Me.Hide()
     End Sub
 
     Private Sub pbNotes_Click(sender As Object, e As EventArgs) Handles pbNotes.Click
-        Dim formBaru As New MyNotes()
+        Dim formBaru As New Mynotes()
         formBaru.Show()
         Me.Hide()
     End Sub
@@ -73,4 +75,112 @@
         Me.Hide()
     End Sub
 
+    Private Sub BtnAddNewBook_Click(sender As Object, e As EventArgs) Handles BtnAddNewBook.Click
+        ' Ambil data dari form
+        Dim title As String = txtAddBookTitle.Text.Trim()
+        Dim author As String = txtAddBookWriter.Text.Trim()
+        Dim categoryId As Integer = 0
+        Dim pages As Integer = 0
+        Dim description As String = tbDesc.Text.Trim()
+        Dim photoPath As String = ""
+
+        ' Jika ada gambar yang diupload
+        If PictureBox7.Tag IsNot Nothing Then
+            photoPath = PictureBox7.Tag.ToString()
+        End If
+
+        ' Validasi input
+        If String.IsNullOrEmpty(title) Then
+            MessageBox.Show("Judul buku harus diisi!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        If String.IsNullOrEmpty(author) Then
+            MessageBox.Show("Penulis buku harus diisi!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        ' Validasi kategori (opsional karena boleh NULL)
+        If cbAddCategory.SelectedItem IsNot Nothing Then
+            Integer.TryParse(cbAddCategory.SelectedValue.ToString(), categoryId)
+        End If
+
+        ' Validasi halaman
+        If Not Integer.TryParse(txtAddPages.Text, pages) OrElse pages <= 0 Then
+            MessageBox.Show("Jumlah halaman harus berupa angka positif!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        ' Proses tambah buku ke database
+        Dim db As New DBConnection()
+        Try
+            If db.TambahBuku(title, author, categoryId, pages, description, photoPath) Then
+                MessageBox.Show("Buku berhasil ditambahkan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                ' Reset form setelah berhasil
+                txtAddBookTitle.Clear()
+                txtAddBookWriter.Clear()
+                cbAddCategory.SelectedIndex = -1
+                txtAddPages.Clear()
+                tbDesc.Clear()
+                PictureBox7.Image = Nothing
+                PictureBox7.Tag = Nothing
+            Else
+                MessageBox.Show("Gagal menambahkan buku!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+            MessageBox.Show($"Terjadi kesalahan: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub LoadCategories()
+        Dim db As New DBConnection()
+        Dim dt As DataTable = db.GetCategories()
+
+        ' Tambahkan opsi default
+        dt.Rows.InsertAt(dt.NewRow(), 0)
+        dt.Rows(0)("CategoryId") = 0
+        dt.Rows(0)("CategoryName") = "-- Pilih Kategori --"
+
+        cbAddCategory.DataSource = dt
+        cbAddCategory.DisplayMember = "CategoryName"
+        cbAddCategory.ValueMember = "CategoryId"
+        cbAddCategory.SelectedIndex = 0
+    End Sub
+
+    Private Sub btnUploadBook_Click(sender As Object, e As EventArgs) Handles btnUploadBook.Click
+        Using openFileDialog As New OpenFileDialog()
+            openFileDialog.Filter = "Image Files (*.bmp;*.jpg;*.jpeg;*.png)|*.bmp;*.jpg;*.jpeg;*.png"
+            openFileDialog.RestoreDirectory = True
+
+            If openFileDialog.ShowDialog() = DialogResult.OK Then
+                Try
+                    ' Generate nama file unik
+                    Dim fileExt As String = Path.GetExtension(openFileDialog.FileName)
+                    Dim fileName As String = Guid.NewGuid().ToString() & fileExt
+                    Dim destPath As String = Path.Combine(Application.StartupPath, "BookCovers", fileName)
+
+                    ' Buat folder jika belum ada
+                    Directory.CreateDirectory(Path.GetDirectoryName(destPath))
+
+                    ' Copy file
+                    File.Copy(openFileDialog.FileName, destPath, True)
+
+                    ' Load gambar ke PictureBox
+                    PictureBox7.Image = Image.FromFile(destPath)
+                    PictureBox7.SizeMode = PictureBoxSizeMode.Zoom
+
+                    ' Simpan path relatif ke Tag PictureBox
+                    PictureBox7.Tag = Path.Combine("BookCovers", fileName)
+
+                Catch ex As Exception
+                    MessageBox.Show("Error: Could not process file. Original error: " & ex.Message,
+                                  "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+            End If
+        End Using
+    End Sub
+
+    Private Sub AddNewBookForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadCategories()
+    End Sub
 End Class

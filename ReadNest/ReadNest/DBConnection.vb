@@ -130,4 +130,35 @@ Public Class DBConnection
         End Try
     End Function
 
+    Public Function TambahBuku(title As String, author As String, categoryId As Integer,
+                         pages As Integer, description As String, photoPath As String) As Boolean
+        Try
+            Dim query As String = "INSERT INTO books (Title, Author, CategoryId, Pages, Description, " &
+                                 "PhotoPath, Status, CreatedAt, ReadDuration, IsFavorite, IsWishlist) " &
+                                 "VALUES (@title, @author, @categoryId, @pages, @description, " &
+                                 "@photoPath, 'Available', NOW(), 0, 0, 0)"
+
+            Using cmd As New MySqlCommand(query, BukaKoneksi())
+                cmd.Parameters.AddWithValue("@title", title)
+                cmd.Parameters.AddWithValue("@author", author)
+                cmd.Parameters.AddWithValue("@categoryId", If(categoryId = 0, DBNull.Value, categoryId))
+                cmd.Parameters.AddWithValue("@pages", pages)
+                cmd.Parameters.AddWithValue("@description", description)
+                cmd.Parameters.AddWithValue("@photoPath", If(String.IsNullOrEmpty(photoPath), DBNull.Value, photoPath))
+
+                Dim hasil As Integer = cmd.ExecuteNonQuery()
+                Return hasil > 0
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Gagal Menambahkan Buku", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            TutupKoneksi()
+        End Try
+        Return False
+    End Function
+
+    Public Function GetCategories() As DataTable
+        Dim query As String = "SELECT CategoryId, CategoryName FROM categories ORDER BY CategoryName"
+        Return EksekusiQuery(query)
+    End Function
 End Class

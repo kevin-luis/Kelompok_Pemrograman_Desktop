@@ -60,6 +60,8 @@ Partial Class AddNewBookForm
         panelContent = New Panel()
         panelForm = New Panel()
         tableLayoutPanel1 = New TableLayoutPanel()
+        tbDesc = New TextBox()
+        lblDesc = New Label()
         panelHeader = New Panel()
         CType(pbProfile, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
@@ -122,22 +124,22 @@ Partial Class AddNewBookForm
         ' 
         txtAddBookWriter.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         txtAddBookWriter.Font = New Font("Segoe UI", 11.0F)
-        txtAddBookWriter.Location = New Point(175, 63)
+        txtAddBookWriter.Location = New Point(135, 53)
         txtAddBookWriter.Margin = New Padding(3, 4, 3, 4)
         txtAddBookWriter.Name = "txtAddBookWriter"
         txtAddBookWriter.PlaceholderText = "Enter Book Writer here"
-        txtAddBookWriter.Size = New Size(407, 32)
+        txtAddBookWriter.Size = New Size(447, 32)
         txtAddBookWriter.TabIndex = 45
         ' 
         ' txtAddBookTitle
         ' 
         txtAddBookTitle.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         txtAddBookTitle.Font = New Font("Segoe UI", 11.0F)
-        txtAddBookTitle.Location = New Point(175, 10)
+        txtAddBookTitle.Location = New Point(135, 6)
         txtAddBookTitle.Margin = New Padding(3, 4, 3, 4)
         txtAddBookTitle.Name = "txtAddBookTitle"
         txtAddBookTitle.PlaceholderText = "Enter Book Title here"
-        txtAddBookTitle.Size = New Size(407, 32)
+        txtAddBookTitle.Size = New Size(447, 32)
         txtAddBookTitle.TabIndex = 46
         ' 
         ' Label4
@@ -146,7 +148,7 @@ Partial Class AddNewBookForm
         Label4.AutoSize = True
         Label4.BackColor = Color.Cornsilk
         Label4.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label4.Location = New Point(3, 14)
+        Label4.Location = New Point(3, 10)
         Label4.Name = "Label4"
         Label4.Size = New Size(103, 24)
         Label4.TabIndex = 47
@@ -170,7 +172,7 @@ Partial Class AddNewBookForm
         Label5.AutoSize = True
         Label5.BackColor = Color.Cornsilk
         Label5.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label5.Location = New Point(3, 67)
+        Label5.Location = New Point(3, 57)
         Label5.Name = "Label5"
         Label5.Size = New Size(118, 24)
         Label5.TabIndex = 49
@@ -181,10 +183,10 @@ Partial Class AddNewBookForm
         BtnAddNewBook.Anchor = AnchorStyles.Right
         BtnAddNewBook.AutoSize = True
         BtnAddNewBook.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        BtnAddNewBook.Location = New Point(496, 221)
+        BtnAddNewBook.Location = New Point(496, 353)
         BtnAddNewBook.Margin = New Padding(3, 4, 3, 4)
         BtnAddNewBook.Name = "BtnAddNewBook"
-        BtnAddNewBook.Size = New Size(86, 36)
+        BtnAddNewBook.Size = New Size(86, 31)
         BtnAddNewBook.TabIndex = 50
         BtnAddNewBook.Text = "Add"
         BtnAddNewBook.UseVisualStyleBackColor = True
@@ -195,7 +197,7 @@ Partial Class AddNewBookForm
         Label7.AutoSize = True
         Label7.BackColor = Color.Cornsilk
         Label7.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label7.Location = New Point(3, 120)
+        Label7.Location = New Point(3, 104)
         Label7.Name = "Label7"
         Label7.Size = New Size(93, 24)
         Label7.TabIndex = 68
@@ -206,10 +208,10 @@ Partial Class AddNewBookForm
         cbAddCategory.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         cbAddCategory.Font = New Font("Segoe UI", 11.0F)
         cbAddCategory.FormattingEnabled = True
-        cbAddCategory.Location = New Point(175, 116)
+        cbAddCategory.Location = New Point(135, 99)
         cbAddCategory.Margin = New Padding(3, 4, 3, 4)
         cbAddCategory.Name = "cbAddCategory"
-        cbAddCategory.Size = New Size(407, 33)
+        cbAddCategory.Size = New Size(447, 33)
         cbAddCategory.TabIndex = 69
         ' 
         ' Label8
@@ -218,7 +220,7 @@ Partial Class AddNewBookForm
         Label8.AutoSize = True
         Label8.BackColor = Color.Cornsilk
         Label8.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label8.Location = New Point(3, 173)
+        Label8.Location = New Point(3, 150)
         Label8.Name = "Label8"
         Label8.Size = New Size(68, 24)
         Label8.TabIndex = 70
@@ -228,11 +230,11 @@ Partial Class AddNewBookForm
         ' 
         txtAddPages.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         txtAddPages.Font = New Font("Segoe UI", 11.0F)
-        txtAddPages.Location = New Point(175, 169)
+        txtAddPages.Location = New Point(135, 146)
         txtAddPages.Margin = New Padding(3, 4, 3, 4)
         txtAddPages.Name = "txtAddPages"
         txtAddPages.PlaceholderText = "Enter Number of pages"
-        txtAddPages.Size = New Size(407, 32)
+        txtAddPages.Size = New Size(447, 32)
         txtAddPages.TabIndex = 71
         ' 
         ' PictureBox7
@@ -516,8 +518,10 @@ Partial Class AddNewBookForm
         tableLayoutPanel1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         tableLayoutPanel1.BackColor = Color.Cornsilk
         tableLayoutPanel1.ColumnCount = 2
-        tableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 29.4017086F))
-        tableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 70.59829F))
+        tableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 22.5641022F))
+        tableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 77.4359F))
+        tableLayoutPanel1.Controls.Add(tbDesc, 1, 4)
+        tableLayoutPanel1.Controls.Add(lblDesc, 0, 4)
         tableLayoutPanel1.Controls.Add(Label4, 0, 0)
         tableLayoutPanel1.Controls.Add(txtAddBookTitle, 1, 0)
         tableLayoutPanel1.Controls.Add(Label5, 0, 1)
@@ -526,18 +530,43 @@ Partial Class AddNewBookForm
         tableLayoutPanel1.Controls.Add(cbAddCategory, 1, 2)
         tableLayoutPanel1.Controls.Add(Label8, 0, 3)
         tableLayoutPanel1.Controls.Add(txtAddPages, 1, 3)
-        tableLayoutPanel1.Controls.Add(BtnAddNewBook, 1, 4)
+        tableLayoutPanel1.Controls.Add(BtnAddNewBook, 1, 5)
         tableLayoutPanel1.Location = New Point(34, 53)
         tableLayoutPanel1.Margin = New Padding(3, 4, 3, 4)
         tableLayoutPanel1.Name = "tableLayoutPanel1"
-        tableLayoutPanel1.RowCount = 5
-        tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        tableLayoutPanel1.Size = New Size(585, 267)
+        tableLayoutPanel1.RowCount = 6
+        tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 12.8939829F))
+        tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 13.753582F))
+        tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 13.1805153F))
+        tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 13.4670486F))
+        tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 46.7048721F))
+        tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 38.0F))
+        tableLayoutPanel1.Size = New Size(585, 388)
         tableLayoutPanel1.TabIndex = 49
+        ' 
+        ' tbDesc
+        ' 
+        tbDesc.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        tbDesc.Font = New Font("Segoe UI", 11.0F)
+        tbDesc.Location = New Point(135, 195)
+        tbDesc.Margin = New Padding(3, 4, 3, 4)
+        tbDesc.Multiline = True
+        tbDesc.Name = "tbDesc"
+        tbDesc.PlaceholderText = "Enter Book Description here"
+        tbDesc.Size = New Size(447, 144)
+        tbDesc.TabIndex = 73
+        ' 
+        ' lblDesc
+        ' 
+        lblDesc.Anchor = AnchorStyles.Left
+        lblDesc.AutoSize = True
+        lblDesc.BackColor = Color.Cornsilk
+        lblDesc.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        lblDesc.Location = New Point(3, 255)
+        lblDesc.Name = "lblDesc"
+        lblDesc.Size = New Size(115, 24)
+        lblDesc.TabIndex = 72
+        lblDesc.Text = "Description"
         ' 
         ' panelHeader
         ' 
@@ -624,4 +653,6 @@ Partial Class AddNewBookForm
     Friend WithEvents panelForm As Panel
     Friend WithEvents tableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents panelHeader As Panel
+    Friend WithEvents tbDesc As TextBox
+    Friend WithEvents lblDesc As Label
 End Class
