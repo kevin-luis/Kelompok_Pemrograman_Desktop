@@ -161,4 +161,10 @@ Public Class DBConnection
         Dim query As String = "SELECT CategoryId, CategoryName FROM categories ORDER BY CategoryName"
         Return EksekusiQuery(query)
     End Function
+
+    Public Function GetBooks() As DataTable
+        Dim query As String = "SELECT BookId, Title, Author, PhotoPath FROM books ORDER BY CreatedAt DESC"
+        Return EksekusiQuery(query)
+    End Function
+
 End Class

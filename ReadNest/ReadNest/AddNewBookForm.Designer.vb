@@ -123,7 +123,7 @@ Partial Class AddNewBookForm
         ' txtAddBookWriter
         ' 
         txtAddBookWriter.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        txtAddBookWriter.Font = New Font("Segoe UI", 11.0F)
+        txtAddBookWriter.Font = New Font("Segoe UI", 11F)
         txtAddBookWriter.Location = New Point(135, 53)
         txtAddBookWriter.Margin = New Padding(3, 4, 3, 4)
         txtAddBookWriter.Name = "txtAddBookWriter"
@@ -134,7 +134,7 @@ Partial Class AddNewBookForm
         ' txtAddBookTitle
         ' 
         txtAddBookTitle.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        txtAddBookTitle.Font = New Font("Segoe UI", 11.0F)
+        txtAddBookTitle.Font = New Font("Segoe UI", 11F)
         txtAddBookTitle.Location = New Point(135, 6)
         txtAddBookTitle.Margin = New Padding(3, 4, 3, 4)
         txtAddBookTitle.Name = "txtAddBookTitle"
@@ -206,7 +206,7 @@ Partial Class AddNewBookForm
         ' cbAddCategory
         ' 
         cbAddCategory.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        cbAddCategory.Font = New Font("Segoe UI", 11.0F)
+        cbAddCategory.Font = New Font("Segoe UI", 11F)
         cbAddCategory.FormattingEnabled = True
         cbAddCategory.Location = New Point(135, 99)
         cbAddCategory.Margin = New Padding(3, 4, 3, 4)
@@ -229,7 +229,7 @@ Partial Class AddNewBookForm
         ' txtAddPages
         ' 
         txtAddPages.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        txtAddPages.Font = New Font("Segoe UI", 11.0F)
+        txtAddPages.Font = New Font("Segoe UI", 11F)
         txtAddPages.Location = New Point(135, 146)
         txtAddPages.Margin = New Padding(3, 4, 3, 4)
         txtAddPages.Name = "txtAddPages"
@@ -540,14 +540,14 @@ Partial Class AddNewBookForm
         tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 13.1805153F))
         tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 13.4670486F))
         tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 46.7048721F))
-        tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 38.0F))
+        tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 38F))
         tableLayoutPanel1.Size = New Size(585, 388)
         tableLayoutPanel1.TabIndex = 49
         ' 
         ' tbDesc
         ' 
         tbDesc.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        tbDesc.Font = New Font("Segoe UI", 11.0F)
+        tbDesc.Font = New Font("Segoe UI", 11F)
         tbDesc.Location = New Point(135, 195)
         tbDesc.Margin = New Padding(3, 4, 3, 4)
         tbDesc.Multiline = True
@@ -582,7 +582,7 @@ Partial Class AddNewBookForm
         ' 
         ' AddNewBookForm
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         ClientSize = New Size(1067, 648)
