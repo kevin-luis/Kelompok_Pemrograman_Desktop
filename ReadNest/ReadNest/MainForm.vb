@@ -1,132 +1,249 @@
-﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+﻿Imports MySql.Data.MySqlClient
 
 Public Class MainForm
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         StartPosition = FormStartPosition.CenterScreen
+        SetupProfileComboBox()
+        LoadBooks()
+    End Sub
 
-        cbProfile.Items.Clear() ' Clear existing items
-        cbProfile.Items.Add("Profile") ' Add placeholder
+    Private Sub SetupProfileComboBox()
+        cbProfile.Items.Clear()
+        cbProfile.Items.Add("Profile")
         cbProfile.Items.Add("View Profile")
         cbProfile.Items.Add("Logout")
-        cbProfile.SelectedIndex = 0 ' Set placeholder as default
+        cbProfile.SelectedIndex = 0
     End Sub
 
     Private Sub MainForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        Dim result As DialogResult = MessageBox.Show("Apakah Anda yakin ingin keluar?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Dim result As DialogResult = MessageBox.Show("Apakah Anda yakin ingin keluar?", "Konfirmasi",
+                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If result = DialogResult.No Then
             e.Cancel = True
         Else
-            Environment.Exit(0)
+            Application.Exit()
         End If
     End Sub
 
-    'Untuk Tombol navigasi di menu'
-    Private Sub lblDiscover_Click(sender As Object, e As EventArgs) Handles lblDiscover.Click
-        Dim formBaru As New MainForm()
-        formBaru.Show()
-        Me.Hide()
+    '============ NAVIGASI MENU ============'
+    Private Sub NavigateToForm(form As Form)
+        form.Show()
+        Me.Close()
     End Sub
 
-    Private Sub pbDiscover_Click(sender As Object, e As EventArgs) Handles pbDiscover.Click
-        Dim formBaru As New MainForm()
-        formBaru.Show()
-        Me.Hide()
+    Private Sub lblDiscover_Click(sender As Object, e As EventArgs) Handles lblDiscover.Click, pbDiscover.Click
+        NavigateToForm(New MainForm())
     End Sub
 
-    Private Sub lblCategory_Click(sender As Object, e As EventArgs) Handles lblCategory.Click
-        Dim formBaru As New CategoryForm()
-        formBaru.Show()
-        Me.Hide()
+    Private Sub lblCategory_Click(sender As Object, e As EventArgs) Handles lblCategory.Click, pbCategory.Click
+        NavigateToForm(New CategoryForm())
     End Sub
 
-    Private Sub pbCategory_Click(sender As Object, e As EventArgs) Handles pbCategory.Click
-        Dim formBaru As New CategoryForm()
-        formBaru.Show()
-        Me.Hide()
+    Private Sub lblNotes_Click(sender As Object, e As EventArgs) Handles lblNotes.Click, pbNotes.Click
+        NavigateToForm(New Mynotes())
     End Sub
 
-    Private Sub lblNotes_Click(sender As Object, e As EventArgs) Handles lblNotes.Click
-        Dim formBaru As New Mynotes()
-        formBaru.Show()
-        Me.Hide()
+    Private Sub lblFavorite_Click(sender As Object, e As EventArgs) Handles lblFavorite.Click, pbFavorite.Click
+        NavigateToForm(New FavoriteForm())
     End Sub
 
-    Private Sub pbNotes_Click(sender As Object, e As EventArgs) Handles pbNotes.Click
-        Dim formBaru As New Mynotes()
-        formBaru.Show()
-        Me.Hide()
+    Private Sub lblBB_Click(sender As Object, e As EventArgs) Handles lblBB.Click, pbBB.Click
+        NavigateToForm(New BorrowForm())
     End Sub
 
-    Private Sub lblFavorite_Click(sender As Object, e As EventArgs) Handles lblFavorite.Click
-        Dim formBaru As New FavoriteForm()
-        formBaru.Show()
-        Me.Hide()
+    Private Sub lblstatistic_Click(sender As Object, e As EventArgs) Handles lblstatistic.Click, pbStatistic.Click
+        NavigateToForm(New StatisticForm())
     End Sub
 
-    Private Sub pbFavorite_Click(sender As Object, e As EventArgs) Handles pbFavorite.Click
-        Dim formBaru As New FavoriteForm()
-        formBaru.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub lblBB_Click(sender As Object, e As EventArgs) Handles lblBB.Click
-        Dim formBaru As New BorrowForm()
-        formBaru.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub pbBB_Click(sender As Object, e As EventArgs) Handles pbBB.Click
-        Dim formBaru As New BorrowForm()
-        formBaru.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub lblstatistic_Click(sender As Object, e As EventArgs) Handles lblstatistic.Click
-        Dim formBaru As New StatisticForm()
-        formBaru.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub pbStatistic_Click(sender As Object, e As EventArgs) Handles pbStatistic.Click
-        Dim formBaru As New StatisticForm()
-        formBaru.Show()
-        Me.Hide()
-    End Sub
-
+    '============ PROFILE MENU ============'
     Private Sub cbProfile_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProfile.SelectedIndexChanged
-
-        ' Pastikan ada item yang dipilih dan bukan pemilihan pertama kali saat load
         If cbProfile.SelectedIndex = -1 Then Exit Sub
 
-        ' Cek pilihan user
         Select Case cbProfile.SelectedItem.ToString()
             Case "View Profile"
-                ' Buka form ProfileForm
-                Dim profileForm As New ProfileForm()
-                profileForm.Show()
-                Me.Hide() ' Sembunyikan form saat ini (opsional)
+                NavigateToForm(New ProfileForm())
 
             Case "Logout"
-                ' Tampilkan pop-up konfirmasi logout
-                Dim result As DialogResult = MessageBox.Show("Apakah Anda yakin ingin keluar?", "Konfirmasi Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
+                Dim result As DialogResult = MessageBox.Show("Apakah Anda yakin ingin keluar?",
+                                                           "Konfirmasi Logout",
+                                                           MessageBoxButtons.YesNo,
+                                                           MessageBoxIcon.Question)
                 If result = DialogResult.Yes Then
-                    ' Jika klik Yes, kembali ke LoginForm
                     Dim loginForm As New LoginForm()
                     loginForm.Show()
-                    Me.Hide() ' Tutup form saat ini
+                    Me.Close()
+                Else
+                    cbProfile.SelectedIndex = 0
                 End If
         End Select
+
+        cbProfile.SelectedIndex = 0 ' Reset ke default setelah aksi
     End Sub
 
+    '============ BOOK MANAGEMENT ============'
     Private Sub btnAddNewBook_Click(sender As Object, e As EventArgs) Handles btnAddNewBook.Click
-        Dim addnewBook As New AddNewBookForm()
-        addnewBook.Show()
-        Me.Hide()
+        Using addNewBookForm As New AddNewBookForm()
+            If addNewBookForm.ShowDialog() = DialogResult.OK Then
+                LoadBooks() ' Refresh daftar buku
+            End If
+        End Using
     End Sub
 
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        SearchBooks(txtSearchBook.Text.Trim())
     End Sub
+
+    Private Sub LoadBooks()
+        Try
+            flowBooks.SuspendLayout()
+            flowBooks.Controls.Clear()
+
+            Dim db As New DBConnection()
+            Dim books As DataTable = db.GetBooks()
+
+            If books?.Rows.Count > 0 Then
+                For Each row As DataRow In books.Rows
+                    Dim bookCard As New BookCard(
+                            Convert.ToInt32(row("BookId")),
+                            row("Title").ToString(),
+                            row("Author").ToString(),
+                            If(IsDBNull(row("PhotoPath")), "", row("PhotoPath").ToString())
+                        )
+                    flowBooks.Controls.Add(bookCard)
+                Next
+            Else
+                flowBooks.Controls.Add(CreateNoBooksLabel())
+            End If
+        Catch ex As Exception
+            MessageBox.Show($"Gagal memuat buku: {ex.Message}", "Error",
+                           MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            flowBooks.ResumeLayout()
+        End Try
+    End Sub
+
+    Private Sub SearchBooks(searchTerm As String)
+        If String.IsNullOrWhiteSpace(searchTerm) Then
+            LoadBooks()
+            Return
+        End If
+
+        Try
+            flowBooks.SuspendLayout()
+            flowBooks.Controls.Clear()
+
+            Dim db As New DBConnection()
+            Dim query As String = "SELECT BookId, Title, Author, PhotoPath FROM books " &
+                                    "WHERE Title LIKE @search OR Author LIKE @search"
+
+            Using cmd As New MySqlCommand(query, db.BukaKoneksi())
+                cmd.Parameters.AddWithValue("@search", $"%{searchTerm}%")
+
+                Using da As New MySqlDataAdapter(cmd)
+                    Dim books As New DataTable()
+                    da.Fill(books)
+
+                    If books.Rows.Count > 0 Then
+                        For Each row As DataRow In books.Rows
+                            Dim bookCard As New BookCard(
+                                    Convert.ToInt32(row("BookId")),
+                                    row("Title").ToString(),
+                                    row("Author").ToString(),
+                                    If(IsDBNull(row("PhotoPath")), "", row("PhotoPath").ToString())
+                                )
+                            flowBooks.Controls.Add(bookCard)
+                        Next
+                    Else
+                        flowBooks.Controls.Add(CreateNoResultsLabel(searchTerm))
+                    End If
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show($"Gagal mencari buku: {ex.Message}", "Error",
+                           MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            flowBooks.ResumeLayout()
+        End Try
+    End Sub
+
+    Private Function CreateNoBooksLabel() As Label
+        Return New Label() With {
+            .Text = "Tidak ada buku tersedia",
+            .AutoSize = True,
+            .Font = New Font("Microsoft Sans Serif", 10.0F, FontStyle.Italic),
+            .TextAlign = ContentAlignment.MiddleCenter,
+            .Dock = DockStyle.Fill
+        }
+    End Function
+
+    Private Function CreateNoResultsLabel(searchTerm As String) As Label
+        Return New Label() With {
+            .Text = $"Tidak ditemukan hasil untuk '{searchTerm}'",
+            .AutoSize = True,
+            .Font = New Font("Microsoft Sans Serif", 10.0F, FontStyle.Italic),
+            .TextAlign = ContentAlignment.MiddleCenter,
+            .Dock = DockStyle.Fill
+        }
+    End Function
+
+    '============ BOOK CARD CLASS ============'
+    Public Class BookCard
+        Inherits Panel
+
+        Public Property BookId As Integer
+        Public Property Title As String
+        Public Property Author As String
+        Public Property PhotoPath As String
+
+        Private WithEvents pbCover As New PictureBox()
+        Private WithEvents lblTitle As New Label()
+        Private WithEvents lblAuthor As New Label()
+
+        Public Sub New(bookId As Integer, title As String, author As String, photoPath As String)
+            Me.BookId = bookId
+            Me.Title = title
+            Me.Author = author
+            Me.PhotoPath = photoPath
+
+            InitializeCard()
+        End Sub
+
+        Private Sub InitializeCard()
+            ' Panel settings
+            Me.Size = New Size(180, 250)
+            Me.BackColor = Color.White
+            Me.BorderStyle = BorderStyle.FixedSingle
+            Me.Margin = New Padding(10)
+            Me.Cursor = Cursors.Hand
+
+            ' Cover image
+            pbCover.Size = New Size(160, 150)
+            pbCover.Location = New Point(10, 10)
+            pbCover.SizeMode = PictureBoxSizeMode.StretchImage
+            pbCover.BackColor = Color.LightGray
+            pbCover.Cursor = Cursors.Hand
+
+            ' Title label
+            lblTitle.AutoSize = False
+            lblTitle.Size = New Size(160, 40)
+            lblTitle.Location = New Point(10, 165)
+            lblTitle.Font = New Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold)
+            lblTitle.Text = Title
+            lblTitle.Cursor = Cursors.Hand
+
+            ' Author label
+            lblAuthor.AutoSize = False
+            lblAuthor.Size = New Size(160, 20)
+            lblAuthor.Location = New Point(10, 205)
+            lblAuthor.Font = New Font("Microsoft Sans Serif", 8.25F)
+            lblAuthor.Text = Author
+            lblAuthor.Cursor = Cursors.Hand
+
+            ' Add controls
+            Me.Controls.Add(pbCover)
+            Me.Controls.Add(lblTitle)
+            Me.Controls.Add(lblAuthor)
+        End Sub
+    End Class
 End Class
