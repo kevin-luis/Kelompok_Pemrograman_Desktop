@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.IO
+Imports MySql.Data.MySqlClient
 
 Public Class MainForm
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -207,18 +208,19 @@ Public Class MainForm
             Me.PhotoPath = photoPath
 
             InitializeCard()
+            LoadCoverImage()
         End Sub
 
         Private Sub InitializeCard()
             ' Panel settings
-            Me.Size = New Size(180, 250)
+            Me.Size = New Size(180, 300)
             Me.BackColor = Color.White
             Me.BorderStyle = BorderStyle.FixedSingle
             Me.Margin = New Padding(10)
             Me.Cursor = Cursors.Hand
 
             ' Cover image
-            pbCover.Size = New Size(160, 150)
+            pbCover.Size = New Size(160, 200)
             pbCover.Location = New Point(10, 10)
             pbCover.SizeMode = PictureBoxSizeMode.StretchImage
             pbCover.BackColor = Color.LightGray
@@ -227,7 +229,7 @@ Public Class MainForm
             ' Title label
             lblTitle.AutoSize = False
             lblTitle.Size = New Size(160, 40)
-            lblTitle.Location = New Point(10, 165)
+            lblTitle.Location = New Point(10, 215)
             lblTitle.Font = New Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold)
             lblTitle.Text = Title
             lblTitle.Cursor = Cursors.Hand
@@ -235,7 +237,7 @@ Public Class MainForm
             ' Author label
             lblAuthor.AutoSize = False
             lblAuthor.Size = New Size(160, 20)
-            lblAuthor.Location = New Point(10, 205)
+            lblAuthor.Location = New Point(10, 255)
             lblAuthor.Font = New Font("Microsoft Sans Serif", 8.25F)
             lblAuthor.Text = Author
             lblAuthor.Cursor = Cursors.Hand
@@ -244,6 +246,35 @@ Public Class MainForm
             Me.Controls.Add(pbCover)
             Me.Controls.Add(lblTitle)
             Me.Controls.Add(lblAuthor)
+
+            ' Add click events
+            AddHandler Me.Click, AddressOf BookCard_Click
+            AddHandler pbCover.Click, AddressOf BookCard_Click
+            AddHandler lblTitle.Click, AddressOf BookCard_Click
+            AddHandler lblAuthor.Click, AddressOf BookCard_Click
+        End Sub
+
+        Private Sub LoadCoverImage()
+            ' Default placeholder
+            pbCover.Image = Nothing
+            pbCover.BackColor = Color.LightGray
+
+            ' Gunakan fungsi dari DBConnection
+            If Not String.IsNullOrEmpty(PhotoPath) Then
+                Dim db As New DBConnection()
+                Dim coverImage As Image = db.LoadBookCoverImage(PhotoPath)
+
+                If coverImage IsNot Nothing Then
+                    pbCover.Image = coverImage
+                    pbCover.BackColor = Color.White
+                End If
+            End If
+        End Sub
+
+        Private Sub BookCard_Click(sender As Object, e As EventArgs)
+            ' Buka detail buku saat card diklik
+            Dim bookDetailForm As New BookDetail(BookId)
+            bookDetailForm.Show()
         End Sub
     End Class
 End Class
