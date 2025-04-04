@@ -1,4 +1,5 @@
 ﻿
+Imports System.IO
 Imports MySql.Data.MySqlClient
 
 Public Class DBConnection
@@ -165,6 +166,142 @@ Public Class DBConnection
     Public Function GetBooks() As DataTable
         Dim query As String = "SELECT BookId, Title, Author, PhotoPath FROM books ORDER BY CreatedAt DESC"
         Return EksekusiQuery(query)
+    End Function
+
+    ' Mendapatkan detail buku berdasarkan ID
+    Public Function GetBookDetail(bookId As Integer) As DataRow
+        Try
+            Dim query As String = "SELECT b.BookId, b.Title, b.Author, b.Description, b.Pages, b.PhotoPath, " &
+                                "c.CategoryName, b.Status, b.IsWishlist, b.IsFavorite " &
+                                "FROM books b " &
+                                "LEFT JOIN categories c ON b.CategoryId = c.CategoryId " &
+                                "WHERE b.BookId = @bookId"
+
+            Using cmd As New MySqlCommand(query, BukaKoneksi())
+                cmd.Parameters.AddWithValue("@bookId", bookId)
+
+                Using da As New MySqlDataAdapter(cmd)
+                    Dim dt As New DataTable()
+                    da.Fill(dt)
+
+                    If dt.Rows.Count > 0 Then
+                        Return dt.Rows(0)
+                    End If
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error getting book details: " & ex.Message, "Error",
+                           MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            TutupKoneksi()
+        End Try
+
+        Return Nothing
+    End Function
+
+    ' Update status wishlist buku
+    Public Function UpdateBookWishlist(bookId As Integer) As Boolean
+        Try
+            Dim query As String = "UPDATE books SET IsWishlist = NOT IsWishlist WHERE BookId = @bookId"
+
+            Using cmd As New MySqlCommand(query, BukaKoneksi())
+                cmd.Parameters.AddWithValue("@bookId", bookId)
+                Dim result As Integer = cmd.ExecuteNonQuery()
+                Return result > 0
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error updating wishlist: " & ex.Message, "Error",
+                           MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
+        Finally
+            TutupKoneksi()
+        End Try
+    End Function
+
+    ' Update status favorite buku
+    Public Function UpdateBookFavorite(bookId As Integer) As Boolean
+        Try
+            Dim query As String = "UPDATE books SET IsFavorite = NOT IsFavorite WHERE BookId = @bookId"
+
+            Using cmd As New MySqlCommand(query, BukaKoneksi())
+                cmd.Parameters.AddWithValue("@bookId", bookId)
+                Dim result As Integer = cmd.ExecuteNonQuery()
+                Return result > 0
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error updating favorite status: " & ex.Message, "Error",
+                           MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
+        Finally
+            TutupKoneksi()
+        End Try
+    End Function
+
+    ' Update status pinjam buku
+    Public Function BorrowBook(bookId As Integer) As Boolean
+        Try
+            Dim query As String = "UPDATE books SET Status = 'Borrowed' WHERE BookId = @bookId"
+
+            Using cmd As New MySqlCommand(query, BukaKoneksi())
+                cmd.Parameters.AddWithValue("@bookId", bookId)
+                Dim result As Integer = cmd.ExecuteNonQuery()
+                Return result > 0
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error borrowing book: " & ex.Message, "Error",
+                           MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
+        Finally
+            TutupKoneksi()
+        End Try
+    End Function
+
+    ' Return buku yang dipinjam
+    Public Function ReturnBook(bookId As Integer) As Boolean
+        Try
+            Dim query As String = "UPDATE books SET Status = 'Available' WHERE BookId = @bookId"
+
+            Using cmd As New MySqlCommand(query, BukaKoneksi())
+                cmd.Parameters.AddWithValue("@bookId", bookId)
+                Dim result As Integer = cmd.ExecuteNonQuery()
+                Return result > 0
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error returning book: " & ex.Message, "Error",
+                           MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
+        Finally
+            TutupKoneksi()
+        End Try
+    End Function
+
+    Public Function LoadBookCoverImage(photoPath As String) As Image
+        ' Cek apakah path kosong
+        If String.IsNullOrEmpty(photoPath) Then
+            Return Nothing
+        End If
+
+        Dim coverPath As String
+
+        ' Cek apakah ini path absolut atau relatif
+        If Path.IsPathRooted(photoPath) Then
+            coverPath = photoPath
+        ElseIf photoPath.StartsWith("BookCovers\") Then
+            coverPath = Path.Combine(Application.StartupPath, photoPath)
+        Else
+            coverPath = Path.Combine(Application.StartupPath, "BookCovers", photoPath)
+        End If
+
+        Debug.WriteLine($"Trying to load image from: {coverPath}")
+
+        If File.Exists(coverPath) Then
+            Using tempImage As Image = Image.FromFile(coverPath)
+                Return New Bitmap(tempImage)
+            End Using
+        Else
+            Debug.WriteLine($"File not found: {coverPath}")
+            Return Nothing
+        End If
     End Function
 
 End Class

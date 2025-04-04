@@ -275,7 +275,7 @@ Partial Class MainForm
         ' 
         btnAddNewBook.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnAddNewBook.AutoSize = True
-        btnAddNewBook.Font = New Font("Microsoft Sans Serif", 10.0F, FontStyle.Bold)
+        btnAddNewBook.Font = New Font("Microsoft Sans Serif", 10F, FontStyle.Bold)
         btnAddNewBook.Location = New Point(609, 121)
         btnAddNewBook.Margin = New Padding(3, 4, 3, 4)
         btnAddNewBook.Name = "btnAddNewBook"
@@ -416,7 +416,7 @@ Partial Class MainForm
         ' 
         ' MainForm
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         BackColor = Color.White
