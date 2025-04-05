@@ -32,7 +32,7 @@ Partial Class BookDetail
         startReadingButton = New Button()
         bookmarkButton = New Button()
         borrowButton = New Button()
-        downloadButton = New Button()
+        favoriteButton = New Button()
         separatorLine = New Panel()
         descriptionTitleLabel = New Label()
         descriptionContentLabel = New Label()
@@ -92,7 +92,7 @@ Partial Class BookDetail
         RightPanel.Controls.Add(startReadingButton)
         RightPanel.Controls.Add(bookmarkButton)
         RightPanel.Controls.Add(borrowButton)
-        RightPanel.Controls.Add(downloadButton)
+        RightPanel.Controls.Add(favoriteButton)
         RightPanel.Controls.Add(separatorLine)
         RightPanel.Controls.Add(descriptionTitleLabel)
         RightPanel.Controls.Add(descriptionContentLabel)
@@ -172,19 +172,19 @@ Partial Class BookDetail
         borrowButton.Text = "📤"
         borrowButton.UseVisualStyleBackColor = False
         ' 
-        ' downloadButton
+        ' favoriteButton
         ' 
-        downloadButton.BackColor = Color.Transparent
-        downloadButton.FlatAppearance.BorderSize = 0
-        downloadButton.FlatStyle = FlatStyle.Flat
-        downloadButton.Font = New Font("Segoe UI", 12F)
-        downloadButton.Location = New Point(290, 180)
-        downloadButton.Margin = New Padding(3, 4, 3, 4)
-        downloadButton.Name = "downloadButton"
-        downloadButton.Size = New Size(40, 37)
-        downloadButton.TabIndex = 6
-        downloadButton.Text = "💾"
-        downloadButton.UseVisualStyleBackColor = False
+        favoriteButton.BackColor = Color.Transparent
+        favoriteButton.FlatAppearance.BorderSize = 0
+        favoriteButton.FlatStyle = FlatStyle.Flat
+        favoriteButton.Font = New Font("Segoe UI", 12.0F)
+        favoriteButton.Location = New Point(290, 180)
+        favoriteButton.Margin = New Padding(3, 4, 3, 4)
+        favoriteButton.Name = "favoriteButton"
+        favoriteButton.Size = New Size(40, 37)
+        favoriteButton.TabIndex = 6
+        favoriteButton.Text = "❤️"
+        favoriteButton.UseVisualStyleBackColor = False
         ' 
         ' separatorLine
         ' 
@@ -283,7 +283,7 @@ Partial Class BookDetail
     Friend WithEvents startReadingButton As Button
     Friend WithEvents bookmarkButton As Button
     Friend WithEvents borrowButton As Button
-    Friend WithEvents downloadButton As Button
+    Friend WithEvents favoriteButton As Button
     Friend WithEvents separatorLine As Panel
     Friend WithEvents descriptionTitleLabel As Label
     Friend WithEvents descriptionContentLabel As Label
