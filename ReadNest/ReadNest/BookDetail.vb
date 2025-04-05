@@ -115,9 +115,12 @@ Public Class BookDetail
         End If
     End Sub
 
-    Private Sub downloadButton_Click(sender As Object, e As EventArgs) Handles downloadButton.Click
-        ' Implementasi untuk mengunduh buku
-        MessageBox.Show("Download functionality not implemented yet.", "Information",
-                       MessageBoxButtons.OK, MessageBoxIcon.Information)
+    Private Sub favoriteButton_Click(sender As Object, e As EventArgs) Handles favoriteButton.Click
+        Dim db As New DBConnection()
+
+        If db.UpdateBookFavorite(_bookId) Then
+            MessageBox.Show("The book was successfully added to your favorites!", "Success",
+                           MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
     End Sub
 End Class
