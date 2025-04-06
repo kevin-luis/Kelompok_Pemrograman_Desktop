@@ -1,6 +1,4 @@
-﻿Imports Mysqlx
-
-<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class AddNewBookForm
     Inherits System.Windows.Forms.Form
 
@@ -59,10 +57,14 @@ Partial Class AddNewBookForm
         PictureBox2 = New PictureBox()
         panelContent = New Panel()
         panelForm = New Panel()
+        Label3 = New Label()
+        txtFilePath = New TextBox()
+        btnUploadFile = New Button()
         tableLayoutPanel1 = New TableLayoutPanel()
         tbDesc = New TextBox()
         lblDesc = New Label()
         panelHeader = New Panel()
+        OpenFileDialog1 = New OpenFileDialog()
         CType(pbProfile, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
@@ -123,7 +125,7 @@ Partial Class AddNewBookForm
         ' txtAddBookWriter
         ' 
         txtAddBookWriter.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        txtAddBookWriter.Font = New Font("Segoe UI", 11F)
+        txtAddBookWriter.Font = New Font("Segoe UI", 11.0F)
         txtAddBookWriter.Location = New Point(135, 53)
         txtAddBookWriter.Margin = New Padding(3, 4, 3, 4)
         txtAddBookWriter.Name = "txtAddBookWriter"
@@ -134,7 +136,7 @@ Partial Class AddNewBookForm
         ' txtAddBookTitle
         ' 
         txtAddBookTitle.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        txtAddBookTitle.Font = New Font("Segoe UI", 11F)
+        txtAddBookTitle.Font = New Font("Segoe UI", 11.0F)
         txtAddBookTitle.Location = New Point(135, 6)
         txtAddBookTitle.Margin = New Padding(3, 4, 3, 4)
         txtAddBookTitle.Name = "txtAddBookTitle"
@@ -206,7 +208,7 @@ Partial Class AddNewBookForm
         ' cbAddCategory
         ' 
         cbAddCategory.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        cbAddCategory.Font = New Font("Segoe UI", 11F)
+        cbAddCategory.Font = New Font("Segoe UI", 11.0F)
         cbAddCategory.FormattingEnabled = True
         cbAddCategory.Location = New Point(135, 99)
         cbAddCategory.Margin = New Padding(3, 4, 3, 4)
@@ -229,7 +231,7 @@ Partial Class AddNewBookForm
         ' txtAddPages
         ' 
         txtAddPages.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        txtAddPages.Font = New Font("Segoe UI", 11F)
+        txtAddPages.Font = New Font("Segoe UI", 11.0F)
         txtAddPages.Location = New Point(135, 146)
         txtAddPages.Margin = New Padding(3, 4, 3, 4)
         txtAddPages.Name = "txtAddPages"
@@ -503,6 +505,9 @@ Partial Class AddNewBookForm
         ' panelForm
         ' 
         panelForm.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        panelForm.Controls.Add(Label3)
+        panelForm.Controls.Add(txtFilePath)
+        panelForm.Controls.Add(btnUploadFile)
         panelForm.Controls.Add(btnUploadBook)
         panelForm.Controls.Add(PictureBox7)
         panelForm.Controls.Add(tableLayoutPanel1)
@@ -512,6 +517,42 @@ Partial Class AddNewBookForm
         panelForm.Name = "panelForm"
         panelForm.Size = New Size(827, 555)
         panelForm.TabIndex = 0
+        ' 
+        ' Label3
+        ' 
+        Label3.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        Label3.AutoSize = True
+        Label3.BackColor = Color.Cornsilk
+        Label3.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label3.Location = New Point(640, 330)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(92, 24)
+        Label3.TabIndex = 77
+        Label3.Text = "File Path"
+        ' 
+        ' txtFilePath
+        ' 
+        txtFilePath.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        txtFilePath.Font = New Font("Segoe UI", 11.0F)
+        txtFilePath.Location = New Point(640, 358)
+        txtFilePath.Margin = New Padding(3, 4, 3, 4)
+        txtFilePath.Name = "txtFilePath"
+        txtFilePath.ReadOnly = True
+        txtFilePath.Size = New Size(150, 32)
+        txtFilePath.TabIndex = 76
+        ' 
+        ' btnUploadFile
+        ' 
+        btnUploadFile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnUploadFile.AutoSize = True
+        btnUploadFile.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        btnUploadFile.Location = New Point(640, 398)
+        btnUploadFile.Margin = New Padding(3, 4, 3, 4)
+        btnUploadFile.Name = "btnUploadFile"
+        btnUploadFile.Size = New Size(150, 39)
+        btnUploadFile.TabIndex = 75
+        btnUploadFile.Text = "Upload File"
+        btnUploadFile.UseVisualStyleBackColor = True
         ' 
         ' tableLayoutPanel1
         ' 
@@ -540,14 +581,14 @@ Partial Class AddNewBookForm
         tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 13.1805153F))
         tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 13.4670486F))
         tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 46.7048721F))
-        tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 38F))
+        tableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 38.0F))
         tableLayoutPanel1.Size = New Size(585, 388)
         tableLayoutPanel1.TabIndex = 49
         ' 
         ' tbDesc
         ' 
         tbDesc.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        tbDesc.Font = New Font("Segoe UI", 11F)
+        tbDesc.Font = New Font("Segoe UI", 11.0F)
         tbDesc.Location = New Point(135, 195)
         tbDesc.Margin = New Padding(3, 4, 3, 4)
         tbDesc.Multiline = True
@@ -580,9 +621,14 @@ Partial Class AddNewBookForm
         panelHeader.Size = New Size(827, 67)
         panelHeader.TabIndex = 1
         ' 
+        ' OpenFileDialog1
+        ' 
+        OpenFileDialog1.FileName = "OpenFileDialog1"
+        OpenFileDialog1.Filter = "PDF Files|*.pdf|EPUB Files|*.epub|All Files|*.*"
+        ' 
         ' AddNewBookForm
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         ClientSize = New Size(1067, 648)
@@ -652,7 +698,11 @@ Partial Class AddNewBookForm
     Friend WithEvents panelContent As Panel
     Friend WithEvents panelForm As Panel
     Friend WithEvents tableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents panelHeader As Panel
     Friend WithEvents tbDesc As TextBox
     Friend WithEvents lblDesc As Label
+    Friend WithEvents panelHeader As Panel
+    Friend WithEvents btnUploadFile As Button
+    Friend WithEvents txtFilePath As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

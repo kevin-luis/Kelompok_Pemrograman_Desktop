@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 
 Public Class AddNewBookForm
+    Private filepath As String = ""
 
     'Untuk Tombol navigasi di menu'
     Private Sub lblDiscover_Click(sender As Object, e As EventArgs) Handles lblDiscover.Click
@@ -114,7 +115,7 @@ Public Class AddNewBookForm
         ' Proses tambah buku ke database
         Dim db As New DBConnection()
         Try
-            If db.TambahBuku(title, author, categoryId, pages, description, photoPath) Then
+            If db.TambahBuku(title, author, categoryId, pages, description, photoPath, filePath) Then
                 MessageBox.Show("Buku berhasil ditambahkan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ' Reset form setelah berhasil
                 txtAddBookTitle.Clear()
@@ -124,6 +125,8 @@ Public Class AddNewBookForm
                 tbDesc.Clear()
                 PictureBox7.Image = Nothing
                 PictureBox7.Tag = Nothing
+                txtFilePath.Text = "Belum ada file yang diupload"
+                filePath = ""
             Else
                 MessageBox.Show("Gagal menambahkan buku!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
@@ -171,6 +174,38 @@ Public Class AddNewBookForm
 
                     ' Simpan path relatif ke Tag PictureBox
                     PictureBox7.Tag = Path.Combine("BookCovers", fileName)
+
+                Catch ex As Exception
+                    MessageBox.Show("Error: Could not process file. Original error: " & ex.Message,
+                                  "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+            End If
+        End Using
+    End Sub
+
+    Private Sub btnUploadFile_Click(sender As Object, e As EventArgs) Handles btnUploadFile.Click
+        Using openFileDialog As New OpenFileDialog()
+            openFileDialog.Filter = "Book Files (*.pdf;*.epub)|*.pdf;*.epub"
+            openFileDialog.RestoreDirectory = True
+
+            If openFileDialog.ShowDialog() = DialogResult.OK Then
+                Try
+                    ' Generate nama file unik
+                    Dim fileExt As String = Path.GetExtension(openFileDialog.FileName)
+                    Dim fileName As String = Guid.NewGuid().ToString() & fileExt
+                    Dim destPath As String = Path.Combine(Application.StartupPath, "BookFiles", fileName)
+
+                    ' Buat folder jika belum ada
+                    Directory.CreateDirectory(Path.GetDirectoryName(destPath))
+
+                    ' Copy file
+                    File.Copy(openFileDialog.FileName, destPath, True)
+
+                    ' Update label to show file has been uploaded
+                    txtFilePath.Text = Path.GetFileName(openFileDialog.FileName)
+
+                    ' Simpan path relatif
+                    filepath = Path.Combine("BookFiles", fileName)
 
                 Catch ex As Exception
                     MessageBox.Show("Error: Could not process file. Original error: " & ex.Message,
