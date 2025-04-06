@@ -132,12 +132,12 @@ Public Class DBConnection
     End Function
 
     Public Function TambahBuku(title As String, author As String, categoryId As Integer,
-                         pages As Integer, description As String, photoPath As String) As Boolean
+                     pages As Integer, description As String, photoPath As String, filePath As String) As Boolean
         Try
             Dim query As String = "INSERT INTO books (Title, Author, CategoryId, Pages, Description, " &
-                                 "PhotoPath, Status, CreatedAt, ReadDuration, IsFavorite, IsWishlist) " &
-                                 "VALUES (@title, @author, @categoryId, @pages, @description, " &
-                                 "@photoPath, 'Available', NOW(), 0, 0, 0)"
+                             "PhotoPath, FilePath, Status, CreatedAt, ReadDuration, IsFavorite, IsWishlist) " &
+                             "VALUES (@title, @author, @categoryId, @pages, @description, " &
+                             "@photoPath, @filePath, 'Available', NOW(), 0, 0, 0)"
 
             Using cmd As New MySqlCommand(query, BukaKoneksi())
                 cmd.Parameters.AddWithValue("@title", title)
@@ -146,6 +146,7 @@ Public Class DBConnection
                 cmd.Parameters.AddWithValue("@pages", pages)
                 cmd.Parameters.AddWithValue("@description", description)
                 cmd.Parameters.AddWithValue("@photoPath", If(String.IsNullOrEmpty(photoPath), DBNull.Value, photoPath))
+                cmd.Parameters.AddWithValue("@filePath", If(String.IsNullOrEmpty(filePath), DBNull.Value, filePath))
 
                 Dim hasil As Integer = cmd.ExecuteNonQuery()
                 Return hasil > 0
