@@ -2,6 +2,7 @@
 Imports MySql.Data.MySqlClient
 
 Public Class MainForm
+    Private isNavigating As Boolean = False
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         StartPosition = FormStartPosition.CenterScreen
         SetupProfileComboBox()
@@ -17,6 +18,10 @@ Public Class MainForm
     End Sub
 
     Private Sub MainForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If isNavigating Then
+            Return
+        End If
+
         Dim result As DialogResult = MessageBox.Show("Apakah Anda yakin ingin keluar?", "Konfirmasi",
                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
@@ -29,6 +34,7 @@ Public Class MainForm
 
     '============ NAVIGASI MENU ============'
     Private Sub NavigateToForm(form As Form)
+        isNavigating = True
         form.Show()
         Me.Close()
     End Sub
@@ -71,6 +77,7 @@ Public Class MainForm
                                                            MessageBoxButtons.YesNo,
                                                            MessageBoxIcon.Question)
                 If result = DialogResult.Yes Then
+                    isNavigating = True
                     Dim loginForm As New LoginForm()
                     loginForm.Show()
                     Me.Close()
