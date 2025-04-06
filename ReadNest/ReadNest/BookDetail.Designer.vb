@@ -197,7 +197,7 @@ Partial Class BookDetail
         ' 
         ' descriptionTitleLabel
         ' 
-        descriptionTitleLabel.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
+        descriptionTitleLabel.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold)
         descriptionTitleLabel.Location = New Point(20, 247)
         descriptionTitleLabel.Name = "descriptionTitleLabel"
         descriptionTitleLabel.Size = New Size(150, 25)
@@ -206,7 +206,7 @@ Partial Class BookDetail
         ' 
         ' descriptionContentLabel
         ' 
-        descriptionContentLabel.Font = New Font("Segoe UI", 10F)
+        descriptionContentLabel.Font = New Font("Segoe UI", 10.0F)
         descriptionContentLabel.ForeColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
         descriptionContentLabel.Location = New Point(20, 277)
         descriptionContentLabel.Name = "descriptionContentLabel"
@@ -216,7 +216,7 @@ Partial Class BookDetail
         ' 
         ' categorylabel
         ' 
-        categorylabel.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
+        categorylabel.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold)
         categorylabel.Location = New Point(20, 460)
         categorylabel.Name = "categorylabel"
         categorylabel.Size = New Size(150, 25)
@@ -225,7 +225,7 @@ Partial Class BookDetail
         ' 
         ' languageContentLabel
         ' 
-        languageContentLabel.Font = New Font("Segoe UI", 10F)
+        languageContentLabel.Font = New Font("Segoe UI", 10.0F)
         languageContentLabel.ForeColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
         languageContentLabel.Location = New Point(20, 490)
         languageContentLabel.Name = "languageContentLabel"
@@ -235,7 +235,7 @@ Partial Class BookDetail
         ' 
         ' pagenumberLabel
         ' 
-        pagenumberLabel.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
+        pagenumberLabel.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold)
         pagenumberLabel.Location = New Point(20, 520)
         pagenumberLabel.Name = "pagenumberLabel"
         pagenumberLabel.Size = New Size(150, 25)
@@ -244,13 +244,13 @@ Partial Class BookDetail
         ' 
         ' paperbackContentLabel
         ' 
-        paperbackContentLabel.Font = New Font("Segoe UI", 10F)
+        paperbackContentLabel.Font = New Font("Segoe UI", 10.0F)
         paperbackContentLabel.ForeColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
         paperbackContentLabel.Location = New Point(20, 550)
         paperbackContentLabel.Name = "paperbackContentLabel"
-        paperbackContentLabel.Size = New Size(250, 50)
+        paperbackContentLabel.Size = New Size(150, 27)
         paperbackContentLabel.TabIndex = 15
-        paperbackContentLabel.Text = "paper textured, full colour, 345 pages" & vbCrLf & "ISBN: 987 3 32564 455 B"
+        paperbackContentLabel.Text = "345 pages"
         ' 
         ' BookDetail
         ' 

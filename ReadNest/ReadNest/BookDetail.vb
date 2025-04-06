@@ -2,13 +2,10 @@
 
 Public Class BookDetail
     Private _bookId As Integer
+    Private _isFavorite As Boolean = False
 
-    ' Constructor untuk menerima BookId
     Public Sub New(bookId As Integer)
-        ' This call is required by the designer.
         InitializeComponent()
-
-        ' Simpan BookId
         _bookId = bookId
     End Sub
 
@@ -44,8 +41,8 @@ Public Class BookDetail
                 Dim pagesText As String = "Unknown"
                 If Not IsDBNull(bookRow("Pages")) AndAlso Convert.ToInt32(bookRow("Pages")) > 0 Then
                     pagesText = $"{bookRow("Pages")} pages"
+                    paperbackContentLabel.Text = pagesText
                 End If
-                paperbackContentLabel.Text = $"paper textured, full colour, {pagesText}"
 
                 ' Load cover image
                 LoadCoverImage(If(IsDBNull(bookRow("PhotoPath")), "", bookRow("PhotoPath").ToString()))
@@ -55,6 +52,12 @@ Public Class BookDetail
                     Dim status As String = bookRow("Status").ToString()
                     borrowButton.Enabled = (status = "Available")
                     borrowButton.Text = If(status = "Available", "📤", "📚")
+                End If
+
+                'Set status buat favorite
+                If Not IsDBNull(bookRow("IsFavorite")) Then
+                    _isFavorite = Convert.ToBoolean(bookRow("IsFavorite"))
+                    UpdateFavoriteButtonIcon()
                 End If
             Else
                 MessageBox.Show("Buku tidak ditemukan.", "Error",
@@ -80,6 +83,14 @@ Public Class BookDetail
                 bookCoverPictureBox.Image = coverImage
                 bookCoverPictureBox.BackColor = Color.White
             End If
+        End If
+    End Sub
+
+    Private Sub UpdateFavoriteButtonIcon()
+        If _isFavorite Then
+            favoriteButton.Text = "❤️"
+        Else
+            favoriteButton.Text = "🤍"
         End If
     End Sub
 
@@ -119,7 +130,14 @@ Public Class BookDetail
         Dim db As New DBConnection()
 
         If db.UpdateBookFavorite(_bookId) Then
-            MessageBox.Show("The book was successfully added to your favorites!", "Success",
+            _isFavorite = Not _isFavorite
+            UpdateFavoriteButtonIcon()
+
+            Dim message As String = If(_isFavorite,
+                                      "The book was successfully added to your favorites!",
+                                      "The book was removed from your favorites!")
+
+            MessageBox.Show(message, "Success",
                            MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
