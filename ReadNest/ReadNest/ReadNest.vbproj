@@ -16,6 +16,10 @@
 
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="9.2.0" />
+    <PackageReference Include="PDFium.x64" Version="4648.0.0" />
+    <PackageReference Include="PdfiumViewer" Version="2.13.0" />
+    <PackageReference Include="PdfiumViewer.Native.x86_64.v8-xfa" Version="2018.4.8.256" />
+    <PackageReference Include="VersOne.Epub" Version="3.3.3" />
   </ItemGroup>
 
   <ItemGroup>

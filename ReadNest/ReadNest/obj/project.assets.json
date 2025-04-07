@@ -140,6 +140,36 @@
           }
         }
       },
+      "PDFium.x64/4648.0.0": {
+        "type": "package",
+        "build": {
+          "Build/pdfium.x64.props": {}
+        }
+      },
+      "PdfiumViewer/2.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net20/PdfiumViewer.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net20/PdfiumViewer.dll": {
+            "related": ".xml"
+          }
+        },
+        "resource": {
+          "lib/net20/nl/PdfiumViewer.resources.dll": {
+            "locale": "nl"
+          }
+        }
+      },
+      "PdfiumViewer.Native.x86_64.v8-xfa/2018.4.8.256": {
+        "type": "package",
+        "build": {
+          "Build/PdfiumViewer.Native.x86_64.v8-xfa.props": {}
+        }
+      },
       "System.Buffers/4.5.1": {
         "type": "package",
         "compile": {
@@ -467,6 +497,19 @@
           }
         }
       },
+      "VersOne.Epub/3.3.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/VersOne.Epub.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/VersOne.Epub.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "ZstdSharp.Port/0.8.0": {
         "type": "package",
         "compile": {
@@ -645,6 +688,48 @@
         "runtimes/win-x64/native/k5sprt64.dll",
         "runtimes/win-x64/native/krb5_64.dll",
         "runtimes/win-x64/native/krbcc64.dll"
+      ]
+    },
+    "PDFium.x64/4648.0.0": {
+      "sha512": "zo2GDGNjjfmuJIw7/XOtg1ss4MbN0fsW/B4JgnrqimAW0jHuqEaHY7AYOIkexqkT9hV9MDUrtwEcciSxlbHEoQ==",
+      "type": "package",
+      "path": "pdfium.x64/4648.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Build/pdfium.x64.props",
+        "Build/x64/pdfium.dll",
+        "pdfium.x64.4648.0.0.nupkg.sha512",
+        "pdfium.x64.nuspec"
+      ]
+    },
+    "PdfiumViewer/2.13.0": {
+      "sha512": "Nw4owBmJzDVXoMRjCnqPbET07CPOawwhcNjt+PyRaSxONN9bsFF+cm9kcMsDLEAEaxsiDJo5jls8bCQjvjidkA==",
+      "type": "package",
+      "path": "pdfiumviewer/2.13.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Tools/Install.ps1",
+        "lib/net20/PdfiumViewer.dll",
+        "lib/net20/PdfiumViewer.xml",
+        "lib/net20/nl/PdfiumViewer.resources.dll",
+        "pdfiumviewer.2.13.0.nupkg.sha512",
+        "pdfiumviewer.nuspec"
+      ]
+    },
+    "PdfiumViewer.Native.x86_64.v8-xfa/2018.4.8.256": {
+      "sha512": "0RQwmLMPKOHBRqRK+NPMR2H5EQ4KlYO+LnT3Y2lByVUa5/JTPCMswL46JEXX+/MAfJtCpS2PzJvy6QzpH2nuIw==",
+      "type": "package",
+      "path": "pdfiumviewer.native.x86_64.v8-xfa/2018.4.8.256",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Build/PdfiumViewer.Native.x86_64.v8-xfa.props",
+        "Build/x64/pdfium.dll",
+        "pdfiumviewer.native.x86_64.v8-xfa.2018.4.8.256.nupkg.sha512",
+        "pdfiumviewer.native.x86_64.v8-xfa.nuspec"
       ]
     },
     "System.Buffers/4.5.1": {
@@ -1582,6 +1667,23 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "VersOne.Epub/3.3.3": {
+      "sha512": "OZ44RjUHD2VAmJ/Mi+t4LDjd2EJZhFX1OHDAVuxx9m+jbg+k4MmKVTEUbYR4raU2XeIQoqNaNQFzOPDqhb2O8Q==",
+      "type": "package",
+      "path": "versone.epub/3.3.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/VersOne.Epub.dll",
+        "lib/net46/VersOne.Epub.xml",
+        "lib/netstandard1.3/VersOne.Epub.dll",
+        "lib/netstandard1.3/VersOne.Epub.xml",
+        "lib/netstandard2.0/VersOne.Epub.dll",
+        "lib/netstandard2.0/VersOne.Epub.xml",
+        "versone.epub.3.3.3.nupkg.sha512",
+        "versone.epub.nuspec"
+      ]
+    },
     "ZstdSharp.Port/0.8.0": {
       "sha512": "Z62eNBIu8E8YtbqlMy57tK3dV1+m2b9NhPeaYovB5exmLKvrGCqOhJTzrEUH5VyUWU6vwX3c1XHJGhW5HVs8dA==",
       "type": "package",
@@ -1604,7 +1706,11 @@
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
-      "MySql.Data >= 9.2.0"
+      "MySql.Data >= 9.2.0",
+      "PDFium.x64 >= 4648.0.0",
+      "PdfiumViewer >= 2.13.0",
+      "PdfiumViewer.Native.x86_64.v8-xfa >= 2018.4.8.256",
+      "VersOne.Epub >= 3.3.3"
     ]
   },
   "packageFolders": {
@@ -1661,6 +1767,22 @@
           "MySql.Data": {
             "target": "Package",
             "version": "[9.2.0, )"
+          },
+          "PDFium.x64": {
+            "target": "Package",
+            "version": "[4648.0.0, )"
+          },
+          "PdfiumViewer": {
+            "target": "Package",
+            "version": "[2.13.0, )"
+          },
+          "PdfiumViewer.Native.x86_64.v8-xfa": {
+            "target": "Package",
+            "version": "[2018.4.8.256, )"
+          },
+          "VersOne.Epub": {
+            "target": "Package",
+            "version": "[3.3.3, )"
           }
         },
         "imports": [
@@ -1685,5 +1807,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'PdfiumViewer 2.13.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "PdfiumViewer",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    }
+  ]
 }

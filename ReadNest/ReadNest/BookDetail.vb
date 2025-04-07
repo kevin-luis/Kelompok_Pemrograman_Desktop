@@ -99,9 +99,8 @@ Public Class BookDetail
     End Sub
 
     Private Sub startReadingButton_Click(sender As Object, e As EventArgs) Handles startReadingButton.Click
-        ' Implementasi untuk membuka reader buku
-        MessageBox.Show("Reading functionality not implemented yet.", "Information",
-                       MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Dim readerForm As New BookReaderForm(_bookId)
+        readerForm.Show()
     End Sub
 
     Private Sub bookmarkButton_Click(sender As Object, e As EventArgs) Handles bookmarkButton.Click

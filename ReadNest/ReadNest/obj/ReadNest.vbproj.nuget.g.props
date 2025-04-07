@@ -13,4 +13,11 @@
     <SourceRoot Include="C:\Users\ASUS\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)pdfiumviewer.native.x86_64.v8-xfa\2018.4.8.256\Build\PdfiumViewer.Native.x86_64.v8-xfa.props" Condition="Exists('$(NuGetPackageRoot)pdfiumviewer.native.x86_64.v8-xfa\2018.4.8.256\Build\PdfiumViewer.Native.x86_64.v8-xfa.props')" />
+    <Import Project="$(NuGetPackageRoot)pdfium.x64\4648.0.0\Build\pdfium.x64.props" Condition="Exists('$(NuGetPackageRoot)pdfium.x64\4648.0.0\Build\pdfium.x64.props')" />
+  </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgPdfiumViewer Condition=" '$(PkgPdfiumViewer)' == '' ">C:\Users\ASUS\.nuget\packages\pdfiumviewer\2.13.0</PkgPdfiumViewer>
+  </PropertyGroup>
 </Project>
