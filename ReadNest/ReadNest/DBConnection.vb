@@ -172,7 +172,7 @@ Public Class DBConnection
     ' Mendapatkan detail buku berdasarkan ID
     Public Function GetBookDetail(bookId As Integer) As DataRow
         Try
-            Dim query As String = "SELECT b.BookId, b.Title, b.Author, b.Description, b.Pages, b.PhotoPath, " &
+            Dim query As String = "SELECT b.BookId, b.Title, b.Author, b.Description, b.Pages, b.PhotoPath, b.FilePath, " &
                                 "c.CategoryName, b.Status, b.IsWishlist, b.IsFavorite " &
                                 "FROM books b " &
                                 "LEFT JOIN categories c ON b.CategoryId = c.CategoryId " &
@@ -304,5 +304,59 @@ Public Class DBConnection
             Return Nothing
         End If
     End Function
+
+    Public Function UpdateReadingProgress(userId As Integer, bookId As Integer, lastPage As Integer, durationMinutes As Integer) As Boolean
+        Try
+            Dim query As String = "INSERT INTO userbookprogress (UserId, BookId, LastPage, ReadDuration, LastOpened)
+                               VALUES (@userId, @bookId, @lastPage, @duration, NOW())
+                               ON DUPLICATE KEY UPDATE
+                               LastPage = @lastPage,
+                               ReadDuration = ReadDuration + @duration,
+                               LastOpened = NOW();"
+
+            Using cmd As New MySqlCommand(query, BukaKoneksi())
+                cmd.Parameters.AddWithValue("@userId", userId)
+                cmd.Parameters.AddWithValue("@bookId", bookId)
+                cmd.Parameters.AddWithValue("@lastPage", lastPage)
+                cmd.Parameters.AddWithValue("@duration", durationMinutes)
+
+                Dim result As Integer = cmd.ExecuteNonQuery()
+                Return result > 0
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Gagal menyimpan progress baca: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
+        Finally
+            TutupKoneksi()
+        End Try
+    End Function
+
+    Public Function GetReadingProgress(userId As Integer, bookId As Integer) As DataRow
+        Try
+            Dim query As String = "SELECT LastPage, ReadDuration, LastOpened FROM userbookprogress 
+                               WHERE UserId = @userId AND BookId = @bookId"
+
+            Using cmd As New MySqlCommand(query, BukaKoneksi())
+                cmd.Parameters.AddWithValue("@userId", userId)
+                cmd.Parameters.AddWithValue("@bookId", bookId)
+
+                Using da As New MySqlDataAdapter(cmd)
+                    Dim dt As New DataTable()
+                    da.Fill(dt)
+
+                    If dt.Rows.Count > 0 Then
+                        Return dt.Rows(0)
+                    End If
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Gagal mengambil progress baca: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            TutupKoneksi()
+        End Try
+
+        Return Nothing
+    End Function
+
 
 End Class

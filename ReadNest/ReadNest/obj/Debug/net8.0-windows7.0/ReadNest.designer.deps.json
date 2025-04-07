@@ -103,6 +103,21 @@
           }
         }
       },
+      "PDFium.x64/4648.0.0": {},
+      "PdfiumViewer/2.13.0": {
+        "runtime": {
+          "lib/net20/PdfiumViewer.dll": {
+            "assemblyVersion": "2.13.0.0",
+            "fileVersion": "2.13.0.0"
+          }
+        },
+        "resources": {
+          "lib/net20/nl/PdfiumViewer.resources.dll": {
+            "locale": "nl"
+          }
+        }
+      },
+      "PdfiumViewer.Native.x86_64.v8-xfa/2018.4.8.256": {},
       "System.Buffers/4.5.1": {},
       "System.Configuration.ConfigurationManager/8.0.0": {
         "dependencies": {
@@ -300,6 +315,14 @@
           }
         }
       },
+      "VersOne.Epub/3.3.3": {
+        "runtime": {
+          "lib/netstandard2.0/VersOne.Epub.dll": {
+            "assemblyVersion": "3.3.3.0",
+            "fileVersion": "3.3.3.0"
+          }
+        }
+      },
       "ZstdSharp.Port/0.8.0": {
         "runtime": {
           "lib/net8.0/ZstdSharp.dll": {
@@ -366,6 +389,27 @@
       "sha512": "sha512-S/O4qGf5+fG64d+IHXpZ+wC08m0HsqIwb2xtEY41jdjXYdV2uEtdEy+Jo2ObQamGj0/GD7X6LUCBbh4eb3fKew==",
       "path": "mysql.data/9.2.0",
       "hashPath": "mysql.data.9.2.0.nupkg.sha512"
+    },
+    "PDFium.x64/4648.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zo2GDGNjjfmuJIw7/XOtg1ss4MbN0fsW/B4JgnrqimAW0jHuqEaHY7AYOIkexqkT9hV9MDUrtwEcciSxlbHEoQ==",
+      "path": "pdfium.x64/4648.0.0",
+      "hashPath": "pdfium.x64.4648.0.0.nupkg.sha512"
+    },
+    "PdfiumViewer/2.13.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Nw4owBmJzDVXoMRjCnqPbET07CPOawwhcNjt+PyRaSxONN9bsFF+cm9kcMsDLEAEaxsiDJo5jls8bCQjvjidkA==",
+      "path": "pdfiumviewer/2.13.0",
+      "hashPath": "pdfiumviewer.2.13.0.nupkg.sha512"
+    },
+    "PdfiumViewer.Native.x86_64.v8-xfa/2018.4.8.256": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0RQwmLMPKOHBRqRK+NPMR2H5EQ4KlYO+LnT3Y2lByVUa5/JTPCMswL46JEXX+/MAfJtCpS2PzJvy6QzpH2nuIw==",
+      "path": "pdfiumviewer.native.x86_64.v8-xfa/2018.4.8.256",
+      "hashPath": "pdfiumviewer.native.x86_64.v8-xfa.2018.4.8.256.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",
@@ -506,6 +550,13 @@
       "sha512": "sha512-Obg3a90MkOw9mYKxrardLpY2u0axDMrSmy4JCdq2cYbelM2cUwmUir5Bomvd1yxmPL9h5LVHU1tuKBZpUjfASg==",
       "path": "system.windows.extensions/8.0.0",
       "hashPath": "system.windows.extensions.8.0.0.nupkg.sha512"
+    },
+    "VersOne.Epub/3.3.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OZ44RjUHD2VAmJ/Mi+t4LDjd2EJZhFX1OHDAVuxx9m+jbg+k4MmKVTEUbYR4raU2XeIQoqNaNQFzOPDqhb2O8Q==",
+      "path": "versone.epub/3.3.3",
+      "hashPath": "versone.epub.3.3.3.nupkg.sha512"
     },
     "ZstdSharp.Port/0.8.0": {
       "type": "package",

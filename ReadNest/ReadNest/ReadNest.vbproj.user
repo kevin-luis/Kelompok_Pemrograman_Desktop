@@ -7,6 +7,9 @@
     <Compile Update="BookDetail.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="BookReaderForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="BorrowedForm.vb">
       <SubType>Form</SubType>
     </Compile>
