@@ -139,3 +139,4 @@ A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Deskt
 A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\nl\PdfiumViewer.resources.dll
 A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.BookReaderForm.resources
 A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\x64\pdfium.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\ReadNest.dll.config

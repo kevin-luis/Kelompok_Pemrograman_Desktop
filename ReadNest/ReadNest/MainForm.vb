@@ -5,8 +5,27 @@ Public Class MainForm
     Private isNavigating As Boolean = False
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         StartPosition = FormStartPosition.CenterScreen
+
+        ' Cek session
+        If SessionHelper.CurrentUser Is Nothing Then
+            MessageBox.Show("Anda harus login terlebih dahulu", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Me.Close()
+            Dim loginForm As New LoginForm()
+            loginForm.Show()
+            Return
+        End If
+
+        ' Setup timer untuk update session activity
+        Dim activityTimer As New Timer With {.Interval = 300000} ' 5 menit
+        AddHandler activityTimer.Tick, AddressOf UpdateSessionActivity
+        activityTimer.Start()
+
         SetupProfileComboBox()
         LoadBooks()
+    End Sub
+
+    Private Sub UpdateSessionActivity(sender As Object, e As EventArgs)
+        SessionHelper.UpdateActivity()
     End Sub
 
     Private Sub SetupProfileComboBox()
@@ -23,17 +42,20 @@ Public Class MainForm
         End If
 
         Dim result As DialogResult = MessageBox.Show("Apakah Anda yakin ingin keluar?", "Konfirmasi",
-                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                                               MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If result = DialogResult.No Then
             e.Cancel = True
         Else
+            ' Tidak menghapus session saat aplikasi ditutup
+            ' Session tetap aktif untuk auto-login
             Application.Exit()
         End If
     End Sub
 
     '============ NAVIGASI MENU ============'
     Private Sub NavigateToForm(form As Form)
+        SessionHelper.UpdateActivity()
         isNavigating = True
         form.Show()
         Me.Close()
@@ -72,11 +94,15 @@ Public Class MainForm
                 NavigateToForm(New ProfileForm())
 
             Case "Logout"
-                Dim result As DialogResult = MessageBox.Show("Apakah Anda yakin ingin keluar?",
-                                                           "Konfirmasi Logout",
-                                                           MessageBoxButtons.YesNo,
-                                                           MessageBoxIcon.Question)
+                Dim result As DialogResult = MessageBox.Show("Apakah Anda yakin ingin logout?",
+                                                       "Konfirmasi Logout",
+                                                       MessageBoxButtons.YesNo,
+                                                       MessageBoxIcon.Question)
                 If result = DialogResult.Yes Then
+                    ' Hapus session
+                    SessionHelper.EndSession()
+                    SessionHelper.ClearSavedSession()
+
                     isNavigating = True
                     Dim loginForm As New LoginForm()
                     loginForm.Show()
@@ -279,7 +305,7 @@ Public Class MainForm
         End Sub
 
         Private Sub BookCard_Click(sender As Object, e As EventArgs)
-            ' Buka detail buku saat card diklik
+            SessionHelper.UpdateActivity()
             Dim bookDetailForm As New BookDetail(BookId)
             bookDetailForm.Show()
         End Sub
