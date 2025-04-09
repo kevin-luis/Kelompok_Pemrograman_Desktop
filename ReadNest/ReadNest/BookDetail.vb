@@ -2,11 +2,13 @@
 
 Public Class BookDetail
     Private _bookId As Integer
+    Private _userId As Integer
     Private _isFavorite As Boolean = False
 
     Public Sub New(bookId As Integer)
         InitializeComponent()
         _bookId = bookId
+        _userId = SessionHelper.CurrentUser.UserId ' Get user ID from session
     End Sub
 
     Private Sub BookDetail_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -54,7 +56,7 @@ Public Class BookDetail
                     borrowButton.Text = If(status = "Available", "📤", "📚")
                 End If
 
-                'Set status buat favorite
+                ' Set status favorite
                 If Not IsDBNull(bookRow("IsFavorite")) Then
                     _isFavorite = Convert.ToBoolean(bookRow("IsFavorite"))
                     UpdateFavoriteButtonIcon()
@@ -99,7 +101,7 @@ Public Class BookDetail
     End Sub
 
     Private Sub startReadingButton_Click(sender As Object, e As EventArgs) Handles startReadingButton.Click
-        Dim readerForm As New BookReaderForm(_bookId)
+        Dim readerForm As New BookReaderForm(_bookId, _userId)
         readerForm.Show()
     End Sub
 
@@ -133,8 +135,8 @@ Public Class BookDetail
             UpdateFavoriteButtonIcon()
 
             Dim message As String = If(_isFavorite,
-                                      "The book was successfully added to your favorites!",
-                                      "The book was removed from your favorites!")
+                                  "The book was successfully added to your favorites!",
+                                  "The book was removed from your favorites!")
 
             MessageBox.Show(message, "Success",
                            MessageBoxButtons.OK, MessageBoxIcon.Information)
