@@ -102,9 +102,13 @@ Public Class AddNewBookForm
         End If
 
         ' Validasi kategori (opsional karena boleh NULL)
-        If cbAddCategory.SelectedItem IsNot Nothing Then
-            Integer.TryParse(cbAddCategory.SelectedValue.ToString(), categoryId)
+        If cbAddCategory.SelectedIndex <= 0 Then
+            MessageBox.Show("Silakan pilih kategori buku!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        Else
+            categoryId = CInt(cbAddCategory.SelectedValue)
         End If
+
 
         ' Validasi halaman
         If Not Integer.TryParse(txtAddPages.Text, pages) OrElse pages <= 0 Then
@@ -218,4 +222,6 @@ Public Class AddNewBookForm
     Private Sub AddNewBookForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadCategories()
     End Sub
+
+
 End Class

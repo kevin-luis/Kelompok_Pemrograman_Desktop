@@ -358,5 +358,41 @@ Public Class DBConnection
         Return Nothing
     End Function
 
+    Public Function GetBooksByCategory(categoryId As Integer, searchTerm As String) As DataTable
+        Dim dt As New DataTable()
+
+        Try
+            Dim query As String = "SELECT BookId, Title, Author, PhotoPath FROM books WHERE " &
+                              "(@categoryId = 0 OR CategoryId = @categoryId) AND " &
+                              "(Title LIKE @search OR Author LIKE @search)"
+
+            Using conn As MySqlConnection = BukaKoneksi()
+                ' Debugging: Log connection state
+                Console.WriteLine($"Connection state: {conn.State}")
+
+                Using cmd As New MySqlCommand(query, conn)
+                    ' Debugging: Log parameters
+                    Console.WriteLine($"Executing query with params: CategoryId={categoryId}, SearchTerm={searchTerm}")
+
+                    cmd.Parameters.AddWithValue("@categoryId", categoryId)
+                    cmd.Parameters.AddWithValue("@search", $"%{searchTerm}%")
+
+                    Using adapter As New MySqlDataAdapter(cmd)
+                        adapter.Fill(dt)
+
+                        ' Debugging: Log results
+                        Console.WriteLine($"Retrieved {dt.Rows.Count} rows")
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            ' Log the error for debugging
+            Console.WriteLine($"Error in GetBooksByCategory: {ex.Message}")
+            ' Optionally rethrow or handle differently
+            Throw New ApplicationException("Failed to retrieve books by category", ex)
+        End Try
+
+        Return dt
+    End Function
 
 End Class

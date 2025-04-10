@@ -21,6 +21,10 @@ Public Class BookReaderForm
         _userId = userId
     End Sub
 
+    Public Sub New(bookId As Integer)
+        _bookId = bookId
+    End Sub
+
     Private Sub BookReaderForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         _lastSaveTime = DateTime.Now
         LoadBookFile()

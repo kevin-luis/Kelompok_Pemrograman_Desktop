@@ -40,8 +40,8 @@ Partial Class CategoryForm
         lblstatistic = New Label()
         PictureBox2 = New PictureBox()
         Panel1 = New Panel()
-        Label2 = New Label()
-        lvBooklist = New ListView()
+        cbSelectCategory = New ComboBox()
+        flowCategory = New FlowLayoutPanel()
         txtSearchBook = New TextBox()
         btnSearch = New Button()
         pbProfile = New PictureBox()
@@ -271,8 +271,8 @@ Partial Class CategoryForm
         ' 
         ' Panel1
         ' 
-        Panel1.Controls.Add(Label2)
-        Panel1.Controls.Add(lvBooklist)
+        Panel1.Controls.Add(cbSelectCategory)
+        Panel1.Controls.Add(flowCategory)
         Panel1.Controls.Add(txtSearchBook)
         Panel1.Controls.Add(btnSearch)
         Panel1.Controls.Add(pbProfile)
@@ -284,33 +284,26 @@ Partial Class CategoryForm
         Panel1.Size = New Size(744, 486)
         Panel1.TabIndex = 0
         ' 
-        ' Label2
+        ' cbSelectCategory
         ' 
-        Label2.AutoSize = True
-        Label2.BackColor = Color.Transparent
-        Label2.Font = New Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold)
-        Label2.ForeColor = SystemColors.ControlText
-        Label2.ImageAlign = ContentAlignment.TopRight
-        Label2.Location = New Point(21, 23)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(261, 26)
-        Label2.TabIndex = 38
-        Label2.Text = "Discover your Category"
+        cbSelectCategory.FormattingEnabled = True
+        cbSelectCategory.Location = New Point(173, 47)
+        cbSelectCategory.Name = "cbSelectCategory"
+        cbSelectCategory.Size = New Size(121, 23)
+        cbSelectCategory.TabIndex = 45
         ' 
-        ' lvBooklist
+        ' flowCategory
         ' 
-        lvBooklist.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        lvBooklist.Location = New Point(21, 122)
-        lvBooklist.Name = "lvBooklist"
-        lvBooklist.Size = New Size(699, 339)
-        lvBooklist.TabIndex = 42
-        lvBooklist.UseCompatibleStateImageBehavior = False
+        flowCategory.Location = New Point(14, 106)
+        flowCategory.Name = "flowCategory"
+        flowCategory.Size = New Size(718, 368)
+        flowCategory.TabIndex = 44
         ' 
         ' txtSearchBook
         ' 
         txtSearchBook.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         txtSearchBook.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        txtSearchBook.Location = New Point(21, 55)
+        txtSearchBook.Location = New Point(14, 76)
         txtSearchBook.Name = "txtSearchBook"
         txtSearchBook.PlaceholderText = "Find your book here"
         txtSearchBook.Size = New Size(401, 24)
@@ -321,7 +314,7 @@ Partial Class CategoryForm
         btnSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnSearch.AutoSize = True
         btnSearch.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        btnSearch.Location = New Point(438, 54)
+        btnSearch.Location = New Point(421, 75)
         btnSearch.Name = "btnSearch"
         btnSearch.Size = New Size(86, 28)
         btnSearch.TabIndex = 35
@@ -346,11 +339,11 @@ Partial Class CategoryForm
         Label5.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
         Label5.ForeColor = SystemColors.ControlText
         Label5.ImageAlign = ContentAlignment.TopRight
-        Label5.Location = New Point(21, 97)
+        Label5.Location = New Point(14, 44)
         Label5.Name = "Label5"
-        Label5.Size = New Size(177, 22)
+        Label5.Size = New Size(153, 22)
         Label5.TabIndex = 41
-        Label5.Text = "Your Category List"
+        Label5.Text = "Select Category"
         ' 
         ' cbProfile
         ' 
@@ -414,11 +407,11 @@ Partial Class CategoryForm
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Splitter1 As Splitter
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents lvBooklist As ListView
-    Friend WithEvents txtSearchBook As TextBox
-    Friend WithEvents btnSearch As Button
     Friend WithEvents pbProfile As PictureBox
     Friend WithEvents Label5 As Label
     Friend WithEvents cbProfile As ComboBox
+    Friend WithEvents flowCategory As FlowLayoutPanel
+    Friend WithEvents cbSelectCategory As ComboBox
+    Friend WithEvents txtSearchBook As TextBox
+    Friend WithEvents btnSearch As Button
 End Class

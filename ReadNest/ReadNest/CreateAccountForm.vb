@@ -44,10 +44,11 @@ Public Class CreateAccountForm
                 Return
             End If
 
-            ' Proses registrasi
             If db.TambahAkun(email, username, password) Then
                 MessageBox.Show("Akun berhasil dibuat!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Me.Close()
+
+                ' Menutup form pendaftaran dan kembali ke form login
+                Me.Hide()            ' Atau gunakan Me.Close() jika tidak ingin menyimpan data form
                 LoginForm.Show()
             Else
                 MessageBox.Show("Gagal membuat akun!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -63,17 +64,4 @@ Public Class CreateAccountForm
         txtConfirmPassword.UseSystemPasswordChar = Not chkPassword.Checked
     End Sub
 
-    Private Sub CreateAccountForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        Dim result As DialogResult = MessageBox.Show("Apakah Anda yakin ingin keluar?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
-        If result = DialogResult.No Then
-            e.Cancel = True
-        Else
-            LoginForm.Show()
-        End If
-    End Sub
-
-    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
-
-    End Sub
 End Class
