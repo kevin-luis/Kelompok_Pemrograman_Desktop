@@ -52,11 +52,10 @@ Partial Class LoginForm
         mainTableLayoutPanel.Controls.Add(Panel1, 1, 0)
         mainTableLayoutPanel.Dock = DockStyle.Fill
         mainTableLayoutPanel.Location = New Point(0, 0)
-        mainTableLayoutPanel.Margin = New Padding(3, 4, 3, 4)
         mainTableLayoutPanel.Name = "mainTableLayoutPanel"
         mainTableLayoutPanel.RowCount = 1
         mainTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
-        mainTableLayoutPanel.Size = New Size(1067, 648)
+        mainTableLayoutPanel.Size = New Size(934, 486)
         mainTableLayoutPanel.TabIndex = 0
         ' 
         ' leftPanel
@@ -64,10 +63,9 @@ Partial Class LoginForm
         leftPanel.BackColor = SystemColors.Info
         leftPanel.Controls.Add(PictureBox1)
         leftPanel.Dock = DockStyle.Fill
-        leftPanel.Location = New Point(3, 4)
-        leftPanel.Margin = New Padding(3, 4, 3, 4)
+        leftPanel.Location = New Point(3, 3)
         leftPanel.Name = "leftPanel"
-        leftPanel.Size = New Size(527, 640)
+        leftPanel.Size = New Size(461, 480)
         leftPanel.TabIndex = 0
         ' 
         ' PictureBox1
@@ -76,9 +74,8 @@ Partial Class LoginForm
         PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox1.Dock = DockStyle.Fill
         PictureBox1.Location = New Point(0, 0)
-        PictureBox1.Margin = New Padding(3, 4, 3, 4)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(527, 640)
+        PictureBox1.Size = New Size(461, 480)
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
         ' 
@@ -94,18 +91,17 @@ Partial Class LoginForm
         Panel1.Controls.Add(Label4)
         Panel1.Controls.Add(Label5)
         Panel1.Dock = DockStyle.Fill
-        Panel1.Location = New Point(536, 4)
-        Panel1.Margin = New Padding(3, 4, 3, 4)
+        Panel1.Location = New Point(470, 3)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(528, 640)
+        Panel1.Size = New Size(461, 480)
         Panel1.TabIndex = 1
         ' 
         ' linkCreateAccount
         ' 
         linkCreateAccount.AutoSize = True
-        linkCreateAccount.Location = New Point(223, 475)
+        linkCreateAccount.Location = New Point(195, 356)
         linkCreateAccount.Name = "linkCreateAccount"
-        linkCreateAccount.Size = New Size(73, 20)
+        linkCreateAccount.Size = New Size(59, 15)
         linkCreateAccount.TabIndex = 1
         linkCreateAccount.TabStop = True
         linkCreateAccount.Text = "Click here"
@@ -115,10 +111,9 @@ Partial Class LoginForm
         btnLoginaAccount.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnLoginaAccount.AutoSize = True
         btnLoginaAccount.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        btnLoginaAccount.Location = New Point(329, 363)
-        btnLoginaAccount.Margin = New Padding(3, 4, 3, 4)
+        btnLoginaAccount.Location = New Point(287, 272)
         btnLoginaAccount.Name = "btnLoginaAccount"
-        btnLoginaAccount.Size = New Size(86, 45)
+        btnLoginaAccount.Size = New Size(75, 34)
         btnLoginaAccount.TabIndex = 0
         btnLoginaAccount.Text = "Login"
         btnLoginaAccount.UseVisualStyleBackColor = True
@@ -126,9 +121,9 @@ Partial Class LoginForm
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(88, 475)
+        Label6.Location = New Point(77, 356)
         Label6.Name = "Label6"
-        Label6.Size = New Size(140, 20)
+        Label6.Size = New Size(112, 15)
         Label6.TabIndex = 0
         Label6.Text = "Dont have account?"
         ' 
@@ -136,9 +131,9 @@ Partial Class LoginForm
         ' 
         Label7.AutoSize = True
         Label7.Font = New Font("Microsoft Sans Serif", 13.25F, FontStyle.Bold)
-        Label7.Location = New Point(86, 167)
+        Label7.Location = New Point(75, 125)
         Label7.Name = "Label7"
-        Label7.Size = New Size(252, 29)
+        Label7.Size = New Size(195, 22)
         Label7.TabIndex = 0
         Label7.Text = "Login Your Acccount"
         ' 
@@ -146,32 +141,29 @@ Partial Class LoginForm
         ' 
         txtloginusername.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         txtloginusername.Font = New Font("Segoe UI", 11F)
-        txtloginusername.Location = New Point(190, 228)
-        txtloginusername.Margin = New Padding(3, 4, 3, 4)
+        txtloginusername.Location = New Point(166, 171)
         txtloginusername.Name = "txtloginusername"
         txtloginusername.PlaceholderText = "Enter your username here"
-        txtloginusername.Size = New Size(224, 32)
+        txtloginusername.Size = New Size(195, 27)
         txtloginusername.TabIndex = 1
         ' 
         ' txtloginpassword
         ' 
         txtloginpassword.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         txtloginpassword.Font = New Font("Segoe UI", 11F)
-        txtloginpassword.Location = New Point(190, 272)
-        txtloginpassword.Margin = New Padding(3, 4, 3, 4)
+        txtloginpassword.Location = New Point(166, 204)
         txtloginpassword.Name = "txtloginpassword"
         txtloginpassword.PlaceholderText = "Enter your password here"
-        txtloginpassword.Size = New Size(224, 32)
+        txtloginpassword.Size = New Size(195, 27)
         txtloginpassword.TabIndex = 1
         txtloginpassword.UseSystemPasswordChar = True
         ' 
         ' chkPassword
         ' 
         chkPassword.AutoSize = True
-        chkPassword.Location = New Point(190, 316)
-        chkPassword.Margin = New Padding(3, 4, 3, 4)
+        chkPassword.Location = New Point(166, 237)
         chkPassword.Name = "chkPassword"
-        chkPassword.Size = New Size(132, 24)
+        chkPassword.Size = New Size(108, 19)
         chkPassword.TabIndex = 0
         chkPassword.Text = "Show Password"
         chkPassword.UseVisualStyleBackColor = True
@@ -181,9 +173,9 @@ Partial Class LoginForm
         Label4.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label4.AutoSize = True
         Label4.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label4.Location = New Point(86, 233)
+        Label4.Location = New Point(75, 175)
         Label4.Name = "Label4"
-        Label4.Size = New Size(105, 24)
+        Label4.Size = New Size(85, 18)
         Label4.TabIndex = 0
         Label4.Text = "Username"
         ' 
@@ -192,9 +184,9 @@ Partial Class LoginForm
         Label5.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label5.AutoSize = True
         Label5.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label5.Location = New Point(88, 277)
+        Label5.Location = New Point(77, 208)
         Label5.Name = "Label5"
-        Label5.Size = New Size(100, 24)
+        Label5.Size = New Size(83, 18)
         Label5.TabIndex = 0
         Label5.Text = "Password"
         ' 
@@ -207,13 +199,12 @@ Partial Class LoginForm
         ' 
         ' LoginForm
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
-        ClientSize = New Size(1067, 648)
+        ClientSize = New Size(934, 486)
         Controls.Add(mainTableLayoutPanel)
-        Margin = New Padding(3, 4, 3, 4)
-        MinimumSize = New Size(912, 651)
+        MinimumSize = New Size(800, 498)
         Name = "LoginForm"
         StartPosition = FormStartPosition.CenterScreen
         Text = "ReadNest, Your Personal Library "

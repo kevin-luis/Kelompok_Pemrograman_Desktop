@@ -117,6 +117,8 @@ Public Class MainForm
 
     '============ BOOK MANAGEMENT ============'
     Private Sub btnAddNewBook_Click(sender As Object, e As EventArgs) Handles btnAddNewBook.Click
+        Me.Hide()
+
         Using addNewBookForm As New AddNewBookForm()
             If addNewBookForm.ShowDialog() = DialogResult.OK Then
                 LoadBooks() ' Refresh daftar buku
