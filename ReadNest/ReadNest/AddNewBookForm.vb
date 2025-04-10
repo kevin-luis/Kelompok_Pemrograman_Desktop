@@ -218,4 +218,8 @@ Public Class AddNewBookForm
     Private Sub AddNewBookForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadCategories()
     End Sub
+
+    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+
+    End Sub
 End Class

@@ -47,7 +47,7 @@ Public Class CreateAccountForm
             ' Proses registrasi
             If db.TambahAkun(email, username, password) Then
                 MessageBox.Show("Akun berhasil dibuat!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Me.Close()
+                Me.Hide()
                 LoginForm.Show()
             Else
                 MessageBox.Show("Gagal membuat akun!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -73,7 +73,4 @@ Public Class CreateAccountForm
         End If
     End Sub
 
-    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
-
-    End Sub
 End Class

@@ -39,6 +39,7 @@ Partial Class ProfileForm
         pbCategory = New PictureBox()
         SplitContainer1 = New SplitContainer()
         PictureBox2 = New PictureBox()
+        Panel2 = New Panel()
         Panel1 = New Panel()
         PictureBox1 = New PictureBox()
         Label7 = New Label()
@@ -49,7 +50,6 @@ Partial Class ProfileForm
         Label4 = New Label()
         Label3 = New Label()
         Label2 = New Label()
-        Panel2 = New Panel()
         CType(pbBB, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbDiscover, ComponentModel.ISupportInitialize).BeginInit()
@@ -61,9 +61,9 @@ Partial Class ProfileForm
         SplitContainer1.Panel2.SuspendLayout()
         SplitContainer1.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        Panel2.SuspendLayout()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        Panel2.SuspendLayout()
         SuspendLayout()
         ' 
         ' pbBB
@@ -259,6 +259,15 @@ Partial Class ProfileForm
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
         ' 
+        ' Panel2
+        ' 
+        Panel2.Controls.Add(Panel1)
+        Panel2.Dock = DockStyle.Fill
+        Panel2.Location = New Point(0, 0)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(744, 486)
+        Panel2.TabIndex = 2
+        ' 
         ' Panel1
         ' 
         Panel1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
@@ -386,15 +395,6 @@ Partial Class ProfileForm
         Label2.TabIndex = 50
         Label2.Text = "Profile"
         ' 
-        ' Panel2
-        ' 
-        Panel2.Controls.Add(Panel1)
-        Panel2.Dock = DockStyle.Fill
-        Panel2.Location = New Point(0, 0)
-        Panel2.Name = "Panel2"
-        Panel2.Size = New Size(744, 486)
-        Panel2.TabIndex = 2
-        ' 
         ' ProfileForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -430,10 +430,10 @@ Partial Class ProfileForm
         CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.ResumeLayout(False)
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        Panel2.ResumeLayout(False)
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        Panel2.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub

@@ -140,3 +140,10 @@ A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Deskt
 A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.BookReaderForm.resources
 A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\x64\pdfium.dll
 A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\ReadNest.dll.config
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\x64\pdfium.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\ReadNest.dll.config
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\PdfiumViewer.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\VersOne.Epub.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\nl\PdfiumViewer.resources.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.BookDetail.resources
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.BookReaderForm.resources
