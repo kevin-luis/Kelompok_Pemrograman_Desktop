@@ -40,17 +40,17 @@ Partial Class CategoryForm
         lblstatistic = New Label()
         PictureBox2 = New PictureBox()
         Panel1 = New Panel()
+        btnHorror = New Button()
+        BtnRomance = New Button()
+        btnComic = New Button()
+        btnNovel = New Button()
         btnHistory = New Button()
+        btnTechno = New Button()
+        btnAcademy = New Button()
+        btnBiography = New Button()
         pbProfile = New PictureBox()
         Label5 = New Label()
         cbProfile = New ComboBox()
-        Button1 = New Button()
-        Button2 = New Button()
-        Button3 = New Button()
-        Button4 = New Button()
-        Button5 = New Button()
-        Button6 = New Button()
-        Button7 = New Button()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer1.Panel1.SuspendLayout()
         SplitContainer1.Panel2.SuspendLayout()
@@ -275,14 +275,14 @@ Partial Class CategoryForm
         ' 
         ' Panel1
         ' 
-        Panel1.Controls.Add(Button7)
-        Panel1.Controls.Add(Button6)
-        Panel1.Controls.Add(Button5)
-        Panel1.Controls.Add(Button4)
-        Panel1.Controls.Add(Button3)
-        Panel1.Controls.Add(Button2)
-        Panel1.Controls.Add(Button1)
+        Panel1.Controls.Add(btnHorror)
+        Panel1.Controls.Add(BtnRomance)
+        Panel1.Controls.Add(btnComic)
+        Panel1.Controls.Add(btnNovel)
         Panel1.Controls.Add(btnHistory)
+        Panel1.Controls.Add(btnTechno)
+        Panel1.Controls.Add(btnAcademy)
+        Panel1.Controls.Add(btnBiography)
         Panel1.Controls.Add(pbProfile)
         Panel1.Controls.Add(Label5)
         Panel1.Controls.Add(cbProfile)
@@ -292,19 +292,117 @@ Partial Class CategoryForm
         Panel1.Size = New Size(744, 486)
         Panel1.TabIndex = 0
         ' 
+        ' btnHorror
+        ' 
+        btnHorror.BackColor = Color.White
+        btnHorror.BackgroundImage = CType(resources.GetObject("btnHorror.BackgroundImage"), Image)
+        btnHorror.BackgroundImageLayout = ImageLayout.Center
+        btnHorror.Font = New Font("Segoe UI", 11F)
+        btnHorror.Location = New Point(494, 276)
+        btnHorror.Name = "btnHorror"
+        btnHorror.Size = New Size(140, 171)
+        btnHorror.TabIndex = 51
+        btnHorror.Text = "Horror"
+        btnHorror.TextAlign = ContentAlignment.BottomCenter
+        btnHorror.UseVisualStyleBackColor = False
+        ' 
+        ' BtnRomance
+        ' 
+        BtnRomance.BackColor = Color.White
+        BtnRomance.BackgroundImage = CType(resources.GetObject("BtnRomance.BackgroundImage"), Image)
+        BtnRomance.BackgroundImageLayout = ImageLayout.Center
+        BtnRomance.Font = New Font("Segoe UI", 11F)
+        BtnRomance.Location = New Point(494, 85)
+        BtnRomance.Name = "BtnRomance"
+        BtnRomance.Size = New Size(140, 171)
+        BtnRomance.TabIndex = 50
+        BtnRomance.Text = "Romance"
+        BtnRomance.TextAlign = ContentAlignment.BottomCenter
+        BtnRomance.UseVisualStyleBackColor = False
+        ' 
+        ' btnComic
+        ' 
+        btnComic.BackColor = Color.White
+        btnComic.BackgroundImage = CType(resources.GetObject("btnComic.BackgroundImage"), Image)
+        btnComic.BackgroundImageLayout = ImageLayout.Center
+        btnComic.Font = New Font("Segoe UI", 11F)
+        btnComic.Location = New Point(348, 276)
+        btnComic.Name = "btnComic"
+        btnComic.Size = New Size(140, 171)
+        btnComic.TabIndex = 49
+        btnComic.Text = "Comic"
+        btnComic.TextAlign = ContentAlignment.BottomCenter
+        btnComic.UseVisualStyleBackColor = False
+        ' 
+        ' btnNovel
+        ' 
+        btnNovel.BackColor = Color.White
+        btnNovel.BackgroundImage = CType(resources.GetObject("btnNovel.BackgroundImage"), Image)
+        btnNovel.BackgroundImageLayout = ImageLayout.Center
+        btnNovel.Font = New Font("Segoe UI", 11F)
+        btnNovel.Location = New Point(52, 276)
+        btnNovel.Name = "btnNovel"
+        btnNovel.Size = New Size(140, 171)
+        btnNovel.TabIndex = 48
+        btnNovel.Text = "Novel"
+        btnNovel.TextAlign = ContentAlignment.BottomCenter
+        btnNovel.UseVisualStyleBackColor = False
+        ' 
         ' btnHistory
         ' 
         btnHistory.BackColor = Color.White
         btnHistory.BackgroundImage = CType(resources.GetObject("btnHistory.BackgroundImage"), Image)
         btnHistory.BackgroundImageLayout = ImageLayout.Center
         btnHistory.Font = New Font("Segoe UI", 11F)
-        btnHistory.Location = New Point(52, 85)
+        btnHistory.Location = New Point(202, 276)
         btnHistory.Name = "btnHistory"
         btnHistory.Size = New Size(140, 171)
-        btnHistory.TabIndex = 44
-        btnHistory.Text = "Biography"
+        btnHistory.TabIndex = 47
+        btnHistory.Text = "History"
         btnHistory.TextAlign = ContentAlignment.BottomCenter
         btnHistory.UseVisualStyleBackColor = False
+        ' 
+        ' btnTechno
+        ' 
+        btnTechno.BackColor = Color.White
+        btnTechno.BackgroundImage = CType(resources.GetObject("btnTechno.BackgroundImage"), Image)
+        btnTechno.BackgroundImageLayout = ImageLayout.Center
+        btnTechno.Font = New Font("Segoe UI", 11F)
+        btnTechno.Location = New Point(348, 85)
+        btnTechno.Name = "btnTechno"
+        btnTechno.Size = New Size(140, 171)
+        btnTechno.TabIndex = 46
+        btnTechno.Text = "Techno"
+        btnTechno.TextAlign = ContentAlignment.BottomCenter
+        btnTechno.UseVisualStyleBackColor = False
+        ' 
+        ' btnAcademy
+        ' 
+        btnAcademy.BackColor = Color.White
+        btnAcademy.BackgroundImage = CType(resources.GetObject("btnAcademy.BackgroundImage"), Image)
+        btnAcademy.BackgroundImageLayout = ImageLayout.Center
+        btnAcademy.Font = New Font("Segoe UI", 11F)
+        btnAcademy.Location = New Point(202, 85)
+        btnAcademy.Name = "btnAcademy"
+        btnAcademy.Size = New Size(140, 171)
+        btnAcademy.TabIndex = 45
+        btnAcademy.Text = "Academy"
+        btnAcademy.TextAlign = ContentAlignment.BottomCenter
+        btnAcademy.UseVisualStyleBackColor = False
+        ' 
+        ' btnBiography
+        ' 
+        btnBiography.BackColor = Color.White
+        btnBiography.BackgroundImage = CType(resources.GetObject("btnBiography.BackgroundImage"), Image)
+        btnBiography.BackgroundImageLayout = ImageLayout.Center
+        btnBiography.Font = New Font("Segoe UI", 11F)
+        btnBiography.Location = New Point(52, 85)
+        btnBiography.Name = "btnBiography"
+        btnBiography.Size = New Size(140, 171)
+        btnBiography.TabIndex = 44
+        btnBiography.Text = "Biography"
+        btnBiography.TextAlign = ContentAlignment.BottomCenter
+        btnBiography.UseVisualStyleBackColor = False
         ' 
         ' pbProfile
         ' 
@@ -324,7 +422,7 @@ Partial Class CategoryForm
         Label5.Font = New Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold)
         Label5.ForeColor = SystemColors.ControlText
         Label5.ImageAlign = ContentAlignment.TopRight
-        Label5.Location = New Point(19, 30)
+        Label5.Location = New Point(52, 45)
         Label5.Name = "Label5"
         Label5.Size = New Size(211, 26)
         Label5.TabIndex = 41
@@ -342,104 +440,6 @@ Partial Class CategoryForm
         cbProfile.Size = New Size(97, 26)
         cbProfile.TabIndex = 43
         cbProfile.Text = "Profile"
-        ' 
-        ' Button1
-        ' 
-        Button1.BackColor = Color.White
-        Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), Image)
-        Button1.BackgroundImageLayout = ImageLayout.Center
-        Button1.Font = New Font("Segoe UI", 11F)
-        Button1.Location = New Point(202, 85)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(140, 171)
-        Button1.TabIndex = 45
-        Button1.Text = "Academy"
-        Button1.TextAlign = ContentAlignment.BottomCenter
-        Button1.UseVisualStyleBackColor = False
-        ' 
-        ' Button2
-        ' 
-        Button2.BackColor = Color.White
-        Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), Image)
-        Button2.BackgroundImageLayout = ImageLayout.Center
-        Button2.Font = New Font("Segoe UI", 11F)
-        Button2.Location = New Point(348, 85)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(140, 171)
-        Button2.TabIndex = 46
-        Button2.Text = "Techno"
-        Button2.TextAlign = ContentAlignment.BottomCenter
-        Button2.UseVisualStyleBackColor = False
-        ' 
-        ' Button3
-        ' 
-        Button3.BackColor = Color.White
-        Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), Image)
-        Button3.BackgroundImageLayout = ImageLayout.Center
-        Button3.Font = New Font("Segoe UI", 11F)
-        Button3.Location = New Point(202, 276)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(140, 171)
-        Button3.TabIndex = 47
-        Button3.Text = "History"
-        Button3.TextAlign = ContentAlignment.BottomCenter
-        Button3.UseVisualStyleBackColor = False
-        ' 
-        ' Button4
-        ' 
-        Button4.BackColor = Color.White
-        Button4.BackgroundImage = CType(resources.GetObject("Button4.BackgroundImage"), Image)
-        Button4.BackgroundImageLayout = ImageLayout.Center
-        Button4.Font = New Font("Segoe UI", 11F)
-        Button4.Location = New Point(52, 276)
-        Button4.Name = "Button4"
-        Button4.Size = New Size(140, 171)
-        Button4.TabIndex = 48
-        Button4.Text = "Novel"
-        Button4.TextAlign = ContentAlignment.BottomCenter
-        Button4.UseVisualStyleBackColor = False
-        ' 
-        ' Button5
-        ' 
-        Button5.BackColor = Color.White
-        Button5.BackgroundImage = CType(resources.GetObject("Button5.BackgroundImage"), Image)
-        Button5.BackgroundImageLayout = ImageLayout.Center
-        Button5.Font = New Font("Segoe UI", 11F)
-        Button5.Location = New Point(348, 276)
-        Button5.Name = "Button5"
-        Button5.Size = New Size(140, 171)
-        Button5.TabIndex = 49
-        Button5.Text = "Comic"
-        Button5.TextAlign = ContentAlignment.BottomCenter
-        Button5.UseVisualStyleBackColor = False
-        ' 
-        ' Button6
-        ' 
-        Button6.BackColor = Color.White
-        Button6.BackgroundImage = CType(resources.GetObject("Button6.BackgroundImage"), Image)
-        Button6.BackgroundImageLayout = ImageLayout.Center
-        Button6.Font = New Font("Segoe UI", 11F)
-        Button6.Location = New Point(494, 85)
-        Button6.Name = "Button6"
-        Button6.Size = New Size(140, 171)
-        Button6.TabIndex = 50
-        Button6.Text = "Techno"
-        Button6.TextAlign = ContentAlignment.BottomCenter
-        Button6.UseVisualStyleBackColor = False
-        ' 
-        ' Button7
-        ' 
-        Button7.BackColor = Color.White
-        Button7.BackgroundImage = CType(resources.GetObject("Button7.BackgroundImage"), Image)
-        Button7.BackgroundImageLayout = ImageLayout.Center
-        Button7.Font = New Font("Segoe UI", 11F)
-        Button7.Location = New Point(494, 276)
-        Button7.Name = "Button7"
-        Button7.Size = New Size(140, 171)
-        Button7.TabIndex = 51
-        Button7.Text = "Comic"
-        Button7.TextAlign = ContentAlignment.BottomCenter
-        Button7.UseVisualStyleBackColor = False
         ' 
         ' CategoryForm
         ' 
@@ -493,12 +493,12 @@ Partial Class CategoryForm
     Friend WithEvents pbProfile As PictureBox
     Friend WithEvents Label5 As Label
     Friend WithEvents cbProfile As ComboBox
+    Friend WithEvents btnBiography As Button
+    Friend WithEvents btnAcademy As Button
     Friend WithEvents btnHistory As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Button6 As Button
+    Friend WithEvents btnTechno As Button
+    Friend WithEvents btnNovel As Button
+    Friend WithEvents btnComic As Button
+    Friend WithEvents btnHorror As Button
+    Friend WithEvents BtnRomance As Button
 End Class
