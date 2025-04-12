@@ -96,4 +96,44 @@
                 End If
         End Select
     End Sub
+
+    Private Sub btnBiography_Click(sender As Object, e As EventArgs) Handles btnBiography.Click
+        OpenBookByCategory("Biography")
+    End Sub
+
+    Private Sub btnAcademy_Click(sender As Object, e As EventArgs) Handles btnAcademy.Click
+        OpenBookByCategory("Academy")
+    End Sub
+
+    Private Sub btnTechno_Click(sender As Object, e As EventArgs) Handles btnTechno.Click
+        OpenBookByCategory("Technology")
+    End Sub
+
+    Private Sub BtnRomance_Click(sender As Object, e As EventArgs) Handles BtnRomance.Click
+        OpenBookByCategory("Romance")
+    End Sub
+
+    Private Sub btnNovel_Click(sender As Object, e As EventArgs) Handles btnNovel.Click
+        OpenBookByCategory("Novel")
+    End Sub
+
+    Private Sub btnHistory_Click(sender As Object, e As EventArgs) Handles btnHistory.Click
+        OpenBookByCategory("History")
+    End Sub
+
+    Private Sub btnComic_Click(sender As Object, e As EventArgs) Handles btnComic.Click
+        OpenBookByCategory("Comic")
+    End Sub
+
+    Private Sub btnHorror_Click(sender As Object, e As EventArgs) Handles btnHorror.Click
+        OpenBookByCategory("Horror")
+    End Sub
+
+    Private Sub OpenBookByCategory(categoryName As String)
+        Dim form As New BookByCategory()
+        form.SelectedCategory = categoryName
+        form.Show()
+        Me.Hide()
+    End Sub
+
 End Class

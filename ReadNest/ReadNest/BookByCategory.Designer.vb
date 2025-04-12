@@ -22,9 +22,399 @@ Partial Class BookByCategory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Text = "BookByCategory"
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BookByCategory))
+        SplitContainer1 = New SplitContainer()
+        Label1 = New Label()
+        lblMenu = New Label()
+        pbDiscover = New PictureBox()
+        lblDiscover = New Label()
+        pbCategory = New PictureBox()
+        lblCategory = New Label()
+        pbNotes = New PictureBox()
+        lblNotes = New Label()
+        pbFavorite = New PictureBox()
+        lblFavorite = New Label()
+        pbBB = New PictureBox()
+        lblBB = New Label()
+        pbStatistic = New PictureBox()
+        lblstatistic = New Label()
+        PictureBox2 = New PictureBox()
+        Panel1 = New Panel()
+        btnBack = New Button()
+        flowCategory = New FlowLayoutPanel()
+        ComboBox1 = New ComboBox()
+        PictureBox1 = New PictureBox()
+        pbProfile = New PictureBox()
+        lblByCategory = New Label()
+        cbProfile = New ComboBox()
+        CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
+        SplitContainer1.Panel1.SuspendLayout()
+        SplitContainer1.Panel2.SuspendLayout()
+        SplitContainer1.SuspendLayout()
+        CType(pbDiscover, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbCategory, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbNotes, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbFavorite, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbBB, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbStatistic, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbProfile, ComponentModel.ISupportInitialize).BeginInit()
+        SuspendLayout()
+        ' 
+        ' SplitContainer1
+        ' 
+        SplitContainer1.Dock = DockStyle.Fill
+        SplitContainer1.FixedPanel = FixedPanel.Panel1
+        SplitContainer1.Location = New Point(0, 0)
+        SplitContainer1.Name = "SplitContainer1"
+        ' 
+        ' SplitContainer1.Panel1
+        ' 
+        SplitContainer1.Panel1.Controls.Add(Label1)
+        SplitContainer1.Panel1.Controls.Add(lblMenu)
+        SplitContainer1.Panel1.Controls.Add(pbDiscover)
+        SplitContainer1.Panel1.Controls.Add(lblDiscover)
+        SplitContainer1.Panel1.Controls.Add(pbCategory)
+        SplitContainer1.Panel1.Controls.Add(lblCategory)
+        SplitContainer1.Panel1.Controls.Add(pbNotes)
+        SplitContainer1.Panel1.Controls.Add(lblNotes)
+        SplitContainer1.Panel1.Controls.Add(pbFavorite)
+        SplitContainer1.Panel1.Controls.Add(lblFavorite)
+        SplitContainer1.Panel1.Controls.Add(pbBB)
+        SplitContainer1.Panel1.Controls.Add(lblBB)
+        SplitContainer1.Panel1.Controls.Add(pbStatistic)
+        SplitContainer1.Panel1.Controls.Add(lblstatistic)
+        SplitContainer1.Panel1.Controls.Add(PictureBox2)
+        SplitContainer1.Panel1MinSize = 186
+        ' 
+        ' SplitContainer1.Panel2
+        ' 
+        SplitContainer1.Panel2.Controls.Add(Panel1)
+        SplitContainer1.Size = New Size(934, 486)
+        SplitContainer1.SplitterDistance = 186
+        SplitContainer1.TabIndex = 35
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.BackColor = SystemColors.Info
+        Label1.Font = New Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label1.ForeColor = SystemColors.ControlText
+        Label1.ImageAlign = ContentAlignment.TopRight
+        Label1.Location = New Point(12, 25)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(144, 31)
+        Label1.TabIndex = 6
+        Label1.Text = "ReadNest"
+        ' 
+        ' lblMenu
+        ' 
+        lblMenu.AutoSize = True
+        lblMenu.BackColor = SystemColors.Info
+        lblMenu.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        lblMenu.ImageAlign = ContentAlignment.TopRight
+        lblMenu.Location = New Point(12, 85)
+        lblMenu.Name = "lblMenu"
+        lblMenu.Size = New Size(49, 18)
+        lblMenu.TabIndex = 13
+        lblMenu.Text = "Menu"
+        ' 
+        ' pbDiscover
+        ' 
+        pbDiscover.BackColor = SystemColors.Info
+        pbDiscover.BackgroundImage = CType(resources.GetObject("pbDiscover.BackgroundImage"), Image)
+        pbDiscover.BackgroundImageLayout = ImageLayout.Stretch
+        pbDiscover.Location = New Point(12, 114)
+        pbDiscover.Name = "pbDiscover"
+        pbDiscover.Size = New Size(28, 28)
+        pbDiscover.TabIndex = 20
+        pbDiscover.TabStop = False
+        ' 
+        ' lblDiscover
+        ' 
+        lblDiscover.AutoSize = True
+        lblDiscover.BackColor = SystemColors.Info
+        lblDiscover.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        lblDiscover.ImageAlign = ContentAlignment.TopRight
+        lblDiscover.Location = New Point(46, 122)
+        lblDiscover.Name = "lblDiscover"
+        lblDiscover.Size = New Size(75, 18)
+        lblDiscover.TabIndex = 21
+        lblDiscover.Text = "Discover"
+        ' 
+        ' pbCategory
+        ' 
+        pbCategory.BackColor = SystemColors.Info
+        pbCategory.BackgroundImage = CType(resources.GetObject("pbCategory.BackgroundImage"), Image)
+        pbCategory.BackgroundImageLayout = ImageLayout.Stretch
+        pbCategory.Location = New Point(12, 148)
+        pbCategory.Name = "pbCategory"
+        pbCategory.Size = New Size(28, 28)
+        pbCategory.TabIndex = 2
+        pbCategory.TabStop = False
+        ' 
+        ' lblCategory
+        ' 
+        lblCategory.AutoSize = True
+        lblCategory.BackColor = SystemColors.Info
+        lblCategory.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        lblCategory.ImageAlign = ContentAlignment.TopRight
+        lblCategory.Location = New Point(46, 156)
+        lblCategory.Name = "lblCategory"
+        lblCategory.Size = New Size(76, 18)
+        lblCategory.TabIndex = 7
+        lblCategory.Text = "Category"
+        ' 
+        ' pbNotes
+        ' 
+        pbNotes.BackColor = SystemColors.Info
+        pbNotes.BackgroundImage = CType(resources.GetObject("pbNotes.BackgroundImage"), Image)
+        pbNotes.BackgroundImageLayout = ImageLayout.Stretch
+        pbNotes.Location = New Point(12, 182)
+        pbNotes.Name = "pbNotes"
+        pbNotes.Size = New Size(28, 28)
+        pbNotes.TabIndex = 3
+        pbNotes.TabStop = False
+        ' 
+        ' lblNotes
+        ' 
+        lblNotes.AutoSize = True
+        lblNotes.BackColor = SystemColors.Info
+        lblNotes.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        lblNotes.ImageAlign = ContentAlignment.TopRight
+        lblNotes.Location = New Point(46, 191)
+        lblNotes.Name = "lblNotes"
+        lblNotes.Size = New Size(80, 18)
+        lblNotes.TabIndex = 8
+        lblNotes.Text = "My Notes"
+        ' 
+        ' pbFavorite
+        ' 
+        pbFavorite.BackColor = SystemColors.Info
+        pbFavorite.BackgroundImage = CType(resources.GetObject("pbFavorite.BackgroundImage"), Image)
+        pbFavorite.BackgroundImageLayout = ImageLayout.Stretch
+        pbFavorite.Location = New Point(12, 218)
+        pbFavorite.Name = "pbFavorite"
+        pbFavorite.Size = New Size(28, 28)
+        pbFavorite.TabIndex = 5
+        pbFavorite.TabStop = False
+        ' 
+        ' lblFavorite
+        ' 
+        lblFavorite.AutoSize = True
+        lblFavorite.BackColor = SystemColors.Info
+        lblFavorite.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        lblFavorite.ImageAlign = ContentAlignment.TopRight
+        lblFavorite.Location = New Point(46, 227)
+        lblFavorite.Name = "lblFavorite"
+        lblFavorite.Size = New Size(69, 18)
+        lblFavorite.TabIndex = 9
+        lblFavorite.Text = "Favorite"
+        ' 
+        ' pbBB
+        ' 
+        pbBB.BackColor = SystemColors.Info
+        pbBB.BackgroundImage = CType(resources.GetObject("pbBB.BackgroundImage"), Image)
+        pbBB.BackgroundImageLayout = ImageLayout.Stretch
+        pbBB.Location = New Point(12, 252)
+        pbBB.Name = "pbBB"
+        pbBB.Size = New Size(28, 28)
+        pbBB.TabIndex = 29
+        pbBB.TabStop = False
+        ' 
+        ' lblBB
+        ' 
+        lblBB.AutoSize = True
+        lblBB.BackColor = SystemColors.Info
+        lblBB.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        lblBB.ImageAlign = ContentAlignment.TopRight
+        lblBB.Location = New Point(46, 260)
+        lblBB.Name = "lblBB"
+        lblBB.Size = New Size(130, 18)
+        lblBB.TabIndex = 28
+        lblBB.Text = "Book Borrowing"
+        ' 
+        ' pbStatistic
+        ' 
+        pbStatistic.BackColor = SystemColors.Info
+        pbStatistic.BackgroundImage = CType(resources.GetObject("pbStatistic.BackgroundImage"), Image)
+        pbStatistic.BackgroundImageLayout = ImageLayout.Stretch
+        pbStatistic.Location = New Point(12, 286)
+        pbStatistic.Name = "pbStatistic"
+        pbStatistic.Size = New Size(28, 28)
+        pbStatistic.TabIndex = 23
+        pbStatistic.TabStop = False
+        ' 
+        ' lblstatistic
+        ' 
+        lblstatistic.AutoSize = True
+        lblstatistic.BackColor = SystemColors.Info
+        lblstatistic.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        lblstatistic.ImageAlign = ContentAlignment.TopRight
+        lblstatistic.Location = New Point(46, 294)
+        lblstatistic.Name = "lblstatistic"
+        lblstatistic.Size = New Size(96, 18)
+        lblstatistic.TabIndex = 24
+        lblstatistic.Text = "My Statistic"
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.BackColor = SystemColors.Info
+        PictureBox2.BorderStyle = BorderStyle.FixedSingle
+        PictureBox2.Dock = DockStyle.Fill
+        PictureBox2.Location = New Point(0, 0)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(186, 486)
+        PictureBox2.TabIndex = 22
+        PictureBox2.TabStop = False
+        ' 
+        ' Panel1
+        ' 
+        Panel1.Controls.Add(btnBack)
+        Panel1.Controls.Add(flowCategory)
+        Panel1.Controls.Add(ComboBox1)
+        Panel1.Controls.Add(PictureBox1)
+        Panel1.Controls.Add(pbProfile)
+        Panel1.Controls.Add(lblByCategory)
+        Panel1.Controls.Add(cbProfile)
+        Panel1.Dock = DockStyle.Fill
+        Panel1.Location = New Point(0, 0)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(744, 486)
+        Panel1.TabIndex = 0
+        ' 
+        ' btnBack
+        ' 
+        btnBack.AutoSize = True
+        btnBack.Font = New Font("Segoe UI", 10F)
+        btnBack.Location = New Point(657, 447)
+        btnBack.Name = "btnBack"
+        btnBack.Size = New Size(75, 29)
+        btnBack.TabIndex = 55
+        btnBack.Text = "Back"
+        btnBack.UseVisualStyleBackColor = True
+        ' 
+        ' flowCategory
+        ' 
+        flowCategory.Location = New Point(3, 71)
+        flowCategory.Name = "flowCategory"
+        flowCategory.Size = New Size(729, 370)
+        flowCategory.TabIndex = 54
+        ' 
+        ' ComboBox1
+        ' 
+        ComboBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        ComboBox1.FlatStyle = FlatStyle.Flat
+        ComboBox1.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        ComboBox1.FormattingEnabled = True
+        ComboBox1.Items.AddRange(New Object() {"View Profile", "Logout"})
+        ComboBox1.Location = New Point(617, 21)
+        ComboBox1.Name = "ComboBox1"
+        ComboBox1.Size = New Size(97, 26)
+        ComboBox1.TabIndex = 53
+        ComboBox1.Text = "Profile"
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), Image)
+        PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
+        PictureBox1.Location = New Point(583, 20)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(28, 28)
+        PictureBox1.TabIndex = 52
+        PictureBox1.TabStop = False
+        ' 
+        ' pbProfile
+        ' 
+        pbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
+        pbProfile.BackgroundImageLayout = ImageLayout.Stretch
+        pbProfile.Location = New Point(1127, 20)
+        pbProfile.Name = "pbProfile"
+        pbProfile.Size = New Size(28, 28)
+        pbProfile.TabIndex = 37
+        pbProfile.TabStop = False
+        ' 
+        ' lblByCategory
+        ' 
+        lblByCategory.AutoSize = True
+        lblByCategory.BackColor = Color.Transparent
+        lblByCategory.Font = New Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold)
+        lblByCategory.ForeColor = SystemColors.ControlText
+        lblByCategory.ImageAlign = ContentAlignment.TopRight
+        lblByCategory.Location = New Point(3, 42)
+        lblByCategory.Name = "lblByCategory"
+        lblByCategory.Size = New Size(129, 26)
+        lblByCategory.TabIndex = 41
+        lblByCategory.Text = "Category : "
+        ' 
+        ' cbProfile
+        ' 
+        cbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        cbProfile.FlatStyle = FlatStyle.Flat
+        cbProfile.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        cbProfile.FormattingEnabled = True
+        cbProfile.Items.AddRange(New Object() {"View Profile", "Logout"})
+        cbProfile.Location = New Point(1161, 21)
+        cbProfile.Name = "cbProfile"
+        cbProfile.Size = New Size(97, 26)
+        cbProfile.TabIndex = 43
+        cbProfile.Text = "Profile"
+        ' 
+        ' BookByCategory
+        ' 
+        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.White
+        ClientSize = New Size(934, 486)
+        Controls.Add(SplitContainer1)
+        Name = "BookByCategory"
+        StartPosition = FormStartPosition.CenterScreen
+        Text = "BookByCategory"
+        SplitContainer1.Panel1.ResumeLayout(False)
+        SplitContainer1.Panel1.PerformLayout()
+        SplitContainer1.Panel2.ResumeLayout(False)
+        CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
+        SplitContainer1.ResumeLayout(False)
+        CType(pbDiscover, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbCategory, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbNotes, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbFavorite, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbBB, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbStatistic, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbProfile, ComponentModel.ISupportInitialize).EndInit()
+        ResumeLayout(False)
     End Sub
+
+    Friend WithEvents SplitContainer1 As SplitContainer
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lblMenu As Label
+    Friend WithEvents pbDiscover As PictureBox
+    Public WithEvents lblDiscover As Label
+    Friend WithEvents pbCategory As PictureBox
+    Friend WithEvents lblCategory As Label
+    Friend WithEvents pbNotes As PictureBox
+    Friend WithEvents lblNotes As Label
+    Friend WithEvents pbFavorite As PictureBox
+    Friend WithEvents lblFavorite As Label
+    Friend WithEvents pbBB As PictureBox
+    Friend WithEvents lblBB As Label
+    Friend WithEvents pbStatistic As PictureBox
+    Friend WithEvents lblstatistic As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents pbProfile As PictureBox
+    Friend WithEvents lblByCategory As Label
+    Friend WithEvents cbProfile As ComboBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents flowCategory As FlowLayoutPanel
+    Friend WithEvents btnBack As Button
 End Class

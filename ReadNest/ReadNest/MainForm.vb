@@ -58,7 +58,7 @@ Public Class MainForm
         SessionHelper.UpdateActivity()
         isNavigating = True
         form.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub lblDiscover_Click(sender As Object, e As EventArgs) Handles lblDiscover.Click, pbDiscover.Click
@@ -312,4 +312,5 @@ Public Class MainForm
             bookDetailForm.Show()
         End Sub
     End Class
+
 End Class

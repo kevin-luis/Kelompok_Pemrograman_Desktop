@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\project readnest\\kelompok_pemrograman_desktop\\readnest\\readnest\\addnewbookform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\addnewbookform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\project readnest\\kelompok_pemrograman_desktop\\readnest\\readnest\\bookbycategory.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\bookbycategory.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\project readnest\\kelompok_pemrograman_desktop\\readnest\\readnest\\categoryform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\categoryform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\project readnest\\kelompok_pemrograman_desktop\\readnest\\readnest\\categoryform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\categoryform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\project readnest\\kelompok_pemrograman_desktop\\readnest\\readnest\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\project readnest\\kelompok_pemrograman_desktop\\readnest\\readnest\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\project readnest\\kelompok_pemrograman_desktop\\readnest\\readnest\\bookbycategory.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\bookbycategory.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 333,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,15 +42,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AddNewBookForm.vb",
-              "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\AddNewBookForm.vb",
-              "RelativeDocumentMoniker": "ReadNest\\AddNewBookForm.vb",
-              "ToolTip": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\AddNewBookForm.vb",
-              "RelativeToolTip": "ReadNest\\AddNewBookForm.vb",
-              "ViewState": "AgIAAA0AAAAAAAAAAAApwIoAAAAkAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "MainForm.vb",
+              "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\MainForm.vb",
+              "RelativeDocumentMoniker": "ReadNest\\MainForm.vb",
+              "ToolTip": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\MainForm.vb*",
+              "RelativeToolTip": "ReadNest\\MainForm.vb*",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAiwGIAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-04-10T09:05:54.807Z",
+              "WhenOpened": "2025-04-12T10:04:31.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainForm.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\MainForm.vb",
+              "RelativeDocumentMoniker": "ReadNest\\MainForm.vb",
+              "ToolTip": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\MainForm.vb [Design]*",
+              "RelativeToolTip": "ReadNest\\MainForm.vb [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-04-12T10:04:29.023Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BookByCategory.vb",
+              "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\BookByCategory.vb",
+              "RelativeDocumentMoniker": "ReadNest\\BookByCategory.vb",
+              "ToolTip": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\BookByCategory.vb",
+              "RelativeToolTip": "ReadNest\\BookByCategory.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-04-12T09:39:09.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BookByCategory.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\BookByCategory.vb",
+              "RelativeDocumentMoniker": "ReadNest\\BookByCategory.vb",
+              "ToolTip": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\BookByCategory.vb [Design]",
+              "RelativeToolTip": "ReadNest\\BookByCategory.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-04-10T10:13:49.272Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CategoryForm.vb",
+              "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\CategoryForm.vb",
+              "RelativeDocumentMoniker": "ReadNest\\CategoryForm.vb",
+              "ToolTip": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\CategoryForm.vb",
+              "RelativeToolTip": "ReadNest\\CategoryForm.vb",
+              "ViewState": "AgIAAHIAAAAAAAAAAAD4v4gAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-04-12T09:41:07.966Z",
               "EditorCaption": ""
             },
             {
@@ -43,8 +109,8 @@
               "Title": "CategoryForm.vb [Design]",
               "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\CategoryForm.vb",
               "RelativeDocumentMoniker": "ReadNest\\CategoryForm.vb",
-              "ToolTip": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\CategoryForm.vb [Design]*",
-              "RelativeToolTip": "ReadNest\\CategoryForm.vb [Design]*",
+              "ToolTip": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Project ReadNest\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\CategoryForm.vb [Design]",
+              "RelativeToolTip": "ReadNest\\CategoryForm.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-04-10T09:02:44.62Z",
               "EditorCaption": " [Design]"
