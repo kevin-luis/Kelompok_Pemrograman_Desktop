@@ -2,6 +2,9 @@
 
 Imports System.IO
 Imports MySql.Data.MySqlClient
+Imports System.Security.Cryptography
+Imports System.Text
+
 
 Public Class DBConnection
     Private conn As MySqlConnection
@@ -32,6 +35,24 @@ Public Class DBConnection
             MessageBox.Show("Gagal Menutup Koneksi: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
+    Public Function EncryptPassword(password As String) As String
+        Try
+            Using sha256 As SHA256 = SHA256.Create()
+                Dim bytes As Byte() = sha256.ComputeHash(Encoding.UTF8.GetBytes(password))
+
+                Dim builder As New StringBuilder()
+                For i As Integer = 0 To bytes.Length - 1
+                    builder.Append(bytes(i).ToString("x2"))
+                Next
+
+                Return builder.ToString()
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error enkripsi: " & ex.Message, "Enkripsi Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return Nothing
+        End Try
+    End Function
 
     Public Function EksekusiQuery(query As String) As DataTable
         Try
@@ -64,18 +85,17 @@ Public Class DBConnection
 
     Public Function CekLogin(username As String, password As String) As DataTable
         Try
+            Dim encryptedPassword As String = EncryptPassword(password)
+
             Dim query As String = "SELECT UserId, Username FROM users WHERE username=@username AND password=@password"
             Dim dt As New DataTable()
-
             Using cmd As New MySqlCommand(query, BukaKoneksi())
                 cmd.Parameters.AddWithValue("@username", username)
-                cmd.Parameters.AddWithValue("@password", password)
-
+                cmd.Parameters.AddWithValue("@password", encryptedPassword)
                 Using da As New MySqlDataAdapter(cmd)
                     da.Fill(dt)
                 End Using
             End Using
-
             Return dt
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -87,13 +107,15 @@ Public Class DBConnection
 
     Public Function TambahAkun(email As String, username As String, password As String) As Boolean
         Try
+            Dim encryptedPassword As String = EncryptPassword(password)
+
             Dim query As String = "INSERT INTO users (email, username, password) VALUES (@email, @username, @password)"
             Using cmd As New MySqlCommand(query, BukaKoneksi())
                 cmd.Parameters.AddWithValue("@email", email)
                 cmd.Parameters.AddWithValue("@username", username)
-                cmd.Parameters.AddWithValue("@password", password)
+                cmd.Parameters.AddWithValue("@password", encryptedPassword)
                 Dim hasil As Integer = cmd.ExecuteNonQuery()
-                Return hasil > 0 ' True jika berhasil
+                Return hasil > 0
             End Using
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, "Registrasi Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error)
