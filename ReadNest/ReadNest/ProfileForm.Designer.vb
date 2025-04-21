@@ -43,9 +43,9 @@ Partial Class ProfileForm
         Panel1 = New Panel()
         PictureBox1 = New PictureBox()
         Label7 = New Label()
-        TextBox3 = New TextBox()
-        TextBox2 = New TextBox()
-        TextBox1 = New TextBox()
+        ProfilePassword = New TextBox()
+        ProfileEmail = New TextBox()
+        ProfileUsername = New TextBox()
         Label5 = New Label()
         Label4 = New Label()
         Label3 = New Label()
@@ -275,9 +275,9 @@ Partial Class ProfileForm
         Panel1.BackColor = Color.Cornsilk
         Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(Label7)
-        Panel1.Controls.Add(TextBox3)
-        Panel1.Controls.Add(TextBox2)
-        Panel1.Controls.Add(TextBox1)
+        Panel1.Controls.Add(ProfilePassword)
+        Panel1.Controls.Add(ProfileEmail)
+        Panel1.Controls.Add(ProfileUsername)
         Panel1.Controls.Add(Label5)
         Panel1.Controls.Add(Label4)
         Panel1.Controls.Add(Label3)
@@ -312,32 +312,32 @@ Partial Class ProfileForm
         Label7.TabIndex = 58
         Label7.Text = "Edit "
         ' 
-        ' TextBox3
+        ' ProfilePassword
         ' 
-        TextBox3.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        TextBox3.Font = New Font("Segoe UI", 11F)
-        TextBox3.Location = New Point(110, 149)
-        TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(252, 27)
-        TextBox3.TabIndex = 57
+        ProfilePassword.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        ProfilePassword.Font = New Font("Segoe UI", 11F)
+        ProfilePassword.Location = New Point(110, 149)
+        ProfilePassword.Name = "ProfilePassword"
+        ProfilePassword.Size = New Size(252, 27)
+        ProfilePassword.TabIndex = 57
         ' 
-        ' TextBox2
+        ' ProfileEmail
         ' 
-        TextBox2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        TextBox2.Font = New Font("Segoe UI", 11F)
-        TextBox2.Location = New Point(110, 116)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(252, 27)
-        TextBox2.TabIndex = 56
+        ProfileEmail.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        ProfileEmail.Font = New Font("Segoe UI", 11F)
+        ProfileEmail.Location = New Point(110, 116)
+        ProfileEmail.Name = "ProfileEmail"
+        ProfileEmail.Size = New Size(252, 27)
+        ProfileEmail.TabIndex = 56
         ' 
-        ' TextBox1
+        ' ProfileUsername
         ' 
-        TextBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        TextBox1.Font = New Font("Segoe UI", 11F)
-        TextBox1.Location = New Point(110, 83)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(252, 27)
-        TextBox1.TabIndex = 55
+        ProfileUsername.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        ProfileUsername.Font = New Font("Segoe UI", 11F)
+        ProfileUsername.Location = New Point(110, 83)
+        ProfileUsername.Name = "ProfileUsername"
+        ProfileUsername.Size = New Size(252, 27)
+        ProfileUsername.TabIndex = 55
         ' 
         ' Label5
         ' 
@@ -461,9 +461,9 @@ Partial Class ProfileForm
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents ProfileUsername As TextBox
+    Friend WithEvents ProfilePassword As TextBox
+    Friend WithEvents ProfileEmail As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel2 As Panel
