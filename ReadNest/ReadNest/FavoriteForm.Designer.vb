@@ -23,7 +23,6 @@ Partial Class FavoriteForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FavoriteForm))
-        lvFavoriteBookList = New ListView()
         Label2 = New Label()
         lblUsername = New Label()
         pbProfile = New PictureBox()
@@ -45,6 +44,7 @@ Partial Class FavoriteForm
         pbCategory = New PictureBox()
         SplitContainer1 = New SplitContainer()
         PictureBox2 = New PictureBox()
+        flowBookFavorite = New FlowLayoutPanel()
         CType(pbProfile, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbBB, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).BeginInit()
@@ -54,17 +54,10 @@ Partial Class FavoriteForm
         CType(pbCategory, ComponentModel.ISupportInitialize).BeginInit()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer1.Panel1.SuspendLayout()
+        SplitContainer1.Panel2.SuspendLayout()
         SplitContainer1.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' lvFavoriteBookList
-        ' 
-        lvFavoriteBookList.Location = New Point(206, 125)
-        lvFavoriteBookList.Name = "lvFavoriteBookList"
-        lvFavoriteBookList.Size = New Size(696, 339)
-        lvFavoriteBookList.TabIndex = 57
-        lvFavoriteBookList.UseCompatibleStateImageBehavior = False
         ' 
         ' Label2
         ' 
@@ -73,7 +66,7 @@ Partial Class FavoriteForm
         Label2.Font = New Font("UD Digi Kyokasho NP-B", 13.2F, FontStyle.Bold)
         Label2.ForeColor = SystemColors.ControlText
         Label2.ImageAlign = ContentAlignment.TopRight
-        Label2.Location = New Point(206, 59)
+        Label2.Location = New Point(14, 33)
         Label2.Name = "Label2"
         Label2.Size = New Size(232, 21)
         Label2.TabIndex = 46
@@ -103,7 +96,7 @@ Partial Class FavoriteForm
         ' 
         btnSearchFavoriteBook.AutoSize = True
         btnSearchFavoriteBook.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        btnSearchFavoriteBook.Location = New Point(610, 90)
+        btnSearchFavoriteBook.Location = New Point(420, 59)
         btnSearchFavoriteBook.Name = "btnSearchFavoriteBook"
         btnSearchFavoriteBook.Size = New Size(75, 27)
         btnSearchFavoriteBook.TabIndex = 42
@@ -113,7 +106,7 @@ Partial Class FavoriteForm
         ' txtSearchFavoriteBook
         ' 
         txtSearchFavoriteBook.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        txtSearchFavoriteBook.Location = New Point(206, 92)
+        txtSearchFavoriteBook.Location = New Point(16, 59)
         txtSearchFavoriteBook.Name = "txtSearchFavoriteBook"
         txtSearchFavoriteBook.PlaceholderText = "Find your Favorite book here"
         txtSearchFavoriteBook.Size = New Size(398, 25)
@@ -293,6 +286,13 @@ Partial Class FavoriteForm
         ' 
         SplitContainer1.Panel1.Controls.Add(PictureBox2)
         SplitContainer1.Panel1MinSize = 186
+        ' 
+        ' SplitContainer1.Panel2
+        ' 
+        SplitContainer1.Panel2.Controls.Add(flowBookFavorite)
+        SplitContainer1.Panel2.Controls.Add(Label2)
+        SplitContainer1.Panel2.Controls.Add(txtSearchFavoriteBook)
+        SplitContainer1.Panel2.Controls.Add(btnSearchFavoriteBook)
         SplitContainer1.Size = New Size(934, 486)
         SplitContainer1.SplitterDistance = 186
         SplitContainer1.TabIndex = 72
@@ -307,6 +307,17 @@ Partial Class FavoriteForm
         PictureBox2.Size = New Size(186, 486)
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
+        ' 
+        ' flowBookFavorite
+        ' 
+        flowBookFavorite.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        flowBookFavorite.AutoScroll = True
+        flowBookFavorite.BackColor = Color.White
+        flowBookFavorite.Location = New Point(14, 92)
+        flowBookFavorite.Name = "flowBookFavorite"
+        flowBookFavorite.Padding = New Padding(9, 8, 9, 8)
+        flowBookFavorite.Size = New Size(718, 384)
+        flowBookFavorite.TabIndex = 34
         ' 
         ' FavoriteForm
         ' 
@@ -328,12 +339,8 @@ Partial Class FavoriteForm
         Controls.Add(pbFavorite)
         Controls.Add(pbNotes)
         Controls.Add(pbCategory)
-        Controls.Add(lvFavoriteBookList)
-        Controls.Add(Label2)
         Controls.Add(lblUsername)
         Controls.Add(pbProfile)
-        Controls.Add(btnSearchFavoriteBook)
-        Controls.Add(txtSearchFavoriteBook)
         Controls.Add(SplitContainer1)
         Name = "FavoriteForm"
         StartPosition = FormStartPosition.CenterScreen
@@ -346,14 +353,14 @@ Partial Class FavoriteForm
         CType(pbNotes, ComponentModel.ISupportInitialize).EndInit()
         CType(pbCategory, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.Panel1.ResumeLayout(False)
+        SplitContainer1.Panel2.ResumeLayout(False)
+        SplitContainer1.Panel2.PerformLayout()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.ResumeLayout(False)
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents lvFavoriteBookList As ListView
     Friend WithEvents Label2 As Label
     Friend WithEvents lblUsername As Label
     Friend WithEvents pbProfile As PictureBox
@@ -375,4 +382,5 @@ Partial Class FavoriteForm
     Friend WithEvents pbCategory As PictureBox
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents flowBookFavorite As FlowLayoutPanel
 End Class

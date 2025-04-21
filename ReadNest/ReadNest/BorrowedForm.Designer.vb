@@ -165,7 +165,7 @@ Partial Class BorrowForm
         Label6.Font = New Font("UD Digi Kyokasho NP-B", 16.2F, FontStyle.Bold)
         Label6.ForeColor = SystemColors.ControlText
         Label6.ImageAlign = ContentAlignment.TopRight
-        Label6.Location = New Point(34, 14)
+        Label6.Location = New Point(40, 37)
         Label6.Name = "Label6"
         Label6.Size = New Size(186, 25)
         Label6.TabIndex = 75
@@ -195,7 +195,7 @@ Partial Class BorrowForm
         ' txtSearchBook
         ' 
         txtSearchBook.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        txtSearchBook.Location = New Point(40, 58)
+        txtSearchBook.Location = New Point(40, 80)
         txtSearchBook.Name = "txtSearchBook"
         txtSearchBook.PlaceholderText = "find the book your friend wants to borrow here"
         txtSearchBook.Size = New Size(398, 25)
@@ -249,7 +249,7 @@ Partial Class BorrowForm
         lbListBorrower.BackColor = Color.Cornsilk
         lbListBorrower.BorderStyle = BorderStyle.FixedSingle
         lbListBorrower.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        lbListBorrower.Location = New Point(444, 14)
+        lbListBorrower.Location = New Point(444, 15)
         lbListBorrower.Name = "lbListBorrower"
         lbListBorrower.Size = New Size(145, 19)
         lbListBorrower.TabIndex = 94
@@ -259,7 +259,7 @@ Partial Class BorrowForm
         ' 
         Button1.AutoSize = True
         Button1.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Button1.Location = New Point(444, 57)
+        Button1.Location = New Point(444, 78)
         Button1.Name = "Button1"
         Button1.Size = New Size(75, 27)
         Button1.TabIndex = 88
@@ -486,9 +486,9 @@ Partial Class BorrowForm
         Panel2.Controls.Add(txtBBPages)
         Panel2.Controls.Add(txtBBCategory)
         Panel2.Controls.Add(txtBorrowerName)
-        Panel2.Location = New Point(48, 65)
+        Panel2.Location = New Point(48, 85)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(606, 352)
+        Panel2.Size = New Size(606, 386)
         Panel2.TabIndex = 95
         ' 
         ' BorrowForm
