@@ -43,10 +43,8 @@ Partial Class ProfileForm
         Panel1 = New Panel()
         PictureBox1 = New PictureBox()
         Label7 = New Label()
-        ProfilePassword = New TextBox()
         ProfileEmail = New TextBox()
         ProfileUsername = New TextBox()
-        Label5 = New Label()
         Label4 = New Label()
         Label3 = New Label()
         Label2 = New Label()
@@ -275,10 +273,8 @@ Partial Class ProfileForm
         Panel1.BackColor = Color.Cornsilk
         Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(Label7)
-        Panel1.Controls.Add(ProfilePassword)
         Panel1.Controls.Add(ProfileEmail)
         Panel1.Controls.Add(ProfileUsername)
-        Panel1.Controls.Add(Label5)
         Panel1.Controls.Add(Label4)
         Panel1.Controls.Add(Label3)
         Panel1.Controls.Add(Label2)
@@ -312,20 +308,11 @@ Partial Class ProfileForm
         Label7.TabIndex = 58
         Label7.Text = "Edit "
         ' 
-        ' ProfilePassword
-        ' 
-        ProfilePassword.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        ProfilePassword.Font = New Font("Segoe UI", 11F)
-        ProfilePassword.Location = New Point(110, 149)
-        ProfilePassword.Name = "ProfilePassword"
-        ProfilePassword.Size = New Size(252, 27)
-        ProfilePassword.TabIndex = 57
-        ' 
         ' ProfileEmail
         ' 
         ProfileEmail.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         ProfileEmail.Font = New Font("Segoe UI", 11F)
-        ProfileEmail.Location = New Point(110, 116)
+        ProfileEmail.Location = New Point(110, 142)
         ProfileEmail.Name = "ProfileEmail"
         ProfileEmail.Size = New Size(252, 27)
         ProfileEmail.TabIndex = 56
@@ -334,24 +321,10 @@ Partial Class ProfileForm
         ' 
         ProfileUsername.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         ProfileUsername.Font = New Font("Segoe UI", 11F)
-        ProfileUsername.Location = New Point(110, 83)
+        ProfileUsername.Location = New Point(110, 109)
         ProfileUsername.Name = "ProfileUsername"
         ProfileUsername.Size = New Size(252, 27)
         ProfileUsername.TabIndex = 55
-        ' 
-        ' Label5
-        ' 
-        Label5.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Label5.AutoSize = True
-        Label5.BackColor = Color.Transparent
-        Label5.Font = New Font("UD Digi Kyokasho NP-B", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label5.ForeColor = SystemColors.ControlText
-        Label5.ImageAlign = ContentAlignment.TopRight
-        Label5.Location = New Point(16, 158)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(88, 18)
-        Label5.TabIndex = 53
-        Label5.Text = "Password"
         ' 
         ' Label4
         ' 
@@ -361,7 +334,7 @@ Partial Class ProfileForm
         Label4.Font = New Font("UD Digi Kyokasho NP-B", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label4.ForeColor = SystemColors.ControlText
         Label4.ImageAlign = ContentAlignment.TopRight
-        Label4.Location = New Point(51, 125)
+        Label4.Location = New Point(51, 147)
         Label4.Name = "Label4"
         Label4.Size = New Size(53, 18)
         Label4.TabIndex = 52
@@ -375,7 +348,7 @@ Partial Class ProfileForm
         Label3.Font = New Font("UD Digi Kyokasho NP-B", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label3.ForeColor = SystemColors.ControlText
         Label3.ImageAlign = ContentAlignment.TopRight
-        Label3.Location = New Point(14, 92)
+        Label3.Location = New Point(14, 114)
         Label3.Name = "Label3"
         Label3.Size = New Size(90, 18)
         Label3.TabIndex = 51
@@ -458,11 +431,9 @@ Partial Class ProfileForm
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents ProfileUsername As TextBox
-    Friend WithEvents ProfilePassword As TextBox
     Friend WithEvents ProfileEmail As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents PictureBox1 As PictureBox

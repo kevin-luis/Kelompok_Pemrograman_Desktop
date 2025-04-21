@@ -1,13 +1,13 @@
 ﻿Public Class ProfileForm
 
     Private Sub ProfileForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Dim db As New DBConnection()
         Dim dt As DataTable = db.GetUserProfile(SessionHelper.CurrentUser.UserId)
 
         If dt.Rows.Count > 0 Then
             ProfileUsername.Text = dt.Rows(0)("Username").ToString()
             ProfileEmail.Text = dt.Rows(0)("Email").ToString()
-            ProfilePassword.Text = dt.Rows(0)("Password").ToString()
         Else
             MessageBox.Show("Data profil tidak ditemukan.")
         End If
@@ -87,15 +87,7 @@
         Me.Hide()
     End Sub
 
-    Private Sub ProfileUsername_TextChanged(sender As Object, e As EventArgs) Handles ProfileUsername.TextChanged
-
-    End Sub
-
     Private Sub ProfileEmail_TextChanged(sender As Object, e As EventArgs) Handles ProfileEmail.TextChanged
-
-    End Sub
-
-    Private Sub ProfilePassword_TextChanged(sender As Object, e As EventArgs) Handles ProfilePassword.TextChanged
 
     End Sub
 End Class
