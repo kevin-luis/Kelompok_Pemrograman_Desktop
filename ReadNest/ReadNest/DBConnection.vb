@@ -4,6 +4,7 @@ Imports System.IO
 Imports MySql.Data.MySqlClient
 Imports System.Security.Cryptography
 Imports System.Text
+Imports Mysqlx
 
 
 Public Class DBConnection
@@ -510,4 +511,31 @@ Public Class DBConnection
             TutupKoneksi()
         End Try
     End Function
+
+    Public Function GetUserProfile(userId As Integer) As DataTable
+        Dim dt As New DataTable
+        Dim query As String = "SELECT Username, Email, Password FROM users WHERE UserID = @UserId"
+
+        Try
+            Using conn As MySqlConnection = BukaKoneksi()
+                Using cmd As New MySqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@UserId", userId)
+
+                    If conn.State = ConnectionState.Closed Then
+                        conn.Open()
+                    End If
+
+                    Using reader As MySqlDataReader = cmd.ExecuteReader()
+                        dt.Load(reader)
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error mengambil data profil: " & ex.Message)
+        End Try
+
+        Return dt
+    End Function
+
+
 End Class
