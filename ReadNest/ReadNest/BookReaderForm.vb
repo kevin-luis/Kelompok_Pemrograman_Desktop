@@ -94,55 +94,47 @@ Public Class BookReaderForm
     End Sub
 
     Private Sub ShowPdf(filePath As String)
-        Try
-            ' Remove "No Document" label
-            lblNoDocument.Visible = False
+        lblNoDocument.Visible = False
 
-            ' Load PDF document
-            _pdfDocument = PdfDocument.Load(filePath)
-            _pdfViewer = New PdfViewer()
-            _pdfViewer.Dock = DockStyle.Fill
-            _pdfViewer.Document = _pdfDocument
-            _pdfViewer.Renderer.ZoomMode = PdfViewerZoomMode.FitWidth ' Use Renderer for zoom mode
+        ' Load PDF document
+        _pdfDocument = PdfDocument.Load(filePath)
+        _pdfViewer = New PdfViewer()
+        _pdfViewer.Dock = DockStyle.Fill
+        _pdfViewer.Document = _pdfDocument
+        _pdfViewer.Renderer.ZoomMode = PdfViewerZoomMode.FitWidth ' Use Renderer for zoom mode
 
-            ' Enable PDF-related controls
-            tsbPrevPage.Enabled = True
-            tsbNextPage.Enabled = True
-            tslPageInfo.Enabled = True
-            tscbZoom.Enabled = True
-            tsbZoomIn.Enabled = True
-            tsbZoomOut.Enabled = True
-            tsbHighlight.Enabled = True
-            tsbNote.Enabled = True
-            tsbBookmark.Enabled = True
-            tsbSearch.Enabled = True
-            tsbViewMode.Enabled = True
-            cmbTheme.Enabled = True
+        ' Disable the built-in toolbar
+        _pdfViewer.ShowToolbar = False
 
-            ' Update page info
-            tslPageInfo.Text = $"1 / {_pdfDocument.PageCount}"
+        ' Enable PDF-related controls
+        tsbPrevPage.Enabled = True
+        tsbNextPage.Enabled = True
+        tslPageInfo.Enabled = True
+        tscbZoom.Enabled = True
+        tsbZoomIn.Enabled = True
+        tsbZoomOut.Enabled = True
+        tsbHighlight.Enabled = True
+        tsbNote.Enabled = True
+        tsbSearch.Enabled = True
+        tsbViewMode.Enabled = True
+        cmbTheme.Enabled = True
 
-            ' Set up zoom combo box
-            tscbZoom.Items.Clear()
-            tscbZoom.Items.AddRange({"50%", "75%", "100%", "125%", "150%", "175%", "200%", "Fit Page", "Fit Width"})
-            tscbZoom.SelectedItem = "Fit Width"
+        ' Update page info
+        tslPageInfo.Text = $"1 / {_pdfDocument.PageCount}"
 
-            pnlDocumentView.Controls.Clear()
-            pnlDocumentView.Controls.Add(_pdfViewer)
+        pnlDocumentView.Controls.Clear()
+        pnlDocumentView.Controls.Add(_pdfViewer)
 
-            ' Go to last saved page if available
-            If _currentPage > 0 AndAlso _currentPage <= _pdfDocument.PageCount Then
-                _pdfViewer.Renderer.Page = _currentPage - 1 ' PdfiumViewer uses 0-based page numbers
-                _lastTrackedPage = _currentPage ' Update the tracked page
-            End If
+        ' Go to last saved page if available
+        If _currentPage > 0 AndAlso _currentPage <= _pdfDocument.PageCount Then
+            _pdfViewer.Renderer.Page = _currentPage - 1 ' PdfiumViewer uses 0-based page numbers
+            _lastTrackedPage = _currentPage ' Update the tracked page
+        End If
 
-            ' Set up page change tracking using a timer
-            _pageCheckTimer.Interval = 250 ' Check every quarter second
-            _pageCheckTimer.Enabled = True
-            AddHandler _pageCheckTimer.Tick, AddressOf PageCheckTimer_Tick
-        Catch ex As Exception
-            MessageBox.Show("Failed to load PDF: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        ' Set up page change tracking using a timer
+        _pageCheckTimer.Interval = 250 ' Check every quarter second
+        _pageCheckTimer.Enabled = True
+        AddHandler _pageCheckTimer.Tick, AddressOf PageCheckTimer_Tick
     End Sub
 
     Private Sub PageCheckTimer_Tick(sender As Object, e As EventArgs)
@@ -199,7 +191,6 @@ Public Class BookReaderForm
             tsbZoomOut.Enabled = False
             tsbHighlight.Enabled = True
             tsbNote.Enabled = True
-            tsbBookmark.Enabled = True
             tsbSearch.Enabled = True
             tsbViewMode.Enabled = False
             cmbTheme.Enabled = True
@@ -322,21 +313,6 @@ Public Class BookReaderForm
         End If
     End Sub
 
-    Private Sub tscbZoom_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tscbZoom.SelectedIndexChanged
-        If _pdfViewer IsNot Nothing AndAlso tscbZoom.SelectedItem IsNot Nothing Then
-            Dim zoomText As String = tscbZoom.SelectedItem.ToString()
-
-            If zoomText.EndsWith("%") Then
-                Dim zoomLevel As Integer = Integer.Parse(zoomText.TrimEnd("%"c))
-                _pdfViewer.Renderer.Zoom = zoomLevel / 100.0F ' Use Renderer.Zoom
-            ElseIf zoomText = "Fit Page" Then
-                _pdfViewer.Renderer.ZoomMode = PdfViewerZoomMode.FitHeight ' Use Renderer.ZoomMode
-            ElseIf zoomText = "Fit Width" Then
-                _pdfViewer.Renderer.ZoomMode = PdfViewerZoomMode.FitWidth ' Use Renderer.ZoomMode
-            End If
-        End If
-    End Sub
-
     Private Sub UpdateZoomComboBox()
         If _pdfViewer IsNot Nothing Then
             Dim zoomPercentage As Integer = CInt(_pdfViewer.Renderer.Zoom * 100) ' Use Renderer.Zoom
@@ -364,4 +340,11 @@ Public Class BookReaderForm
     Private Sub btnCloseSearch_Click(sender As Object, e As EventArgs) Handles btnCloseSearch.Click
         pnlSearch.Visible = False
     End Sub
+
+    Private Sub tsbOpenDocument_Click(sender As Object, e As EventArgs) Handles tsbOpenDocument.Click
+        Dim home As New MainForm()
+        home.Show()
+        Me.Close()
+    End Sub
+
 End Class

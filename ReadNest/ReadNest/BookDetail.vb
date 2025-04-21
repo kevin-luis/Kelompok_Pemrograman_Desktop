@@ -98,11 +98,14 @@ Public Class BookDetail
 
     Private Sub backButton_Click(sender As Object, e As EventArgs) Handles backButton.Click
         Me.Close()
+        Dim mainForm As New MainForm()
+        mainForm.Show()
     End Sub
 
     Private Sub startReadingButton_Click(sender As Object, e As EventArgs) Handles startReadingButton.Click
         Dim readerForm As New BookReaderForm(_bookId, _userId)
         readerForm.Show()
+        Me.Hide()
     End Sub
 
     Private Sub bookmarkButton_Click(sender As Object, e As EventArgs) Handles bookmarkButton.Click

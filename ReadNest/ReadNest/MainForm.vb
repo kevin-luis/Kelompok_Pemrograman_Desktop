@@ -37,20 +37,8 @@ Public Class MainForm
     End Sub
 
     Private Sub MainForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If isNavigating Then
-            Return
-        End If
-
-        Dim result As DialogResult = MessageBox.Show("Apakah Anda yakin ingin keluar?", "Konfirmasi",
-                                               MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
-        If result = DialogResult.No Then
-            e.Cancel = True
-        Else
-            ' Tidak menghapus session saat aplikasi ditutup
-            ' Session tetap aktif untuk auto-login
-            Application.Exit()
-        End If
+        If isNavigating Then Return
+        Application.Exit()
     End Sub
 
     '============ NAVIGASI MENU ============'
@@ -313,6 +301,12 @@ Public Class MainForm
             SessionHelper.UpdateActivity()
             Dim bookDetailForm As New BookDetail(BookId)
             bookDetailForm.Show()
+
+            ' Buat tutup mainformnya
+            Dim parentForm = Me.FindForm()
+            If parentForm IsNot Nothing Then
+                parentForm.Hide()
+            End If
         End Sub
     End Class
 

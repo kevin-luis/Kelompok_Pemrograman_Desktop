@@ -23,6 +23,7 @@ Partial Class BookReaderForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BookReaderForm))
         pnlMainContainer = New TableLayoutPanel()
         pnlSidebar = New Panel()
         tbcSidebar = New TabControl()
@@ -54,7 +55,7 @@ Partial Class BookReaderForm
         tsbNextPage = New ToolStripButton()
         toolStripSeparator1 = New ToolStripSeparator()
         tsbZoomOut = New ToolStripButton()
-        tscbZoom = New ToolStripComboBox()
+        tscbZoom = New ToolStripTextBox()
         tsbZoomIn = New ToolStripButton()
         toolStripSeparator2 = New ToolStripSeparator()
         tsbHighlight = New ToolStripDropDownButton()
@@ -68,7 +69,6 @@ Partial Class BookReaderForm
         addNoteToolStripMenuItem = New ToolStripMenuItem()
         copyTextToolStripMenuItem = New ToolStripMenuItem()
         tsbNote = New ToolStripButton()
-        tsbBookmark = New ToolStripButton()
         toolStripSeparator3 = New ToolStripSeparator()
         tsbSearch = New ToolStripButton()
         tsbViewMode = New ToolStripDropDownButton()
@@ -432,7 +432,7 @@ Partial Class BookReaderForm
         tlsReaderTools.Font = New Font("Segoe UI", 10F)
         tlsReaderTools.GripStyle = ToolStripGripStyle.Hidden
         tlsReaderTools.ImageScalingSize = New Size(20, 20)
-        tlsReaderTools.Items.AddRange(New ToolStripItem() {tsbOpenDocument, tsbToggleSidebar, toolStripSeparator4, tsbPrevPage, tslPageInfo, tsbNextPage, toolStripSeparator1, tsbZoomOut, tscbZoom, tsbZoomIn, toolStripSeparator2, tsbHighlight, tsbNote, tsbBookmark, toolStripSeparator3, tsbSearch, tsbViewMode, cmbTheme, menuSettings})
+        tlsReaderTools.Items.AddRange(New ToolStripItem() {tsbOpenDocument, tsbToggleSidebar, toolStripSeparator4, tsbPrevPage, tslPageInfo, tsbNextPage, toolStripSeparator1, tsbZoomOut, tscbZoom, tsbZoomIn, toolStripSeparator2, tsbHighlight, tsbNote, toolStripSeparator3, tsbSearch, tsbViewMode, cmbTheme, menuSettings})
         tlsReaderTools.Location = New Point(0, 0)
         tlsReaderTools.Name = "tlsReaderTools"
         tlsReaderTools.Padding = New Padding(5, 0, 5, 0)
@@ -445,6 +445,7 @@ Partial Class BookReaderForm
         ' 
         tsbOpenDocument.AutoSize = False
         tsbOpenDocument.DisplayStyle = ToolStripItemDisplayStyle.Image
+        tsbOpenDocument.Image = CType(resources.GetObject("tsbOpenDocument.Image"), Image)
         tsbOpenDocument.ImageTransparentColor = Color.Magenta
         tsbOpenDocument.Margin = New Padding(10, 0, 5, 0)
         tsbOpenDocument.Name = "tsbOpenDocument"
@@ -455,6 +456,7 @@ Partial Class BookReaderForm
         ' 
         tsbToggleSidebar.AutoSize = False
         tsbToggleSidebar.DisplayStyle = ToolStripItemDisplayStyle.Image
+        tsbToggleSidebar.Image = CType(resources.GetObject("tsbToggleSidebar.Image"), Image)
         tsbToggleSidebar.ImageTransparentColor = Color.Magenta
         tsbToggleSidebar.Margin = New Padding(5, 0, 5, 0)
         tsbToggleSidebar.Name = "tsbToggleSidebar"
@@ -472,6 +474,7 @@ Partial Class BookReaderForm
         tsbPrevPage.AutoSize = False
         tsbPrevPage.DisplayStyle = ToolStripItemDisplayStyle.Image
         tsbPrevPage.Enabled = False
+        tsbPrevPage.Image = CType(resources.GetObject("tsbPrevPage.Image"), Image)
         tsbPrevPage.ImageTransparentColor = Color.Magenta
         tsbPrevPage.Margin = New Padding(5, 0, 5, 0)
         tsbPrevPage.Name = "tsbPrevPage"
@@ -493,6 +496,7 @@ Partial Class BookReaderForm
         tsbNextPage.AutoSize = False
         tsbNextPage.DisplayStyle = ToolStripItemDisplayStyle.Image
         tsbNextPage.Enabled = False
+        tsbNextPage.Image = CType(resources.GetObject("tsbNextPage.Image"), Image)
         tsbNextPage.ImageTransparentColor = Color.Magenta
         tsbNextPage.Margin = New Padding(5, 0, 5, 0)
         tsbNextPage.Name = "tsbNextPage"
@@ -510,6 +514,7 @@ Partial Class BookReaderForm
         tsbZoomOut.AutoSize = False
         tsbZoomOut.DisplayStyle = ToolStripItemDisplayStyle.Image
         tsbZoomOut.Enabled = False
+        tsbZoomOut.Image = CType(resources.GetObject("tsbZoomOut.Image"), Image)
         tsbZoomOut.ImageTransparentColor = Color.Magenta
         tsbZoomOut.Margin = New Padding(5, 0, 5, 0)
         tsbZoomOut.Name = "tsbZoomOut"
@@ -518,20 +523,17 @@ Partial Class BookReaderForm
         ' 
         ' tscbZoom
         ' 
-        tscbZoom.AutoSize = False
-        tscbZoom.DropDownStyle = ComboBoxStyle.DropDownList
-        tscbZoom.Enabled = False
-        tscbZoom.FlatStyle = FlatStyle.Standard
-        tscbZoom.Items.AddRange(New Object() {"50%", "75%", "100%", "125%", "150%", "175%", "200%", "Fit Page", "Fit Width"})
-        tscbZoom.Margin = New Padding(2, 0, 2, 0)
+        tscbZoom.BackColor = SystemColors.MenuBar
         tscbZoom.Name = "tscbZoom"
-        tscbZoom.Size = New Size(90, 28)
+        tscbZoom.ReadOnly = True
+        tscbZoom.Size = New Size(60, 60)
         ' 
         ' tsbZoomIn
         ' 
         tsbZoomIn.AutoSize = False
         tsbZoomIn.DisplayStyle = ToolStripItemDisplayStyle.Image
         tsbZoomIn.Enabled = False
+        tsbZoomIn.Image = CType(resources.GetObject("tsbZoomIn.Image"), Image)
         tsbZoomIn.ImageTransparentColor = Color.Magenta
         tsbZoomIn.Margin = New Padding(5, 0, 5, 0)
         tsbZoomIn.Name = "tsbZoomIn"
@@ -550,6 +552,7 @@ Partial Class BookReaderForm
         tsbHighlight.DisplayStyle = ToolStripItemDisplayStyle.Image
         tsbHighlight.DropDown = cmsHighlighting
         tsbHighlight.Enabled = False
+        tsbHighlight.Image = CType(resources.GetObject("tsbHighlight.Image"), Image)
         tsbHighlight.ImageTransparentColor = Color.Magenta
         tsbHighlight.Margin = New Padding(5, 0, 5, 0)
         tsbHighlight.Name = "tsbHighlight"
@@ -561,7 +564,6 @@ Partial Class BookReaderForm
         cmsHighlighting.ImageScalingSize = New Size(20, 20)
         cmsHighlighting.Items.AddRange(New ToolStripItem() {yellowHighlightToolStripMenuItem, blueHighlightToolStripMenuItem, greenHighlightToolStripMenuItem, pinkHighlightToolStripMenuItem, removeHighlightToolStripMenuItem, toolStripMenuItem1, addNoteToolStripMenuItem, copyTextToolStripMenuItem})
         cmsHighlighting.Name = "cmsHighlighting"
-        cmsHighlighting.OwnerItem = tsbHighlight
         cmsHighlighting.Size = New Size(199, 178)
         ' 
         ' yellowHighlightToolStripMenuItem
@@ -620,22 +622,12 @@ Partial Class BookReaderForm
         tsbNote.AutoSize = False
         tsbNote.DisplayStyle = ToolStripItemDisplayStyle.Image
         tsbNote.Enabled = False
+        tsbNote.Image = CType(resources.GetObject("tsbNote.Image"), Image)
         tsbNote.ImageTransparentColor = Color.Magenta
         tsbNote.Margin = New Padding(5, 0, 5, 0)
         tsbNote.Name = "tsbNote"
         tsbNote.Size = New Size(40, 40)
         tsbNote.Text = "Add Note"
-        ' 
-        ' tsbBookmark
-        ' 
-        tsbBookmark.AutoSize = False
-        tsbBookmark.DisplayStyle = ToolStripItemDisplayStyle.Image
-        tsbBookmark.Enabled = False
-        tsbBookmark.ImageTransparentColor = Color.Magenta
-        tsbBookmark.Margin = New Padding(5, 0, 5, 0)
-        tsbBookmark.Name = "tsbBookmark"
-        tsbBookmark.Size = New Size(40, 40)
-        tsbBookmark.Text = "Add Bookmark"
         ' 
         ' toolStripSeparator3
         ' 
@@ -648,6 +640,7 @@ Partial Class BookReaderForm
         tsbSearch.AutoSize = False
         tsbSearch.DisplayStyle = ToolStripItemDisplayStyle.Image
         tsbSearch.Enabled = False
+        tsbSearch.Image = CType(resources.GetObject("tsbSearch.Image"), Image)
         tsbSearch.ImageTransparentColor = Color.Magenta
         tsbSearch.Margin = New Padding(5, 0, 5, 0)
         tsbSearch.Name = "tsbSearch"
@@ -660,6 +653,7 @@ Partial Class BookReaderForm
         tsbViewMode.DisplayStyle = ToolStripItemDisplayStyle.Image
         tsbViewMode.DropDownItems.AddRange(New ToolStripItem() {singlePageToolStripMenuItem1, twoPagesToolStripMenuItem1})
         tsbViewMode.Enabled = False
+        tsbViewMode.Image = CType(resources.GetObject("tsbViewMode.Image"), Image)
         tsbViewMode.ImageTransparentColor = Color.Magenta
         tsbViewMode.Margin = New Padding(5, 0, 5, 0)
         tsbViewMode.Name = "tsbViewMode"
@@ -671,13 +665,13 @@ Partial Class BookReaderForm
         singlePageToolStripMenuItem1.Checked = True
         singlePageToolStripMenuItem1.CheckState = CheckState.Checked
         singlePageToolStripMenuItem1.Name = "singlePageToolStripMenuItem1"
-        singlePageToolStripMenuItem1.Size = New Size(182, 28)
+        singlePageToolStripMenuItem1.Size = New Size(224, 28)
         singlePageToolStripMenuItem1.Text = "Single Page"
         ' 
         ' twoPagesToolStripMenuItem1
         ' 
         twoPagesToolStripMenuItem1.Name = "twoPagesToolStripMenuItem1"
-        twoPagesToolStripMenuItem1.Size = New Size(182, 28)
+        twoPagesToolStripMenuItem1.Size = New Size(224, 28)
         twoPagesToolStripMenuItem1.Text = "Two Pages"
         ' 
         ' cmbTheme
@@ -686,6 +680,7 @@ Partial Class BookReaderForm
         cmbTheme.DisplayStyle = ToolStripItemDisplayStyle.Image
         cmbTheme.DropDownItems.AddRange(New ToolStripItem() {lightModeToolStripMenuItem, darkModeToolStripMenuItem, sepiaToolStripMenuItem})
         cmbTheme.Enabled = False
+        cmbTheme.Image = CType(resources.GetObject("cmbTheme.Image"), Image)
         cmbTheme.ImageTransparentColor = Color.Magenta
         cmbTheme.Margin = New Padding(5, 0, 5, 0)
         cmbTheme.Name = "cmbTheme"
@@ -697,19 +692,19 @@ Partial Class BookReaderForm
         lightModeToolStripMenuItem.Checked = True
         lightModeToolStripMenuItem.CheckState = CheckState.Checked
         lightModeToolStripMenuItem.Name = "lightModeToolStripMenuItem"
-        lightModeToolStripMenuItem.Size = New Size(181, 28)
+        lightModeToolStripMenuItem.Size = New Size(224, 28)
         lightModeToolStripMenuItem.Text = "Light Mode"
         ' 
         ' darkModeToolStripMenuItem
         ' 
         darkModeToolStripMenuItem.Name = "darkModeToolStripMenuItem"
-        darkModeToolStripMenuItem.Size = New Size(181, 28)
+        darkModeToolStripMenuItem.Size = New Size(224, 28)
         darkModeToolStripMenuItem.Text = "Dark Mode"
         ' 
         ' sepiaToolStripMenuItem
         ' 
         sepiaToolStripMenuItem.Name = "sepiaToolStripMenuItem"
-        sepiaToolStripMenuItem.Size = New Size(181, 28)
+        sepiaToolStripMenuItem.Size = New Size(224, 28)
         sepiaToolStripMenuItem.Text = "Sepia"
         ' 
         ' menuSettings
@@ -718,6 +713,7 @@ Partial Class BookReaderForm
         menuSettings.AutoSize = False
         menuSettings.DisplayStyle = ToolStripItemDisplayStyle.Image
         menuSettings.DropDownItems.AddRange(New ToolStripItem() {preferencesToolStripMenuItem, helpToolStripMenuItem1, aboutToolStripMenuItem1})
+        menuSettings.Image = CType(resources.GetObject("menuSettings.Image"), Image)
         menuSettings.ImageTransparentColor = Color.Magenta
         menuSettings.Margin = New Padding(5, 0, 10, 0)
         menuSettings.Name = "menuSettings"
@@ -941,7 +937,6 @@ Partial Class BookReaderForm
     Friend WithEvents tsbNextPage As ToolStripButton
     Friend WithEvents toolStripSeparator1 As ToolStripSeparator
     Friend WithEvents tsbZoomOut As ToolStripButton
-    Friend WithEvents tscbZoom As ToolStripComboBox
     Friend WithEvents tsbZoomIn As ToolStripButton
     Friend WithEvents toolStripSeparator2 As ToolStripSeparator
     Friend WithEvents tsbHighlight As ToolStripDropDownButton
@@ -955,7 +950,6 @@ Partial Class BookReaderForm
     Friend WithEvents addNoteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents copyTextToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents tsbNote As ToolStripButton
-    Friend WithEvents tsbBookmark As ToolStripButton
     Friend WithEvents toolStripSeparator3 As ToolStripSeparator
     Friend WithEvents tsbSearch As ToolStripButton
     Friend WithEvents tsbViewMode As ToolStripDropDownButton
@@ -982,4 +976,5 @@ Partial Class BookReaderForm
     Friend WithEvents SearchDialog1 As RichTextBox
     Friend WithEvents BookmarkDialog1 As TextBox
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents tscbZoom As ToolStripTextBox
 End Class
