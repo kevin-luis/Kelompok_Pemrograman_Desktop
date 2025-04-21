@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 
-Public Class FavoriteForm
+Public Class WishlistForm
 
     Private Sub FavoriteForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadFavoriteBooks()
@@ -15,11 +15,11 @@ Public Class FavoriteForm
 
     Private Sub LoadFavoriteBooks(Optional searchTerm As String = "")
         Try
-            flowBookFavorite.SuspendLayout()
-            flowBookFavorite.Controls.Clear()
+            flowBookWishlist.SuspendLayout()
+            flowBookWishlist.Controls.Clear()
 
             Dim db As New DBConnection()
-            Dim query As String = "SELECT BookId, Title, Author, PhotoPath FROM books WHERE IsFavorite = 1"
+            Dim query As String = "SELECT BookId, Title, Author, PhotoPath FROM books WHERE IsWishlist = 1"
 
             If Not String.IsNullOrWhiteSpace(searchTerm) Then
                 query &= " AND (Title LIKE @search OR Author LIKE @search)"
@@ -42,11 +42,11 @@ Public Class FavoriteForm
                             row("Author").ToString(),
                             If(IsDBNull(row("PhotoPath")), "", row("PhotoPath").ToString())
                         )
-                            flowBookFavorite.Controls.Add(bookCard)
+                            flowBookWishlist.Controls.Add(bookCard)
                         Next
                     Else
-                        flowBookFavorite.Controls.Add(New Label() With {
-                        .Text = "Tidak ada buku favorit ditemukan.",
+                        flowBookWishlist.Controls.Add(New Label() With {
+                        .Text = "Tidak ada buku wishlist ditemukan.",
                         .AutoSize = True,
                         .Font = New Font("Segoe UI", 10.0F, FontStyle.Italic),
                         .Dock = DockStyle.Fill
@@ -55,10 +55,10 @@ Public Class FavoriteForm
                 End Using
             End Using
         Catch ex As Exception
-            MessageBox.Show("Gagal memuat buku favorit: " & ex.Message, "Error",
+            MessageBox.Show("Gagal memuat buku wishlist: " & ex.Message, "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
-            flowBookFavorite.ResumeLayout()
+            flowBookWishlist.ResumeLayout()
         End Try
     End Sub
 

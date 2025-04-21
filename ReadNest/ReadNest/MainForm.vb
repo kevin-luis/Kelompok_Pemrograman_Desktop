@@ -85,6 +85,9 @@ Public Class MainForm
         NavigateToForm(New StatisticForm())
     End Sub
 
+    Private Sub lblWishlist_Click(sender As Object, e As EventArgs) Handles lblWishlist.Click
+        NavigateToForm(New WishlistForm())
+    End Sub
     '============ PROFILE MENU ============'
     Private Sub cbProfile_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProfile.SelectedIndexChanged
         If cbProfile.SelectedIndex = -1 Then Exit Sub
@@ -312,5 +315,6 @@ Public Class MainForm
             bookDetailForm.Show()
         End Sub
     End Class
+
 
 End Class

@@ -56,6 +56,8 @@ Partial Class BorrowForm
         pbNotes = New PictureBox()
         pbCategory = New PictureBox()
         SplitContainer1 = New SplitContainer()
+        lblWishlist = New Label()
+        PictureBox1 = New PictureBox()
         PictureBox2 = New PictureBox()
         Panel1 = New Panel()
         Panel2 = New Panel()
@@ -71,6 +73,7 @@ Partial Class BorrowForm
         SplitContainer1.Panel1.SuspendLayout()
         SplitContainer1.Panel2.SuspendLayout()
         SplitContainer1.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
@@ -98,10 +101,10 @@ Partial Class BorrowForm
         ' 
         Label8.AutoSize = True
         Label8.BackColor = Color.Cornsilk
-        Label8.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label8.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label8.Location = New Point(68, 259)
         Label8.Name = "Label8"
-        Label8.Size = New Size(56, 17)
+        Label8.Size = New Size(55, 18)
         Label8.TabIndex = 84
         Label8.Text = "Pages"
         ' 
@@ -109,10 +112,10 @@ Partial Class BorrowForm
         ' 
         Label7.AutoSize = True
         Label7.BackColor = Color.Cornsilk
-        Label7.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label7.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label7.Location = New Point(68, 226)
         Label7.Name = "Label7"
-        Label7.Size = New Size(80, 17)
+        Label7.Size = New Size(76, 18)
         Label7.TabIndex = 82
         Label7.Text = "Category"
         ' 
@@ -120,10 +123,10 @@ Partial Class BorrowForm
         ' 
         Label5.AutoSize = True
         Label5.BackColor = Color.Cornsilk
-        Label5.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label5.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label5.Location = New Point(68, 192)
         Label5.Name = "Label5"
-        Label5.Size = New Size(100, 17)
+        Label5.Size = New Size(99, 18)
         Label5.TabIndex = 80
         Label5.Text = "Book Writer"
         ' 
@@ -131,10 +134,10 @@ Partial Class BorrowForm
         ' 
         Label2.AutoSize = True
         Label2.BackColor = Color.Cornsilk
-        Label2.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label2.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label2.Location = New Point(68, 159)
         Label2.Name = "Label2"
-        Label2.Size = New Size(87, 17)
+        Label2.Size = New Size(85, 18)
         Label2.TabIndex = 78
         Label2.Text = "Book Title"
         ' 
@@ -162,12 +165,12 @@ Partial Class BorrowForm
         ' 
         Label6.AutoSize = True
         Label6.BackColor = Color.Cornsilk
-        Label6.Font = New Font("UD Digi Kyokasho NP-B", 16.2F, FontStyle.Bold)
+        Label6.Font = New Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold)
         Label6.ForeColor = SystemColors.ControlText
         Label6.ImageAlign = ContentAlignment.TopRight
         Label6.Location = New Point(40, 37)
         Label6.Name = "Label6"
-        Label6.Size = New Size(186, 25)
+        Label6.Size = New Size(177, 26)
         Label6.TabIndex = 75
         Label6.Text = "Borrowing book"
         ' 
@@ -184,31 +187,31 @@ Partial Class BorrowForm
         ' BtnAddNewBook
         ' 
         BtnAddNewBook.AutoSize = True
-        BtnAddNewBook.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        BtnAddNewBook.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         BtnAddNewBook.Location = New Point(233, 291)
         BtnAddNewBook.Name = "BtnAddNewBook"
-        BtnAddNewBook.Size = New Size(131, 27)
+        BtnAddNewBook.Size = New Size(131, 28)
         BtnAddNewBook.TabIndex = 81
         BtnAddNewBook.Text = "Borrow"
         BtnAddNewBook.UseVisualStyleBackColor = True
         ' 
         ' txtSearchBook
         ' 
-        txtSearchBook.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        txtSearchBook.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         txtSearchBook.Location = New Point(40, 80)
         txtSearchBook.Name = "txtSearchBook"
         txtSearchBook.PlaceholderText = "find the book your friend wants to borrow here"
-        txtSearchBook.Size = New Size(398, 25)
+        txtSearchBook.Size = New Size(398, 24)
         txtSearchBook.TabIndex = 89
         ' 
         ' Label9
         ' 
         Label9.AutoSize = True
         Label9.BackColor = Color.Cornsilk
-        Label9.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label9.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label9.Location = New Point(40, 126)
         Label9.Name = "Label9"
-        Label9.Size = New Size(128, 17)
+        Label9.Size = New Size(127, 18)
         Label9.TabIndex = 90
         Label9.Text = "Borrower Name"
         ' 
@@ -236,10 +239,10 @@ Partial Class BorrowForm
         ' 
         lblUsername.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         lblUsername.AutoSize = True
-        lblUsername.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        lblUsername.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblUsername.Location = New Point(850, 25)
         lblUsername.Name = "lblUsername"
-        lblUsername.Size = New Size(61, 17)
+        lblUsername.Size = New Size(57, 18)
         lblUsername.TabIndex = 93
         lblUsername.Text = "Profile"
         ' 
@@ -248,20 +251,20 @@ Partial Class BorrowForm
         lbListBorrower.AutoSize = True
         lbListBorrower.BackColor = Color.Cornsilk
         lbListBorrower.BorderStyle = BorderStyle.FixedSingle
-        lbListBorrower.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        lbListBorrower.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lbListBorrower.Location = New Point(444, 15)
         lbListBorrower.Name = "lbListBorrower"
-        lbListBorrower.Size = New Size(145, 19)
+        lbListBorrower.Size = New Size(141, 20)
         lbListBorrower.TabIndex = 94
         lbListBorrower.Text = "List of Borrowers"
         ' 
         ' Button1
         ' 
         Button1.AutoSize = True
-        Button1.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Button1.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Button1.Location = New Point(444, 78)
         Button1.Name = "Button1"
-        Button1.Size = New Size(75, 27)
+        Button1.Size = New Size(75, 28)
         Button1.TabIndex = 88
         Button1.Text = "Search"
         Button1.UseVisualStyleBackColor = True
@@ -281,11 +284,11 @@ Partial Class BorrowForm
         ' 
         lblBB.AutoSize = True
         lblBB.BackColor = SystemColors.Info
-        lblBB.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
+        lblBB.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblBB.ImageAlign = ContentAlignment.TopRight
         lblBB.Location = New Point(46, 260)
         lblBB.Name = "lblBB"
-        lblBB.Size = New Size(131, 17)
+        lblBB.Size = New Size(130, 18)
         lblBB.TabIndex = 107
         lblBB.Text = "Book Borrowing"
         ' 
@@ -293,11 +296,11 @@ Partial Class BorrowForm
         ' 
         lblstatistic.AutoSize = True
         lblstatistic.BackColor = SystemColors.Info
-        lblstatistic.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
+        lblstatistic.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblstatistic.ImageAlign = ContentAlignment.TopRight
         lblstatistic.Location = New Point(46, 294)
         lblstatistic.Name = "lblstatistic"
-        lblstatistic.Size = New Size(103, 17)
+        lblstatistic.Size = New Size(96, 18)
         lblstatistic.TabIndex = 106
         lblstatistic.Text = "My Statistic"
         ' 
@@ -316,11 +319,11 @@ Partial Class BorrowForm
         ' 
         lblDiscover.AutoSize = True
         lblDiscover.BackColor = SystemColors.Info
-        lblDiscover.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
+        lblDiscover.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblDiscover.ImageAlign = ContentAlignment.TopRight
         lblDiscover.Location = New Point(46, 122)
         lblDiscover.Name = "lblDiscover"
-        lblDiscover.Size = New Size(74, 17)
+        lblDiscover.Size = New Size(75, 18)
         lblDiscover.TabIndex = 104
         lblDiscover.Text = "Discover"
         ' 
@@ -351,11 +354,11 @@ Partial Class BorrowForm
         ' 
         lblFavorite.AutoSize = True
         lblFavorite.BackColor = SystemColors.Info
-        lblFavorite.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
+        lblFavorite.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblFavorite.ImageAlign = ContentAlignment.TopRight
         lblFavorite.Location = New Point(46, 227)
         lblFavorite.Name = "lblFavorite"
-        lblFavorite.Size = New Size(73, 17)
+        lblFavorite.Size = New Size(69, 18)
         lblFavorite.TabIndex = 101
         lblFavorite.Text = "Favorite"
         ' 
@@ -363,11 +366,11 @@ Partial Class BorrowForm
         ' 
         lblNotes.AutoSize = True
         lblNotes.BackColor = SystemColors.Info
-        lblNotes.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
+        lblNotes.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblNotes.ImageAlign = ContentAlignment.TopRight
         lblNotes.Location = New Point(46, 191)
         lblNotes.Name = "lblNotes"
-        lblNotes.Size = New Size(81, 17)
+        lblNotes.Size = New Size(80, 18)
         lblNotes.TabIndex = 100
         lblNotes.Text = "My Notes"
         ' 
@@ -375,11 +378,11 @@ Partial Class BorrowForm
         ' 
         lblCategory.AutoSize = True
         lblCategory.BackColor = SystemColors.Info
-        lblCategory.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
+        lblCategory.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblCategory.ImageAlign = ContentAlignment.TopRight
         lblCategory.Location = New Point(46, 156)
         lblCategory.Name = "lblCategory"
-        lblCategory.Size = New Size(80, 17)
+        lblCategory.Size = New Size(76, 18)
         lblCategory.TabIndex = 99
         lblCategory.Text = "Category"
         ' 
@@ -387,12 +390,12 @@ Partial Class BorrowForm
         ' 
         Label1.AutoSize = True
         Label1.BackColor = SystemColors.Info
-        Label1.Font = New Font("UD Digi Kyokasho NK-B", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label1.Font = New Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label1.ForeColor = SystemColors.ControlText
         Label1.ImageAlign = ContentAlignment.TopRight
         Label1.Location = New Point(12, 25)
         Label1.Name = "Label1"
-        Label1.Size = New Size(148, 31)
+        Label1.Size = New Size(144, 31)
         Label1.TabIndex = 98
         Label1.Text = "ReadNest"
         ' 
@@ -437,6 +440,8 @@ Partial Class BorrowForm
         ' 
         ' SplitContainer1.Panel1
         ' 
+        SplitContainer1.Panel1.Controls.Add(lblWishlist)
+        SplitContainer1.Panel1.Controls.Add(PictureBox1)
         SplitContainer1.Panel1.Controls.Add(PictureBox2)
         ' 
         ' SplitContainer1.Panel2
@@ -445,6 +450,29 @@ Partial Class BorrowForm
         SplitContainer1.Size = New Size(934, 486)
         SplitContainer1.SplitterDistance = 186
         SplitContainer1.TabIndex = 109
+        ' 
+        ' lblWishlist
+        ' 
+        lblWishlist.AutoSize = True
+        lblWishlist.BackColor = SystemColors.Info
+        lblWishlist.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        lblWishlist.ImageAlign = ContentAlignment.TopRight
+        lblWishlist.Location = New Point(46, 329)
+        lblWishlist.Name = "lblWishlist"
+        lblWishlist.Size = New Size(68, 18)
+        lblWishlist.TabIndex = 111
+        lblWishlist.Text = "Wishlist"
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = SystemColors.Info
+        PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), Image)
+        PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
+        PictureBox1.Location = New Point(12, 321)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(28, 28)
+        PictureBox1.TabIndex = 110
+        PictureBox1.TabStop = False
         ' 
         ' PictureBox2
         ' 
@@ -526,9 +554,11 @@ Partial Class BorrowForm
         CType(pbNotes, ComponentModel.ISupportInitialize).EndInit()
         CType(pbCategory, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.Panel1.ResumeLayout(False)
+        SplitContainer1.Panel1.PerformLayout()
         SplitContainer1.Panel2.ResumeLayout(False)
         CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.ResumeLayout(False)
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
         Panel2.ResumeLayout(False)
@@ -572,4 +602,6 @@ Partial Class BorrowForm
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents lblWishlist As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Mynotes
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class WishlistForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,14 @@ Partial Class Mynotes
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Mynotes))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(WishlistForm))
+        Label2 = New Label()
+        lblUsername = New Label()
+        pbProfile = New PictureBox()
+        btnSearchFavoriteBook = New Button()
+        txtSearchFavoriteBook = New TextBox()
         pbBB = New PictureBox()
         lblBB = New Label()
         lblstatistic = New Label()
@@ -41,11 +46,8 @@ Partial Class Mynotes
         lblWishlist = New Label()
         pbWishlist = New PictureBox()
         PictureBox2 = New PictureBox()
-        TextBox1 = New TextBox()
-        Label5 = New Label()
-        pbProfile = New PictureBox()
-        Splitter1 = New Splitter()
-        cbProfile = New ComboBox()
+        flowBookWishlist = New FlowLayoutPanel()
+        CType(pbProfile, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbBB, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbDiscover, ComponentModel.ISupportInitialize).BeginInit()
@@ -58,8 +60,60 @@ Partial Class Mynotes
         SplitContainer1.SuspendLayout()
         CType(pbWishlist, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
-        CType(pbProfile, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.BackColor = Color.Transparent
+        Label2.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
+        Label2.ForeColor = SystemColors.ControlText
+        Label2.ImageAlign = ContentAlignment.TopRight
+        Label2.Location = New Point(14, 33)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(217, 22)
+        Label2.TabIndex = 46
+        Label2.Text = "Your Wishlist Book List"
+        ' 
+        ' lblUsername
+        ' 
+        lblUsername.AutoSize = True
+        lblUsername.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        lblUsername.Location = New Point(848, 26)
+        lblUsername.Name = "lblUsername"
+        lblUsername.Size = New Size(57, 18)
+        lblUsername.TabIndex = 45
+        lblUsername.Text = "Profile"
+        ' 
+        ' pbProfile
+        ' 
+        pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
+        pbProfile.BackgroundImageLayout = ImageLayout.Stretch
+        pbProfile.Location = New Point(814, 16)
+        pbProfile.Name = "pbProfile"
+        pbProfile.Size = New Size(28, 28)
+        pbProfile.TabIndex = 44
+        pbProfile.TabStop = False
+        ' 
+        ' btnSearchFavoriteBook
+        ' 
+        btnSearchFavoriteBook.AutoSize = True
+        btnSearchFavoriteBook.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        btnSearchFavoriteBook.Location = New Point(420, 59)
+        btnSearchFavoriteBook.Name = "btnSearchFavoriteBook"
+        btnSearchFavoriteBook.Size = New Size(75, 28)
+        btnSearchFavoriteBook.TabIndex = 42
+        btnSearchFavoriteBook.Text = "Search"
+        btnSearchFavoriteBook.UseVisualStyleBackColor = True
+        ' 
+        ' txtSearchFavoriteBook
+        ' 
+        txtSearchFavoriteBook.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        txtSearchFavoriteBook.Location = New Point(16, 59)
+        txtSearchFavoriteBook.Name = "txtSearchFavoriteBook"
+        txtSearchFavoriteBook.PlaceholderText = "Find your wishlist book here"
+        txtSearchFavoriteBook.Size = New Size(398, 24)
+        txtSearchFavoriteBook.TabIndex = 43
         ' 
         ' pbBB
         ' 
@@ -69,7 +123,7 @@ Partial Class Mynotes
         pbBB.Location = New Point(12, 252)
         pbBB.Name = "pbBB"
         pbBB.Size = New Size(28, 28)
-        pbBB.TabIndex = 119
+        pbBB.TabIndex = 71
         pbBB.TabStop = False
         ' 
         ' lblBB
@@ -81,7 +135,7 @@ Partial Class Mynotes
         lblBB.Location = New Point(46, 260)
         lblBB.Name = "lblBB"
         lblBB.Size = New Size(130, 18)
-        lblBB.TabIndex = 118
+        lblBB.TabIndex = 70
         lblBB.Text = "Book Borrowing"
         ' 
         ' lblstatistic
@@ -93,7 +147,7 @@ Partial Class Mynotes
         lblstatistic.Location = New Point(46, 294)
         lblstatistic.Name = "lblstatistic"
         lblstatistic.Size = New Size(96, 18)
-        lblstatistic.TabIndex = 117
+        lblstatistic.TabIndex = 69
         lblstatistic.Text = "My Statistic"
         ' 
         ' pbStatistic
@@ -104,7 +158,7 @@ Partial Class Mynotes
         pbStatistic.Location = New Point(12, 286)
         pbStatistic.Name = "pbStatistic"
         pbStatistic.Size = New Size(28, 28)
-        pbStatistic.TabIndex = 116
+        pbStatistic.TabIndex = 68
         pbStatistic.TabStop = False
         ' 
         ' lblDiscover
@@ -116,7 +170,7 @@ Partial Class Mynotes
         lblDiscover.Location = New Point(46, 122)
         lblDiscover.Name = "lblDiscover"
         lblDiscover.Size = New Size(75, 18)
-        lblDiscover.TabIndex = 115
+        lblDiscover.TabIndex = 67
         lblDiscover.Text = "Discover"
         ' 
         ' pbDiscover
@@ -127,7 +181,7 @@ Partial Class Mynotes
         pbDiscover.Location = New Point(12, 114)
         pbDiscover.Name = "pbDiscover"
         pbDiscover.Size = New Size(28, 28)
-        pbDiscover.TabIndex = 114
+        pbDiscover.TabIndex = 66
         pbDiscover.TabStop = False
         ' 
         ' lblMenu
@@ -139,7 +193,7 @@ Partial Class Mynotes
         lblMenu.Location = New Point(12, 85)
         lblMenu.Name = "lblMenu"
         lblMenu.Size = New Size(49, 18)
-        lblMenu.TabIndex = 113
+        lblMenu.TabIndex = 65
         lblMenu.Text = "Menu"
         ' 
         ' lblFavorite
@@ -151,7 +205,7 @@ Partial Class Mynotes
         lblFavorite.Location = New Point(46, 227)
         lblFavorite.Name = "lblFavorite"
         lblFavorite.Size = New Size(69, 18)
-        lblFavorite.TabIndex = 112
+        lblFavorite.TabIndex = 64
         lblFavorite.Text = "Favorite"
         ' 
         ' lblNotes
@@ -163,7 +217,7 @@ Partial Class Mynotes
         lblNotes.Location = New Point(46, 191)
         lblNotes.Name = "lblNotes"
         lblNotes.Size = New Size(80, 18)
-        lblNotes.TabIndex = 111
+        lblNotes.TabIndex = 63
         lblNotes.Text = "My Notes"
         ' 
         ' lblCategory
@@ -175,7 +229,7 @@ Partial Class Mynotes
         lblCategory.Location = New Point(46, 156)
         lblCategory.Name = "lblCategory"
         lblCategory.Size = New Size(76, 18)
-        lblCategory.TabIndex = 110
+        lblCategory.TabIndex = 62
         lblCategory.Text = "Category"
         ' 
         ' Label1
@@ -188,7 +242,7 @@ Partial Class Mynotes
         Label1.Location = New Point(12, 25)
         Label1.Name = "Label1"
         Label1.Size = New Size(144, 31)
-        Label1.TabIndex = 109
+        Label1.TabIndex = 61
         Label1.Text = "ReadNest"
         ' 
         ' pbFavorite
@@ -199,7 +253,7 @@ Partial Class Mynotes
         pbFavorite.Location = New Point(12, 218)
         pbFavorite.Name = "pbFavorite"
         pbFavorite.Size = New Size(28, 28)
-        pbFavorite.TabIndex = 108
+        pbFavorite.TabIndex = 60
         pbFavorite.TabStop = False
         ' 
         ' pbNotes
@@ -210,7 +264,7 @@ Partial Class Mynotes
         pbNotes.Location = New Point(12, 182)
         pbNotes.Name = "pbNotes"
         pbNotes.Size = New Size(28, 28)
-        pbNotes.TabIndex = 107
+        pbNotes.TabIndex = 59
         pbNotes.TabStop = False
         ' 
         ' pbCategory
@@ -221,12 +275,13 @@ Partial Class Mynotes
         pbCategory.Location = New Point(12, 148)
         pbCategory.Name = "pbCategory"
         pbCategory.Size = New Size(28, 28)
-        pbCategory.TabIndex = 106
+        pbCategory.TabIndex = 58
         pbCategory.TabStop = False
         ' 
         ' SplitContainer1
         ' 
         SplitContainer1.Dock = DockStyle.Fill
+        SplitContainer1.FixedPanel = FixedPanel.Panel1
         SplitContainer1.Location = New Point(0, 0)
         SplitContainer1.Name = "SplitContainer1"
         ' 
@@ -235,17 +290,17 @@ Partial Class Mynotes
         SplitContainer1.Panel1.Controls.Add(lblWishlist)
         SplitContainer1.Panel1.Controls.Add(pbWishlist)
         SplitContainer1.Panel1.Controls.Add(PictureBox2)
+        SplitContainer1.Panel1MinSize = 186
         ' 
         ' SplitContainer1.Panel2
         ' 
-        SplitContainer1.Panel2.Controls.Add(TextBox1)
-        SplitContainer1.Panel2.Controls.Add(Label5)
-        SplitContainer1.Panel2.Controls.Add(pbProfile)
-        SplitContainer1.Panel2.Controls.Add(Splitter1)
-        SplitContainer1.Panel2.Controls.Add(cbProfile)
+        SplitContainer1.Panel2.Controls.Add(flowBookWishlist)
+        SplitContainer1.Panel2.Controls.Add(Label2)
+        SplitContainer1.Panel2.Controls.Add(txtSearchFavoriteBook)
+        SplitContainer1.Panel2.Controls.Add(btnSearchFavoriteBook)
         SplitContainer1.Size = New Size(934, 486)
         SplitContainer1.SplitterDistance = 186
-        SplitContainer1.TabIndex = 120
+        SplitContainer1.TabIndex = 72
         ' 
         ' lblWishlist
         ' 
@@ -253,10 +308,10 @@ Partial Class Mynotes
         lblWishlist.BackColor = SystemColors.Info
         lblWishlist.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblWishlist.ImageAlign = ContentAlignment.TopRight
-        lblWishlist.Location = New Point(46, 327)
+        lblWishlist.Location = New Point(46, 326)
         lblWishlist.Name = "lblWishlist"
         lblWishlist.Size = New Size(68, 18)
-        lblWishlist.TabIndex = 122
+        lblWishlist.TabIndex = 71
         lblWishlist.Text = "Wishlist"
         ' 
         ' pbWishlist
@@ -264,10 +319,10 @@ Partial Class Mynotes
         pbWishlist.BackColor = SystemColors.Info
         pbWishlist.BackgroundImage = CType(resources.GetObject("pbWishlist.BackgroundImage"), Image)
         pbWishlist.BackgroundImageLayout = ImageLayout.Stretch
-        pbWishlist.Location = New Point(12, 319)
+        pbWishlist.Location = New Point(12, 318)
         pbWishlist.Name = "pbWishlist"
         pbWishlist.Size = New Size(28, 28)
-        pbWishlist.TabIndex = 121
+        pbWishlist.TabIndex = 70
         pbWishlist.TabStop = False
         ' 
         ' PictureBox2
@@ -281,66 +336,21 @@ Partial Class Mynotes
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
         ' 
-        ' TextBox1
+        ' flowBookWishlist
         ' 
-        TextBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        TextBox1.Location = New Point(9, 90)
-        TextBox1.Multiline = True
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(723, 384)
-        TextBox1.TabIndex = 124
+        flowBookWishlist.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        flowBookWishlist.AutoScroll = True
+        flowBookWishlist.BackColor = Color.White
+        flowBookWishlist.Location = New Point(14, 92)
+        flowBookWishlist.Name = "flowBookWishlist"
+        flowBookWishlist.Padding = New Padding(9, 8, 9, 8)
+        flowBookWishlist.Size = New Size(718, 384)
+        flowBookWishlist.TabIndex = 34
         ' 
-        ' Label5
+        ' WishlistForm
         ' 
-        Label5.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        Label5.AutoSize = True
-        Label5.BackColor = Color.Transparent
-        Label5.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
-        Label5.ForeColor = SystemColors.ControlText
-        Label5.ImageAlign = ContentAlignment.TopRight
-        Label5.Location = New Point(9, 65)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(93, 22)
-        Label5.TabIndex = 123
-        Label5.Text = "My Notes"
-        ' 
-        ' pbProfile
-        ' 
-        pbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
-        pbProfile.BackgroundImageLayout = ImageLayout.Stretch
-        pbProfile.Location = New Point(579, 22)
-        pbProfile.Name = "pbProfile"
-        pbProfile.Size = New Size(28, 28)
-        pbProfile.TabIndex = 121
-        pbProfile.TabStop = False
-        ' 
-        ' Splitter1
-        ' 
-        Splitter1.Location = New Point(0, 0)
-        Splitter1.Name = "Splitter1"
-        Splitter1.Size = New Size(3, 486)
-        Splitter1.TabIndex = 0
-        Splitter1.TabStop = False
-        ' 
-        ' cbProfile
-        ' 
-        cbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        cbProfile.FlatStyle = FlatStyle.Flat
-        cbProfile.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
-        cbProfile.FormattingEnabled = True
-        cbProfile.Items.AddRange(New Object() {"View Profile", "Logout"})
-        cbProfile.Location = New Point(613, 22)
-        cbProfile.Name = "cbProfile"
-        cbProfile.Size = New Size(97, 26)
-        cbProfile.TabIndex = 122
-        cbProfile.Text = "Profile"
-        ' 
-        ' Mynotes
-        ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
-        AutoSize = True
         BackColor = Color.White
         ClientSize = New Size(934, 486)
         Controls.Add(pbBB)
@@ -357,10 +367,13 @@ Partial Class Mynotes
         Controls.Add(pbFavorite)
         Controls.Add(pbNotes)
         Controls.Add(pbCategory)
+        Controls.Add(lblUsername)
+        Controls.Add(pbProfile)
         Controls.Add(SplitContainer1)
-        Name = "Mynotes"
+        Name = "WishlistForm"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Mynotes"
+        Text = "Form8"
+        CType(pbProfile, ComponentModel.ISupportInitialize).EndInit()
         CType(pbBB, ComponentModel.ISupportInitialize).EndInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).EndInit()
         CType(pbDiscover, ComponentModel.ISupportInitialize).EndInit()
@@ -375,11 +388,14 @@ Partial Class Mynotes
         SplitContainer1.ResumeLayout(False)
         CType(pbWishlist, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
-        CType(pbProfile, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
+    Friend WithEvents Label2 As Label
+    Friend WithEvents lblUsername As Label
+    Friend WithEvents pbProfile As PictureBox
+    Friend WithEvents btnSearchFavoriteBook As Button
+    Friend WithEvents txtSearchFavoriteBook As TextBox
     Friend WithEvents pbBB As PictureBox
     Friend WithEvents lblBB As Label
     Friend WithEvents lblstatistic As Label
@@ -396,11 +412,7 @@ Partial Class Mynotes
     Friend WithEvents pbCategory As PictureBox
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Splitter1 As Splitter
-    Friend WithEvents pbProfile As PictureBox
-    Friend WithEvents cbProfile As ComboBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents flowBookWishlist As FlowLayoutPanel
     Friend WithEvents lblWishlist As Label
     Friend WithEvents pbWishlist As PictureBox
 End Class

@@ -136,4 +136,15 @@
         Me.Hide()
     End Sub
 
+    Private Sub lblWishlist_Click(sender As Object, e As EventArgs) Handles lblWishlist.Click
+        Dim formBaru As New WishlistForm()
+        formBaru.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub pbWishlist_Click(sender As Object, e As EventArgs) Handles pbWishlist.Click
+        Dim formBaru As New WishlistForm()
+        formBaru.Show()
+        Me.Hide()
+    End Sub
 End Class

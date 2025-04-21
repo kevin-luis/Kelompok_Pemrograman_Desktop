@@ -68,9 +68,9 @@
     End Sub
 
     Private Sub pbStatistic_Click(sender As Object, e As EventArgs) Handles pbStatistic.Click
-        Dim formBaru As New StatisticForm()
-        formBaru.Show()
-        Me.Hide()
+        Dim formBaru As New StatisticForm
+        formBaru.Show
+        Hide
     End Sub
 
     Private Sub BorrowForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -83,5 +83,17 @@
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
+    End Sub
+
+    Private Sub lblWishlist_Click(sender As Object, e As EventArgs) Handles lblWishlist.Click
+        Dim formBaru As New WishlistForm()
+        formBaru.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Dim formBaru As New WishlistForm()
+        formBaru.Show()
+        Me.Hide()
     End Sub
 End Class

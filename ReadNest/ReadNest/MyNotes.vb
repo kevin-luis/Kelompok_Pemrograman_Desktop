@@ -74,7 +74,15 @@
         Me.Hide()
     End Sub
 
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+    Private Sub lblWishlist_Click(sender As Object, e As EventArgs) Handles lblWishlist.Click
+        Dim formBaru As New WishlistForm()
+        formBaru.Show()
+        Me.Hide()
+    End Sub
 
+    Private Sub pbWishlist_Click(sender As Object, e As EventArgs) Handles pbWishlist.Click
+        Dim formBaru As New WishlistForm()
+        formBaru.Show()
+        Me.Hide()
     End Sub
 End Class

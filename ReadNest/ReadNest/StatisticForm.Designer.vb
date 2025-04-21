@@ -46,6 +46,8 @@ Partial Class StatisticForm
         pbNotes = New PictureBox()
         pbCategory = New PictureBox()
         SplitContainer1 = New SplitContainer()
+        lblWishlist = New Label()
+        pbWishlist = New PictureBox()
         PictureBox2 = New PictureBox()
         Panel1 = New Panel()
         pbProfile = New PictureBox()
@@ -59,6 +61,7 @@ Partial Class StatisticForm
         SplitContainer1.Panel1.SuspendLayout()
         SplitContainer1.Panel2.SuspendLayout()
         SplitContainer1.SuspendLayout()
+        CType(pbWishlist, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         CType(pbProfile, ComponentModel.ISupportInitialize).BeginInit()
@@ -68,12 +71,12 @@ Partial Class StatisticForm
         ' 
         Label2.AutoSize = True
         Label2.BackColor = Color.Cornsilk
-        Label2.Font = New Font("UD Digi Kyokasho NP-B", 16.2F, FontStyle.Bold)
+        Label2.Font = New Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold)
         Label2.ForeColor = SystemColors.ControlText
         Label2.ImageAlign = ContentAlignment.TopRight
         Label2.Location = New Point(14, 21)
         Label2.Name = "Label2"
-        Label2.Size = New Size(171, 25)
+        Label2.Size = New Size(159, 26)
         Label2.TabIndex = 49
         Label2.Text = "Book Statistic"
         ' 
@@ -81,12 +84,12 @@ Partial Class StatisticForm
         ' 
         Label5.AutoSize = True
         Label5.BackColor = Color.Cornsilk
-        Label5.Font = New Font("UD Digi Kyokasho NP-B", 13.2F, FontStyle.Bold)
+        Label5.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
         Label5.ForeColor = SystemColors.ControlText
         Label5.ImageAlign = ContentAlignment.TopRight
         Label5.Location = New Point(85, 88)
         Label5.Name = "Label5"
-        Label5.Size = New Size(175, 21)
+        Label5.Size = New Size(170, 22)
         Label5.TabIndex = 50
         Label5.Text = "Total Books Read"
         ' 
@@ -94,12 +97,12 @@ Partial Class StatisticForm
         ' 
         Label6.AutoSize = True
         Label6.BackColor = Color.Cornsilk
-        Label6.Font = New Font("UD Digi Kyokasho NP-B", 13.2F, FontStyle.Bold)
+        Label6.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
         Label6.ForeColor = SystemColors.ControlText
         Label6.ImageAlign = ContentAlignment.TopRight
         Label6.Location = New Point(54, 146)
         Label6.Name = "Label6"
-        Label6.Size = New Size(206, 21)
+        Label6.Size = New Size(196, 22)
         Label6.TabIndex = 51
         Label6.Text = "Total Favorite Books"
         ' 
@@ -107,12 +110,12 @@ Partial Class StatisticForm
         ' 
         Label7.AutoSize = True
         Label7.BackColor = Color.Cornsilk
-        Label7.Font = New Font("UD Digi Kyokasho NP-B", 13.2F, FontStyle.Bold)
+        Label7.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
         Label7.ForeColor = SystemColors.ControlText
         Label7.ImageAlign = ContentAlignment.TopRight
         Label7.Location = New Point(66, 117)
         Label7.Name = "Label7"
-        Label7.Size = New Size(194, 21)
+        Label7.Size = New Size(186, 22)
         Label7.TabIndex = 52
         Label7.Text = "Total Reading Time"
         ' 
@@ -140,10 +143,10 @@ Partial Class StatisticForm
         ' lblUsername
         ' 
         lblUsername.AutoSize = True
-        lblUsername.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        lblUsername.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblUsername.Location = New Point(831, 23)
         lblUsername.Name = "lblUsername"
-        lblUsername.Size = New Size(61, 17)
+        lblUsername.Size = New Size(57, 18)
         lblUsername.TabIndex = 58
         lblUsername.Text = "Profile"
         ' 
@@ -162,11 +165,11 @@ Partial Class StatisticForm
         ' 
         lblBB.AutoSize = True
         lblBB.BackColor = SystemColors.Info
-        lblBB.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
+        lblBB.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblBB.ImageAlign = ContentAlignment.TopRight
         lblBB.Location = New Point(46, 260)
         lblBB.Name = "lblBB"
-        lblBB.Size = New Size(131, 17)
+        lblBB.Size = New Size(130, 18)
         lblBB.TabIndex = 71
         lblBB.Text = "Book Borrowing"
         ' 
@@ -174,11 +177,11 @@ Partial Class StatisticForm
         ' 
         lblstatistic.AutoSize = True
         lblstatistic.BackColor = SystemColors.Info
-        lblstatistic.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
+        lblstatistic.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblstatistic.ImageAlign = ContentAlignment.TopRight
         lblstatistic.Location = New Point(46, 294)
         lblstatistic.Name = "lblstatistic"
-        lblstatistic.Size = New Size(103, 17)
+        lblstatistic.Size = New Size(96, 18)
         lblstatistic.TabIndex = 70
         lblstatistic.Text = "My Statistic"
         ' 
@@ -197,11 +200,11 @@ Partial Class StatisticForm
         ' 
         lblDiscover.AutoSize = True
         lblDiscover.BackColor = SystemColors.Info
-        lblDiscover.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
+        lblDiscover.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblDiscover.ImageAlign = ContentAlignment.TopRight
         lblDiscover.Location = New Point(46, 122)
         lblDiscover.Name = "lblDiscover"
-        lblDiscover.Size = New Size(74, 17)
+        lblDiscover.Size = New Size(75, 18)
         lblDiscover.TabIndex = 68
         lblDiscover.Text = "Discover"
         ' 
@@ -232,11 +235,11 @@ Partial Class StatisticForm
         ' 
         lblFavorite.AutoSize = True
         lblFavorite.BackColor = SystemColors.Info
-        lblFavorite.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
+        lblFavorite.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblFavorite.ImageAlign = ContentAlignment.TopRight
         lblFavorite.Location = New Point(46, 227)
         lblFavorite.Name = "lblFavorite"
-        lblFavorite.Size = New Size(73, 17)
+        lblFavorite.Size = New Size(69, 18)
         lblFavorite.TabIndex = 65
         lblFavorite.Text = "Favorite"
         ' 
@@ -244,11 +247,11 @@ Partial Class StatisticForm
         ' 
         lblNotes.AutoSize = True
         lblNotes.BackColor = SystemColors.Info
-        lblNotes.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
+        lblNotes.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblNotes.ImageAlign = ContentAlignment.TopRight
         lblNotes.Location = New Point(46, 191)
         lblNotes.Name = "lblNotes"
-        lblNotes.Size = New Size(81, 17)
+        lblNotes.Size = New Size(80, 18)
         lblNotes.TabIndex = 64
         lblNotes.Text = "My Notes"
         ' 
@@ -256,11 +259,11 @@ Partial Class StatisticForm
         ' 
         lblCategory.AutoSize = True
         lblCategory.BackColor = SystemColors.Info
-        lblCategory.Font = New Font("UD Digi Kyokasho NK-B", 11.25F, FontStyle.Bold)
+        lblCategory.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblCategory.ImageAlign = ContentAlignment.TopRight
         lblCategory.Location = New Point(46, 156)
         lblCategory.Name = "lblCategory"
-        lblCategory.Size = New Size(80, 17)
+        lblCategory.Size = New Size(76, 18)
         lblCategory.TabIndex = 63
         lblCategory.Text = "Category"
         ' 
@@ -268,12 +271,12 @@ Partial Class StatisticForm
         ' 
         Label1.AutoSize = True
         Label1.BackColor = SystemColors.Info
-        Label1.Font = New Font("UD Digi Kyokasho NK-B", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label1.Font = New Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label1.ForeColor = SystemColors.ControlText
         Label1.ImageAlign = ContentAlignment.TopRight
         Label1.Location = New Point(12, 25)
         Label1.Name = "Label1"
-        Label1.Size = New Size(148, 31)
+        Label1.Size = New Size(144, 31)
         Label1.TabIndex = 62
         Label1.Text = "ReadNest"
         ' 
@@ -319,6 +322,8 @@ Partial Class StatisticForm
         ' 
         ' SplitContainer1.Panel1
         ' 
+        SplitContainer1.Panel1.Controls.Add(lblWishlist)
+        SplitContainer1.Panel1.Controls.Add(pbWishlist)
         SplitContainer1.Panel1.Controls.Add(PictureBox2)
         ' 
         ' SplitContainer1.Panel2
@@ -327,6 +332,29 @@ Partial Class StatisticForm
         SplitContainer1.Size = New Size(934, 486)
         SplitContainer1.SplitterDistance = 186
         SplitContainer1.TabIndex = 73
+        ' 
+        ' lblWishlist
+        ' 
+        lblWishlist.AutoSize = True
+        lblWishlist.BackColor = SystemColors.Info
+        lblWishlist.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        lblWishlist.ImageAlign = ContentAlignment.TopRight
+        lblWishlist.Location = New Point(46, 330)
+        lblWishlist.Name = "lblWishlist"
+        lblWishlist.Size = New Size(68, 18)
+        lblWishlist.TabIndex = 75
+        lblWishlist.Text = "Wishlist"
+        ' 
+        ' pbWishlist
+        ' 
+        pbWishlist.BackColor = SystemColors.Info
+        pbWishlist.BackgroundImage = CType(resources.GetObject("pbWishlist.BackgroundImage"), Image)
+        pbWishlist.BackgroundImageLayout = ImageLayout.Stretch
+        pbWishlist.Location = New Point(12, 322)
+        pbWishlist.Name = "pbWishlist"
+        pbWishlist.Size = New Size(28, 28)
+        pbWishlist.TabIndex = 74
+        pbWishlist.TabStop = False
         ' 
         ' PictureBox2
         ' 
@@ -397,9 +425,11 @@ Partial Class StatisticForm
         CType(pbNotes, ComponentModel.ISupportInitialize).EndInit()
         CType(pbCategory, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.Panel1.ResumeLayout(False)
+        SplitContainer1.Panel1.PerformLayout()
         SplitContainer1.Panel2.ResumeLayout(False)
         CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.ResumeLayout(False)
+        CType(pbWishlist, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
@@ -433,4 +463,6 @@ Partial Class StatisticForm
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents pbProfile As PictureBox
+    Friend WithEvents lblWishlist As Label
+    Friend WithEvents pbWishlist As PictureBox
 End Class

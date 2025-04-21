@@ -24,6 +24,8 @@ Partial Class BookByCategory
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BookByCategory))
         SplitContainer1 = New SplitContainer()
+        pbWishlist = New PictureBox()
+        lblWishlist = New Label()
         Label1 = New Label()
         lblMenu = New Label()
         pbDiscover = New PictureBox()
@@ -51,6 +53,7 @@ Partial Class BookByCategory
         SplitContainer1.Panel1.SuspendLayout()
         SplitContainer1.Panel2.SuspendLayout()
         SplitContainer1.SuspendLayout()
+        CType(pbWishlist, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbDiscover, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbCategory, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbNotes, ComponentModel.ISupportInitialize).BeginInit()
@@ -72,6 +75,8 @@ Partial Class BookByCategory
         ' 
         ' SplitContainer1.Panel1
         ' 
+        SplitContainer1.Panel1.Controls.Add(pbWishlist)
+        SplitContainer1.Panel1.Controls.Add(lblWishlist)
         SplitContainer1.Panel1.Controls.Add(Label1)
         SplitContainer1.Panel1.Controls.Add(lblMenu)
         SplitContainer1.Panel1.Controls.Add(pbDiscover)
@@ -95,6 +100,29 @@ Partial Class BookByCategory
         SplitContainer1.Size = New Size(934, 486)
         SplitContainer1.SplitterDistance = 186
         SplitContainer1.TabIndex = 35
+        ' 
+        ' pbWishlist
+        ' 
+        pbWishlist.BackColor = SystemColors.Info
+        pbWishlist.BackgroundImage = CType(resources.GetObject("pbWishlist.BackgroundImage"), Image)
+        pbWishlist.BackgroundImageLayout = ImageLayout.Stretch
+        pbWishlist.Location = New Point(12, 318)
+        pbWishlist.Name = "pbWishlist"
+        pbWishlist.Size = New Size(28, 28)
+        pbWishlist.TabIndex = 30
+        pbWishlist.TabStop = False
+        ' 
+        ' lblWishlist
+        ' 
+        lblWishlist.AutoSize = True
+        lblWishlist.BackColor = SystemColors.Info
+        lblWishlist.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        lblWishlist.ImageAlign = ContentAlignment.TopRight
+        lblWishlist.Location = New Point(46, 326)
+        lblWishlist.Name = "lblWishlist"
+        lblWishlist.Size = New Size(68, 18)
+        lblWishlist.TabIndex = 31
+        lblWishlist.Text = "Wishlist"
         ' 
         ' Label1
         ' 
@@ -379,6 +407,7 @@ Partial Class BookByCategory
         SplitContainer1.Panel2.ResumeLayout(False)
         CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.ResumeLayout(False)
+        CType(pbWishlist, ComponentModel.ISupportInitialize).EndInit()
         CType(pbDiscover, ComponentModel.ISupportInitialize).EndInit()
         CType(pbCategory, ComponentModel.ISupportInitialize).EndInit()
         CType(pbNotes, ComponentModel.ISupportInitialize).EndInit()
@@ -417,4 +446,6 @@ Partial Class BookByCategory
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents flowCategory As FlowLayoutPanel
     Friend WithEvents btnBack As Button
+    Friend WithEvents pbWishlist As PictureBox
+    Friend WithEvents lblWishlist As Label
 End Class

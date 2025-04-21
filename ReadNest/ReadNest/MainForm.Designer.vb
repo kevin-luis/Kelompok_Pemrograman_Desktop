@@ -47,6 +47,8 @@ Partial Class MainForm
         Label5 = New Label()
         cbProfile = New ComboBox()
         SplitContainer1 = New SplitContainer()
+        pbWishlist = New PictureBox()
+        lblWishlist = New Label()
         panelRight = New Panel()
         flowBooks = New FlowLayoutPanel()
         MySqlCommand1 = New MySql.Data.MySqlClient.MySqlCommand()
@@ -63,6 +65,7 @@ Partial Class MainForm
         SplitContainer1.Panel1.SuspendLayout()
         SplitContainer1.Panel2.SuspendLayout()
         SplitContainer1.SuspendLayout()
+        CType(pbWishlist, ComponentModel.ISupportInitialize).BeginInit()
         panelRight.SuspendLayout()
         SuspendLayout()
         ' 
@@ -345,6 +348,8 @@ Partial Class MainForm
         ' 
         ' SplitContainer1.Panel1
         ' 
+        SplitContainer1.Panel1.Controls.Add(pbWishlist)
+        SplitContainer1.Panel1.Controls.Add(lblWishlist)
         SplitContainer1.Panel1.Controls.Add(Label1)
         SplitContainer1.Panel1.Controls.Add(lblMenu)
         SplitContainer1.Panel1.Controls.Add(pbDiscover)
@@ -368,6 +373,29 @@ Partial Class MainForm
         SplitContainer1.Size = New Size(934, 490)
         SplitContainer1.SplitterDistance = 186
         SplitContainer1.TabIndex = 33
+        ' 
+        ' pbWishlist
+        ' 
+        pbWishlist.BackColor = SystemColors.Info
+        pbWishlist.BackgroundImage = CType(resources.GetObject("pbWishlist.BackgroundImage"), Image)
+        pbWishlist.BackgroundImageLayout = ImageLayout.Stretch
+        pbWishlist.Location = New Point(12, 319)
+        pbWishlist.Name = "pbWishlist"
+        pbWishlist.Size = New Size(28, 28)
+        pbWishlist.TabIndex = 30
+        pbWishlist.TabStop = False
+        ' 
+        ' lblWishlist
+        ' 
+        lblWishlist.AutoSize = True
+        lblWishlist.BackColor = SystemColors.Info
+        lblWishlist.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        lblWishlist.ImageAlign = ContentAlignment.TopRight
+        lblWishlist.Location = New Point(46, 327)
+        lblWishlist.Name = "lblWishlist"
+        lblWishlist.Size = New Size(68, 18)
+        lblWishlist.TabIndex = 31
+        lblWishlist.Text = "Wishlist"
         ' 
         ' panelRight
         ' 
@@ -432,6 +460,7 @@ Partial Class MainForm
         SplitContainer1.Panel2.ResumeLayout(False)
         CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.ResumeLayout(False)
+        CType(pbWishlist, ComponentModel.ISupportInitialize).EndInit()
         panelRight.ResumeLayout(False)
         panelRight.PerformLayout()
         ResumeLayout(False)
@@ -464,4 +493,6 @@ Partial Class MainForm
     Friend WithEvents panelRight As Panel
     Friend WithEvents flowBooks As FlowLayoutPanel
     Friend WithEvents MySqlCommand1 As MySql.Data.MySqlClient.MySqlCommand
+    Friend WithEvents pbWishlist As PictureBox
+    Friend WithEvents lblWishlist As Label
 End Class
