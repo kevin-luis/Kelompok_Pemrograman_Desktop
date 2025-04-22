@@ -48,6 +48,8 @@ Partial Class ProfileForm
         Label4 = New Label()
         Label3 = New Label()
         Label2 = New Label()
+        pbWishlist = New PictureBox()
+        lblWishlist = New Label()
         CType(pbBB, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbDiscover, ComponentModel.ISupportInitialize).BeginInit()
@@ -62,6 +64,7 @@ Partial Class ProfileForm
         Panel2.SuspendLayout()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbWishlist, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' pbBB
@@ -236,6 +239,8 @@ Partial Class ProfileForm
         ' 
         ' SplitContainer1.Panel1
         ' 
+        SplitContainer1.Panel1.Controls.Add(pbWishlist)
+        SplitContainer1.Panel1.Controls.Add(lblWishlist)
         SplitContainer1.Panel1.Controls.Add(PictureBox2)
         SplitContainer1.Panel1MinSize = 186
         ' 
@@ -368,6 +373,29 @@ Partial Class ProfileForm
         Label2.TabIndex = 50
         Label2.Text = "Profile"
         ' 
+        ' pbWishlist
+        ' 
+        pbWishlist.BackColor = SystemColors.Info
+        pbWishlist.BackgroundImage = CType(resources.GetObject("pbWishlist.BackgroundImage"), Image)
+        pbWishlist.BackgroundImageLayout = ImageLayout.Stretch
+        pbWishlist.Location = New Point(12, 320)
+        pbWishlist.Name = "pbWishlist"
+        pbWishlist.Size = New Size(28, 28)
+        pbWishlist.TabIndex = 89
+        pbWishlist.TabStop = False
+        ' 
+        ' lblWishlist
+        ' 
+        lblWishlist.AutoSize = True
+        lblWishlist.BackColor = SystemColors.Info
+        lblWishlist.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        lblWishlist.ImageAlign = ContentAlignment.TopRight
+        lblWishlist.Location = New Point(46, 330)
+        lblWishlist.Name = "lblWishlist"
+        lblWishlist.Size = New Size(68, 18)
+        lblWishlist.TabIndex = 90
+        lblWishlist.Text = "Wishlist"
+        ' 
         ' ProfileForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -399,6 +427,7 @@ Partial Class ProfileForm
         CType(pbNotes, ComponentModel.ISupportInitialize).EndInit()
         CType(pbCategory, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.Panel1.ResumeLayout(False)
+        SplitContainer1.Panel1.PerformLayout()
         SplitContainer1.Panel2.ResumeLayout(False)
         CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.ResumeLayout(False)
@@ -407,6 +436,7 @@ Partial Class ProfileForm
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbWishlist, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -438,4 +468,6 @@ Partial Class ProfileForm
     Friend WithEvents Label7 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents pbWishlist As PictureBox
+    Friend WithEvents lblWishlist As Label
 End Class
