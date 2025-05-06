@@ -78,6 +78,7 @@ Public Class AddNewBookForm
 
     Private Sub BtnAddNewBook_Click(sender As Object, e As EventArgs) Handles BtnAddNewBook.Click
         ' Ambil data dari form
+        Dim userId As Integer = SessionHelper.CurrentUser.UserId
         Dim title As String = txtAddBookTitle.Text.Trim()
         Dim author As String = txtAddBookWriter.Text.Trim()
         Dim categoryId As Integer = 0
@@ -115,7 +116,7 @@ Public Class AddNewBookForm
         ' Proses tambah buku ke database
         Dim db As New DBConnection()
         Try
-            If db.TambahBuku(title, author, categoryId, pages, description, photoPath, filePath) Then
+            If db.TambahBuku(userId, title, author, categoryId, pages, description, photoPath, filepath) Then
                 MessageBox.Show("Buku berhasil ditambahkan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ' Reset form setelah berhasil
                 txtAddBookTitle.Clear()
@@ -126,7 +127,7 @@ Public Class AddNewBookForm
                 PictureBox7.Image = Nothing
                 PictureBox7.Tag = Nothing
                 txtFilePath.Text = "Belum ada file yang diupload"
-                filePath = ""
+                filepath = ""
             Else
                 MessageBox.Show("Gagal menambahkan buku!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If

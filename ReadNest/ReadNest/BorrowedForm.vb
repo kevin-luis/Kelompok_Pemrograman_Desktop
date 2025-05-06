@@ -34,32 +34,32 @@ Public Class BorrowForm
             Dim query As String = "SELECT BookId, Title, Author, CategoryId, Pages, PhotoPath FROM books " &
                                   "WHERE Title LIKE @search OR Author LIKE @search LIMIT 1"
 
-            Using cmd As New MySqlCommand(query, db.BukaKoneksi())
-                cmd.Parameters.AddWithValue("@search", $"%{searchTerm}%")
+            Dim parameters As New Dictionary(Of String, Object) From {
+                {"@search", $"%{searchTerm}%"}
+            }
 
-                Using reader As MySqlDataReader = cmd.ExecuteReader()
-                    If reader.HasRows Then
-                        reader.Read()
+            Dim result = db.ExecuteQueryWithParams(query, parameters)
 
-                        ' Tampilkan detail buku
-                        selectedBookId = Convert.ToInt32(reader("BookId"))
-                        selectedBookPhotoPath = If(IsDBNull(reader("PhotoPath")), "", reader("PhotoPath").ToString())
-                        txtBBTitle.Text = reader("Title").ToString()
-                        txtBBWriter.Text = reader("Author").ToString()
-                        txtBBPages.Text = reader("Pages").ToString()
+            If result IsNot Nothing AndAlso result.Rows.Count > 0 Then
+                Dim row = result.Rows(0)
 
-                        ' Ambil nama kategori berdasarkan CategoryId
-                        Dim categoryName = GetCategoryName(Convert.ToInt32(reader("CategoryId")))
-                        txtBBCategory.Text = categoryName
+                ' Tampilkan detail buku
+                selectedBookId = Convert.ToInt32(row("BookId"))
+                selectedBookPhotoPath = If(IsDBNull(row("PhotoPath")), "", row("PhotoPath").ToString())
+                txtBBTitle.Text = row("Title").ToString()
+                txtBBWriter.Text = row("Author").ToString()
+                txtBBPages.Text = row("Pages").ToString()
 
-                        ' Tampilkan cover buku
-                        LoadBookCover(selectedBookPhotoPath)
-                    Else
-                        MessageBox.Show("Buku tidak ditemukan", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        ClearBookDetails()
-                    End If
-                End Using
-            End Using
+                ' Ambil nama kategori berdasarkan CategoryId
+                Dim categoryName = GetCategoryName(Convert.ToInt32(row("CategoryId")))
+                txtBBCategory.Text = categoryName
+
+                ' Tampilkan cover buku
+                LoadBookCover(selectedBookPhotoPath)
+            Else
+                MessageBox.Show("Buku tidak ditemukan", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                ClearBookDetails()
+            End If
         Catch ex As Exception
             MessageBox.Show($"Gagal mencari buku: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -67,7 +67,6 @@ Public Class BorrowForm
 
     Private Sub LoadBookCover(photoPath As String)
         Try
-
             Dim db As New DBConnection()
             Dim coverImage As Image = db.LoadBookCoverImage(photoPath)
 
@@ -84,15 +83,15 @@ Public Class BorrowForm
         Try
             Dim db As New DBConnection()
             Dim query As String = "SELECT CategoryName FROM categories WHERE CategoryId = @categoryId"
+            Dim parameters As New Dictionary(Of String, Object) From {
+                {"@categoryId", categoryId}
+            }
 
-            Using cmd As New MySqlCommand(query, db.BukaKoneksi())
-                cmd.Parameters.AddWithValue("@categoryId", categoryId)
+            Dim result = db.ExecuteQueryWithParams(query, parameters)
 
-                Dim result = cmd.ExecuteScalar()
-                If result IsNot Nothing Then
-                    Return result.ToString()
-                End If
-            End Using
+            If result IsNot Nothing AndAlso result.Rows.Count > 0 Then
+                Return result.Rows(0)("CategoryName").ToString()
+            End If
         Catch ex As Exception
             MessageBox.Show($"Gagal mengambil kategori: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -121,24 +120,24 @@ Public Class BorrowForm
             Dim query As String = "INSERT INTO borrowers (BookId, BorrowerName, BorrowDate, ReturnDate, IsReturned) " &
                                  "VALUES (@bookId, @borrowerName, @borrowDate, @returnDate, 0)"
 
-            Using cmd As New MySqlCommand(query, db.BukaKoneksi())
-                cmd.Parameters.AddWithValue("@bookId", selectedBookId)
-                cmd.Parameters.AddWithValue("@borrowerName", txtBorrowerName.Text.Trim())
-                cmd.Parameters.AddWithValue("@borrowDate", borrowDate)
-                cmd.Parameters.AddWithValue("@returnDate", returnDate)
+            Dim parameters As New Dictionary(Of String, Object) From {
+                {"@bookId", selectedBookId},
+                {"@borrowerName", txtBorrowerName.Text.Trim()},
+                {"@borrowDate", borrowDate},
+                {"@returnDate", returnDate}
+            }
 
-                Dim rowsAffected = cmd.ExecuteNonQuery()
+            Dim rowsAffected = db.ExecuteNonQueryWithParams(query, parameters)
 
-                If rowsAffected > 0 Then
-                    ' Update status buku menjadi "Borrowed"
-                    UpdateBookStatus(selectedBookId, "Borrowed")
+            If rowsAffected > 0 Then
+                ' Update status buku menjadi "Borrowed"
+                UpdateBookStatus(selectedBookId, "Borrowed")
 
-                    MessageBox.Show("Peminjaman berhasil dicatat", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    ClearForm()
-                Else
-                    MessageBox.Show("Gagal mencatat peminjaman", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
-            End Using
+                MessageBox.Show("Peminjaman berhasil dicatat", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                ClearForm()
+            Else
+                MessageBox.Show("Gagal mencatat peminjaman", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
         Catch ex As Exception
             MessageBox.Show($"Gagal mencatat peminjaman: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -149,11 +148,12 @@ Public Class BorrowForm
             Dim db As New DBConnection()
             Dim query As String = "UPDATE books SET Status = @status WHERE BookId = @bookId"
 
-            Using cmd As New MySqlCommand(query, db.BukaKoneksi())
-                cmd.Parameters.AddWithValue("@status", status)
-                cmd.Parameters.AddWithValue("@bookId", bookId)
-                cmd.ExecuteNonQuery()
-            End Using
+            Dim parameters As New Dictionary(Of String, Object) From {
+                {"@status", status},
+                {"@bookId", bookId}
+            }
+
+            db.ExecuteNonQueryWithParams(query, parameters)
         Catch ex As Exception
             MessageBox.Show($"Gagal mengupdate status buku: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -280,5 +280,4 @@ Public Class BorrowForm
         formBaru.Show()
         Me.Hide()
     End Sub
-
 End Class

@@ -152,3 +152,4 @@ A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Deskt
 A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.WishlistForm.resources
 C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.WishlistForm.resources
 C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Project ReadNest\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.ListBorrowerForm.resources
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.ListBorrowerForm.resources
