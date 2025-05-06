@@ -127,7 +127,8 @@ Public Class MainForm
             flowBooks.Controls.Clear()
 
             Dim db As New DBConnection()
-            Dim books As DataTable = db.GetBooks()
+            Dim currentUserId As Integer = SessionHelper.CurrentUser.UserId
+            Dim books As DataTable = db.GetBooks(currentUserId)
 
             If books?.Rows.Count > 0 Then
                 For Each row As DataRow In books.Rows
@@ -164,28 +165,25 @@ Public Class MainForm
             Dim query As String = "SELECT BookId, Title, Author, PhotoPath FROM books " &
                                     "WHERE Title LIKE @search OR Author LIKE @search"
 
-            Using cmd As New MySqlCommand(query, db.BukaKoneksi())
-                cmd.Parameters.AddWithValue("@search", $"%{searchTerm}%")
+            Dim parameters As New Dictionary(Of String, Object) From {
+                {"@search", $"%{searchTerm}%"}
+            }
 
-                Using da As New MySqlDataAdapter(cmd)
-                    Dim books As New DataTable()
-                    da.Fill(books)
+            Dim books As DataTable = db.ExecuteQueryWithParams(query, parameters)
 
-                    If books.Rows.Count > 0 Then
-                        For Each row As DataRow In books.Rows
-                            Dim bookCard As New BookCard(
-                                    Convert.ToInt32(row("BookId")),
-                                    row("Title").ToString(),
-                                    row("Author").ToString(),
-                                    If(IsDBNull(row("PhotoPath")), "", row("PhotoPath").ToString())
-                                )
-                            flowBooks.Controls.Add(bookCard)
-                        Next
-                    Else
-                        flowBooks.Controls.Add(CreateNoResultsLabel(searchTerm))
-                    End If
-                End Using
-            End Using
+            If books IsNot Nothing AndAlso books.Rows.Count > 0 Then
+                For Each row As DataRow In books.Rows
+                    Dim bookCard As New BookCard(
+                            Convert.ToInt32(row("BookId")),
+                            row("Title").ToString(),
+                            row("Author").ToString(),
+                            If(IsDBNull(row("PhotoPath")), "", row("PhotoPath").ToString())
+                        )
+                    flowBooks.Controls.Add(bookCard)
+                Next
+            Else
+                flowBooks.Controls.Add(CreateNoResultsLabel(searchTerm))
+            End If
         Catch ex As Exception
             MessageBox.Show($"Gagal mencari buku: {ex.Message}", "Error",
                            MessageBoxButtons.OK, MessageBoxIcon.Error)

@@ -1,72 +1,88 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports ReadNest.MainForm
 
 Public Class BookByCategory
     Public Property SelectedCategory As String
+    Private db As DBConnection
+
+    Public Sub New()
+        InitializeComponent()
+        db = New DBConnection()
+    End Sub
 
     Private Sub BookByCategory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Not String.IsNullOrEmpty(SelectedCategory) Then
-            lblByCategory.Text = "Kategori: " & SelectedCategory ' ← tampilkan nama kategori di label
-            LoadBooksByCategory(SelectedCategory)
+            lblByCategory.Text = "Kategori: " & SelectedCategory
+            Dim currentUserId As Integer = SessionHelper.CurrentUser.UserId
+            LoadBooksByCategory(SelectedCategory, currentUserId)
+        Else
+            MessageBox.Show("Kategori tidak valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            ReturnToCategoryForm()
         End If
     End Sub
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
-        Dim formBaru As New CategoryForm()
-        formBaru.Show()
-        Me.Hide()
+        ReturnToCategoryForm()
     End Sub
 
-    Private Sub LoadBooksByCategory(categoryName As String)
+    Private Sub ReturnToCategoryForm()
+        Dim formBaru As New CategoryForm()
+        formBaru.Show()
+        Me.Close() ' Use Close instead of Hide to properly dispose the form
+    End Sub
+
+    Private Sub LoadBooksByCategory(categoryName As String, userId As Integer)
         Try
             flowCategory.SuspendLayout()
             flowCategory.Controls.Clear()
 
-            Dim db As New DBConnection()
-            Dim query As String = "SELECT BookId, Title, Author, PhotoPath FROM books " &
-                                  "WHERE CategoryId = (SELECT CategoryId FROM categories WHERE CategoryName = @categoryName)"
+            Dim query As String = "SELECT b.BookId, b.Title, b.Author, b.PhotoPath " &
+                              "FROM books b " &
+                              "JOIN categories c ON b.CategoryId = c.CategoryId " &
+                              "WHERE c.CategoryName = @categoryName AND b.UserId = @userId"
 
-            Using cmd As New MySqlCommand(query, db.BukaKoneksi())
-                cmd.Parameters.AddWithValue("@categoryName", categoryName)
+            Dim parameters As New Dictionary(Of String, Object) From {
+            {"@categoryName", categoryName},
+            {"@userId", userId}
+        }
 
-                Using da As New MySqlDataAdapter(cmd)
-                    Dim books As New DataTable()
-                    da.Fill(books)
+            Dim books = db.ExecuteQueryWithParams(query, parameters)
 
-                    If books.Rows.Count > 0 Then
-                        For Each row As DataRow In books.Rows
-                            Dim bookCard As New MainForm.BookCard(
-                                Convert.ToInt32(row("BookId")),
-                                row("Title").ToString(),
-                                row("Author").ToString(),
-                                If(IsDBNull(row("PhotoPath")), "", row("PhotoPath").ToString())
-                            )
-                            flowCategory.Controls.Add(bookCard)
-                        Next
-                    Else
-                        flowCategory.Controls.Add(New Label With {
-                            .Text = "Tidak ada buku dalam kategori ini.",
-                            .AutoSize = True,
-                            .Font = New Font("Segoe UI", 10, FontStyle.Italic)
-                        })
-                    End If
-                End Using
-            End Using
+            If books IsNot Nothing AndAlso books.Rows.Count > 0 Then
+                For Each row As DataRow In books.Rows
+                    Dim bookId As Integer = Convert.ToInt32(row("BookId"))
+                    Dim title As String = row("Title").ToString()
+                    Dim author As String = row("Author").ToString()
+                    Dim photoPath As String = If(IsDBNull(row("PhotoPath")), "", row("PhotoPath").ToString())
+
+                    Dim bookCard As New BookCard(bookId, title, author, photoPath)
+                    flowCategory.Controls.Add(bookCard)
+                Next
+            Else
+                flowCategory.Controls.Add(New Label With {
+                .Text = "Tidak ada buku dalam kategori ini.",
+                .AutoSize = True,
+                .Font = New Font("Segoe UI", 10, FontStyle.Italic)
+            })
+            End If
         Catch ex As Exception
-            MessageBox.Show($"Gagal memuat buku: {ex.Message}")
+            MessageBox.Show($"Gagal memuat buku: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
             flowCategory.ResumeLayout()
         End Try
     End Sub
 
     Private Sub lblWishlist_Click(sender As Object, e As EventArgs) Handles lblWishlist.Click
-        Dim formBaru As New WishlistForm()
-        formBaru.Show()
-        Me.Hide()
+        NavigateToWishlist()
     End Sub
 
     Private Sub pbWishlist_Click(sender As Object, e As EventArgs) Handles pbWishlist.Click
+        NavigateToWishlist()
+    End Sub
+
+    Private Sub NavigateToWishlist()
         Dim formBaru As New WishlistForm()
         formBaru.Show()
-        Me.Hide()
+        Me.Close() ' Use Close instead of Hide
     End Sub
 End Class

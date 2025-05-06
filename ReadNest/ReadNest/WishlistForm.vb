@@ -5,6 +5,7 @@ Public Class WishlistForm
     Private Sub FavoriteForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadFavoriteBooks()
     End Sub
+
     Private Sub btnSearchFavoriteBook_Click(sender As Object, e As EventArgs) Handles btnSearchFavoriteBook.Click
         LoadFavoriteBooks(txtSearchFavoriteBook.Text.Trim())
     End Sub
@@ -19,48 +20,45 @@ Public Class WishlistForm
             flowBookWishlist.Controls.Clear()
 
             Dim db As New DBConnection()
-            Dim query As String = "SELECT BookId, Title, Author, PhotoPath FROM books WHERE IsWishlist = 1"
+            Dim currentUserId As Integer = SessionHelper.CurrentUser.UserId
+            Dim query As String = "SELECT BookId, Title, Author, PhotoPath FROM books WHERE IsWishlist = 1 AND UserId = @userId"
+
+            Dim parameters As New Dictionary(Of String, Object)()
+            parameters.Add("@userId", currentUserId)
 
             If Not String.IsNullOrWhiteSpace(searchTerm) Then
                 query &= " AND (Title LIKE @search OR Author LIKE @search)"
+                parameters.Add("@search", $"%{searchTerm}%")
             End If
 
-            Using cmd As New MySqlCommand(query, db.BukaKoneksi())
-                If Not String.IsNullOrWhiteSpace(searchTerm) Then
-                    cmd.Parameters.AddWithValue("@search", $"%{searchTerm}%")
-                End If
+            Dim books As DataTable = db.ExecuteQueryWithParams(query, parameters)
 
-                Using da As New MySqlDataAdapter(cmd)
-                    Dim books As New DataTable()
-                    da.Fill(books)
-
-                    If books.Rows.Count > 0 Then
-                        For Each row As DataRow In books.Rows
-                            Dim bookCard As New MainForm.BookCard(
-                            Convert.ToInt32(row("BookId")),
-                            row("Title").ToString(),
-                            row("Author").ToString(),
-                            If(IsDBNull(row("PhotoPath")), "", row("PhotoPath").ToString())
-                        )
-                            flowBookWishlist.Controls.Add(bookCard)
-                        Next
-                    Else
-                        flowBookWishlist.Controls.Add(New Label() With {
-                        .Text = "Tidak ada buku wishlist ditemukan.",
-                        .AutoSize = True,
-                        .Font = New Font("Segoe UI", 10.0F, FontStyle.Italic),
-                        .Dock = DockStyle.Fill
-                    })
-                    End If
-                End Using
-            End Using
+            If books IsNot Nothing AndAlso books.Rows.Count > 0 Then
+                For Each row As DataRow In books.Rows
+                    Dim bookCard As New MainForm.BookCard(
+                    Convert.ToInt32(row("BookId")),
+                    row("Title").ToString(),
+                    row("Author").ToString(),
+                    If(IsDBNull(row("PhotoPath")), "", row("PhotoPath").ToString())
+                )
+                    flowBookWishlist.Controls.Add(bookCard)
+                Next
+            Else
+                flowBookWishlist.Controls.Add(New Label() With {
+                .Text = "Tidak ada buku wishlist ditemukan.",
+                .AutoSize = True,
+                .Font = New Font("Segoe UI", 10.0F, FontStyle.Italic),
+                .Dock = DockStyle.Fill
+            })
+            End If
         Catch ex As Exception
             MessageBox.Show("Gagal memuat buku wishlist: " & ex.Message, "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
             flowBookWishlist.ResumeLayout()
         End Try
     End Sub
+
 
 
     'Untuk Tombol navigasi di menu'
