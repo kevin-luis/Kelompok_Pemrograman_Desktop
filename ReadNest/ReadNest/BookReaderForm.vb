@@ -229,18 +229,17 @@ Public Class BookReaderForm
     End Sub
 
     Private Sub btnTimerControl_Click(sender As Object, e As EventArgs) Handles btnTimerControl.Click
+        _isTimerRunning = Not _isTimerRunning
+
         If _isTimerRunning Then
-            ' If timer is running, stop it
-            ReadingTimer.Stop()
-            _isTimerRunning = False
-            btnTimerControl.Text = "▶"
-        Else
-            ' If timer is stopped, start it
             ReadingTimer.Start()
-            _isTimerRunning = True
             btnTimerControl.Text = "⏸"
+        Else
+            ReadingTimer.Stop()
+            btnTimerControl.Text = "▶"
         End If
     End Sub
+
 
     Private Sub SaveReadingProgress()
         Try
