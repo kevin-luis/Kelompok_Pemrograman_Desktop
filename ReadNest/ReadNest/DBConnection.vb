@@ -274,20 +274,21 @@ Public Class DBConnection
     End Function
 
     ' Update reading progress
-    Public Function UpdateReadingProgress(userId As Integer, bookId As Integer, lastPage As Integer, durationMinutes As Integer) As Boolean
-        Dim query As String = "INSERT INTO userbookprogress (UserId, BookId, LastPage, ReadDuration, LastOpened)
-                           VALUES (@userId, @bookId, @lastPage, @duration, NOW())
-                           ON DUPLICATE KEY UPDATE
-                           LastPage = @lastPage,
-                           ReadDuration = ReadDuration + @duration,
-                           LastOpened = NOW();"
+    Public Function UpdateReadingProgressAbsolute(userId As Integer, bookId As Integer, lastPage As Integer, totalDurationMinutes As Integer) As Boolean
+        Dim query As String = "
+    INSERT INTO userbookprogress (UserId, BookId, LastPage, ReadDuration, LastOpened)
+    VALUES (@userId, @bookId, @lastPage, @duration, NOW())
+    ON DUPLICATE KEY UPDATE
+        LastPage = @lastPage,
+        ReadDuration = @duration,
+        LastOpened = NOW();"
 
         Dim parameters As New Dictionary(Of String, Object) From {
-            {"@userId", userId},
-            {"@bookId", bookId},
-            {"@lastPage", lastPage},
-            {"@duration", durationMinutes}
-        }
+        {"@userId", userId},
+        {"@bookId", bookId},
+        {"@lastPage", lastPage},
+        {"@duration", totalDurationMinutes}
+    }
 
         Dim result = ExecuteNonQueryWithParams(query, parameters)
         Return result > 0
