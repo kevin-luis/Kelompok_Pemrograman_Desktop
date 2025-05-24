@@ -564,6 +564,7 @@ Partial Class BookReaderForm
         cmsHighlighting.ImageScalingSize = New Size(20, 20)
         cmsHighlighting.Items.AddRange(New ToolStripItem() {yellowHighlightToolStripMenuItem, blueHighlightToolStripMenuItem, greenHighlightToolStripMenuItem, pinkHighlightToolStripMenuItem, removeHighlightToolStripMenuItem, toolStripMenuItem1, addNoteToolStripMenuItem, copyTextToolStripMenuItem})
         cmsHighlighting.Name = "cmsHighlighting"
+        cmsHighlighting.OwnerItem = tsbHighlight
         cmsHighlighting.Size = New Size(199, 178)
         ' 
         ' yellowHighlightToolStripMenuItem
@@ -665,13 +666,13 @@ Partial Class BookReaderForm
         singlePageToolStripMenuItem1.Checked = True
         singlePageToolStripMenuItem1.CheckState = CheckState.Checked
         singlePageToolStripMenuItem1.Name = "singlePageToolStripMenuItem1"
-        singlePageToolStripMenuItem1.Size = New Size(224, 28)
+        singlePageToolStripMenuItem1.Size = New Size(182, 28)
         singlePageToolStripMenuItem1.Text = "Single Page"
         ' 
         ' twoPagesToolStripMenuItem1
         ' 
         twoPagesToolStripMenuItem1.Name = "twoPagesToolStripMenuItem1"
-        twoPagesToolStripMenuItem1.Size = New Size(224, 28)
+        twoPagesToolStripMenuItem1.Size = New Size(182, 28)
         twoPagesToolStripMenuItem1.Text = "Two Pages"
         ' 
         ' cmbTheme
@@ -692,19 +693,19 @@ Partial Class BookReaderForm
         lightModeToolStripMenuItem.Checked = True
         lightModeToolStripMenuItem.CheckState = CheckState.Checked
         lightModeToolStripMenuItem.Name = "lightModeToolStripMenuItem"
-        lightModeToolStripMenuItem.Size = New Size(224, 28)
+        lightModeToolStripMenuItem.Size = New Size(181, 28)
         lightModeToolStripMenuItem.Text = "Light Mode"
         ' 
         ' darkModeToolStripMenuItem
         ' 
         darkModeToolStripMenuItem.Name = "darkModeToolStripMenuItem"
-        darkModeToolStripMenuItem.Size = New Size(224, 28)
+        darkModeToolStripMenuItem.Size = New Size(181, 28)
         darkModeToolStripMenuItem.Text = "Dark Mode"
         ' 
         ' sepiaToolStripMenuItem
         ' 
         sepiaToolStripMenuItem.Name = "sepiaToolStripMenuItem"
-        sepiaToolStripMenuItem.Size = New Size(224, 28)
+        sepiaToolStripMenuItem.Size = New Size(181, 28)
         sepiaToolStripMenuItem.Text = "Sepia"
         ' 
         ' menuSettings
@@ -812,10 +813,9 @@ Partial Class BookReaderForm
         ' 
         btnTimerControl.BackColor = Color.FromArgb(CByte(240), CByte(240), CByte(240))
         btnTimerControl.Dock = DockStyle.Right
-        btnTimerControl.Enabled = False
         btnTimerControl.FlatAppearance.BorderColor = Color.FromArgb(CByte(200), CByte(200), CByte(200))
         btnTimerControl.FlatStyle = FlatStyle.Flat
-        btnTimerControl.Font = New Font("Segoe UI", 9F)
+        btnTimerControl.Font = New Font("Segoe UI", 9.0F)
         btnTimerControl.ForeColor = Color.FromArgb(CByte(60), CByte(60), CByte(60))
         btnTimerControl.Location = New Point(190, 0)
         btnTimerControl.Margin = New Padding(4, 5, 4, 5)
@@ -828,7 +828,7 @@ Partial Class BookReaderForm
         ' lblTimerDisplay
         ' 
         lblTimerDisplay.Dock = DockStyle.Left
-        lblTimerDisplay.Font = New Font("Segoe UI", 9F)
+        lblTimerDisplay.Font = New Font("Segoe UI", 9.0F)
         lblTimerDisplay.ForeColor = Color.FromArgb(CByte(60), CByte(60), CByte(60))
         lblTimerDisplay.Location = New Point(0, 0)
         lblTimerDisplay.Margin = New Padding(0)
@@ -868,7 +868,7 @@ Partial Class BookReaderForm
         ' 
         ' BookReaderForm
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         ClientSize = New Size(1200, 850)
