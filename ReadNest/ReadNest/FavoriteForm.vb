@@ -2,6 +2,73 @@
 
 Public Class FavoriteForm
 
+    Private isNavigating As Boolean = False
+
+    '============ NAVIGASI MENU ============'
+    Private Sub NavigateToForm(form As Form)
+        SessionHelper.UpdateActivity()
+        isNavigating = True
+        form.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub lblDiscover_Click(sender As Object, e As EventArgs) Handles lblDiscover.Click, pbDiscover.Click
+        NavigateToForm(New MainForm())
+    End Sub
+
+    Private Sub lblCategory_Click(sender As Object, e As EventArgs) Handles lblCategory.Click, pbCategory.Click
+        NavigateToForm(New CategoryForm())
+    End Sub
+
+    Private Sub lblNotes_Click(sender As Object, e As EventArgs) Handles lblNotes.Click, pbNotes.Click
+        NavigateToForm(New Mynotes())
+    End Sub
+
+    Private Sub lblFavorite_Click(sender As Object, e As EventArgs) Handles lblFavorite.Click, pbFavorite.Click
+        NavigateToForm(New FavoriteForm())
+    End Sub
+
+    Private Sub lblBB_Click(sender As Object, e As EventArgs) Handles lblBB.Click, pbBB.Click
+        NavigateToForm(New BorrowForm())
+    End Sub
+
+    Private Sub lblstatistic_Click(sender As Object, e As EventArgs) Handles lblstatistic.Click, pbStatistic.Click
+        NavigateToForm(New StatisticForm())
+    End Sub
+
+    Private Sub lblWishlist_Click(sender As Object, e As EventArgs) Handles lblWishlist.Click
+        NavigateToForm(New WishlistForm())
+    End Sub
+    '============ PROFILE MENU ============'
+    Private Sub cbProfile_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProfile.SelectedIndexChanged
+        If cbProfile.SelectedIndex = -1 Then Exit Sub
+
+        Select Case cbProfile.SelectedItem.ToString()
+            Case "View Profile"
+                NavigateToForm(New ProfileForm())
+
+            Case "Logout"
+                Dim result As DialogResult = MessageBox.Show("Apakah Anda yakin ingin logout?",
+                                                       "Konfirmasi Logout",
+                                                       MessageBoxButtons.YesNo,
+                                                       MessageBoxIcon.Question)
+                If result = DialogResult.Yes Then
+                    ' Hapus session
+                    SessionHelper.EndSession()
+                    SessionHelper.ClearSavedSession()
+
+                    isNavigating = True
+                    Dim loginForm As New LoginForm()
+                    loginForm.Show()
+                    Me.Close()
+                Else
+                    cbProfile.SelectedIndex = 0
+                End If
+        End Select
+
+        cbProfile.SelectedIndex = 0 ' Reset ke default setelah aksi
+    End Sub
+
     Private Sub FavoriteForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadFavoriteBooks()
     End Sub
@@ -59,90 +126,4 @@ Public Class FavoriteForm
         End Try
     End Sub
 
-
-
-    'Untuk Tombol navigasi di menu'
-    Private Sub lblDiscover_Click(sender As Object, e As EventArgs) Handles lblDiscover.Click
-        Dim formBaru As New MainForm()
-        formBaru.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub pbDiscover_Click(sender As Object, e As EventArgs) Handles pbDiscover.Click
-        Dim formBaru As New MainForm()
-        formBaru.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub lblCategory_Click(sender As Object, e As EventArgs) Handles lblCategory.Click
-        Dim formBaru As New CategoryForm()
-        formBaru.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub pbCategory_Click(sender As Object, e As EventArgs) Handles pbCategory.Click
-        Dim formBaru As New CategoryForm()
-        formBaru.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub lblNotes_Click(sender As Object, e As EventArgs) Handles lblNotes.Click
-        Dim formBaru As New Mynotes()
-        formBaru.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub lblWishlist_Click(sender As Object, e As EventArgs) Handles lblWishlist.Click
-        Dim formBaru As New WishlistForm()
-        formBaru.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub pbNotes_Click(sender As Object, e As EventArgs) Handles pbNotes.Click
-        Dim formBaru As New Mynotes()
-        formBaru.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub lblFavorite_Click(sender As Object, e As EventArgs) Handles lblFavorite.Click
-        Dim formBaru As New FavoriteForm()
-        formBaru.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub pbFavorite_Click(sender As Object, e As EventArgs) Handles pbFavorite.Click
-        Dim formBaru As New FavoriteForm()
-        formBaru.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub lblBB_Click(sender As Object, e As EventArgs) Handles lblBB.Click
-        Dim formBaru As New BorrowForm()
-        formBaru.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub pbBB_Click(sender As Object, e As EventArgs) Handles pbBB.Click
-        Dim formBaru As New BorrowForm()
-        formBaru.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub lblstatistic_Click(sender As Object, e As EventArgs) Handles lblstatistic.Click
-        Dim formBaru As New StatisticForm()
-        formBaru.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub pbStatistic_Click(sender As Object, e As EventArgs) Handles pbStatistic.Click
-        Dim formBaru As New StatisticForm()
-        formBaru.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub pbWishlist_Click(sender As Object, e As EventArgs) Handles pbWishlist.Click
-        Dim formBaru As New WishlistForm()
-        formBaru.Show()
-        Me.Hide()
-    End Sub
 End Class
