@@ -24,7 +24,6 @@ Partial Class WishlistForm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(WishlistForm))
         Label2 = New Label()
-        lblUsername = New Label()
         pbProfile = New PictureBox()
         btnSearchFavoriteBook = New Button()
         txtSearchFavoriteBook = New TextBox()
@@ -47,6 +46,7 @@ Partial Class WishlistForm
         pbWishlist = New PictureBox()
         PictureBox2 = New PictureBox()
         flowBookWishlist = New FlowLayoutPanel()
+        cbProfile = New ComboBox()
         CType(pbProfile, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbBB, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).BeginInit()
@@ -75,21 +75,11 @@ Partial Class WishlistForm
         Label2.TabIndex = 46
         Label2.Text = "Your Wishlist Book List"
         ' 
-        ' lblUsername
-        ' 
-        lblUsername.AutoSize = True
-        lblUsername.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        lblUsername.Location = New Point(848, 26)
-        lblUsername.Name = "lblUsername"
-        lblUsername.Size = New Size(57, 18)
-        lblUsername.TabIndex = 45
-        lblUsername.Text = "Profile"
-        ' 
         ' pbProfile
         ' 
         pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
         pbProfile.BackgroundImageLayout = ImageLayout.Stretch
-        pbProfile.Location = New Point(814, 16)
+        pbProfile.Location = New Point(576, 25)
         pbProfile.Name = "pbProfile"
         pbProfile.Size = New Size(28, 28)
         pbProfile.TabIndex = 44
@@ -294,10 +284,12 @@ Partial Class WishlistForm
         ' 
         ' SplitContainer1.Panel2
         ' 
+        SplitContainer1.Panel2.Controls.Add(cbProfile)
         SplitContainer1.Panel2.Controls.Add(flowBookWishlist)
         SplitContainer1.Panel2.Controls.Add(Label2)
         SplitContainer1.Panel2.Controls.Add(txtSearchFavoriteBook)
         SplitContainer1.Panel2.Controls.Add(btnSearchFavoriteBook)
+        SplitContainer1.Panel2.Controls.Add(pbProfile)
         SplitContainer1.Size = New Size(934, 486)
         SplitContainer1.SplitterDistance = 186
         SplitContainer1.TabIndex = 72
@@ -347,9 +339,22 @@ Partial Class WishlistForm
         flowBookWishlist.Size = New Size(718, 384)
         flowBookWishlist.TabIndex = 34
         ' 
+        ' cbProfile
+        ' 
+        cbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        cbProfile.DropDownStyle = ComboBoxStyle.DropDownList
+        cbProfile.FlatStyle = FlatStyle.Flat
+        cbProfile.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        cbProfile.FormattingEnabled = True
+        cbProfile.Items.AddRange(New Object() {"Profile", "View Profile", "Logout"})
+        cbProfile.Location = New Point(610, 23)
+        cbProfile.Name = "cbProfile"
+        cbProfile.Size = New Size(97, 26)
+        cbProfile.TabIndex = 73
+        ' 
         ' WishlistForm
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         ClientSize = New Size(934, 486)
@@ -367,8 +372,6 @@ Partial Class WishlistForm
         Controls.Add(pbFavorite)
         Controls.Add(pbNotes)
         Controls.Add(pbCategory)
-        Controls.Add(lblUsername)
-        Controls.Add(pbProfile)
         Controls.Add(SplitContainer1)
         Name = "WishlistForm"
         StartPosition = FormStartPosition.CenterScreen
@@ -392,7 +395,6 @@ Partial Class WishlistForm
         PerformLayout()
     End Sub
     Friend WithEvents Label2 As Label
-    Friend WithEvents lblUsername As Label
     Friend WithEvents pbProfile As PictureBox
     Friend WithEvents btnSearchFavoriteBook As Button
     Friend WithEvents txtSearchFavoriteBook As TextBox
@@ -415,4 +417,5 @@ Partial Class WishlistForm
     Friend WithEvents flowBookWishlist As FlowLayoutPanel
     Friend WithEvents lblWishlist As Label
     Friend WithEvents pbWishlist As PictureBox
+    Friend WithEvents cbProfile As ComboBox
 End Class

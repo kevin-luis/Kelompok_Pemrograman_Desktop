@@ -30,7 +30,6 @@ Partial Class StatisticForm
         txtTotalBooksRead = New TextBox()
         txtTotalReadingTime = New TextBox()
         txtTotalFavoriteBooks = New TextBox()
-        lblUsername = New Label()
         pbBB = New PictureBox()
         lblBB = New Label()
         lblstatistic = New Label()
@@ -51,6 +50,7 @@ Partial Class StatisticForm
         PictureBox2 = New PictureBox()
         Panel1 = New Panel()
         pbProfile = New PictureBox()
+        cbProfile = New ComboBox()
         CType(pbBB, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbDiscover, ComponentModel.ISupportInitialize).BeginInit()
@@ -139,16 +139,6 @@ Partial Class StatisticForm
         txtTotalFavoriteBooks.Name = "txtTotalFavoriteBooks"
         txtTotalFavoriteBooks.Size = New Size(100, 23)
         txtTotalFavoriteBooks.TabIndex = 55
-        ' 
-        ' lblUsername
-        ' 
-        lblUsername.AutoSize = True
-        lblUsername.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        lblUsername.Location = New Point(831, 23)
-        lblUsername.Name = "lblUsername"
-        lblUsername.Size = New Size(57, 18)
-        lblUsername.TabIndex = 58
-        lblUsername.Text = "Profile"
         ' 
         ' pbBB
         ' 
@@ -328,7 +318,9 @@ Partial Class StatisticForm
         ' 
         ' SplitContainer1.Panel2
         ' 
+        SplitContainer1.Panel2.Controls.Add(cbProfile)
         SplitContainer1.Panel2.Controls.Add(Panel1)
+        SplitContainer1.Panel2.Controls.Add(pbProfile)
         SplitContainer1.Size = New Size(934, 486)
         SplitContainer1.SplitterDistance = 186
         SplitContainer1.TabIndex = 73
@@ -386,11 +378,24 @@ Partial Class StatisticForm
         ' 
         pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
         pbProfile.BackgroundImageLayout = ImageLayout.Stretch
-        pbProfile.Location = New Point(797, 12)
+        pbProfile.Location = New Point(584, 23)
         pbProfile.Name = "pbProfile"
         pbProfile.Size = New Size(28, 28)
         pbProfile.TabIndex = 57
         pbProfile.TabStop = False
+        ' 
+        ' cbProfile
+        ' 
+        cbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        cbProfile.DropDownStyle = ComboBoxStyle.DropDownList
+        cbProfile.FlatStyle = FlatStyle.Flat
+        cbProfile.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        cbProfile.FormattingEnabled = True
+        cbProfile.Items.AddRange(New Object() {"Profile", "View Profile", "Logout"})
+        cbProfile.Location = New Point(618, 25)
+        cbProfile.Name = "cbProfile"
+        cbProfile.Size = New Size(97, 26)
+        cbProfile.TabIndex = 74
         ' 
         ' StatisticForm
         ' 
@@ -412,8 +417,6 @@ Partial Class StatisticForm
         Controls.Add(pbFavorite)
         Controls.Add(pbNotes)
         Controls.Add(pbCategory)
-        Controls.Add(lblUsername)
-        Controls.Add(pbProfile)
         Controls.Add(SplitContainer1)
         Name = "StatisticForm"
         StartPosition = FormStartPosition.CenterScreen
@@ -444,7 +447,6 @@ Partial Class StatisticForm
     Friend WithEvents txtTotalBooksRead As TextBox
     Friend WithEvents txtTotalReadingTime As TextBox
     Friend WithEvents txtTotalFavoriteBooks As TextBox
-    Friend WithEvents lblUsername As Label
     Friend WithEvents pbBB As PictureBox
     Friend WithEvents lblBB As Label
     Friend WithEvents lblstatistic As Label
@@ -465,4 +467,5 @@ Partial Class StatisticForm
     Friend WithEvents pbProfile As PictureBox
     Friend WithEvents lblWishlist As Label
     Friend WithEvents pbWishlist As PictureBox
+    Friend WithEvents cbProfile As ComboBox
 End Class
