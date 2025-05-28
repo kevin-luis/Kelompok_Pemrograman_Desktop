@@ -23,8 +23,8 @@ Public Class BookReaderForm
     End Sub
 
     Private Sub BookReaderForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadReadingProgress() ' Pindah ke atas sebelum LoadBookFile
         LoadBookFile()
-        LoadReadingProgress()
 
         ' Mulai sesi baca baru
         _sessionStartTime = DateTime.Now
@@ -95,26 +95,43 @@ Public Class BookReaderForm
 
         _pdfDocument = PdfDocument.Load(_filePath)
         _pdfViewer = New PdfViewer() With {
-            .Dock = DockStyle.Fill,
-            .Document = _pdfDocument,
-            .ShowToolbar = False
-        }
+        .Dock = DockStyle.Fill,
+        .Document = _pdfDocument,
+        .ShowToolbar = False
+    }
         _pdfViewer.Renderer.ZoomMode = PdfViewerZoomMode.FitWidth
 
         ' Enable controls
         SetControlsEnabled(True)
 
-        ' Update page info
-        tslPageInfo.Text = $"1 / {_pdfDocument.PageCount}"
-
         pnlDocumentView.Controls.Clear()
         pnlDocumentView.Controls.Add(_pdfViewer)
 
-        ' Go to last saved page
-        If _currentPage > 0 AndAlso _currentPage <= _pdfDocument.PageCount Then
-            _pdfViewer.Renderer.Page = _currentPage - 1
-            _lastTrackedPage = _currentPage
-        End If
+        ' Gunakan Timer untuk delay sedikit agar viewer ter-render dengan benar
+        Dim setPageTimer As New Timer()
+        setPageTimer.Interval = 100 ' 100ms delay
+        AddHandler setPageTimer.Tick, Sub()
+                                          setPageTimer.Stop()
+                                          setPageTimer.Dispose()
+
+                                          ' Go to last saved page SETELAH viewer siap
+                                          If _currentPage > 0 AndAlso _currentPage <= _pdfDocument.PageCount Then
+                                              _pdfViewer.Renderer.Page = _currentPage - 1
+                                              _lastTrackedPage = _currentPage
+                                              tslPageInfo.Text = $"{_currentPage} / {_pdfDocument.PageCount}"
+
+                                              ' ✅ Tambahan: update progress bar saat buka awal
+                                              Dim progress As Integer = CInt((_currentPage / _pdfDocument.PageCount) * 100)
+                                              progressBar.Value = Math.Min(progress, 100)
+                                              lblProgressPercentage.Text = $"{progress}%"
+                                          Else
+                                              ' Jika tidak ada halaman tersimpan, mulai dari halaman 1
+                                              _currentPage = 1
+                                              _lastTrackedPage = 1
+                                              tslPageInfo.Text = $"1 / {_pdfDocument.PageCount}"
+                                          End If
+                                      End Sub
+        setPageTimer.Start()
 
         ' Setup page tracking
         _pageCheckTimer.Interval = 250
