@@ -123,8 +123,9 @@ Public Class BookDetail
         Dim db As New DBConnection()
 
         If db.BorrowBook(_bookId) Then
-            MessageBox.Show("Book borrowed successfully!", "Success",
-                           MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Dim borrow As New BorrowForm(_bookId)
+            borrow.Show()
+            Me.Close()
             borrowButton.Enabled = False
             borrowButton.Text = "📚"
         End If

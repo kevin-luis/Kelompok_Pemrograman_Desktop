@@ -5,11 +5,68 @@ Public Class BorrowForm
 
     Private selectedBookId As Integer = -1
     Private selectedBookPhotoPath As String = ""
+    Private autoFillBookId As Integer = -1
+    Public Sub New(Optional bookId As Integer = -1)
+        InitializeComponent()
+
+        autoFillBookId = bookId
+    End Sub
+
+    Private Sub LoadBookDetailsById(bookId As Integer)
+        Try
+            Dim db As New DBConnection()
+            Dim query As String = "SELECT b.BookId, b.Title, b.Author, b.CategoryId, b.Pages, b.PhotoPath, c.CategoryName " &
+                             "FROM books b " &
+                             "LEFT JOIN categories c ON b.CategoryId = c.CategoryId " &
+                             "WHERE b.BookId = @bookId"
+
+            Dim parameters As New Dictionary(Of String, Object) From {
+            {"@bookId", bookId}
+        }
+
+            Dim result = db.ExecuteQueryWithParams(query, parameters)
+
+            If result IsNot Nothing AndAlso result.Rows.Count > 0 Then
+                Dim row = result.Rows(0)
+
+                ' Set selectedBookId dan photoPath
+                selectedBookId = Convert.ToInt32(row("BookId"))
+                selectedBookPhotoPath = If(IsDBNull(row("PhotoPath")), "", row("PhotoPath").ToString())
+
+                ' Fill form fields
+                txtBBTitle.Text = row("Title").ToString()
+                txtBBWriter.Text = row("Author").ToString()
+                txtBBPages.Text = row("Pages").ToString()
+
+                ' Set category name
+                If Not IsDBNull(row("CategoryName")) Then
+                    txtBBCategory.Text = row("CategoryName").ToString()
+                Else
+                    txtBBCategory.Text = "Unknown Category"
+                End If
+
+                ' Load cover image
+                LoadBookCover(selectedBookPhotoPath)
+
+                ' Auto-fill search textbox dengan judul buku
+                txtSearchBook.Text = row("Title").ToString()
+
+                MessageBox.Show("Book details loaded successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("Book not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+            MessageBox.Show($"Error loading book details: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 
     Private Sub BorrowForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Kosongkan detail buku saat form pertama kali dimuat
         ClearBookDetails()
         ' Set default image untuk picturebox
+        If autoFillBookId > 0 Then
+            LoadBookDetailsById(autoFillBookId)
+        End If
     End Sub
 
     Private Sub ClearBookDetails()
