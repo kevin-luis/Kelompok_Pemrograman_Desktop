@@ -15,6 +15,7 @@ Public Class BookReaderForm
     Private _lastTrackedPage As Integer = -1
     Private _pageCheckTimer As New Timer()
 
+
     Public Sub New(bookId As Integer, userId As Integer)
         InitializeComponent()
         _bookId = bookId
@@ -212,8 +213,13 @@ Public Class BookReaderForm
 
     Private Sub btnTimerControl_Click(sender As Object, e As EventArgs) Handles btnTimerControl.Click
         If ReadingTimer.Enabled Then
-            ' Pause - simpan progress dulu
+            ' Pause - simpan progress dan hentikan timer
             SaveReadingProgress()
+
+            ' Update _totalSecondsFromDB dengan waktu sesi saat ini
+            Dim currentSessionSeconds As Integer = CInt(DateTime.Now.Subtract(_sessionStartTime).TotalSeconds)
+            _totalSecondsFromDB += currentSessionSeconds
+
             ReadingTimer.Stop()
             btnTimerControl.Text = "▶"
         Else
@@ -226,25 +232,29 @@ Public Class BookReaderForm
 
     Private Sub SaveReadingProgress()
         Static isCurrentlySaving As Boolean = False
-
         ' Prevent multiple simultaneous saves
         If isCurrentlySaving Then Return
         isCurrentlySaving = True
-
         Try
             If _pdfViewer IsNot Nothing AndAlso _pdfDocument IsNot Nothing Then
                 _currentPage = _pdfViewer.Renderer.Page + 1
             End If
 
             ' Hitung total waktu dalam detik
+            Dim totalSecondsToSave As Integer = _totalSecondsFromDB
+
+            ' Selalu tambahkan waktu sesi yang sudah berjalan sejak _sessionStartTime
+            ' Ini akan menangkap waktu baik saat timer berjalan maupun sudah dihentikan
             Dim currentSessionSeconds As Integer = CInt(DateTime.Now.Subtract(_sessionStartTime).TotalSeconds)
-            Dim newTotalSeconds As Integer = _totalSecondsFromDB + currentSessionSeconds
+            totalSecondsToSave += currentSessionSeconds
 
             Dim db As New DBConnection()
-            If db.UpdateReadingProgressAbsolute(_userId, _bookId, _currentPage, newTotalSeconds) Then
-                _totalSecondsFromDB = newTotalSeconds
+            If db.UpdateReadingProgressAbsolute(_userId, _bookId, _currentPage, totalSecondsToSave) Then
+                ' Update _totalSecondsFromDB dengan nilai yang baru disimpan
+                _totalSecondsFromDB = totalSecondsToSave
+                ' Reset session start time untuk menghindari double counting
+                _sessionStartTime = DateTime.Now
             End If
-
         Catch ex As Exception
             MessageBox.Show("Failed to save progress: " & ex.Message, "Error")
         Finally
@@ -253,9 +263,14 @@ Public Class BookReaderForm
     End Sub
 
     Private Sub BookReaderForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        ' Hentikan timer terlebih dahulu
+        If ReadingTimer IsNot Nothing AndAlso ReadingTimer.Enabled Then
+            ReadingTimer.Stop()
+        End If
+
+        ' Simpan progress
         SaveReadingProgress()
 
-        ReadingTimer?.Stop()
         _pageCheckTimer?.Stop()
 
         If _pageCheckTimer IsNot Nothing Then
