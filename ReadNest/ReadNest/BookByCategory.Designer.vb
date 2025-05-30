@@ -44,7 +44,7 @@ Partial Class BookByCategory
         Panel1 = New Panel()
         btnBack = New Button()
         flowCategory = New FlowLayoutPanel()
-        ComboBox1 = New ComboBox()
+        cbProfile1 = New ComboBox()
         PictureBox1 = New PictureBox()
         pbProfile = New PictureBox()
         lblByCategory = New Label()
@@ -302,7 +302,7 @@ Partial Class BookByCategory
         ' 
         Panel1.Controls.Add(btnBack)
         Panel1.Controls.Add(flowCategory)
-        Panel1.Controls.Add(ComboBox1)
+        Panel1.Controls.Add(cbProfile1)
         Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(pbProfile)
         Panel1.Controls.Add(lblByCategory)
@@ -331,18 +331,18 @@ Partial Class BookByCategory
         flowCategory.Size = New Size(729, 370)
         flowCategory.TabIndex = 54
         ' 
-        ' ComboBox1
+        ' cbProfile1
         ' 
-        ComboBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        ComboBox1.FlatStyle = FlatStyle.Flat
-        ComboBox1.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
-        ComboBox1.FormattingEnabled = True
-        ComboBox1.Items.AddRange(New Object() {"View Profile", "Logout"})
-        ComboBox1.Location = New Point(617, 21)
-        ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(97, 26)
-        ComboBox1.TabIndex = 53
-        ComboBox1.Text = "Profile"
+        cbProfile1.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        cbProfile1.FlatStyle = FlatStyle.Flat
+        cbProfile1.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        cbProfile1.FormattingEnabled = True
+        cbProfile1.Items.AddRange(New Object() {"View Profile", "Logout"})
+        cbProfile1.Location = New Point(617, 21)
+        cbProfile1.Name = "cbProfile1"
+        cbProfile1.Size = New Size(97, 26)
+        cbProfile1.TabIndex = 53
+        cbProfile1.Text = "Profile"
         ' 
         ' PictureBox1
         ' 
@@ -443,7 +443,7 @@ Partial Class BookByCategory
     Friend WithEvents lblByCategory As Label
     Friend WithEvents cbProfile As ComboBox
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cbProfile1 As ComboBox
     Friend WithEvents flowCategory As FlowLayoutPanel
     Friend WithEvents btnBack As Button
     Friend WithEvents pbWishlist As PictureBox

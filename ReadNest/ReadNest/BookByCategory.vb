@@ -121,10 +121,10 @@ Public Class BookByCategory
         NavigateToForm(New WishlistForm())
     End Sub
     '============ PROFILE MENU ============'
-    Private Sub cbProfile_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProfile.SelectedIndexChanged
-        If cbProfile.SelectedIndex = -1 Then Exit Sub
+    Private Sub cbProfile1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProfile1.SelectedIndexChanged
+        If cbProfile1.SelectedIndex = -1 Then Exit Sub
 
-        Select Case cbProfile.SelectedItem.ToString()
+        Select Case cbProfile1.SelectedItem.ToString()
             Case "View Profile"
                 NavigateToForm(New ProfileForm())
 
@@ -143,11 +143,11 @@ Public Class BookByCategory
                     loginForm.Show()
                     Me.Close()
                 Else
-                    cbProfile.SelectedIndex = 0
+                    cbProfile1.SelectedIndex = 0
                 End If
         End Select
 
-        cbProfile.SelectedIndex = 0 ' Reset ke default setelah aksi
+        cbProfile1.SelectedIndex = 0 ' Reset ke default setelah aksi
     End Sub
 
 End Class
