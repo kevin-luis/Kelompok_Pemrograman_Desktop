@@ -76,7 +76,6 @@
     End Sub
 
     Private Sub SetupFlowLayoutPanel()
-        ' Pastikan FlowLayoutPanel memiliki pengaturan scroll yang benar
         With flNotes
             .AutoScroll = True
             .WrapContents = True
@@ -91,7 +90,11 @@
         Try
             flNotes.Controls.Clear()
 
-            Dim query As String = "SELECT NoteId, Title, Content, BookId FROM notes ORDER BY NoteId DESC"
+            ' Modified query to join with books table to get book title
+            Dim query As String = "SELECT n.NoteId, n.Title, n.Content, n.BookId, b.Title as BookTitle " &
+                             "FROM notes n " &
+                             "LEFT JOIN books b ON n.BookId = b.BookId " &
+                             "ORDER BY n.NoteId DESC"
             Dim parameters As New Dictionary(Of String, Object)
 
             Dim dt As DataTable = db.ExecuteQueryWithParams(query, parameters)
@@ -99,11 +102,12 @@
             If dt IsNot Nothing Then
                 For Each row As DataRow In dt.Rows
                     Dim noteCard As Panel = CreateNoteCard(
-                        row("NoteId").ToString(),
-                        If(IsDBNull(row("Title")), "", row("Title").ToString()),
-                        If(IsDBNull(row("Content")), "", row("Content").ToString()),
-                        If(IsDBNull(row("BookId")), "", row("BookId").ToString())
-                    )
+                    row("NoteId").ToString(),
+                    If(IsDBNull(row("Title")), "", row("Title").ToString()),
+                    If(IsDBNull(row("Content")), "", row("Content").ToString()),
+                    If(IsDBNull(row("BookId")), "", row("BookId").ToString()),
+                    If(IsDBNull(row("BookTitle")), "", row("BookTitle").ToString())
+                )
                     flNotes.Controls.Add(noteCard)
                 Next
             End If
@@ -112,7 +116,7 @@
         End Try
     End Sub
 
-    Private Function CreateNoteCard(noteId As String, title As String, content As String, bookId As String) As Panel
+    Private Function CreateNoteCard(noteId As String, title As String, content As String, bookId As String, bookTitle As String) As Panel
         Dim card As New Panel()
         card.Size = New Size(300, 150)
         card.BorderStyle = BorderStyle.FixedSingle
@@ -126,7 +130,7 @@
         lblTitle.Text = If(String.IsNullOrEmpty(title), "Untitled Note", title)
         lblTitle.Font = New Font("Arial", 12, FontStyle.Bold)
         lblTitle.Location = New Point(10, 10)
-        lblTitle.Size = New Size(240, 25) ' Dikurangi untuk memberi ruang delete button
+        lblTitle.Size = New Size(240, 25)
         lblTitle.ForeColor = Color.Black
         lblTitle.Tag = noteId
         lblTitle.Cursor = Cursors.Hand
@@ -142,16 +146,20 @@
         lblContent.Tag = noteId
         lblContent.Cursor = Cursors.Hand
 
-        ' Book ID Label (if exists)
-        Dim lblBookId As New Label()
+        ' Book Info Label (Enhanced to show title)
+        Dim lblBookInfo As New Label()
         If Not String.IsNullOrEmpty(bookId) Then
-            lblBookId.Text = "Book ID: " & bookId
-            lblBookId.Font = New Font("Arial", 8, FontStyle.Italic)
-            lblBookId.Location = New Point(10, 105)
-            lblBookId.Size = New Size(150, 15)
-            lblBookId.ForeColor = Color.DarkGreen
-            lblBookId.Tag = noteId
-            lblBookId.Cursor = Cursors.Hand
+            If Not String.IsNullOrEmpty(bookTitle) Then
+                lblBookInfo.Text = $"📖 {bookTitle}"
+            Else
+                lblBookInfo.Text = $"📖 Book ID: {bookId}"
+            End If
+            lblBookInfo.Font = New Font("Arial", 8, FontStyle.Italic)
+            lblBookInfo.Location = New Point(10, 105)
+            lblBookInfo.Size = New Size(240, 15)
+            lblBookInfo.ForeColor = Color.DarkGreen
+            lblBookInfo.Tag = noteId
+            lblBookInfo.Cursor = Cursors.Hand
         End If
 
         ' Delete Button
@@ -167,18 +175,16 @@
         btnDelete.Tag = noteId
         btnDelete.Cursor = Cursors.Hand
 
-        ' Event handlers untuk semua komponen yang bisa diklik untuk edit
+        ' Event handlers
         AddHandler card.Click, AddressOf NoteCard_Click
         AddHandler lblTitle.Click, AddressOf NoteCard_Click
         AddHandler lblContent.Click, AddressOf NoteCard_Click
         If Not String.IsNullOrEmpty(bookId) Then
-            AddHandler lblBookId.Click, AddressOf NoteCard_Click
+            AddHandler lblBookInfo.Click, AddressOf NoteCard_Click
         End If
-
-        ' Event handler khusus untuk delete button
         AddHandler btnDelete.Click, AddressOf DeleteNote_Click
 
-        ' Hover effects untuk card
+        ' Hover effects
         AddHandler card.MouseEnter, AddressOf NoteCard_MouseEnter
         AddHandler card.MouseLeave, AddressOf NoteCard_MouseLeave
         AddHandler lblTitle.MouseEnter, AddressOf NoteCard_MouseEnter
@@ -186,15 +192,15 @@
         AddHandler lblContent.MouseEnter, AddressOf NoteCard_MouseEnter
         AddHandler lblContent.MouseLeave, AddressOf NoteCard_MouseLeave
         If Not String.IsNullOrEmpty(bookId) Then
-            AddHandler lblBookId.MouseEnter, AddressOf NoteCard_MouseEnter
-            AddHandler lblBookId.MouseLeave, AddressOf NoteCard_MouseLeave
+            AddHandler lblBookInfo.MouseEnter, AddressOf NoteCard_MouseEnter
+            AddHandler lblBookInfo.MouseLeave, AddressOf NoteCard_MouseLeave
         End If
 
         ' Add controls to card
         card.Controls.Add(lblTitle)
         card.Controls.Add(lblContent)
         If Not String.IsNullOrEmpty(bookId) Then
-            card.Controls.Add(lblBookId)
+            card.Controls.Add(lblBookInfo)
         End If
         card.Controls.Add(btnDelete)
 

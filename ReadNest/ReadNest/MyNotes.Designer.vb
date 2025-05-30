@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Mynotes
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Mynotes
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Mynotes))
         pbBB = New PictureBox()
@@ -41,12 +41,12 @@ Partial Class Mynotes
         lblWishlist = New Label()
         pbWishlist = New PictureBox()
         PictureBox2 = New PictureBox()
+        btnAddNote = New Button()
         flNotes = New FlowLayoutPanel()
         Label5 = New Label()
         pbProfile = New PictureBox()
         Splitter1 = New Splitter()
         cbProfile = New ComboBox()
-        btnAddNote = New Button()
         CType(pbBB, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbDiscover, ComponentModel.ISupportInitialize).BeginInit()
@@ -283,11 +283,27 @@ Partial Class Mynotes
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
         ' 
+        ' btnAddNote
+        ' 
+        btnAddNote.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnAddNote.BackColor = Color.FromArgb(CByte(40), CByte(167), CByte(69))
+        btnAddNote.FlatAppearance.BorderSize = 0
+        btnAddNote.FlatStyle = FlatStyle.Flat
+        btnAddNote.Font = New Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnAddNote.ForeColor = Color.White
+        btnAddNote.Location = New Point(613, 73)
+        btnAddNote.Margin = New Padding(4, 3, 4, 3)
+        btnAddNote.Name = "btnAddNote"
+        btnAddNote.Size = New Size(93, 35)
+        btnAddNote.TabIndex = 125
+        btnAddNote.Text = "+ Add Note"
+        btnAddNote.UseVisualStyleBackColor = False
+        ' 
         ' flNotes
         ' 
-        flNotes.Location = New Point(20, 94)
+        flNotes.Location = New Point(20, 114)
         flNotes.Name = "flNotes"
-        flNotes.Size = New Size(690, 380)
+        flNotes.Size = New Size(690, 360)
         flNotes.TabIndex = 124
         ' 
         ' Label5
@@ -298,7 +314,7 @@ Partial Class Mynotes
         Label5.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
         Label5.ForeColor = SystemColors.ControlText
         Label5.ImageAlign = ContentAlignment.TopRight
-        Label5.Location = New Point(20, 63)
+        Label5.Location = New Point(20, 28)
         Label5.Name = "Label5"
         Label5.Size = New Size(93, 22)
         Label5.TabIndex = 123
@@ -336,18 +352,9 @@ Partial Class Mynotes
         cbProfile.TabIndex = 122
         cbProfile.Text = "Profile"
         ' 
-        ' btnAddNote
-        ' 
-        btnAddNote.Location = New Point(635, 65)
-        btnAddNote.Name = "btnAddNote"
-        btnAddNote.Size = New Size(75, 23)
-        btnAddNote.TabIndex = 125
-        btnAddNote.Text = "+ Note"
-        btnAddNote.UseVisualStyleBackColor = True
-        ' 
         ' Mynotes
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         BackColor = Color.White
