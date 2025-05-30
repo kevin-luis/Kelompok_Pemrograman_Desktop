@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\kelompok_pemrograman_desktop\\readnest\\readnest\\listborrowerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\listborrowerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\kelompok_pemrograman_desktop\\readnest\\readnest\\borrowedform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\borrowedform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\kelompok_pemrograman_desktop\\readnest\\readnest\\borrowedform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\borrowedform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\kelompok_pemrograman_desktop\\readnest\\readnest\\addnewbookform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\addnewbookform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\kelompok_pemrograman_desktop\\readnest\\readnest\\addnewbookform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\addnewbookform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\kelompok_pemrograman_desktop\\readnest\\readnest\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
@@ -27,8 +19,8 @@
       "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\kelompok_pemrograman_desktop\\readnest\\readnest\\listborrowerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\listborrowerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\kelompok_pemrograman_desktop\\readnest\\readnest\\borrowedform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\borrowedform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\kelompok_pemrograman_desktop\\readnest\\readnest\\dbconnection.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -37,6 +29,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\kelompok_pemrograman_desktop\\readnest\\readnest\\listborrowerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\listborrowerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\kelompok_pemrograman_desktop\\readnest\\readnest\\addnewbookform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\addnewbookform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\kelompok_pemrograman_desktop\\readnest\\readnest\\addnewbookform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\addnewbookform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 333,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,20 +62,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "BorrowedForm.vb",
               "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\BorrowedForm.vb",
               "RelativeDocumentMoniker": "ReadNest\\BorrowedForm.vb",
               "ToolTip": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\BorrowedForm.vb",
               "RelativeToolTip": "ReadNest\\BorrowedForm.vb",
-              "ViewState": "AgIAADIBAAAAAAAAAAAjwEUBAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAD4v1QAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-05-30T05:12:33.988Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "AddNewBookForm.vb",
               "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\AddNewBookForm.vb",
               "RelativeDocumentMoniker": "ReadNest\\AddNewBookForm.vb",
@@ -88,7 +88,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "AddNewBookForm.vb [Design]",
               "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\AddNewBookForm.vb",
               "RelativeDocumentMoniker": "ReadNest\\AddNewBookForm.vb",
@@ -100,7 +100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "DBConnection.vb",
               "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\DBConnection.vb",
               "RelativeDocumentMoniker": "ReadNest\\DBConnection.vb",
@@ -113,20 +113,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "ListBorrowerForm.vb",
               "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\ListBorrowerForm.vb",
               "RelativeDocumentMoniker": "ReadNest\\ListBorrowerForm.vb",
               "ToolTip": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\ListBorrowerForm.vb",
               "RelativeToolTip": "ReadNest\\ListBorrowerForm.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0BAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAOcAAAAAAAAAAAAuwPAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-05-30T04:40:02.352Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "ListBorrowerForm.vb [Design]",
               "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\ListBorrowerForm.vb",
               "RelativeDocumentMoniker": "ReadNest\\ListBorrowerForm.vb",
@@ -138,24 +138,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "MainForm.vb [Design]",
               "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\MainForm.vb",
               "RelativeDocumentMoniker": "ReadNest\\MainForm.vb",
-              "ToolTip": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\MainForm.vb [Design]*",
-              "RelativeToolTip": "ReadNest\\MainForm.vb [Design]*",
+              "ToolTip": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\MainForm.vb [Design]",
+              "RelativeToolTip": "ReadNest\\MainForm.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-05-28T15:09:35.267Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "MainForm.vb",
               "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\MainForm.vb",
               "RelativeDocumentMoniker": "ReadNest\\MainForm.vb",
-              "ToolTip": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\MainForm.vb*",
-              "RelativeToolTip": "ReadNest\\MainForm.vb*",
+              "ToolTip": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\MainForm.vb",
+              "RelativeToolTip": "ReadNest\\MainForm.vb",
               "ViewState": "AgIAAFUAAAAAAAAAAAAUwGoAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-05-29T09:12:46.159Z",
@@ -163,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "BorrowedForm.vb [Design]",
               "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\BorrowedForm.vb",
               "RelativeDocumentMoniker": "ReadNest\\BorrowedForm.vb",

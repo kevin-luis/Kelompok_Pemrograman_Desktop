@@ -170,7 +170,7 @@ Public Class BorrowForm
 
         ' Buat tanggal peminjaman (hari ini) dan pengembalian (2 hari dari sekarang)
         Dim borrowDate = DateTime.Now
-        Dim returnDate = borrowDate.AddDays(2) ' Default 2 hari
+        Dim returnDate = borrowDate.AddDays(7) ' Default 2 hari
 
         Try
             Dim db As New DBConnection()
