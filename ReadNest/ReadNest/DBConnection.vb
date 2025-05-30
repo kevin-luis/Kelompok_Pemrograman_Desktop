@@ -416,4 +416,35 @@ Public Class DBConnection
 
         Return ExecuteQueryWithParams(query, parameters)
     End Function
+
+    Public Function GetActiveBorrowers(userId As Integer) As DataTable
+        Dim query As String = "SELECT b.BookId, b.Title, b.Author, b.PhotoPath, 
+                         br.BorrowerId, br.BorrowerName, br.BorrowDate, 
+                         br.ReturnDate, br.IsReturned
+                         FROM borrowers br
+                         JOIN books b ON br.BookId = b.BookId
+                         WHERE b.UserId = @userId AND br.IsReturned = 0
+                         ORDER BY br.BorrowDate DESC"
+
+        Dim parameters As New Dictionary(Of String, Object) From {
+            {"@userId", userId}
+        }
+
+        Return ExecuteQueryWithParams(query, parameters)
+    End Function
+
+    Public Function MarkBookAsReturned(borrowerId As Integer) As Boolean
+        Dim query As String = "UPDATE borrowers SET IsReturned = 1, ReturnDate = NOW() 
+                         WHERE BorrowerId = @borrowerId;
+                         UPDATE books SET Status = 'Available' 
+                         WHERE BookId = (SELECT BookId FROM borrowers WHERE BorrowerId = @borrowerId)"
+
+        Dim parameters As New Dictionary(Of String, Object) From {
+            {"@borrowerId", borrowerId}
+        }
+
+        Dim result = ExecuteNonQueryWithParams(query, parameters)
+        Return result > 0
+    End Function
+
 End Class
