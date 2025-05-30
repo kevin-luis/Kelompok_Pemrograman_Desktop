@@ -4,7 +4,7 @@ Imports System.Security.Cryptography
 Imports System.Text
 
 Public Class DBConnection
-    Private ReadOnly strConn As String = "server=localhost;userid=root;password=;database=readnest"
+    Private ReadOnly strConn As String = "server=localhost;userid=root;password=;database=readnest2"
     Private ReadOnly connectionProvider As Func(Of MySqlConnection) = Function() New MySqlConnection(strConn)
 
     ' Central error handler
@@ -445,6 +445,92 @@ Public Class DBConnection
 
         Dim result = ExecuteNonQueryWithParams(query, parameters)
         Return result > 0
+    End Function
+
+    ' Tambahkan method-method ini ke dalam class DBConnection yang sudah ada
+
+    ' Get all notes
+    Public Function GetNotes() As DataTable
+        Dim query As String = "SELECT NoteId, Title, Content, BookId, CreatedDate, ModifiedDate FROM notes ORDER BY NoteId DESC"
+        Return ExecuteQueryWithParams(query, New Dictionary(Of String, Object))
+    End Function
+
+    ' Get single note by ID
+    Public Function GetNoteById(noteId As Integer) As DataRow
+        Dim query As String = "SELECT NoteId, Title, Content, BookId, CreatedDate, ModifiedDate FROM notes WHERE NoteId = @NoteId"
+        Dim parameters As New Dictionary(Of String, Object) From {
+            {"@NoteId", noteId}
+        }
+
+        Dim dt = ExecuteQueryWithParams(query, parameters)
+        If dt IsNot Nothing AndAlso dt.Rows.Count > 0 Then
+            Return dt.Rows(0)
+        End If
+
+        Return Nothing
+    End Function
+
+    ' Add new note
+    Public Function AddNote(title As String, content As String, Optional bookId As String = Nothing) As Boolean
+        Dim query As String = "INSERT INTO notes (Title, Content, BookId, CreatedDate) VALUES (@Title, @Content, @BookId, NOW())"
+
+        Dim parameters As New Dictionary(Of String, Object) From {
+            {"@Title", title},
+            {"@Content", content},
+            {"@BookId", If(String.IsNullOrWhiteSpace(bookId), Nothing, bookId)}
+        }
+
+        Dim result = ExecuteNonQueryWithParams(query, parameters)
+        Return result > 0
+    End Function
+
+    ' Update existing note
+    Public Function UpdateNote(noteId As Integer, title As String, content As String, Optional bookId As String = Nothing) As Boolean
+        Dim query As String = "UPDATE notes SET Title = @Title, Content = @Content, BookId = @BookId, ModifiedDate = NOW() WHERE NoteId = @NoteId"
+
+        Dim parameters As New Dictionary(Of String, Object) From {
+            {"@NoteId", noteId},
+            {"@Title", title},
+            {"@Content", content},
+            {"@BookId", If(String.IsNullOrWhiteSpace(bookId), Nothing, bookId)}
+        }
+
+        Dim result = ExecuteNonQueryWithParams(query, parameters)
+        Return result > 0
+    End Function
+
+    ' Delete note
+    Public Function DeleteNote(noteId As Integer) As Boolean
+        Dim query As String = "DELETE FROM notes WHERE NoteId = @NoteId"
+
+        Dim parameters As New Dictionary(Of String, Object) From {
+            {"@NoteId", noteId}
+        }
+
+        Dim result = ExecuteNonQueryWithParams(query, parameters)
+        Return result > 0
+    End Function
+
+    ' Get notes by BookId
+    Public Function GetNotesByBookId(bookId As String) As DataTable
+        Dim query As String = "SELECT NoteId, Title, Content, BookId, CreatedDate, ModifiedDate FROM notes WHERE BookId = @BookId ORDER BY CreatedDate DESC"
+
+        Dim parameters As New Dictionary(Of String, Object) From {
+            {"@BookId", bookId}
+        }
+
+        Return ExecuteQueryWithParams(query, parameters)
+    End Function
+
+    ' Search notes by title or content
+    Public Function SearchNotes(searchTerm As String) As DataTable
+        Dim query As String = "SELECT NoteId, Title, Content, BookId, CreatedDate, ModifiedDate FROM notes WHERE Title LIKE @SearchTerm OR Content LIKE @SearchTerm ORDER BY CreatedDate DESC"
+
+        Dim parameters As New Dictionary(Of String, Object) From {
+            {"@SearchTerm", "%" & searchTerm & "%"}
+        }
+
+        Return ExecuteQueryWithParams(query, parameters)
     End Function
 
 End Class

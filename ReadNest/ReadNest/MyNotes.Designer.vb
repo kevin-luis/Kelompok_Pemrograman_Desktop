@@ -41,11 +41,12 @@ Partial Class Mynotes
         lblWishlist = New Label()
         pbWishlist = New PictureBox()
         PictureBox2 = New PictureBox()
-        TextBox1 = New TextBox()
+        flNotes = New FlowLayoutPanel()
         Label5 = New Label()
         pbProfile = New PictureBox()
         Splitter1 = New Splitter()
         cbProfile = New ComboBox()
+        btnAddNote = New Button()
         CType(pbBB, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbDiscover, ComponentModel.ISupportInitialize).BeginInit()
@@ -238,7 +239,8 @@ Partial Class Mynotes
         ' 
         ' SplitContainer1.Panel2
         ' 
-        SplitContainer1.Panel2.Controls.Add(TextBox1)
+        SplitContainer1.Panel2.Controls.Add(btnAddNote)
+        SplitContainer1.Panel2.Controls.Add(flNotes)
         SplitContainer1.Panel2.Controls.Add(Label5)
         SplitContainer1.Panel2.Controls.Add(pbProfile)
         SplitContainer1.Panel2.Controls.Add(Splitter1)
@@ -281,14 +283,12 @@ Partial Class Mynotes
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
         ' 
-        ' TextBox1
+        ' flNotes
         ' 
-        TextBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        TextBox1.Location = New Point(9, 90)
-        TextBox1.Multiline = True
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(723, 384)
-        TextBox1.TabIndex = 124
+        flNotes.Location = New Point(20, 94)
+        flNotes.Name = "flNotes"
+        flNotes.Size = New Size(690, 380)
+        flNotes.TabIndex = 124
         ' 
         ' Label5
         ' 
@@ -298,7 +298,7 @@ Partial Class Mynotes
         Label5.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
         Label5.ForeColor = SystemColors.ControlText
         Label5.ImageAlign = ContentAlignment.TopRight
-        Label5.Location = New Point(9, 65)
+        Label5.Location = New Point(20, 63)
         Label5.Name = "Label5"
         Label5.Size = New Size(93, 22)
         Label5.TabIndex = 123
@@ -335,6 +335,15 @@ Partial Class Mynotes
         cbProfile.Size = New Size(97, 26)
         cbProfile.TabIndex = 122
         cbProfile.Text = "Profile"
+        ' 
+        ' btnAddNote
+        ' 
+        btnAddNote.Location = New Point(635, 65)
+        btnAddNote.Name = "btnAddNote"
+        btnAddNote.Size = New Size(75, 23)
+        btnAddNote.TabIndex = 125
+        btnAddNote.Text = "+ Note"
+        btnAddNote.UseVisualStyleBackColor = True
         ' 
         ' Mynotes
         ' 
@@ -400,7 +409,8 @@ Partial Class Mynotes
     Friend WithEvents pbProfile As PictureBox
     Friend WithEvents cbProfile As ComboBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents lblWishlist As Label
     Friend WithEvents pbWishlist As PictureBox
+    Friend WithEvents flNotes As FlowLayoutPanel
+    Friend WithEvents btnAddNote As Button
 End Class
