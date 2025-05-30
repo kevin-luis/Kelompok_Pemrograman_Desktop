@@ -42,7 +42,10 @@ Partial Class ListBorrowerForm
         PictureBox1 = New PictureBox()
         PictureBox2 = New PictureBox()
         Panel1 = New Panel()
-        flowBooks = New FlowLayoutPanel()
+        Label2 = New Label()
+        cbProfile = New ComboBox()
+        pbProfile = New PictureBox()
+        flowBorrowers = New FlowLayoutPanel()
         CType(pbBB, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbDiscover, ComponentModel.ISupportInitialize).BeginInit()
@@ -56,6 +59,7 @@ Partial Class ListBorrowerForm
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
+        CType(pbProfile, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' pbBB
@@ -276,23 +280,63 @@ Partial Class ListBorrowerForm
         ' 
         ' Panel1
         ' 
-        Panel1.Controls.Add(flowBooks)
+        Panel1.Controls.Add(Label2)
+        Panel1.Controls.Add(cbProfile)
+        Panel1.Controls.Add(pbProfile)
+        Panel1.Controls.Add(flowBorrowers)
         Panel1.Dock = DockStyle.Fill
         Panel1.Location = New Point(0, 0)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(744, 486)
         Panel1.TabIndex = 0
         ' 
-        ' flowBooks
+        ' Label2
         ' 
-        flowBooks.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        flowBooks.AutoScroll = True
-        flowBooks.BackColor = Color.White
-        flowBooks.Location = New Point(13, 121)
-        flowBooks.Name = "flowBooks"
-        flowBooks.Padding = New Padding(9, 8, 9, 8)
-        flowBooks.Size = New Size(719, 353)
-        flowBooks.TabIndex = 34
+        Label2.AutoSize = True
+        Label2.BackColor = Color.Transparent
+        Label2.Font = New Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold)
+        Label2.ForeColor = SystemColors.ControlText
+        Label2.ImageAlign = ContentAlignment.TopRight
+        Label2.Location = New Point(13, 52)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(247, 26)
+        Label2.TabIndex = 125
+        Label2.Text = "List of book borrowers"
+        ' 
+        ' cbProfile
+        ' 
+        cbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        cbProfile.DropDownStyle = ComboBoxStyle.DropDownList
+        cbProfile.FlatStyle = FlatStyle.Flat
+        cbProfile.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        cbProfile.FormattingEnabled = True
+        cbProfile.Items.AddRange(New Object() {"Profile", "View Profile", "Logout"})
+        cbProfile.Location = New Point(610, 23)
+        cbProfile.Name = "cbProfile"
+        cbProfile.Size = New Size(97, 26)
+        cbProfile.TabIndex = 111
+        ' 
+        ' pbProfile
+        ' 
+        pbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
+        pbProfile.BackgroundImageLayout = ImageLayout.Stretch
+        pbProfile.Location = New Point(576, 22)
+        pbProfile.Name = "pbProfile"
+        pbProfile.Size = New Size(28, 28)
+        pbProfile.TabIndex = 93
+        pbProfile.TabStop = False
+        ' 
+        ' flowBorrowers
+        ' 
+        flowBorrowers.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        flowBorrowers.AutoScroll = True
+        flowBorrowers.BackColor = Color.White
+        flowBorrowers.Location = New Point(13, 85)
+        flowBorrowers.Name = "flowBorrowers"
+        flowBorrowers.Padding = New Padding(9, 8, 9, 8)
+        flowBorrowers.Size = New Size(719, 389)
+        flowBorrowers.TabIndex = 34
         ' 
         ' ListBorrowerForm
         ' 
@@ -331,6 +375,8 @@ Partial Class ListBorrowerForm
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
+        CType(pbProfile, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -354,5 +400,8 @@ Partial Class ListBorrowerForm
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents flowBooks As FlowLayoutPanel
+    Friend WithEvents flowBorrowers As FlowLayoutPanel
+    Friend WithEvents pbProfile As PictureBox
+    Friend WithEvents cbProfile As ComboBox
+    Friend WithEvents Label2 As Label
 End Class

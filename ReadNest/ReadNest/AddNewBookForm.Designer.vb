@@ -24,8 +24,6 @@ Partial Class AddNewBookForm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddNewBookForm))
         Label2 = New Label()
-        lblUsername = New Label()
-        pbProfile = New PictureBox()
         txtAddBookWriter = New TextBox()
         txtAddBookTitle = New TextBox()
         Label4 = New Label()
@@ -64,8 +62,11 @@ Partial Class AddNewBookForm
         tbDesc = New TextBox()
         lblDesc = New Label()
         panelHeader = New Panel()
+        cbProfile = New ComboBox()
+        pbProfile = New PictureBox()
         OpenFileDialog1 = New OpenFileDialog()
-        CType(pbProfile, ComponentModel.ISupportInitialize).BeginInit()
+        lblWishlist = New Label()
+        pbWishlist = New PictureBox()
         CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbBB, ComponentModel.ISupportInitialize).BeginInit()
@@ -84,6 +85,8 @@ Partial Class AddNewBookForm
         panelForm.SuspendLayout()
         tableLayoutPanel1.SuspendLayout()
         panelHeader.SuspendLayout()
+        CType(pbProfile, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbWishlist, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label2
@@ -93,33 +96,11 @@ Partial Class AddNewBookForm
         Label2.Font = New Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold)
         Label2.ForeColor = SystemColors.ControlText
         Label2.ImageAlign = ContentAlignment.TopRight
-        Label2.Location = New Point(20, 15)
+        Label2.Location = New Point(20, 22)
         Label2.Name = "Label2"
         Label2.Size = New Size(169, 26)
         Label2.TabIndex = 42
         Label2.Text = "Add New Book"
-        ' 
-        ' lblUsername
-        ' 
-        lblUsername.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        lblUsername.AutoSize = True
-        lblUsername.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        lblUsername.Location = New Point(661, 15)
-        lblUsername.Name = "lblUsername"
-        lblUsername.Size = New Size(57, 18)
-        lblUsername.TabIndex = 44
-        lblUsername.Text = "Profile"
-        ' 
-        ' pbProfile
-        ' 
-        pbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
-        pbProfile.BackgroundImageLayout = ImageLayout.Stretch
-        pbProfile.Location = New Point(627, 10)
-        pbProfile.Name = "pbProfile"
-        pbProfile.Size = New Size(28, 28)
-        pbProfile.TabIndex = 43
-        pbProfile.TabStop = False
         ' 
         ' txtAddBookWriter
         ' 
@@ -439,6 +420,8 @@ Partial Class AddNewBookForm
         ' 
         ' panelSidebar
         ' 
+        panelSidebar.Controls.Add(pbWishlist)
+        panelSidebar.Controls.Add(lblWishlist)
         panelSidebar.Controls.Add(Label1)
         panelSidebar.Controls.Add(lblMenu)
         panelSidebar.Controls.Add(pbDiscover)
@@ -478,7 +461,7 @@ Partial Class AddNewBookForm
         panelContent.Dock = DockStyle.Fill
         panelContent.Location = New Point(0, 0)
         panelContent.Name = "panelContent"
-        panelContent.Padding = New Padding(10, 10, 10, 10)
+        panelContent.Padding = New Padding(10)
         panelContent.Size = New Size(744, 486)
         panelContent.TabIndex = 0
         ' 
@@ -586,19 +569,66 @@ Partial Class AddNewBookForm
         ' 
         ' panelHeader
         ' 
-        panelHeader.Controls.Add(Label2)
-        panelHeader.Controls.Add(lblUsername)
+        panelHeader.Controls.Add(cbProfile)
         panelHeader.Controls.Add(pbProfile)
+        panelHeader.Controls.Add(Label2)
         panelHeader.Dock = DockStyle.Top
         panelHeader.Location = New Point(10, 10)
         panelHeader.Name = "panelHeader"
         panelHeader.Size = New Size(724, 50)
         panelHeader.TabIndex = 1
         ' 
+        ' cbProfile
+        ' 
+        cbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        cbProfile.DropDownStyle = ComboBoxStyle.DropDownList
+        cbProfile.FlatStyle = FlatStyle.Flat
+        cbProfile.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        cbProfile.FormattingEnabled = True
+        cbProfile.Items.AddRange(New Object() {"Profile", "View Profile", "Logout"})
+        cbProfile.Location = New Point(610, 23)
+        cbProfile.Name = "cbProfile"
+        cbProfile.Size = New Size(97, 26)
+        cbProfile.TabIndex = 44
+        ' 
+        ' pbProfile
+        ' 
+        pbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
+        pbProfile.BackgroundImageLayout = ImageLayout.Stretch
+        pbProfile.Location = New Point(576, 22)
+        pbProfile.Name = "pbProfile"
+        pbProfile.Size = New Size(28, 28)
+        pbProfile.TabIndex = 43
+        pbProfile.TabStop = False
+        ' 
         ' OpenFileDialog1
         ' 
         OpenFileDialog1.FileName = "OpenFileDialog1"
         OpenFileDialog1.Filter = "PDF Files|*.pdf|EPUB Files|*.epub|All Files|*.*"
+        ' 
+        ' lblWishlist
+        ' 
+        lblWishlist.AutoSize = True
+        lblWishlist.BackColor = SystemColors.Info
+        lblWishlist.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
+        lblWishlist.ImageAlign = ContentAlignment.TopRight
+        lblWishlist.Location = New Point(46, 327)
+        lblWishlist.Name = "lblWishlist"
+        lblWishlist.Size = New Size(68, 18)
+        lblWishlist.TabIndex = 90
+        lblWishlist.Text = "Wishlist"
+        ' 
+        ' pbWishlist
+        ' 
+        pbWishlist.BackColor = SystemColors.Info
+        pbWishlist.BackgroundImage = CType(resources.GetObject("pbWishlist.BackgroundImage"), Image)
+        pbWishlist.BackgroundImageLayout = ImageLayout.Stretch
+        pbWishlist.Location = New Point(12, 319)
+        pbWishlist.Name = "pbWishlist"
+        pbWishlist.Size = New Size(28, 28)
+        pbWishlist.TabIndex = 91
+        pbWishlist.TabStop = False
         ' 
         ' AddNewBookForm
         ' 
@@ -611,7 +641,6 @@ Partial Class AddNewBookForm
         Name = "AddNewBookForm"
         StartPosition = FormStartPosition.CenterScreen
         Text = "ReadNest - Add New Book"
-        CType(pbProfile, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
         CType(pbBB, ComponentModel.ISupportInitialize).EndInit()
@@ -634,11 +663,11 @@ Partial Class AddNewBookForm
         tableLayoutPanel1.PerformLayout()
         panelHeader.ResumeLayout(False)
         panelHeader.PerformLayout()
+        CType(pbProfile, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbWishlist, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
     Friend WithEvents Label2 As Label
-    Friend WithEvents lblUsername As Label
-    Friend WithEvents pbProfile As PictureBox
     Friend WithEvents txtAddBookWriter As TextBox
     Friend WithEvents txtAddBookTitle As TextBox
     Friend WithEvents Label4 As Label
@@ -678,4 +707,8 @@ Partial Class AddNewBookForm
     Friend WithEvents txtFilePath As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents pbProfile As PictureBox
+    Friend WithEvents cbProfile As ComboBox
+    Friend WithEvents lblWishlist As Label
+    Friend WithEvents pbWishlist As PictureBox
 End Class

@@ -51,7 +51,6 @@ Partial Class MainForm
         lblWishlist = New Label()
         panelRight = New Panel()
         flowBooks = New FlowLayoutPanel()
-        MySqlCommand1 = New MySql.Data.MySqlClient.MySqlCommand()
         CType(pbCategory, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbNotes, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbFavorite, ComponentModel.ISupportInitialize).BeginInit()
@@ -425,13 +424,6 @@ Partial Class MainForm
         flowBooks.Padding = New Padding(9, 8, 9, 8)
         flowBooks.Size = New Size(719, 353)
         flowBooks.TabIndex = 33
-        ' 
-        ' MySqlCommand1
-        ' 
-        MySqlCommand1.CacheAge = 0
-        MySqlCommand1.Connection = Nothing
-        MySqlCommand1.EnableCaching = False
-        MySqlCommand1.Transaction = Nothing
         ' 
         ' MainForm
         ' 
