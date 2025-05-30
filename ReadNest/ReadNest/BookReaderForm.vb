@@ -14,6 +14,8 @@ Public Class BookReaderForm
     Private _pdfViewer As PdfViewer
     Private _lastTrackedPage As Integer = -1
     Private _pageCheckTimer As New Timer()
+    Private db As New DBConnection()
+
 
 
     Public Sub New(bookId As Integer, userId As Integer)
@@ -352,5 +354,12 @@ Public Class BookReaderForm
         Dim home As New MainForm()
         home.Show()
         Me.Close()
+    End Sub
+
+    Private Sub tsbNote_Click(sender As Object, e As EventArgs) Handles tsbNote.Click
+        Dim editForm As New AddEditNoteForm()
+        editForm.txtBookId.Text = _bookId
+        editForm.txtBookId.Enabled = False
+        editForm.Show()
     End Sub
 End Class
