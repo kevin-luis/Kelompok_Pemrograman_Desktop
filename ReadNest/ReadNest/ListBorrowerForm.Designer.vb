@@ -360,6 +360,7 @@ Partial Class ListBorrowerForm
         Controls.Add(pbCategory)
         Controls.Add(SplitContainer1)
         Name = "ListBorrowerForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "ListBorrowerForm"
         CType(pbBB, ComponentModel.ISupportInitialize).EndInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).EndInit()
