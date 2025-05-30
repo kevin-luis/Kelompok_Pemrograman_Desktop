@@ -27,9 +27,10 @@ Partial Class AddEditNoteForm
         lblContent = New Label()
         txtContent = New TextBox()
         lblBookId = New Label()
-        txtBookId = New TextBox()
+        'txtBookId = New TextBox()
         btnSave = New Button()
         btnCancel = New Button()
+        cbBooks = New ComboBox()
         SuspendLayout()
         ' 
         ' lblTitle
@@ -86,17 +87,18 @@ Partial Class AddEditNoteForm
         lblBookId.Name = "lblBookId"
         lblBookId.Size = New Size(154, 19)
         lblBookId.TabIndex = 4
-        lblBookId.Text = "Book ID (Optional):"
+        lblBookId.Text = "Pilih Buku (Optional):"
         ' 
-        ' txtBookId
-        ' 
-        txtBookId.Font = New Font("Arial", 10.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        txtBookId.Location = New Point(19, 398)
-        txtBookId.Margin = New Padding(4, 3, 4, 3)
-        txtBookId.MaxLength = 50
-        txtBookId.Name = "txtBookId"
-        txtBookId.Size = New Size(233, 23)
-        txtBookId.TabIndex = 5
+        ' txtBookId changed to cbooks
+        '
+        cbBooks = New ComboBox()
+        cbBooks.DropDownStyle = ComboBoxStyle.DropDownList
+        cbBooks.Font = New Font("Arial", 10.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        cbBooks.Location = New Point(19, 398)
+        cbBooks.Margin = New Padding(4, 3, 4, 3)
+        cbBooks.Name = "cbBooks"
+        cbBooks.Size = New Size(350, 23)
+        cbBooks.TabIndex = 5
         ' 
         ' btnSave
         ' 
@@ -134,7 +136,8 @@ Partial Class AddEditNoteForm
         ClientSize = New Size(565, 509)
         Controls.Add(btnCancel)
         Controls.Add(btnSave)
-        Controls.Add(txtBookId)
+        'Controls.Add(txtBookId)
+        Controls.Add(cbBooks)
         Controls.Add(lblBookId)
         Controls.Add(txtContent)
         Controls.Add(lblContent)
@@ -158,7 +161,8 @@ Partial Class AddEditNoteForm
     Friend WithEvents lblContent As Label
     Friend WithEvents txtContent As TextBox
     Friend WithEvents lblBookId As Label
-    Friend WithEvents txtBookId As TextBox
+    'Friend WithEvents txtBookId As TextBox
+    Friend WithEvents cbBooks As ComboBox
     Friend WithEvents btnSave As Button
     Friend WithEvents btnCancel As Button
 End Class

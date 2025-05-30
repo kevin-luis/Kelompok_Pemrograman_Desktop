@@ -357,9 +357,8 @@ Public Class BookReaderForm
     End Sub
 
     Private Sub tsbNote_Click(sender As Object, e As EventArgs) Handles tsbNote.Click
-        Dim editForm As New AddEditNoteForm()
-        editForm.txtBookId.Text = _bookId
-        editForm.txtBookId.Enabled = False
-        editForm.Show()
+        ' Buka form untuk menampilkan list notes terkait book ini
+        Dim bookNotesForm As New BookNotesForm(_bookId)
+        bookNotesForm.ShowDialog()
     End Sub
 End Class
