@@ -14,6 +14,8 @@ Public Class BookReaderForm
     Private _pdfViewer As PdfViewer
     Private _lastTrackedPage As Integer = -1
     Private _pageCheckTimer As New Timer()
+    Private db As New DBConnection()
+
 
 
     Public Sub New(bookId As Integer, userId As Integer)
@@ -352,5 +354,11 @@ Public Class BookReaderForm
         Dim home As New MainForm()
         home.Show()
         Me.Close()
+    End Sub
+
+    Private Sub tsbNote_Click(sender As Object, e As EventArgs) Handles tsbNote.Click
+        ' Buka form untuk menampilkan list notes terkait book ini
+        Dim bookNotesForm As New BookNotesForm(_bookId)
+        bookNotesForm.ShowDialog()
     End Sub
 End Class

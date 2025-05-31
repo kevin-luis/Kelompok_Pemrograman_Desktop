@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Mynotes
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Mynotes
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Mynotes))
         pbBB = New PictureBox()
@@ -41,7 +41,8 @@ Partial Class Mynotes
         lblWishlist = New Label()
         pbWishlist = New PictureBox()
         PictureBox2 = New PictureBox()
-        TextBox1 = New TextBox()
+        btnAddNote = New Button()
+        flNotes = New FlowLayoutPanel()
         Label5 = New Label()
         pbProfile = New PictureBox()
         Splitter1 = New Splitter()
@@ -238,7 +239,8 @@ Partial Class Mynotes
         ' 
         ' SplitContainer1.Panel2
         ' 
-        SplitContainer1.Panel2.Controls.Add(TextBox1)
+        SplitContainer1.Panel2.Controls.Add(btnAddNote)
+        SplitContainer1.Panel2.Controls.Add(flNotes)
         SplitContainer1.Panel2.Controls.Add(Label5)
         SplitContainer1.Panel2.Controls.Add(pbProfile)
         SplitContainer1.Panel2.Controls.Add(Splitter1)
@@ -281,14 +283,28 @@ Partial Class Mynotes
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
         ' 
-        ' TextBox1
+        ' btnAddNote
         ' 
-        TextBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        TextBox1.Location = New Point(9, 90)
-        TextBox1.Multiline = True
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(723, 384)
-        TextBox1.TabIndex = 124
+        btnAddNote.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnAddNote.BackColor = Color.FromArgb(CByte(40), CByte(167), CByte(69))
+        btnAddNote.FlatAppearance.BorderSize = 0
+        btnAddNote.FlatStyle = FlatStyle.Flat
+        btnAddNote.Font = New Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnAddNote.ForeColor = Color.White
+        btnAddNote.Location = New Point(613, 73)
+        btnAddNote.Margin = New Padding(4, 3, 4, 3)
+        btnAddNote.Name = "btnAddNote"
+        btnAddNote.Size = New Size(93, 35)
+        btnAddNote.TabIndex = 125
+        btnAddNote.Text = "+ Add Note"
+        btnAddNote.UseVisualStyleBackColor = False
+        ' 
+        ' flNotes
+        ' 
+        flNotes.Location = New Point(20, 114)
+        flNotes.Name = "flNotes"
+        flNotes.Size = New Size(690, 360)
+        flNotes.TabIndex = 124
         ' 
         ' Label5
         ' 
@@ -298,7 +314,7 @@ Partial Class Mynotes
         Label5.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
         Label5.ForeColor = SystemColors.ControlText
         Label5.ImageAlign = ContentAlignment.TopRight
-        Label5.Location = New Point(9, 65)
+        Label5.Location = New Point(20, 28)
         Label5.Name = "Label5"
         Label5.Size = New Size(93, 22)
         Label5.TabIndex = 123
@@ -338,7 +354,7 @@ Partial Class Mynotes
         ' 
         ' Mynotes
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         BackColor = Color.White
@@ -400,7 +416,8 @@ Partial Class Mynotes
     Friend WithEvents pbProfile As PictureBox
     Friend WithEvents cbProfile As ComboBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents lblWishlist As Label
     Friend WithEvents pbWishlist As PictureBox
+    Friend WithEvents flNotes As FlowLayoutPanel
+    Friend WithEvents btnAddNote As Button
 End Class
