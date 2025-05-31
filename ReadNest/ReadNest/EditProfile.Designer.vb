@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class ProfileForm
+Partial Class EditProfile
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class ProfileForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ProfileForm))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EditProfile))
         pbBB = New PictureBox()
         lblBB = New Label()
         lblstatistic = New Label()
@@ -43,10 +43,9 @@ Partial Class ProfileForm
         PictureBox2 = New PictureBox()
         Panel2 = New Panel()
         Panel1 = New Panel()
-        PbEditProfile = New PictureBox()
-        BtnEditProfile = New Label()
-        ProfileEmail = New TextBox()
-        ProfileUsername = New TextBox()
+        BtnSave = New Label()
+        EditEmail = New TextBox()
+        EditProfileUsername = New TextBox()
         Label4 = New Label()
         Label3 = New Label()
         Label2 = New Label()
@@ -64,7 +63,6 @@ Partial Class ProfileForm
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
         Panel1.SuspendLayout()
-        CType(PbEditProfile, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' pbBB
@@ -75,7 +73,7 @@ Partial Class ProfileForm
         pbBB.Location = New Point(12, 252)
         pbBB.Name = "pbBB"
         pbBB.Size = New Size(28, 28)
-        pbBB.TabIndex = 87
+        pbBB.TabIndex = 102
         pbBB.TabStop = False
         ' 
         ' lblBB
@@ -87,7 +85,7 @@ Partial Class ProfileForm
         lblBB.Location = New Point(46, 260)
         lblBB.Name = "lblBB"
         lblBB.Size = New Size(131, 17)
-        lblBB.TabIndex = 86
+        lblBB.TabIndex = 101
         lblBB.Text = "Book Borrowing"
         ' 
         ' lblstatistic
@@ -99,7 +97,7 @@ Partial Class ProfileForm
         lblstatistic.Location = New Point(46, 294)
         lblstatistic.Name = "lblstatistic"
         lblstatistic.Size = New Size(103, 17)
-        lblstatistic.TabIndex = 85
+        lblstatistic.TabIndex = 100
         lblstatistic.Text = "My Statistic"
         ' 
         ' pbStatistic
@@ -110,7 +108,7 @@ Partial Class ProfileForm
         pbStatistic.Location = New Point(12, 286)
         pbStatistic.Name = "pbStatistic"
         pbStatistic.Size = New Size(28, 28)
-        pbStatistic.TabIndex = 84
+        pbStatistic.TabIndex = 99
         pbStatistic.TabStop = False
         ' 
         ' lblDiscover
@@ -122,7 +120,7 @@ Partial Class ProfileForm
         lblDiscover.Location = New Point(46, 122)
         lblDiscover.Name = "lblDiscover"
         lblDiscover.Size = New Size(74, 17)
-        lblDiscover.TabIndex = 83
+        lblDiscover.TabIndex = 98
         lblDiscover.Text = "Discover"
         ' 
         ' pbDiscover
@@ -133,7 +131,7 @@ Partial Class ProfileForm
         pbDiscover.Location = New Point(12, 114)
         pbDiscover.Name = "pbDiscover"
         pbDiscover.Size = New Size(28, 28)
-        pbDiscover.TabIndex = 82
+        pbDiscover.TabIndex = 97
         pbDiscover.TabStop = False
         ' 
         ' lblMenu
@@ -145,7 +143,7 @@ Partial Class ProfileForm
         lblMenu.Location = New Point(12, 85)
         lblMenu.Name = "lblMenu"
         lblMenu.Size = New Size(49, 18)
-        lblMenu.TabIndex = 81
+        lblMenu.TabIndex = 96
         lblMenu.Text = "Menu"
         ' 
         ' lblFavorite
@@ -157,7 +155,7 @@ Partial Class ProfileForm
         lblFavorite.Location = New Point(46, 227)
         lblFavorite.Name = "lblFavorite"
         lblFavorite.Size = New Size(73, 17)
-        lblFavorite.TabIndex = 80
+        lblFavorite.TabIndex = 95
         lblFavorite.Text = "Favorite"
         ' 
         ' lblNotes
@@ -169,7 +167,7 @@ Partial Class ProfileForm
         lblNotes.Location = New Point(46, 191)
         lblNotes.Name = "lblNotes"
         lblNotes.Size = New Size(81, 17)
-        lblNotes.TabIndex = 79
+        lblNotes.TabIndex = 94
         lblNotes.Text = "My Notes"
         ' 
         ' lblCategory
@@ -181,7 +179,7 @@ Partial Class ProfileForm
         lblCategory.Location = New Point(46, 156)
         lblCategory.Name = "lblCategory"
         lblCategory.Size = New Size(80, 17)
-        lblCategory.TabIndex = 78
+        lblCategory.TabIndex = 93
         lblCategory.Text = "Category"
         ' 
         ' Label1
@@ -194,7 +192,7 @@ Partial Class ProfileForm
         Label1.Location = New Point(12, 25)
         Label1.Name = "Label1"
         Label1.Size = New Size(148, 31)
-        Label1.TabIndex = 77
+        Label1.TabIndex = 92
         Label1.Text = "ReadNest"
         ' 
         ' pbFavorite
@@ -205,7 +203,7 @@ Partial Class ProfileForm
         pbFavorite.Location = New Point(12, 218)
         pbFavorite.Name = "pbFavorite"
         pbFavorite.Size = New Size(28, 28)
-        pbFavorite.TabIndex = 76
+        pbFavorite.TabIndex = 91
         pbFavorite.TabStop = False
         ' 
         ' pbNotes
@@ -216,7 +214,7 @@ Partial Class ProfileForm
         pbNotes.Location = New Point(12, 182)
         pbNotes.Name = "pbNotes"
         pbNotes.Size = New Size(28, 28)
-        pbNotes.TabIndex = 75
+        pbNotes.TabIndex = 90
         pbNotes.TabStop = False
         ' 
         ' pbCategory
@@ -227,7 +225,7 @@ Partial Class ProfileForm
         pbCategory.Location = New Point(12, 148)
         pbCategory.Name = "pbCategory"
         pbCategory.Size = New Size(28, 28)
-        pbCategory.TabIndex = 74
+        pbCategory.TabIndex = 89
         pbCategory.TabStop = False
         ' 
         ' SplitContainer1
@@ -249,7 +247,7 @@ Partial Class ProfileForm
         SplitContainer1.Panel2.Controls.Add(Panel2)
         SplitContainer1.Size = New Size(934, 486)
         SplitContainer1.SplitterDistance = 186
-        SplitContainer1.TabIndex = 88
+        SplitContainer1.TabIndex = 103
         ' 
         ' pbWishlist
         ' 
@@ -296,65 +294,50 @@ Partial Class ProfileForm
         ' 
         ' Panel1
         ' 
-        Panel1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        Panel1.AutoScroll = True
         Panel1.BackColor = Color.Cornsilk
-        Panel1.Controls.Add(PbEditProfile)
-        Panel1.Controls.Add(BtnEditProfile)
-        Panel1.Controls.Add(ProfileEmail)
-        Panel1.Controls.Add(ProfileUsername)
+        Panel1.Controls.Add(BtnSave)
+        Panel1.Controls.Add(EditEmail)
+        Panel1.Controls.Add(EditProfileUsername)
         Panel1.Controls.Add(Label4)
         Panel1.Controls.Add(Label3)
         Panel1.Controls.Add(Label2)
         Panel1.Location = New Point(130, 85)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(383, 312)
-        Panel1.TabIndex = 1
+        Panel1.TabIndex = 0
         ' 
-        ' PbEditProfile
+        ' BtnSave
         ' 
-        PbEditProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
-        PbEditProfile.BackgroundImage = CType(resources.GetObject("PbEditProfile.BackgroundImage"), Image)
-        PbEditProfile.BackgroundImageLayout = ImageLayout.Stretch
-        PbEditProfile.Location = New Point(333, 11)
-        PbEditProfile.Name = "PbEditProfile"
-        PbEditProfile.Size = New Size(28, 28)
-        PbEditProfile.TabIndex = 59
-        PbEditProfile.TabStop = False
+        BtnSave.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        BtnSave.AutoSize = True
+        BtnSave.BackColor = Color.Transparent
+        BtnSave.BorderStyle = BorderStyle.FixedSingle
+        BtnSave.Font = New Font("UD Digi Kyokasho NP-B", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        BtnSave.ForeColor = SystemColors.ControlText
+        BtnSave.ImageAlign = ContentAlignment.TopRight
+        BtnSave.Location = New Point(313, 175)
+        BtnSave.Name = "BtnSave"
+        BtnSave.Size = New Size(49, 20)
+        BtnSave.TabIndex = 57
+        BtnSave.Text = "Save"
         ' 
-        ' BtnEditProfile
+        ' EditEmail
         ' 
-        BtnEditProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
-        BtnEditProfile.AutoSize = True
-        BtnEditProfile.BackColor = Color.Transparent
-        BtnEditProfile.Font = New Font("UD Digi Kyokasho NP-B", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        BtnEditProfile.ForeColor = SystemColors.ControlText
-        BtnEditProfile.ImageAlign = ContentAlignment.TopRight
-        BtnEditProfile.Location = New Point(283, 16)
-        BtnEditProfile.Name = "BtnEditProfile"
-        BtnEditProfile.Size = New Size(46, 18)
-        BtnEditProfile.TabIndex = 58
-        BtnEditProfile.Text = "Edit "
+        EditEmail.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        EditEmail.Font = New Font("Segoe UI", 11F)
+        EditEmail.Location = New Point(110, 142)
+        EditEmail.Name = "EditEmail"
+        EditEmail.Size = New Size(252, 27)
+        EditEmail.TabIndex = 56
         ' 
-        ' ProfileEmail
+        ' EditProfileUsername
         ' 
-        ProfileEmail.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        ProfileEmail.Font = New Font("Segoe UI", 11F)
-        ProfileEmail.Location = New Point(110, 142)
-        ProfileEmail.Name = "ProfileEmail"
-        ProfileEmail.ReadOnly = True
-        ProfileEmail.Size = New Size(252, 27)
-        ProfileEmail.TabIndex = 56
-        ' 
-        ' ProfileUsername
-        ' 
-        ProfileUsername.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        ProfileUsername.Font = New Font("Segoe UI", 11F)
-        ProfileUsername.Location = New Point(110, 109)
-        ProfileUsername.Name = "ProfileUsername"
-        ProfileUsername.ReadOnly = True
-        ProfileUsername.Size = New Size(252, 27)
-        ProfileUsername.TabIndex = 55
+        EditProfileUsername.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        EditProfileUsername.Font = New Font("Segoe UI", 11F)
+        EditProfileUsername.Location = New Point(110, 109)
+        EditProfileUsername.Name = "EditProfileUsername"
+        EditProfileUsername.Size = New Size(252, 27)
+        EditProfileUsername.TabIndex = 56
         ' 
         ' Label4
         ' 
@@ -367,7 +350,7 @@ Partial Class ProfileForm
         Label4.Location = New Point(51, 147)
         Label4.Name = "Label4"
         Label4.Size = New Size(53, 18)
-        Label4.TabIndex = 52
+        Label4.TabIndex = 53
         Label4.Text = "Email"
         ' 
         ' Label3
@@ -381,7 +364,7 @@ Partial Class ProfileForm
         Label3.Location = New Point(14, 114)
         Label3.Name = "Label3"
         Label3.Size = New Size(90, 18)
-        Label3.TabIndex = 51
+        Label3.TabIndex = 52
         Label3.Text = "Username"
         ' 
         ' Label2
@@ -394,11 +377,11 @@ Partial Class ProfileForm
         Label2.ImageAlign = ContentAlignment.TopRight
         Label2.Location = New Point(14, 11)
         Label2.Name = "Label2"
-        Label2.Size = New Size(74, 21)
-        Label2.TabIndex = 50
-        Label2.Text = "Profile"
+        Label2.Size = New Size(118, 21)
+        Label2.TabIndex = 51
+        Label2.Text = "Edit Profile"
         ' 
-        ' ProfileForm
+        ' EditProfile
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
@@ -419,9 +402,9 @@ Partial Class ProfileForm
         Controls.Add(pbNotes)
         Controls.Add(pbCategory)
         Controls.Add(SplitContainer1)
-        Name = "ProfileForm"
+        Name = "EditProfile"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "ProfileForm"
+        Text = "EditProfile"
         CType(pbBB, ComponentModel.ISupportInitialize).EndInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).EndInit()
         CType(pbDiscover, ComponentModel.ISupportInitialize).EndInit()
@@ -438,7 +421,6 @@ Partial Class ProfileForm
         Panel2.ResumeLayout(False)
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
-        CType(PbEditProfile, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -458,18 +440,15 @@ Partial Class ProfileForm
     Friend WithEvents pbNotes As PictureBox
     Friend WithEvents pbCategory As PictureBox
     Friend WithEvents SplitContainer1 As SplitContainer
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Splitter1 As Splitter
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents ProfileUsername As TextBox
-    Friend WithEvents ProfileEmail As TextBox
-    Friend WithEvents BtnEditProfile As Label
-    Friend WithEvents PbEditProfile As PictureBox
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents pbWishlist As PictureBox
     Friend WithEvents lblWishlist As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents EditEmail As TextBox
+    Friend WithEvents EditProfileUsername As TextBox
+    Friend WithEvents BtnSave As Label
 End Class

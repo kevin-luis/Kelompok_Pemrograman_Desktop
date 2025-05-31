@@ -447,6 +447,21 @@ Public Class DBConnection
         Return result > 0
     End Function
 
+fix_bookbycategory_form
+
+    ' Update user profile (username dan email saja)
+    Public Function UpdateUserProfile(userId As Integer, username As String, email As String) As Boolean
+        Dim query As String = "UPDATE users SET Username = @Username, Email = @Email WHERE UserID = @UserId"
+
+        Dim parameters As New Dictionary(Of String, Object) From {
+        {"@Username", username},
+        {"@Email", email},
+        {"@UserId", userId}
+    }
+
+        Dim rowsAffected As Integer = ExecuteNonQueryWithParams(query, parameters)
+        Return rowsAffected > 0
+
     ' Tambahkan method-method ini ke dalam class DBConnection yang sudah ada
 
     ' Get all notes
@@ -531,6 +546,7 @@ Public Class DBConnection
         }
 
         Return ExecuteQueryWithParams(query, parameters)
+main
     End Function
 
 End Class
