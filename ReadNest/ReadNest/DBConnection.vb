@@ -447,4 +447,19 @@ Public Class DBConnection
         Return result > 0
     End Function
 
+
+    ' Update user profile (username dan email saja)
+    Public Function UpdateUserProfile(userId As Integer, username As String, email As String) As Boolean
+        Dim query As String = "UPDATE users SET Username = @Username, Email = @Email WHERE UserID = @UserId"
+
+        Dim parameters As New Dictionary(Of String, Object) From {
+        {"@Username", username},
+        {"@Email", email},
+        {"@UserId", userId}
+    }
+
+        Dim rowsAffected As Integer = ExecuteNonQueryWithParams(query, parameters)
+        Return rowsAffected > 0
+    End Function
+
 End Class

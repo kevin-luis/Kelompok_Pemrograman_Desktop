@@ -19,6 +19,9 @@
     <Compile Update="CategoryForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="EditProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FavoriteForm.vb">
       <SubType>Form</SubType>
     </Compile>
