@@ -4,7 +4,7 @@ Imports System.Security.Cryptography
 Imports System.Text
 
 Public Class DBConnection
-    Private ReadOnly strConn As String = "server=localhost;userid=root;password=;database=readnest2"
+    Private ReadOnly strConn As String = "server=localhost;userid=root;password=;database=readnest"
     Private ReadOnly connectionProvider As Func(Of MySqlConnection) = Function() New MySqlConnection(strConn)
 
     ' Central error handler
@@ -447,8 +447,6 @@ Public Class DBConnection
         Return result > 0
     End Function
 
-fix_bookbycategory_form
-
     ' Update user profile (username dan email saja)
     Public Function UpdateUserProfile(userId As Integer, username As String, email As String) As Boolean
         Dim query As String = "UPDATE users SET Username = @Username, Email = @Email WHERE UserID = @UserId"
@@ -462,7 +460,8 @@ fix_bookbycategory_form
         Dim rowsAffected As Integer = ExecuteNonQueryWithParams(query, parameters)
         Return rowsAffected > 0
 
-    ' Tambahkan method-method ini ke dalam class DBConnection yang sudah ada
+        ' Tambahkan method-method ini ke dalam class DBConnection yang sudah ada
+    End Function
 
     ' Get all notes
     Public Function GetNotes() As DataTable
@@ -546,7 +545,67 @@ fix_bookbycategory_form
         }
 
         Return ExecuteQueryWithParams(query, parameters)
-main
+        Main()
     End Function
+
+    Public Function GetUserStatistics(userId As Integer) As Dictionary(Of String, Integer)
+        Dim stats As New Dictionary(Of String, Integer) From {
+        {"read", 0},
+        {"reading", 0},
+        {"borrowed", 0},
+        {"favorite", 0},
+        {"avgReadingTime", 0}
+    }
+
+        ' Get read, reading, and favorite counts
+        Dim query1 As String = "SELECT 
+            SUM(CASE WHEN Status = 'read' THEN 1 ELSE 0 END) AS ReadCount,
+            SUM(CASE WHEN Status = 'reading' THEN 1 ELSE 0 END) AS ReadingCount,
+            SUM(CASE WHEN IsFavorite = 1 THEN 1 ELSE 0 END) AS FavoriteCount
+         FROM books
+         WHERE UserId = @userId;"
+
+        Dim parameters1 As New Dictionary(Of String, Object) From {
+        {"@userId", userId}
+    }
+
+        Dim dt1 = ExecuteQueryWithParams(query1, parameters1)
+        If dt1 IsNot Nothing AndAlso dt1.Rows.Count > 0 Then
+            stats("read") = If(IsDBNull(dt1.Rows(0)("ReadCount")), 0, Convert.ToInt32(dt1.Rows(0)("ReadCount")))
+            stats("reading") = If(IsDBNull(dt1.Rows(0)("ReadingCount")), 0, Convert.ToInt32(dt1.Rows(0)("ReadingCount")))
+            stats("favorite") = If(IsDBNull(dt1.Rows(0)("FavoriteCount")), 0, Convert.ToInt32(dt1.Rows(0)("FavoriteCount")))
+        End If
+
+        ' Get borrowed count
+        Dim query2 As String = "SELECT COUNT(*) AS BorrowedCount 
+         FROM borrowers 
+         WHERE UserId = @userId;"
+
+        Dim parameters2 As New Dictionary(Of String, Object) From {
+        {"@userId", userId}
+    }
+
+        Dim dt2 = ExecuteQueryWithParams(query2, parameters2)
+        If dt2 IsNot Nothing AndAlso dt2.Rows.Count > 0 Then
+            stats("borrowed") = If(IsDBNull(dt2.Rows(0)("BorrowedCount")), 0, Convert.ToInt32(dt2.Rows(0)("BorrowedCount")))
+        End If
+
+        ' Get average reading time (in minutes)
+        Dim query3 As String = "SELECT AVG(ReadDuration) AS AvgReadingTime
+         FROM userbookprogress
+         WHERE UserId = @userId;"
+
+        Dim parameters3 As New Dictionary(Of String, Object) From {
+        {"@userId", userId}
+    }
+
+        Dim dt3 = ExecuteQueryWithParams(query3, parameters3)
+        If dt3 IsNot Nothing AndAlso dt3.Rows.Count > 0 Then
+            stats("avgReadingTime") = If(IsDBNull(dt3.Rows(0)("AvgReadingTime")), 0, Convert.ToInt32(dt3.Rows(0)("AvgReadingTime")))
+        End If
+
+        Return stats
+    End Function
+
 
 End Class

@@ -48,9 +48,13 @@ Partial Class StatisticForm
         lblWishlist = New Label()
         pbWishlist = New PictureBox()
         PictureBox2 = New PictureBox()
-        Panel1 = New Panel()
-        pbProfile = New PictureBox()
         cbProfile = New ComboBox()
+        Panel1 = New Panel()
+        Label4 = New Label()
+        Label3 = New Label()
+        txtTotalBooksBorrowed = New TextBox()
+        txtAvReadingTime = New TextBox()
+        pbProfile = New PictureBox()
         CType(pbBB, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbDiscover, ComponentModel.ISupportInitialize).BeginInit()
@@ -100,11 +104,11 @@ Partial Class StatisticForm
         Label6.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
         Label6.ForeColor = SystemColors.ControlText
         Label6.ImageAlign = ContentAlignment.TopRight
-        Label6.Location = New Point(54, 146)
+        Label6.Location = New Point(54, 150)
         Label6.Name = "Label6"
-        Label6.Size = New Size(196, 22)
+        Label6.Size = New Size(198, 22)
         Label6.TabIndex = 51
-        Label6.Text = "Total Favorite Books"
+        Label6.Text = "Total Borrowed Book"
         ' 
         ' Label7
         ' 
@@ -135,7 +139,7 @@ Partial Class StatisticForm
         ' 
         ' txtTotalFavoriteBooks
         ' 
-        txtTotalFavoriteBooks.Location = New Point(266, 143)
+        txtTotalFavoriteBooks.Location = New Point(266, 182)
         txtTotalFavoriteBooks.Name = "txtTotalFavoriteBooks"
         txtTotalFavoriteBooks.Size = New Size(100, 23)
         txtTotalFavoriteBooks.TabIndex = 55
@@ -359,31 +363,6 @@ Partial Class StatisticForm
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
         ' 
-        ' Panel1
-        ' 
-        Panel1.BackColor = Color.Cornsilk
-        Panel1.Controls.Add(txtTotalFavoriteBooks)
-        Panel1.Controls.Add(Label2)
-        Panel1.Controls.Add(Label7)
-        Panel1.Controls.Add(Label5)
-        Panel1.Controls.Add(Label6)
-        Panel1.Controls.Add(txtTotalBooksRead)
-        Panel1.Controls.Add(txtTotalReadingTime)
-        Panel1.Location = New Point(75, 114)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(422, 255)
-        Panel1.TabIndex = 0
-        ' 
-        ' pbProfile
-        ' 
-        pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
-        pbProfile.BackgroundImageLayout = ImageLayout.Stretch
-        pbProfile.Location = New Point(584, 23)
-        pbProfile.Name = "pbProfile"
-        pbProfile.Size = New Size(28, 28)
-        pbProfile.TabIndex = 57
-        pbProfile.TabStop = False
-        ' 
         ' cbProfile
         ' 
         cbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
@@ -396,6 +375,75 @@ Partial Class StatisticForm
         cbProfile.Name = "cbProfile"
         cbProfile.Size = New Size(97, 26)
         cbProfile.TabIndex = 74
+        ' 
+        ' Panel1
+        ' 
+        Panel1.BackColor = Color.Cornsilk
+        Panel1.Controls.Add(Label4)
+        Panel1.Controls.Add(Label3)
+        Panel1.Controls.Add(txtTotalBooksBorrowed)
+        Panel1.Controls.Add(txtAvReadingTime)
+        Panel1.Controls.Add(txtTotalFavoriteBooks)
+        Panel1.Controls.Add(Label2)
+        Panel1.Controls.Add(Label7)
+        Panel1.Controls.Add(Label5)
+        Panel1.Controls.Add(Label6)
+        Panel1.Controls.Add(txtTotalBooksRead)
+        Panel1.Controls.Add(txtTotalReadingTime)
+        Panel1.Location = New Point(75, 114)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(422, 292)
+        Panel1.TabIndex = 0
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.BackColor = Color.Cornsilk
+        Label4.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
+        Label4.ForeColor = SystemColors.ControlText
+        Label4.ImageAlign = ContentAlignment.TopRight
+        Label4.Location = New Point(38, 217)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(214, 22)
+        Label4.TabIndex = 60
+        Label4.Text = "Average Reading Time"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.BackColor = Color.Cornsilk
+        Label3.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
+        Label3.ForeColor = SystemColors.ControlText
+        Label3.ImageAlign = ContentAlignment.TopRight
+        Label3.Location = New Point(108, 183)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(144, 22)
+        Label3.TabIndex = 59
+        Label3.Text = "Favorite Books"
+        ' 
+        ' txtTotalBooksBorrowed
+        ' 
+        txtTotalBooksBorrowed.Location = New Point(266, 149)
+        txtTotalBooksBorrowed.Name = "txtTotalBooksBorrowed"
+        txtTotalBooksBorrowed.Size = New Size(100, 23)
+        txtTotalBooksBorrowed.TabIndex = 58
+        ' 
+        ' txtAvReadingTime
+        ' 
+        txtAvReadingTime.Location = New Point(266, 216)
+        txtAvReadingTime.Name = "txtAvReadingTime"
+        txtAvReadingTime.Size = New Size(100, 23)
+        txtAvReadingTime.TabIndex = 56
+        ' 
+        ' pbProfile
+        ' 
+        pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
+        pbProfile.BackgroundImageLayout = ImageLayout.Stretch
+        pbProfile.Location = New Point(584, 23)
+        pbProfile.Name = "pbProfile"
+        pbProfile.Size = New Size(28, 28)
+        pbProfile.TabIndex = 57
+        pbProfile.TabStop = False
         ' 
         ' StatisticForm
         ' 
@@ -468,4 +516,8 @@ Partial Class StatisticForm
     Friend WithEvents lblWishlist As Label
     Friend WithEvents pbWishlist As PictureBox
     Friend WithEvents cbProfile As ComboBox
+    Friend WithEvents txtAvReadingTime As TextBox
+    Friend WithEvents txtTotalBooksBorrowed As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
 End Class
