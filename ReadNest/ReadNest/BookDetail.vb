@@ -103,6 +103,8 @@ Public Class BookDetail
     End Sub
 
     Private Sub startReadingButton_Click(sender As Object, e As EventArgs) Handles startReadingButton.Click
+        Dim db As New DBConnection()
+        db.UpdateBookStatus(_bookId, "Reading")
         Dim readerForm As New BookReaderForm(_bookId, _userId)
         readerForm.Show()
         Me.Hide()

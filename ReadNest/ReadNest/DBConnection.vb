@@ -229,27 +229,25 @@ Public Class DBConnection
         Return result > 0
     End Function
 
-    ' Borrow book
+    ' Fungsi ganti status buku
+    Public Function UpdateBookStatus(bookId As Integer, status As String) As Boolean
+        Dim query As String = "UPDATE books SET Status = @status WHERE BookId = @bookId"
+        Dim parameters As New Dictionary(Of String, Object) From {
+        {"@bookId", bookId},
+        {"@status", status}
+    }
+
+        Dim result = ExecuteNonQueryWithParams(query, parameters)
+        Return result > 0
+    End Function
     Public Function BorrowBook(bookId As Integer) As Boolean
-        Dim query As String = "UPDATE books SET Status = 'Borrowed' WHERE BookId = @bookId"
-        Dim parameters As New Dictionary(Of String, Object) From {
-            {"@bookId", bookId}
-        }
-
-        Dim result = ExecuteNonQueryWithParams(query, parameters)
-        Return result > 0
+        Return UpdateBookStatus(bookId, "Borrowed")
     End Function
 
-    ' Return book
     Public Function ReturnBook(bookId As Integer) As Boolean
-        Dim query As String = "UPDATE books SET Status = 'Available' WHERE BookId = @bookId"
-        Dim parameters As New Dictionary(Of String, Object) From {
-            {"@bookId", bookId}
-        }
-
-        Dim result = ExecuteNonQueryWithParams(query, parameters)
-        Return result > 0
+        Return UpdateBookStatus(bookId, "Available")
     End Function
+
 
     ' Load book cover image
     Public Function LoadBookCoverImage(photoPath As String) As Image
