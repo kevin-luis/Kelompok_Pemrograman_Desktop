@@ -2,19 +2,33 @@
 Imports MySql.Data.MySqlClient
 Public Class StatisticForm
 
+    Private Sub StatisticForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadStatistics()
+    End Sub
+
     Private Sub LoadStatistics()
         Try
             Dim db As New DBConnection()
+            ' Pastikan CurrentUser tidak null
+            If SessionHelper.CurrentUser Is Nothing Then
+                MessageBox.Show("User tidak terautentikasi", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+
             Dim userId As Integer = SessionHelper.CurrentUser.UserId
 
             Dim stats As Dictionary(Of String, Integer) = db.GetUserStatistics(userId)
 
+            ' Debug: Tampilkan nilai stats di console/output
+            Console.WriteLine($"Read: {stats("read")}, Reading: {stats("reading")}, etc...")
+
+            ' Pastikan TextBox benar-benar ada di form dengan nama yang tepat
             txtTotalBooksRead.Text = stats("read").ToString()
             txtTotalReadingTime.Text = stats("reading").ToString()
             txtTotalBooksBorrowed.Text = stats("borrowed").ToString()
             txtTotalFavoriteBooks.Text = stats("favorite").ToString()
 
-            ' Format average reading time (convert minutes to hours:minutes format if needed)
+            ' Format average reading time
             Dim avgMinutes = stats("avgReadingTime")
             If avgMinutes >= 60 Then
                 Dim hours = avgMinutes \ 60
@@ -27,7 +41,6 @@ Public Class StatisticForm
             MessageBox.Show("Gagal memuat statistik: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
 
     Private isNavigating As Boolean = False
 
