@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2025 at 08:40 PM
+-- Generation Time: Jun 01, 2025 at 09:06 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -39,11 +39,21 @@ CREATE TABLE `books` (
   `ReadDuration` int(11) DEFAULT 0,
   `IsFavorite` tinyint(1) DEFAULT 0,
   `IsWishlist` tinyint(1) DEFAULT 0,
-  `Status` enum('Available','Borrowed','Reading') DEFAULT 'Available',
+  `Status` enum('Available','Borrowed','Reading','Finished') DEFAULT 'Available',
   `CreatedAt` timestamp NOT NULL DEFAULT current_timestamp(),
   `PhotoPath` varchar(255) DEFAULT NULL,
   `FilePath` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `books`
+--
+
+INSERT INTO `books` (`BookId`, `UserId`, `CategoryId`, `Title`, `Description`, `Pages`, `Author`, `LastSeen`, `ReadDuration`, `IsFavorite`, `IsWishlist`, `Status`, `CreatedAt`, `PhotoPath`, `FilePath`) VALUES
+(1, 1, 5, 'Bibi Gill', 'Bagaimana menjadi petarung terkuat di dunia paralel? Dengan latihan panjang dan pengorbanan. Termasuk kehilangan dan kesedihan. Inilah kisah tentang Bibi Gill, yang sejak kecil berusaha mengalahkan \'monster\' dalam hidupnya.\n\nApakah dia bisa menemukan ja', 686, 'Tere Liye', NULL, 0, 1, 1, 'Reading', '2025-04-21 17:49:48', 'BookCovers\\238bc441-9e9a-4a5b-8c42-7494366b14b8.png', 'BookFiles\\c7ed4059-8a36-44ba-b065-0db4eb4934d7.pdf'),
+(2, 1, 5, 'Bumi', 'foewaj', 498, 'Tere Liye', NULL, 0, 0, 0, 'Available', '2025-04-21 22:16:36', 'BookCovers\\3985a92d-bf47-4358-8b88-2124753d5587.jpg', 'BookFiles\\1fd98679-0118-49cc-87a0-7fbf093602e5.epub'),
+(3, 0, 7, 'Test1', 'tidak ada', 1, 'dika', NULL, 0, 0, 0, 'Available', '2025-04-22 01:55:02', 'BookCovers\\accf8bc1-15fa-4e14-b69c-e55784ea1da4.png', 'BookFiles\\8da2460f-3cbe-4221-b588-e833269de5bd.pdf'),
+(4, 0, 5, 'test2', 'p', 10, 'test2', NULL, 0, 0, 0, 'Available', '2025-04-22 01:55:47', 'BookCovers\\9a9f61fb-ec84-4e39-8cec-90d1c125bd0c.png', 'BookFiles\\40b08c29-00bb-4801-8d8d-afd98e3842c8.pdf');
 
 -- --------------------------------------------------------
 
@@ -220,7 +230,7 @@ ALTER TABLE `usersessions`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `BookId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `BookId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `borrowers`
