@@ -1,4 +1,34 @@
-﻿Public Class StatisticForm
+﻿
+Imports MySql.Data.MySqlClient
+Public Class StatisticForm
+
+    Private Sub LoadStatistics()
+        Try
+            Dim db As New DBConnection()
+            Dim userId As Integer = SessionHelper.CurrentUser.UserId
+
+            Dim stats As Dictionary(Of String, Integer) = db.GetUserStatistics(userId)
+
+            txtTotalBooksRead.Text = stats("read").ToString()
+            txtTotalReadingTime.Text = stats("reading").ToString()
+            txtTotalBooksBorrowed.Text = stats("borrowed").ToString()
+            txtTotalFavoriteBooks.Text = stats("favorite").ToString()
+
+            ' Format average reading time (convert minutes to hours:minutes format if needed)
+            Dim avgMinutes = stats("avgReadingTime")
+            If avgMinutes >= 60 Then
+                Dim hours = avgMinutes \ 60
+                Dim minutes = avgMinutes Mod 60
+                txtAvReadingTime.Text = $"{hours} jam {minutes} menit"
+            Else
+                txtAvReadingTime.Text = $"{avgMinutes} menit"
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Gagal memuat statistik: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+
     Private isNavigating As Boolean = False
 
     '============ NAVIGASI MENU ============'
@@ -65,4 +95,5 @@
 
         cbProfile.SelectedIndex = 0 ' Reset ke default setelah aksi
     End Sub
+
 End Class
