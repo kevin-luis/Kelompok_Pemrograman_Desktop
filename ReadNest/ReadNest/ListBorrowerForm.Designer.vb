@@ -67,9 +67,10 @@ Partial Class ListBorrowerForm
         pbBB.BackColor = SystemColors.Info
         pbBB.BackgroundImage = CType(resources.GetObject("pbBB.BackgroundImage"), Image)
         pbBB.BackgroundImageLayout = ImageLayout.Stretch
-        pbBB.Location = New Point(12, 252)
+        pbBB.Location = New Point(14, 336)
+        pbBB.Margin = New Padding(3, 4, 3, 4)
         pbBB.Name = "pbBB"
-        pbBB.Size = New Size(28, 28)
+        pbBB.Size = New Size(32, 37)
         pbBB.TabIndex = 123
         pbBB.TabStop = False
         ' 
@@ -79,9 +80,9 @@ Partial Class ListBorrowerForm
         lblBB.BackColor = SystemColors.Info
         lblBB.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblBB.ImageAlign = ContentAlignment.TopRight
-        lblBB.Location = New Point(46, 260)
+        lblBB.Location = New Point(53, 347)
         lblBB.Name = "lblBB"
-        lblBB.Size = New Size(130, 18)
+        lblBB.Size = New Size(158, 24)
         lblBB.TabIndex = 122
         lblBB.Text = "Book Borrowing"
         ' 
@@ -91,9 +92,9 @@ Partial Class ListBorrowerForm
         lblstatistic.BackColor = SystemColors.Info
         lblstatistic.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblstatistic.ImageAlign = ContentAlignment.TopRight
-        lblstatistic.Location = New Point(46, 294)
+        lblstatistic.Location = New Point(53, 392)
         lblstatistic.Name = "lblstatistic"
-        lblstatistic.Size = New Size(96, 18)
+        lblstatistic.Size = New Size(113, 24)
         lblstatistic.TabIndex = 121
         lblstatistic.Text = "My Statistic"
         ' 
@@ -102,9 +103,10 @@ Partial Class ListBorrowerForm
         pbStatistic.BackColor = SystemColors.Info
         pbStatistic.BackgroundImage = CType(resources.GetObject("pbStatistic.BackgroundImage"), Image)
         pbStatistic.BackgroundImageLayout = ImageLayout.Stretch
-        pbStatistic.Location = New Point(12, 286)
+        pbStatistic.Location = New Point(14, 381)
+        pbStatistic.Margin = New Padding(3, 4, 3, 4)
         pbStatistic.Name = "pbStatistic"
-        pbStatistic.Size = New Size(28, 28)
+        pbStatistic.Size = New Size(32, 37)
         pbStatistic.TabIndex = 120
         pbStatistic.TabStop = False
         ' 
@@ -114,9 +116,9 @@ Partial Class ListBorrowerForm
         lblDiscover.BackColor = SystemColors.Info
         lblDiscover.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblDiscover.ImageAlign = ContentAlignment.TopRight
-        lblDiscover.Location = New Point(46, 122)
+        lblDiscover.Location = New Point(53, 163)
         lblDiscover.Name = "lblDiscover"
-        lblDiscover.Size = New Size(75, 18)
+        lblDiscover.Size = New Size(91, 24)
         lblDiscover.TabIndex = 119
         lblDiscover.Text = "Discover"
         ' 
@@ -125,9 +127,10 @@ Partial Class ListBorrowerForm
         pbDiscover.BackColor = SystemColors.Info
         pbDiscover.BackgroundImage = CType(resources.GetObject("pbDiscover.BackgroundImage"), Image)
         pbDiscover.BackgroundImageLayout = ImageLayout.Stretch
-        pbDiscover.Location = New Point(12, 114)
+        pbDiscover.Location = New Point(14, 152)
+        pbDiscover.Margin = New Padding(3, 4, 3, 4)
         pbDiscover.Name = "pbDiscover"
-        pbDiscover.Size = New Size(28, 28)
+        pbDiscover.Size = New Size(32, 37)
         pbDiscover.TabIndex = 118
         pbDiscover.TabStop = False
         ' 
@@ -137,9 +140,9 @@ Partial Class ListBorrowerForm
         lblMenu.BackColor = SystemColors.Info
         lblMenu.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblMenu.ImageAlign = ContentAlignment.TopRight
-        lblMenu.Location = New Point(12, 85)
+        lblMenu.Location = New Point(14, 113)
         lblMenu.Name = "lblMenu"
-        lblMenu.Size = New Size(49, 18)
+        lblMenu.Size = New Size(63, 24)
         lblMenu.TabIndex = 117
         lblMenu.Text = "Menu"
         ' 
@@ -149,9 +152,9 @@ Partial Class ListBorrowerForm
         lblFavorite.BackColor = SystemColors.Info
         lblFavorite.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblFavorite.ImageAlign = ContentAlignment.TopRight
-        lblFavorite.Location = New Point(46, 227)
+        lblFavorite.Location = New Point(53, 303)
         lblFavorite.Name = "lblFavorite"
-        lblFavorite.Size = New Size(69, 18)
+        lblFavorite.Size = New Size(85, 24)
         lblFavorite.TabIndex = 116
         lblFavorite.Text = "Favorite"
         ' 
@@ -161,9 +164,9 @@ Partial Class ListBorrowerForm
         lblNotes.BackColor = SystemColors.Info
         lblNotes.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblNotes.ImageAlign = ContentAlignment.TopRight
-        lblNotes.Location = New Point(46, 191)
+        lblNotes.Location = New Point(53, 255)
         lblNotes.Name = "lblNotes"
-        lblNotes.Size = New Size(80, 18)
+        lblNotes.Size = New Size(97, 24)
         lblNotes.TabIndex = 115
         lblNotes.Text = "My Notes"
         ' 
@@ -173,9 +176,9 @@ Partial Class ListBorrowerForm
         lblCategory.BackColor = SystemColors.Info
         lblCategory.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblCategory.ImageAlign = ContentAlignment.TopRight
-        lblCategory.Location = New Point(46, 156)
+        lblCategory.Location = New Point(53, 208)
         lblCategory.Name = "lblCategory"
-        lblCategory.Size = New Size(76, 18)
+        lblCategory.Size = New Size(93, 24)
         lblCategory.TabIndex = 114
         lblCategory.Text = "Category"
         ' 
@@ -186,9 +189,9 @@ Partial Class ListBorrowerForm
         Label1.Font = New Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label1.ForeColor = SystemColors.ControlText
         Label1.ImageAlign = ContentAlignment.TopRight
-        Label1.Location = New Point(12, 25)
+        Label1.Location = New Point(14, 33)
         Label1.Name = "Label1"
-        Label1.Size = New Size(144, 31)
+        Label1.Size = New Size(177, 39)
         Label1.TabIndex = 113
         Label1.Text = "ReadNest"
         ' 
@@ -197,9 +200,10 @@ Partial Class ListBorrowerForm
         pbFavorite.BackColor = SystemColors.Info
         pbFavorite.BackgroundImage = CType(resources.GetObject("pbFavorite.BackgroundImage"), Image)
         pbFavorite.BackgroundImageLayout = ImageLayout.Stretch
-        pbFavorite.Location = New Point(12, 218)
+        pbFavorite.Location = New Point(14, 291)
+        pbFavorite.Margin = New Padding(3, 4, 3, 4)
         pbFavorite.Name = "pbFavorite"
-        pbFavorite.Size = New Size(28, 28)
+        pbFavorite.Size = New Size(32, 37)
         pbFavorite.TabIndex = 112
         pbFavorite.TabStop = False
         ' 
@@ -208,9 +212,10 @@ Partial Class ListBorrowerForm
         pbNotes.BackColor = SystemColors.Info
         pbNotes.BackgroundImage = CType(resources.GetObject("pbNotes.BackgroundImage"), Image)
         pbNotes.BackgroundImageLayout = ImageLayout.Stretch
-        pbNotes.Location = New Point(12, 182)
+        pbNotes.Location = New Point(14, 243)
+        pbNotes.Margin = New Padding(3, 4, 3, 4)
         pbNotes.Name = "pbNotes"
-        pbNotes.Size = New Size(28, 28)
+        pbNotes.Size = New Size(32, 37)
         pbNotes.TabIndex = 111
         pbNotes.TabStop = False
         ' 
@@ -219,9 +224,10 @@ Partial Class ListBorrowerForm
         pbCategory.BackColor = SystemColors.Info
         pbCategory.BackgroundImage = CType(resources.GetObject("pbCategory.BackgroundImage"), Image)
         pbCategory.BackgroundImageLayout = ImageLayout.Stretch
-        pbCategory.Location = New Point(12, 148)
+        pbCategory.Location = New Point(14, 197)
+        pbCategory.Margin = New Padding(3, 4, 3, 4)
         pbCategory.Name = "pbCategory"
-        pbCategory.Size = New Size(28, 28)
+        pbCategory.Size = New Size(32, 37)
         pbCategory.TabIndex = 110
         pbCategory.TabStop = False
         ' 
@@ -229,6 +235,7 @@ Partial Class ListBorrowerForm
         ' 
         SplitContainer1.Dock = DockStyle.Fill
         SplitContainer1.Location = New Point(0, 0)
+        SplitContainer1.Margin = New Padding(3, 4, 3, 4)
         SplitContainer1.Name = "SplitContainer1"
         ' 
         ' SplitContainer1.Panel1
@@ -240,8 +247,9 @@ Partial Class ListBorrowerForm
         ' SplitContainer1.Panel2
         ' 
         SplitContainer1.Panel2.Controls.Add(Panel1)
-        SplitContainer1.Size = New Size(934, 486)
-        SplitContainer1.SplitterDistance = 186
+        SplitContainer1.Size = New Size(1067, 648)
+        SplitContainer1.SplitterDistance = 212
+        SplitContainer1.SplitterWidth = 5
         SplitContainer1.TabIndex = 124
         ' 
         ' lblWishlist
@@ -250,9 +258,9 @@ Partial Class ListBorrowerForm
         lblWishlist.BackColor = SystemColors.Info
         lblWishlist.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblWishlist.ImageAlign = ContentAlignment.TopRight
-        lblWishlist.Location = New Point(46, 329)
+        lblWishlist.Location = New Point(53, 439)
         lblWishlist.Name = "lblWishlist"
-        lblWishlist.Size = New Size(68, 18)
+        lblWishlist.Size = New Size(81, 24)
         lblWishlist.TabIndex = 111
         lblWishlist.Text = "Wishlist"
         ' 
@@ -261,9 +269,10 @@ Partial Class ListBorrowerForm
         PictureBox1.BackColor = SystemColors.Info
         PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), Image)
         PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox1.Location = New Point(12, 321)
+        PictureBox1.Location = New Point(14, 428)
+        PictureBox1.Margin = New Padding(3, 4, 3, 4)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(28, 28)
+        PictureBox1.Size = New Size(32, 37)
         PictureBox1.TabIndex = 110
         PictureBox1.TabStop = False
         ' 
@@ -273,8 +282,9 @@ Partial Class ListBorrowerForm
         PictureBox2.BorderStyle = BorderStyle.FixedSingle
         PictureBox2.Dock = DockStyle.Fill
         PictureBox2.Location = New Point(0, 0)
+        PictureBox2.Margin = New Padding(3, 4, 3, 4)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(186, 486)
+        PictureBox2.Size = New Size(212, 648)
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
         ' 
@@ -286,8 +296,9 @@ Partial Class ListBorrowerForm
         Panel1.Controls.Add(flowBorrowers)
         Panel1.Dock = DockStyle.Fill
         Panel1.Location = New Point(0, 0)
+        Panel1.Margin = New Padding(3, 4, 3, 4)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(744, 486)
+        Panel1.Size = New Size(850, 648)
         Panel1.TabIndex = 0
         ' 
         ' Label2
@@ -297,9 +308,9 @@ Partial Class ListBorrowerForm
         Label2.Font = New Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold)
         Label2.ForeColor = SystemColors.ControlText
         Label2.ImageAlign = ContentAlignment.TopRight
-        Label2.Location = New Point(13, 52)
+        Label2.Location = New Point(15, 69)
         Label2.Name = "Label2"
-        Label2.Size = New Size(247, 26)
+        Label2.Size = New Size(313, 32)
         Label2.TabIndex = 125
         Label2.Text = "List of book borrowers"
         ' 
@@ -311,9 +322,10 @@ Partial Class ListBorrowerForm
         cbProfile.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         cbProfile.FormattingEnabled = True
         cbProfile.Items.AddRange(New Object() {"Profile", "View Profile", "Logout"})
-        cbProfile.Location = New Point(610, 23)
+        cbProfile.Location = New Point(697, 31)
+        cbProfile.Margin = New Padding(3, 4, 3, 4)
         cbProfile.Name = "cbProfile"
-        cbProfile.Size = New Size(97, 26)
+        cbProfile.Size = New Size(110, 32)
         cbProfile.TabIndex = 111
         ' 
         ' pbProfile
@@ -321,9 +333,10 @@ Partial Class ListBorrowerForm
         pbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
         pbProfile.BackgroundImageLayout = ImageLayout.Stretch
-        pbProfile.Location = New Point(576, 22)
+        pbProfile.Location = New Point(658, 29)
+        pbProfile.Margin = New Padding(3, 4, 3, 4)
         pbProfile.Name = "pbProfile"
-        pbProfile.Size = New Size(28, 28)
+        pbProfile.Size = New Size(32, 37)
         pbProfile.TabIndex = 93
         pbProfile.TabStop = False
         ' 
@@ -332,18 +345,19 @@ Partial Class ListBorrowerForm
         flowBorrowers.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         flowBorrowers.AutoScroll = True
         flowBorrowers.BackColor = Color.White
-        flowBorrowers.Location = New Point(13, 85)
+        flowBorrowers.Location = New Point(15, 113)
+        flowBorrowers.Margin = New Padding(3, 4, 3, 4)
         flowBorrowers.Name = "flowBorrowers"
-        flowBorrowers.Padding = New Padding(9, 8, 9, 8)
-        flowBorrowers.Size = New Size(719, 389)
+        flowBorrowers.Padding = New Padding(10, 11, 10, 11)
+        flowBorrowers.Size = New Size(822, 519)
         flowBorrowers.TabIndex = 34
         ' 
         ' ListBorrowerForm
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
-        ClientSize = New Size(934, 486)
+        ClientSize = New Size(1067, 648)
         Controls.Add(pbBB)
         Controls.Add(lblBB)
         Controls.Add(lblstatistic)
@@ -359,9 +373,10 @@ Partial Class ListBorrowerForm
         Controls.Add(pbNotes)
         Controls.Add(pbCategory)
         Controls.Add(SplitContainer1)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "ListBorrowerForm"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "ListBorrowerForm"
+        Text = "ReadNest, Your Personal Library"
         CType(pbBB, ComponentModel.ISupportInitialize).EndInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).EndInit()
         CType(pbDiscover, ComponentModel.ISupportInitialize).EndInit()

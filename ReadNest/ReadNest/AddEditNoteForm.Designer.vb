@@ -27,7 +27,6 @@ Partial Class AddEditNoteForm
         lblContent = New Label()
         txtContent = New TextBox()
         lblBookId = New Label()
-        'txtBookId = New TextBox()
         btnSave = New Button()
         btnCancel = New Button()
         cbBooks = New ComboBox()
@@ -36,80 +35,69 @@ Partial Class AddEditNoteForm
         ' lblTitle
         ' 
         lblTitle.AutoSize = True
-        lblTitle.Font = New Font("Arial", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblTitle.Location = New Point(14, 17)
-        lblTitle.Margin = New Padding(4, 0, 4, 0)
+        lblTitle.Font = New Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTitle.Location = New Point(16, 23)
+        lblTitle.Margin = New Padding(5, 0, 5, 0)
         lblTitle.Name = "lblTitle"
-        lblTitle.Size = New Size(58, 19)
+        lblTitle.Size = New Size(69, 24)
         lblTitle.TabIndex = 0
         lblTitle.Text = "Judul:"
         ' 
         ' txtTitle
         ' 
-        txtTitle.Font = New Font("Arial", 10.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        txtTitle.Location = New Point(19, 46)
-        txtTitle.Margin = New Padding(4, 3, 4, 3)
+        txtTitle.Font = New Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtTitle.Location = New Point(22, 61)
+        txtTitle.Margin = New Padding(5, 4, 5, 4)
         txtTitle.MaxLength = 255
         txtTitle.Name = "txtTitle"
         txtTitle.PlaceholderText = "Judul Tidak Boleh Kosong"
-        txtTitle.Size = New Size(524, 23)
+        txtTitle.Size = New Size(598, 27)
         txtTitle.TabIndex = 1
         txtTitle.Text = "Untitled Note"
         ' 
         ' lblContent
         ' 
         lblContent.AutoSize = True
-        lblContent.Font = New Font("Arial", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblContent.Location = New Point(14, 92)
-        lblContent.Margin = New Padding(4, 0, 4, 0)
+        lblContent.Font = New Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblContent.Location = New Point(16, 123)
+        lblContent.Margin = New Padding(5, 0, 5, 0)
         lblContent.Name = "lblContent"
-        lblContent.Size = New Size(81, 19)
+        lblContent.Size = New Size(99, 24)
         lblContent.TabIndex = 2
         lblContent.Text = "Isi Notes:"
         ' 
         ' txtContent
         ' 
-        txtContent.Font = New Font("Arial", 10.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        txtContent.Location = New Point(19, 121)
-        txtContent.Margin = New Padding(4, 3, 4, 3)
+        txtContent.Font = New Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtContent.Location = New Point(22, 161)
+        txtContent.Margin = New Padding(5, 4, 5, 4)
         txtContent.Multiline = True
         txtContent.Name = "txtContent"
         txtContent.ScrollBars = ScrollBars.Vertical
-        txtContent.Size = New Size(524, 230)
+        txtContent.Size = New Size(598, 305)
         txtContent.TabIndex = 3
         ' 
         ' lblBookId
         ' 
         lblBookId.AutoSize = True
-        lblBookId.Font = New Font("Arial", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblBookId.Location = New Point(14, 369)
-        lblBookId.Margin = New Padding(4, 0, 4, 0)
+        lblBookId.Font = New Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblBookId.Location = New Point(16, 492)
+        lblBookId.Margin = New Padding(5, 0, 5, 0)
         lblBookId.Name = "lblBookId"
-        lblBookId.Size = New Size(154, 19)
+        lblBookId.Size = New Size(212, 24)
         lblBookId.TabIndex = 4
         lblBookId.Text = "Pilih Buku (Optional):"
-        ' 
-        ' txtBookId changed to cbooks
-        '
-        cbBooks = New ComboBox()
-        cbBooks.DropDownStyle = ComboBoxStyle.DropDownList
-        cbBooks.Font = New Font("Arial", 10.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        cbBooks.Location = New Point(19, 398)
-        cbBooks.Margin = New Padding(4, 3, 4, 3)
-        cbBooks.Name = "cbBooks"
-        cbBooks.Size = New Size(350, 23)
-        cbBooks.TabIndex = 5
         ' 
         ' btnSave
         ' 
         btnSave.BackColor = Color.DodgerBlue
         btnSave.FlatStyle = FlatStyle.Flat
-        btnSave.Font = New Font("Arial", 10.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnSave.Font = New Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnSave.ForeColor = Color.White
-        btnSave.Location = New Point(327, 450)
-        btnSave.Margin = New Padding(4, 3, 4, 3)
+        btnSave.Location = New Point(374, 600)
+        btnSave.Margin = New Padding(5, 4, 5, 4)
         btnSave.Name = "btnSave"
-        btnSave.Size = New Size(105, 40)
+        btnSave.Size = New Size(120, 53)
         btnSave.TabIndex = 6
         btnSave.Text = "Simpan"
         btnSave.UseVisualStyleBackColor = False
@@ -118,25 +106,34 @@ Partial Class AddEditNoteForm
         ' 
         btnCancel.BackColor = Color.Gray
         btnCancel.FlatStyle = FlatStyle.Flat
-        btnCancel.Font = New Font("Arial", 10.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnCancel.Font = New Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnCancel.ForeColor = Color.White
-        btnCancel.Location = New Point(439, 450)
-        btnCancel.Margin = New Padding(4, 3, 4, 3)
+        btnCancel.Location = New Point(502, 600)
+        btnCancel.Margin = New Padding(5, 4, 5, 4)
         btnCancel.Name = "btnCancel"
-        btnCancel.Size = New Size(105, 40)
+        btnCancel.Size = New Size(120, 53)
         btnCancel.TabIndex = 7
         btnCancel.Text = "Batal"
         btnCancel.UseVisualStyleBackColor = False
         ' 
+        ' cbBooks
+        ' 
+        cbBooks.DropDownStyle = ComboBoxStyle.DropDownList
+        cbBooks.Font = New Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        cbBooks.Location = New Point(22, 531)
+        cbBooks.Margin = New Padding(5, 4, 5, 4)
+        cbBooks.Name = "cbBooks"
+        cbBooks.Size = New Size(399, 27)
+        cbBooks.TabIndex = 5
+        ' 
         ' AddEditNoteForm
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
-        ClientSize = New Size(565, 509)
+        ClientSize = New Size(646, 679)
         Controls.Add(btnCancel)
         Controls.Add(btnSave)
-        'Controls.Add(txtBookId)
         Controls.Add(cbBooks)
         Controls.Add(lblBookId)
         Controls.Add(txtContent)
@@ -144,13 +141,13 @@ Partial Class AddEditNoteForm
         Controls.Add(txtTitle)
         Controls.Add(lblTitle)
         FormBorderStyle = FormBorderStyle.FixedDialog
-        Margin = New Padding(4, 3, 4, 3)
+        Margin = New Padding(5, 4, 5, 4)
         MaximizeBox = False
         MinimizeBox = False
         Name = "AddEditNoteForm"
         ShowInTaskbar = False
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Note Form"
+        Text = "MyNote"
         ResumeLayout(False)
         PerformLayout()
 

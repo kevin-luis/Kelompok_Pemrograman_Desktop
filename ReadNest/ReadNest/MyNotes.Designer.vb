@@ -67,9 +67,10 @@ Partial Class Mynotes
         pbBB.BackColor = SystemColors.Info
         pbBB.BackgroundImage = CType(resources.GetObject("pbBB.BackgroundImage"), Image)
         pbBB.BackgroundImageLayout = ImageLayout.Stretch
-        pbBB.Location = New Point(12, 252)
+        pbBB.Location = New Point(14, 336)
+        pbBB.Margin = New Padding(3, 4, 3, 4)
         pbBB.Name = "pbBB"
-        pbBB.Size = New Size(28, 28)
+        pbBB.Size = New Size(32, 37)
         pbBB.TabIndex = 119
         pbBB.TabStop = False
         ' 
@@ -79,9 +80,9 @@ Partial Class Mynotes
         lblBB.BackColor = SystemColors.Info
         lblBB.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblBB.ImageAlign = ContentAlignment.TopRight
-        lblBB.Location = New Point(46, 260)
+        lblBB.Location = New Point(53, 347)
         lblBB.Name = "lblBB"
-        lblBB.Size = New Size(130, 18)
+        lblBB.Size = New Size(158, 24)
         lblBB.TabIndex = 118
         lblBB.Text = "Book Borrowing"
         ' 
@@ -91,9 +92,9 @@ Partial Class Mynotes
         lblstatistic.BackColor = SystemColors.Info
         lblstatistic.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblstatistic.ImageAlign = ContentAlignment.TopRight
-        lblstatistic.Location = New Point(46, 294)
+        lblstatistic.Location = New Point(53, 392)
         lblstatistic.Name = "lblstatistic"
-        lblstatistic.Size = New Size(96, 18)
+        lblstatistic.Size = New Size(113, 24)
         lblstatistic.TabIndex = 117
         lblstatistic.Text = "My Statistic"
         ' 
@@ -102,9 +103,10 @@ Partial Class Mynotes
         pbStatistic.BackColor = SystemColors.Info
         pbStatistic.BackgroundImage = CType(resources.GetObject("pbStatistic.BackgroundImage"), Image)
         pbStatistic.BackgroundImageLayout = ImageLayout.Stretch
-        pbStatistic.Location = New Point(12, 286)
+        pbStatistic.Location = New Point(14, 381)
+        pbStatistic.Margin = New Padding(3, 4, 3, 4)
         pbStatistic.Name = "pbStatistic"
-        pbStatistic.Size = New Size(28, 28)
+        pbStatistic.Size = New Size(32, 37)
         pbStatistic.TabIndex = 116
         pbStatistic.TabStop = False
         ' 
@@ -114,9 +116,9 @@ Partial Class Mynotes
         lblDiscover.BackColor = SystemColors.Info
         lblDiscover.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblDiscover.ImageAlign = ContentAlignment.TopRight
-        lblDiscover.Location = New Point(46, 122)
+        lblDiscover.Location = New Point(53, 163)
         lblDiscover.Name = "lblDiscover"
-        lblDiscover.Size = New Size(75, 18)
+        lblDiscover.Size = New Size(91, 24)
         lblDiscover.TabIndex = 115
         lblDiscover.Text = "Discover"
         ' 
@@ -125,9 +127,10 @@ Partial Class Mynotes
         pbDiscover.BackColor = SystemColors.Info
         pbDiscover.BackgroundImage = CType(resources.GetObject("pbDiscover.BackgroundImage"), Image)
         pbDiscover.BackgroundImageLayout = ImageLayout.Stretch
-        pbDiscover.Location = New Point(12, 114)
+        pbDiscover.Location = New Point(14, 152)
+        pbDiscover.Margin = New Padding(3, 4, 3, 4)
         pbDiscover.Name = "pbDiscover"
-        pbDiscover.Size = New Size(28, 28)
+        pbDiscover.Size = New Size(32, 37)
         pbDiscover.TabIndex = 114
         pbDiscover.TabStop = False
         ' 
@@ -137,9 +140,9 @@ Partial Class Mynotes
         lblMenu.BackColor = SystemColors.Info
         lblMenu.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblMenu.ImageAlign = ContentAlignment.TopRight
-        lblMenu.Location = New Point(12, 85)
+        lblMenu.Location = New Point(14, 113)
         lblMenu.Name = "lblMenu"
-        lblMenu.Size = New Size(49, 18)
+        lblMenu.Size = New Size(63, 24)
         lblMenu.TabIndex = 113
         lblMenu.Text = "Menu"
         ' 
@@ -149,9 +152,9 @@ Partial Class Mynotes
         lblFavorite.BackColor = SystemColors.Info
         lblFavorite.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblFavorite.ImageAlign = ContentAlignment.TopRight
-        lblFavorite.Location = New Point(46, 227)
+        lblFavorite.Location = New Point(53, 303)
         lblFavorite.Name = "lblFavorite"
-        lblFavorite.Size = New Size(69, 18)
+        lblFavorite.Size = New Size(85, 24)
         lblFavorite.TabIndex = 112
         lblFavorite.Text = "Favorite"
         ' 
@@ -161,9 +164,9 @@ Partial Class Mynotes
         lblNotes.BackColor = SystemColors.Info
         lblNotes.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblNotes.ImageAlign = ContentAlignment.TopRight
-        lblNotes.Location = New Point(46, 191)
+        lblNotes.Location = New Point(53, 255)
         lblNotes.Name = "lblNotes"
-        lblNotes.Size = New Size(80, 18)
+        lblNotes.Size = New Size(97, 24)
         lblNotes.TabIndex = 111
         lblNotes.Text = "My Notes"
         ' 
@@ -173,9 +176,9 @@ Partial Class Mynotes
         lblCategory.BackColor = SystemColors.Info
         lblCategory.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblCategory.ImageAlign = ContentAlignment.TopRight
-        lblCategory.Location = New Point(46, 156)
+        lblCategory.Location = New Point(53, 208)
         lblCategory.Name = "lblCategory"
-        lblCategory.Size = New Size(76, 18)
+        lblCategory.Size = New Size(93, 24)
         lblCategory.TabIndex = 110
         lblCategory.Text = "Category"
         ' 
@@ -186,9 +189,9 @@ Partial Class Mynotes
         Label1.Font = New Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label1.ForeColor = SystemColors.ControlText
         Label1.ImageAlign = ContentAlignment.TopRight
-        Label1.Location = New Point(12, 25)
+        Label1.Location = New Point(14, 33)
         Label1.Name = "Label1"
-        Label1.Size = New Size(144, 31)
+        Label1.Size = New Size(177, 39)
         Label1.TabIndex = 109
         Label1.Text = "ReadNest"
         ' 
@@ -197,9 +200,10 @@ Partial Class Mynotes
         pbFavorite.BackColor = SystemColors.Info
         pbFavorite.BackgroundImage = CType(resources.GetObject("pbFavorite.BackgroundImage"), Image)
         pbFavorite.BackgroundImageLayout = ImageLayout.Stretch
-        pbFavorite.Location = New Point(12, 218)
+        pbFavorite.Location = New Point(14, 291)
+        pbFavorite.Margin = New Padding(3, 4, 3, 4)
         pbFavorite.Name = "pbFavorite"
-        pbFavorite.Size = New Size(28, 28)
+        pbFavorite.Size = New Size(32, 37)
         pbFavorite.TabIndex = 108
         pbFavorite.TabStop = False
         ' 
@@ -208,9 +212,10 @@ Partial Class Mynotes
         pbNotes.BackColor = SystemColors.Info
         pbNotes.BackgroundImage = CType(resources.GetObject("pbNotes.BackgroundImage"), Image)
         pbNotes.BackgroundImageLayout = ImageLayout.Stretch
-        pbNotes.Location = New Point(12, 182)
+        pbNotes.Location = New Point(14, 243)
+        pbNotes.Margin = New Padding(3, 4, 3, 4)
         pbNotes.Name = "pbNotes"
-        pbNotes.Size = New Size(28, 28)
+        pbNotes.Size = New Size(32, 37)
         pbNotes.TabIndex = 107
         pbNotes.TabStop = False
         ' 
@@ -219,9 +224,10 @@ Partial Class Mynotes
         pbCategory.BackColor = SystemColors.Info
         pbCategory.BackgroundImage = CType(resources.GetObject("pbCategory.BackgroundImage"), Image)
         pbCategory.BackgroundImageLayout = ImageLayout.Stretch
-        pbCategory.Location = New Point(12, 148)
+        pbCategory.Location = New Point(14, 197)
+        pbCategory.Margin = New Padding(3, 4, 3, 4)
         pbCategory.Name = "pbCategory"
-        pbCategory.Size = New Size(28, 28)
+        pbCategory.Size = New Size(32, 37)
         pbCategory.TabIndex = 106
         pbCategory.TabStop = False
         ' 
@@ -229,6 +235,7 @@ Partial Class Mynotes
         ' 
         SplitContainer1.Dock = DockStyle.Fill
         SplitContainer1.Location = New Point(0, 0)
+        SplitContainer1.Margin = New Padding(3, 4, 3, 4)
         SplitContainer1.Name = "SplitContainer1"
         ' 
         ' SplitContainer1.Panel1
@@ -245,8 +252,9 @@ Partial Class Mynotes
         SplitContainer1.Panel2.Controls.Add(pbProfile)
         SplitContainer1.Panel2.Controls.Add(Splitter1)
         SplitContainer1.Panel2.Controls.Add(cbProfile)
-        SplitContainer1.Size = New Size(934, 486)
-        SplitContainer1.SplitterDistance = 186
+        SplitContainer1.Size = New Size(1067, 648)
+        SplitContainer1.SplitterDistance = 212
+        SplitContainer1.SplitterWidth = 5
         SplitContainer1.TabIndex = 120
         ' 
         ' lblWishlist
@@ -255,9 +263,9 @@ Partial Class Mynotes
         lblWishlist.BackColor = SystemColors.Info
         lblWishlist.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblWishlist.ImageAlign = ContentAlignment.TopRight
-        lblWishlist.Location = New Point(46, 327)
+        lblWishlist.Location = New Point(53, 436)
         lblWishlist.Name = "lblWishlist"
-        lblWishlist.Size = New Size(68, 18)
+        lblWishlist.Size = New Size(81, 24)
         lblWishlist.TabIndex = 122
         lblWishlist.Text = "Wishlist"
         ' 
@@ -266,9 +274,10 @@ Partial Class Mynotes
         pbWishlist.BackColor = SystemColors.Info
         pbWishlist.BackgroundImage = CType(resources.GetObject("pbWishlist.BackgroundImage"), Image)
         pbWishlist.BackgroundImageLayout = ImageLayout.Stretch
-        pbWishlist.Location = New Point(12, 319)
+        pbWishlist.Location = New Point(14, 425)
+        pbWishlist.Margin = New Padding(3, 4, 3, 4)
         pbWishlist.Name = "pbWishlist"
-        pbWishlist.Size = New Size(28, 28)
+        pbWishlist.Size = New Size(32, 37)
         pbWishlist.TabIndex = 121
         pbWishlist.TabStop = False
         ' 
@@ -278,8 +287,9 @@ Partial Class Mynotes
         PictureBox2.BorderStyle = BorderStyle.FixedSingle
         PictureBox2.Dock = DockStyle.Fill
         PictureBox2.Location = New Point(0, 0)
+        PictureBox2.Margin = New Padding(3, 4, 3, 4)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(186, 486)
+        PictureBox2.Size = New Size(212, 648)
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
         ' 
@@ -291,19 +301,20 @@ Partial Class Mynotes
         btnAddNote.FlatStyle = FlatStyle.Flat
         btnAddNote.Font = New Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnAddNote.ForeColor = Color.White
-        btnAddNote.Location = New Point(613, 73)
-        btnAddNote.Margin = New Padding(4, 3, 4, 3)
+        btnAddNote.Location = New Point(701, 97)
+        btnAddNote.Margin = New Padding(5, 4, 5, 4)
         btnAddNote.Name = "btnAddNote"
-        btnAddNote.Size = New Size(93, 35)
+        btnAddNote.Size = New Size(106, 47)
         btnAddNote.TabIndex = 125
         btnAddNote.Text = "+ Add Note"
         btnAddNote.UseVisualStyleBackColor = False
         ' 
         ' flNotes
         ' 
-        flNotes.Location = New Point(20, 114)
+        flNotes.Location = New Point(23, 152)
+        flNotes.Margin = New Padding(3, 4, 3, 4)
         flNotes.Name = "flNotes"
-        flNotes.Size = New Size(690, 360)
+        flNotes.Size = New Size(789, 480)
         flNotes.TabIndex = 124
         ' 
         ' Label5
@@ -314,9 +325,9 @@ Partial Class Mynotes
         Label5.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
         Label5.ForeColor = SystemColors.ControlText
         Label5.ImageAlign = ContentAlignment.TopRight
-        Label5.Location = New Point(20, 28)
+        Label5.Location = New Point(23, 37)
         Label5.Name = "Label5"
-        Label5.Size = New Size(93, 22)
+        Label5.Size = New Size(112, 26)
         Label5.TabIndex = 123
         Label5.Text = "My Notes"
         ' 
@@ -325,17 +336,19 @@ Partial Class Mynotes
         pbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
         pbProfile.BackgroundImageLayout = ImageLayout.Stretch
-        pbProfile.Location = New Point(579, 22)
+        pbProfile.Location = New Point(662, 29)
+        pbProfile.Margin = New Padding(3, 4, 3, 4)
         pbProfile.Name = "pbProfile"
-        pbProfile.Size = New Size(28, 28)
+        pbProfile.Size = New Size(32, 37)
         pbProfile.TabIndex = 121
         pbProfile.TabStop = False
         ' 
         ' Splitter1
         ' 
         Splitter1.Location = New Point(0, 0)
+        Splitter1.Margin = New Padding(3, 4, 3, 4)
         Splitter1.Name = "Splitter1"
-        Splitter1.Size = New Size(3, 486)
+        Splitter1.Size = New Size(3, 648)
         Splitter1.TabIndex = 0
         Splitter1.TabStop = False
         ' 
@@ -346,19 +359,20 @@ Partial Class Mynotes
         cbProfile.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         cbProfile.FormattingEnabled = True
         cbProfile.Items.AddRange(New Object() {"View Profile", "Logout"})
-        cbProfile.Location = New Point(613, 22)
+        cbProfile.Location = New Point(701, 29)
+        cbProfile.Margin = New Padding(3, 4, 3, 4)
         cbProfile.Name = "cbProfile"
-        cbProfile.Size = New Size(97, 26)
+        cbProfile.Size = New Size(110, 32)
         cbProfile.TabIndex = 122
         cbProfile.Text = "Profile"
         ' 
         ' Mynotes
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         BackColor = Color.White
-        ClientSize = New Size(934, 486)
+        ClientSize = New Size(1067, 648)
         Controls.Add(pbBB)
         Controls.Add(lblBB)
         Controls.Add(lblstatistic)
@@ -374,9 +388,10 @@ Partial Class Mynotes
         Controls.Add(pbNotes)
         Controls.Add(pbCategory)
         Controls.Add(SplitContainer1)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "Mynotes"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Mynotes"
+        Text = "ReadNest, Your Personal Library"
         CType(pbBB, ComponentModel.ISupportInitialize).EndInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).EndInit()
         CType(pbDiscover, ComponentModel.ISupportInitialize).EndInit()
