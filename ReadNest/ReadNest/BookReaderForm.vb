@@ -270,6 +270,9 @@ Public Class BookReaderForm
             If db.UpdateReadingProgressAbsolute(_userId, _bookId, _currentPage, totalSecondsToSave, progressPercent) Then
                 _totalSecondsFromDB = totalSecondsToSave
                 _sessionStartTime = DateTime.Now
+                If progressPercent >= 100 Then
+                    db.UpdateBookStatus(_bookId, "Finished")
+                End If
             End If
         Catch ex As Exception
             MessageBox.Show("Failed to save progress: " & ex.Message, "Error")
