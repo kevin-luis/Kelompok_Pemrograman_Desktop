@@ -3,6 +3,8 @@ Imports MySql.Data.MySqlClient
 
 Public Class MainForm
     Private isNavigating As Boolean = False
+    Private isDeleteMode As Boolean = False
+
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         StartPosition = FormStartPosition.CenterScreen
 
@@ -224,6 +226,7 @@ Public Class MainForm
         Private WithEvents pbCover As New PictureBox()
         Private WithEvents lblTitle As New Label()
         Private WithEvents lblAuthor As New Label()
+        Private WithEvents btnDelete As New Button()  ' Tambahan untuk tombol delete
 
         Public Sub New(bookId As Integer, title As String, author As String, photoPath As String)
             Me.BookId = bookId
@@ -266,16 +269,74 @@ Public Class MainForm
             lblAuthor.Text = Author
             lblAuthor.Cursor = Cursors.Hand
 
+            ' Delete button (initially hidden)
+            btnDelete.Size = New Size(30, 30)
+            btnDelete.Location = New Point(145, 10)
+            btnDelete.Text = "-"
+            btnDelete.Font = New Font("Microsoft Sans Serif", 18.0F, FontStyle.Bold)
+            btnDelete.BackColor = Color.Cyan
+            btnDelete.ForeColor = Color.White
+            btnDelete.FlatStyle = FlatStyle.Flat
+            btnDelete.FlatAppearance.BorderSize = 0
+            btnDelete.Cursor = Cursors.Hand
+            btnDelete.Visible = False
+            AddHandler btnDelete.Click, AddressOf DeleteButton_Click
+
             ' Add controls
             Me.Controls.Add(pbCover)
             Me.Controls.Add(lblTitle)
             Me.Controls.Add(lblAuthor)
+            Me.Controls.Add(btnDelete)
+
+            ' Pastikan tombol delete di atas semua kontrol
+            btnDelete.BringToFront()
 
             ' Add click events
             AddHandler Me.Click, AddressOf BookCard_Click
             AddHandler pbCover.Click, AddressOf BookCard_Click
             AddHandler lblTitle.Click, AddressOf BookCard_Click
             AddHandler lblAuthor.Click, AddressOf BookCard_Click
+        End Sub
+
+        ' Method untuk mengatur mode delete
+        Public Sub SetDeleteMode(deleteMode As Boolean)
+            btnDelete.Visible = deleteMode
+
+            ' Jika dalam mode delete, nonaktifkan click event untuk buka detail
+            Me.Cursor = If(deleteMode, Cursors.Default, Cursors.Hand)
+            pbCover.Cursor = If(deleteMode, Cursors.Default, Cursors.Hand)
+            lblTitle.Cursor = If(deleteMode, Cursors.Default, Cursors.Hand)
+            lblAuthor.Cursor = If(deleteMode, Cursors.Default, Cursors.Hand)
+        End Sub
+
+        ' Event handler untuk tombol delete
+        Private Sub DeleteButton_Click(sender As Object, e As EventArgs)
+            Dim result As DialogResult = MessageBox.Show(
+            $"Apakah Anda yakin ingin menghapus buku '{Title}'?",
+            "Konfirmasi Hapus Buku",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question)
+
+            If result = DialogResult.Yes Then
+                Try
+                    Dim db As New DBConnection()
+                    ' Asumsi ada method DeleteBook di DBConnection
+                    db.HapusBuku(BookId)
+
+                    MessageBox.Show("Buku berhasil dihapus", "Sukses",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    ' Refresh daftar buku di parent form
+                    Dim parentForm As MainForm = DirectCast(Me.FindForm(), MainForm)
+                    If parentForm IsNot Nothing Then
+                        parentForm.LoadBooks()
+                    End If
+
+                Catch ex As Exception
+                    MessageBox.Show($"Gagal menghapus buku: {ex.Message}", "Error",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+            End If
         End Sub
 
         Private Sub LoadCoverImage()
@@ -296,6 +357,9 @@ Public Class MainForm
         End Sub
 
         Private Sub BookCard_Click(sender As Object, e As EventArgs)
+            ' Jangan buka detail jika dalam mode delete
+            If btnDelete.Visible Then Return
+
             SessionHelper.UpdateActivity()
             Dim bookDetailForm As New BookDetail(BookId)
             bookDetailForm.Show()
@@ -307,5 +371,24 @@ Public Class MainForm
             End If
         End Sub
     End Class
+
+    Private Sub pbDeleteBook_Click(sender As Object, e As EventArgs) Handles pbDeleteBook.Click
+        isDeleteMode = Not isDeleteMode
+
+        ' Update tampilan semua book cards
+        For Each control As Control In flowBooks.Controls
+            If TypeOf control Is BookCard Then
+                Dim bookCard As BookCard = DirectCast(control, BookCard)
+                bookCard.SetDeleteMode(isDeleteMode)
+            End If
+        Next
+
+        ' Update appearance tombol delete
+        If isDeleteMode Then
+            pbDeleteBook.BackColor = Color.Aquamarine
+        Else
+            pbDeleteBook.BackColor = SystemColors.Control
+        End If
+    End Sub
 
 End Class
