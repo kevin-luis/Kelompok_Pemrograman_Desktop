@@ -60,6 +60,7 @@ Public Class WishlistForm
         End Try
     End Sub
 
+
     '============ NAVIGASI MENU ============'
     Private Sub NavigateToForm(form As Form)
         SessionHelper.UpdateActivity()
@@ -96,15 +97,15 @@ Public Class WishlistForm
         NavigateToForm(New WishlistForm())
     End Sub
     '============ PROFILE MENU ============'
-    Private Sub cbProfile_SelectedIndexChanged(sender As Object, e As EventArgs)
+    Private Sub cbProfile_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProfile.SelectedIndexChanged
         If cbProfile.SelectedIndex = -1 Then Exit Sub
 
         Select Case cbProfile.SelectedItem.ToString()
             Case "View Profile"
-                NavigateToForm(New ProfileForm)
+                NavigateToForm(New ProfileForm())
 
             Case "Logout"
-                Dim result = MessageBox.Show("Apakah Anda yakin ingin logout?",
+                Dim result As DialogResult = MessageBox.Show("Apakah Anda yakin ingin logout?",
                                                        "Konfirmasi Logout",
                                                        MessageBoxButtons.YesNo,
                                                        MessageBoxIcon.Question)
@@ -114,9 +115,9 @@ Public Class WishlistForm
                     SessionHelper.ClearSavedSession()
 
                     isNavigating = True
-                    Dim loginForm As New LoginForm
+                    Dim loginForm As New LoginForm()
                     loginForm.Show()
-                    Close()
+                    Me.Close()
                 Else
                     cbProfile.SelectedIndex = 0
                 End If
