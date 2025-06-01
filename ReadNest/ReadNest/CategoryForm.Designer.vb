@@ -74,6 +74,7 @@ Partial Class CategoryForm
         SplitContainer1.Dock = DockStyle.Fill
         SplitContainer1.FixedPanel = FixedPanel.Panel1
         SplitContainer1.Location = New Point(0, 0)
+        SplitContainer1.Margin = New Padding(3, 4, 3, 4)
         SplitContainer1.Name = "SplitContainer1"
         ' 
         ' SplitContainer1.Panel1
@@ -100,8 +101,9 @@ Partial Class CategoryForm
         ' SplitContainer1.Panel2
         ' 
         SplitContainer1.Panel2.Controls.Add(Panel1)
-        SplitContainer1.Size = New Size(934, 486)
-        SplitContainer1.SplitterDistance = 186
+        SplitContainer1.Size = New Size(1067, 648)
+        SplitContainer1.SplitterDistance = 213
+        SplitContainer1.SplitterWidth = 5
         SplitContainer1.TabIndex = 34
         ' 
         ' pbWishlist
@@ -109,9 +111,10 @@ Partial Class CategoryForm
         pbWishlist.BackColor = SystemColors.Info
         pbWishlist.BackgroundImage = CType(resources.GetObject("pbWishlist.BackgroundImage"), Image)
         pbWishlist.BackgroundImageLayout = ImageLayout.Stretch
-        pbWishlist.Location = New Point(12, 321)
+        pbWishlist.Location = New Point(14, 428)
+        pbWishlist.Margin = New Padding(3, 4, 3, 4)
         pbWishlist.Name = "pbWishlist"
-        pbWishlist.Size = New Size(28, 28)
+        pbWishlist.Size = New Size(32, 37)
         pbWishlist.TabIndex = 30
         pbWishlist.TabStop = False
         ' 
@@ -121,9 +124,9 @@ Partial Class CategoryForm
         lblWishlist.BackColor = SystemColors.Info
         lblWishlist.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblWishlist.ImageAlign = ContentAlignment.TopRight
-        lblWishlist.Location = New Point(46, 329)
+        lblWishlist.Location = New Point(53, 439)
         lblWishlist.Name = "lblWishlist"
-        lblWishlist.Size = New Size(68, 18)
+        lblWishlist.Size = New Size(81, 24)
         lblWishlist.TabIndex = 31
         lblWishlist.Text = "Wishlist"
         ' 
@@ -134,9 +137,9 @@ Partial Class CategoryForm
         Label1.Font = New Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label1.ForeColor = SystemColors.ControlText
         Label1.ImageAlign = ContentAlignment.TopRight
-        Label1.Location = New Point(12, 25)
+        Label1.Location = New Point(14, 33)
         Label1.Name = "Label1"
-        Label1.Size = New Size(144, 31)
+        Label1.Size = New Size(177, 39)
         Label1.TabIndex = 6
         Label1.Text = "ReadNest"
         ' 
@@ -146,9 +149,9 @@ Partial Class CategoryForm
         lblMenu.BackColor = SystemColors.Info
         lblMenu.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblMenu.ImageAlign = ContentAlignment.TopRight
-        lblMenu.Location = New Point(12, 85)
+        lblMenu.Location = New Point(14, 113)
         lblMenu.Name = "lblMenu"
-        lblMenu.Size = New Size(49, 18)
+        lblMenu.Size = New Size(63, 24)
         lblMenu.TabIndex = 13
         lblMenu.Text = "Menu"
         ' 
@@ -157,9 +160,10 @@ Partial Class CategoryForm
         pbDiscover.BackColor = SystemColors.Info
         pbDiscover.BackgroundImage = CType(resources.GetObject("pbDiscover.BackgroundImage"), Image)
         pbDiscover.BackgroundImageLayout = ImageLayout.Stretch
-        pbDiscover.Location = New Point(12, 114)
+        pbDiscover.Location = New Point(14, 152)
+        pbDiscover.Margin = New Padding(3, 4, 3, 4)
         pbDiscover.Name = "pbDiscover"
-        pbDiscover.Size = New Size(28, 28)
+        pbDiscover.Size = New Size(32, 37)
         pbDiscover.TabIndex = 20
         pbDiscover.TabStop = False
         ' 
@@ -169,9 +173,9 @@ Partial Class CategoryForm
         lblDiscover.BackColor = SystemColors.Info
         lblDiscover.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblDiscover.ImageAlign = ContentAlignment.TopRight
-        lblDiscover.Location = New Point(46, 122)
+        lblDiscover.Location = New Point(53, 163)
         lblDiscover.Name = "lblDiscover"
-        lblDiscover.Size = New Size(75, 18)
+        lblDiscover.Size = New Size(91, 24)
         lblDiscover.TabIndex = 21
         lblDiscover.Text = "Discover"
         ' 
@@ -180,9 +184,10 @@ Partial Class CategoryForm
         pbCategory.BackColor = SystemColors.Info
         pbCategory.BackgroundImage = CType(resources.GetObject("pbCategory.BackgroundImage"), Image)
         pbCategory.BackgroundImageLayout = ImageLayout.Stretch
-        pbCategory.Location = New Point(12, 148)
+        pbCategory.Location = New Point(14, 197)
+        pbCategory.Margin = New Padding(3, 4, 3, 4)
         pbCategory.Name = "pbCategory"
-        pbCategory.Size = New Size(28, 28)
+        pbCategory.Size = New Size(32, 37)
         pbCategory.TabIndex = 2
         pbCategory.TabStop = False
         ' 
@@ -192,9 +197,9 @@ Partial Class CategoryForm
         lblCategory.BackColor = SystemColors.Info
         lblCategory.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblCategory.ImageAlign = ContentAlignment.TopRight
-        lblCategory.Location = New Point(46, 156)
+        lblCategory.Location = New Point(53, 208)
         lblCategory.Name = "lblCategory"
-        lblCategory.Size = New Size(76, 18)
+        lblCategory.Size = New Size(93, 24)
         lblCategory.TabIndex = 7
         lblCategory.Text = "Category"
         ' 
@@ -203,9 +208,10 @@ Partial Class CategoryForm
         pbNotes.BackColor = SystemColors.Info
         pbNotes.BackgroundImage = CType(resources.GetObject("pbNotes.BackgroundImage"), Image)
         pbNotes.BackgroundImageLayout = ImageLayout.Stretch
-        pbNotes.Location = New Point(12, 182)
+        pbNotes.Location = New Point(14, 243)
+        pbNotes.Margin = New Padding(3, 4, 3, 4)
         pbNotes.Name = "pbNotes"
-        pbNotes.Size = New Size(28, 28)
+        pbNotes.Size = New Size(32, 37)
         pbNotes.TabIndex = 3
         pbNotes.TabStop = False
         ' 
@@ -215,9 +221,9 @@ Partial Class CategoryForm
         lblNotes.BackColor = SystemColors.Info
         lblNotes.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblNotes.ImageAlign = ContentAlignment.TopRight
-        lblNotes.Location = New Point(46, 191)
+        lblNotes.Location = New Point(53, 255)
         lblNotes.Name = "lblNotes"
-        lblNotes.Size = New Size(80, 18)
+        lblNotes.Size = New Size(97, 24)
         lblNotes.TabIndex = 8
         lblNotes.Text = "My Notes"
         ' 
@@ -226,9 +232,10 @@ Partial Class CategoryForm
         pbFavorite.BackColor = SystemColors.Info
         pbFavorite.BackgroundImage = CType(resources.GetObject("pbFavorite.BackgroundImage"), Image)
         pbFavorite.BackgroundImageLayout = ImageLayout.Stretch
-        pbFavorite.Location = New Point(12, 218)
+        pbFavorite.Location = New Point(14, 291)
+        pbFavorite.Margin = New Padding(3, 4, 3, 4)
         pbFavorite.Name = "pbFavorite"
-        pbFavorite.Size = New Size(28, 28)
+        pbFavorite.Size = New Size(32, 37)
         pbFavorite.TabIndex = 5
         pbFavorite.TabStop = False
         ' 
@@ -238,9 +245,9 @@ Partial Class CategoryForm
         lblFavorite.BackColor = SystemColors.Info
         lblFavorite.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblFavorite.ImageAlign = ContentAlignment.TopRight
-        lblFavorite.Location = New Point(46, 227)
+        lblFavorite.Location = New Point(53, 303)
         lblFavorite.Name = "lblFavorite"
-        lblFavorite.Size = New Size(69, 18)
+        lblFavorite.Size = New Size(85, 24)
         lblFavorite.TabIndex = 9
         lblFavorite.Text = "Favorite"
         ' 
@@ -249,9 +256,10 @@ Partial Class CategoryForm
         pbBB.BackColor = SystemColors.Info
         pbBB.BackgroundImage = CType(resources.GetObject("pbBB.BackgroundImage"), Image)
         pbBB.BackgroundImageLayout = ImageLayout.Stretch
-        pbBB.Location = New Point(12, 252)
+        pbBB.Location = New Point(14, 336)
+        pbBB.Margin = New Padding(3, 4, 3, 4)
         pbBB.Name = "pbBB"
-        pbBB.Size = New Size(28, 28)
+        pbBB.Size = New Size(32, 37)
         pbBB.TabIndex = 29
         pbBB.TabStop = False
         ' 
@@ -261,9 +269,9 @@ Partial Class CategoryForm
         lblBB.BackColor = SystemColors.Info
         lblBB.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblBB.ImageAlign = ContentAlignment.TopRight
-        lblBB.Location = New Point(46, 260)
+        lblBB.Location = New Point(53, 347)
         lblBB.Name = "lblBB"
-        lblBB.Size = New Size(130, 18)
+        lblBB.Size = New Size(158, 24)
         lblBB.TabIndex = 28
         lblBB.Text = "Book Borrowing"
         ' 
@@ -272,9 +280,10 @@ Partial Class CategoryForm
         pbStatistic.BackColor = SystemColors.Info
         pbStatistic.BackgroundImage = CType(resources.GetObject("pbStatistic.BackgroundImage"), Image)
         pbStatistic.BackgroundImageLayout = ImageLayout.Stretch
-        pbStatistic.Location = New Point(12, 286)
+        pbStatistic.Location = New Point(14, 381)
+        pbStatistic.Margin = New Padding(3, 4, 3, 4)
         pbStatistic.Name = "pbStatistic"
-        pbStatistic.Size = New Size(28, 28)
+        pbStatistic.Size = New Size(32, 37)
         pbStatistic.TabIndex = 23
         pbStatistic.TabStop = False
         ' 
@@ -284,9 +293,9 @@ Partial Class CategoryForm
         lblstatistic.BackColor = SystemColors.Info
         lblstatistic.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblstatistic.ImageAlign = ContentAlignment.TopRight
-        lblstatistic.Location = New Point(46, 294)
+        lblstatistic.Location = New Point(53, 392)
         lblstatistic.Name = "lblstatistic"
-        lblstatistic.Size = New Size(96, 18)
+        lblstatistic.Size = New Size(113, 24)
         lblstatistic.TabIndex = 24
         lblstatistic.Text = "My Statistic"
         ' 
@@ -296,8 +305,9 @@ Partial Class CategoryForm
         PictureBox2.BorderStyle = BorderStyle.FixedSingle
         PictureBox2.Dock = DockStyle.Fill
         PictureBox2.Location = New Point(0, 0)
+        PictureBox2.Margin = New Padding(3, 4, 3, 4)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(186, 486)
+        PictureBox2.Size = New Size(213, 648)
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
         ' 
@@ -316,8 +326,9 @@ Partial Class CategoryForm
         Panel1.Controls.Add(cbProfile)
         Panel1.Dock = DockStyle.Fill
         Panel1.Location = New Point(0, 0)
+        Panel1.Margin = New Padding(3, 4, 3, 4)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(744, 486)
+        Panel1.Size = New Size(849, 648)
         Panel1.TabIndex = 0
         ' 
         ' btnHorror
@@ -326,9 +337,10 @@ Partial Class CategoryForm
         btnHorror.BackgroundImage = CType(resources.GetObject("btnHorror.BackgroundImage"), Image)
         btnHorror.BackgroundImageLayout = ImageLayout.Center
         btnHorror.Font = New Font("Segoe UI", 11F)
-        btnHorror.Location = New Point(494, 276)
+        btnHorror.Location = New Point(565, 368)
+        btnHorror.Margin = New Padding(3, 4, 3, 4)
         btnHorror.Name = "btnHorror"
-        btnHorror.Size = New Size(140, 171)
+        btnHorror.Size = New Size(160, 228)
         btnHorror.TabIndex = 51
         btnHorror.Text = "Horror"
         btnHorror.TextAlign = ContentAlignment.BottomCenter
@@ -340,9 +352,10 @@ Partial Class CategoryForm
         BtnRomance.BackgroundImage = CType(resources.GetObject("BtnRomance.BackgroundImage"), Image)
         BtnRomance.BackgroundImageLayout = ImageLayout.Center
         BtnRomance.Font = New Font("Segoe UI", 11F)
-        BtnRomance.Location = New Point(494, 85)
+        BtnRomance.Location = New Point(565, 113)
+        BtnRomance.Margin = New Padding(3, 4, 3, 4)
         BtnRomance.Name = "BtnRomance"
-        BtnRomance.Size = New Size(140, 171)
+        BtnRomance.Size = New Size(160, 228)
         BtnRomance.TabIndex = 50
         BtnRomance.Text = "Romance"
         BtnRomance.TextAlign = ContentAlignment.BottomCenter
@@ -354,9 +367,10 @@ Partial Class CategoryForm
         btnComic.BackgroundImage = CType(resources.GetObject("btnComic.BackgroundImage"), Image)
         btnComic.BackgroundImageLayout = ImageLayout.Center
         btnComic.Font = New Font("Segoe UI", 11F)
-        btnComic.Location = New Point(348, 276)
+        btnComic.Location = New Point(398, 368)
+        btnComic.Margin = New Padding(3, 4, 3, 4)
         btnComic.Name = "btnComic"
-        btnComic.Size = New Size(140, 171)
+        btnComic.Size = New Size(160, 228)
         btnComic.TabIndex = 49
         btnComic.Text = "Comic"
         btnComic.TextAlign = ContentAlignment.BottomCenter
@@ -368,9 +382,10 @@ Partial Class CategoryForm
         btnNovel.BackgroundImage = CType(resources.GetObject("btnNovel.BackgroundImage"), Image)
         btnNovel.BackgroundImageLayout = ImageLayout.Center
         btnNovel.Font = New Font("Segoe UI", 11F)
-        btnNovel.Location = New Point(52, 276)
+        btnNovel.Location = New Point(59, 368)
+        btnNovel.Margin = New Padding(3, 4, 3, 4)
         btnNovel.Name = "btnNovel"
-        btnNovel.Size = New Size(140, 171)
+        btnNovel.Size = New Size(160, 228)
         btnNovel.TabIndex = 48
         btnNovel.Text = "Novel"
         btnNovel.TextAlign = ContentAlignment.BottomCenter
@@ -382,9 +397,10 @@ Partial Class CategoryForm
         btnHistory.BackgroundImage = CType(resources.GetObject("btnHistory.BackgroundImage"), Image)
         btnHistory.BackgroundImageLayout = ImageLayout.Center
         btnHistory.Font = New Font("Segoe UI", 11F)
-        btnHistory.Location = New Point(202, 276)
+        btnHistory.Location = New Point(231, 368)
+        btnHistory.Margin = New Padding(3, 4, 3, 4)
         btnHistory.Name = "btnHistory"
-        btnHistory.Size = New Size(140, 171)
+        btnHistory.Size = New Size(160, 228)
         btnHistory.TabIndex = 47
         btnHistory.Text = "History"
         btnHistory.TextAlign = ContentAlignment.BottomCenter
@@ -396,9 +412,10 @@ Partial Class CategoryForm
         btnTechno.BackgroundImage = CType(resources.GetObject("btnTechno.BackgroundImage"), Image)
         btnTechno.BackgroundImageLayout = ImageLayout.Center
         btnTechno.Font = New Font("Segoe UI", 11F)
-        btnTechno.Location = New Point(348, 85)
+        btnTechno.Location = New Point(398, 113)
+        btnTechno.Margin = New Padding(3, 4, 3, 4)
         btnTechno.Name = "btnTechno"
-        btnTechno.Size = New Size(140, 171)
+        btnTechno.Size = New Size(160, 228)
         btnTechno.TabIndex = 46
         btnTechno.Text = "Techno"
         btnTechno.TextAlign = ContentAlignment.BottomCenter
@@ -410,9 +427,10 @@ Partial Class CategoryForm
         btnAcademy.BackgroundImage = CType(resources.GetObject("btnAcademy.BackgroundImage"), Image)
         btnAcademy.BackgroundImageLayout = ImageLayout.Center
         btnAcademy.Font = New Font("Segoe UI", 11F)
-        btnAcademy.Location = New Point(202, 85)
+        btnAcademy.Location = New Point(231, 113)
+        btnAcademy.Margin = New Padding(3, 4, 3, 4)
         btnAcademy.Name = "btnAcademy"
-        btnAcademy.Size = New Size(140, 171)
+        btnAcademy.Size = New Size(160, 228)
         btnAcademy.TabIndex = 45
         btnAcademy.Text = "Academy"
         btnAcademy.TextAlign = ContentAlignment.BottomCenter
@@ -424,9 +442,10 @@ Partial Class CategoryForm
         btnBiography.BackgroundImage = CType(resources.GetObject("btnBiography.BackgroundImage"), Image)
         btnBiography.BackgroundImageLayout = ImageLayout.Center
         btnBiography.Font = New Font("Segoe UI", 11F)
-        btnBiography.Location = New Point(52, 85)
+        btnBiography.Location = New Point(59, 113)
+        btnBiography.Margin = New Padding(3, 4, 3, 4)
         btnBiography.Name = "btnBiography"
-        btnBiography.Size = New Size(140, 171)
+        btnBiography.Size = New Size(160, 228)
         btnBiography.TabIndex = 44
         btnBiography.Text = "Biography"
         btnBiography.TextAlign = ContentAlignment.BottomCenter
@@ -437,9 +456,10 @@ Partial Class CategoryForm
         pbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
         pbProfile.BackgroundImageLayout = ImageLayout.Stretch
-        pbProfile.Location = New Point(583, 20)
+        pbProfile.Location = New Point(665, 27)
+        pbProfile.Margin = New Padding(3, 4, 3, 4)
         pbProfile.Name = "pbProfile"
-        pbProfile.Size = New Size(28, 28)
+        pbProfile.Size = New Size(32, 37)
         pbProfile.TabIndex = 37
         pbProfile.TabStop = False
         ' 
@@ -450,9 +470,9 @@ Partial Class CategoryForm
         Label5.Font = New Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold)
         Label5.ForeColor = SystemColors.ControlText
         Label5.ImageAlign = ContentAlignment.TopRight
-        Label5.Location = New Point(52, 45)
+        Label5.Location = New Point(59, 60)
         Label5.Name = "Label5"
-        Label5.Size = New Size(211, 26)
+        Label5.Size = New Size(266, 32)
         Label5.TabIndex = 41
         Label5.Text = "Your Category List"
         ' 
@@ -463,22 +483,24 @@ Partial Class CategoryForm
         cbProfile.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         cbProfile.FormattingEnabled = True
         cbProfile.Items.AddRange(New Object() {"View Profile", "Logout"})
-        cbProfile.Location = New Point(617, 21)
+        cbProfile.Location = New Point(704, 28)
+        cbProfile.Margin = New Padding(3, 4, 3, 4)
         cbProfile.Name = "cbProfile"
-        cbProfile.Size = New Size(97, 26)
+        cbProfile.Size = New Size(110, 32)
         cbProfile.TabIndex = 43
         cbProfile.Text = "Profile"
         ' 
         ' CategoryForm
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
-        ClientSize = New Size(934, 486)
+        ClientSize = New Size(1067, 648)
         Controls.Add(SplitContainer1)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "CategoryForm"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Form6"
+        Text = "ReadNest, Your Personal Library"
         SplitContainer1.Panel1.ResumeLayout(False)
         SplitContainer1.Panel1.PerformLayout()
         SplitContainer1.Panel2.ResumeLayout(False)

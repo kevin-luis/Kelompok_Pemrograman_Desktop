@@ -54,11 +54,10 @@ Partial Class CreateAccountForm
         mainTableLayoutPanel.Controls.Add(Panel1, 1, 0)
         mainTableLayoutPanel.Dock = DockStyle.Fill
         mainTableLayoutPanel.Location = New Point(0, 0)
-        mainTableLayoutPanel.Margin = New Padding(3, 2, 3, 2)
         mainTableLayoutPanel.Name = "mainTableLayoutPanel"
         mainTableLayoutPanel.RowCount = 1
         mainTableLayoutPanel.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
-        mainTableLayoutPanel.Size = New Size(934, 486)
+        mainTableLayoutPanel.Size = New Size(1067, 648)
         mainTableLayoutPanel.TabIndex = 0
         ' 
         ' leftPanel
@@ -67,10 +66,9 @@ Partial Class CreateAccountForm
         leftPanel.Controls.Add(PictureBox1)
         leftPanel.Controls.Add(Label2)
         leftPanel.Dock = DockStyle.Fill
-        leftPanel.Location = New Point(3, 2)
-        leftPanel.Margin = New Padding(3, 2, 3, 2)
+        leftPanel.Location = New Point(3, 3)
         leftPanel.Name = "leftPanel"
-        leftPanel.Size = New Size(461, 482)
+        leftPanel.Size = New Size(527, 642)
         leftPanel.TabIndex = 0
         ' 
         ' PictureBox1
@@ -79,8 +77,9 @@ Partial Class CreateAccountForm
         PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox1.Dock = DockStyle.Fill
         PictureBox1.Location = New Point(0, 0)
+        PictureBox1.Margin = New Padding(3, 4, 3, 4)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(461, 482)
+        PictureBox1.Size = New Size(527, 642)
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
         ' 
@@ -90,9 +89,9 @@ Partial Class CreateAccountForm
         Label2.BackColor = SystemColors.Info
         Label2.Font = New Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold)
         Label2.ForeColor = SystemColors.ControlText
-        Label2.Location = New Point(12, 34)
+        Label2.Location = New Point(14, 45)
         Label2.Name = "Label2"
-        Label2.Size = New Size(423, 31)
+        Label2.Size = New Size(520, 39)
         Label2.TabIndex = 1
         Label2.Text = "Create Your ReadNest Account"
         ' 
@@ -110,9 +109,10 @@ Partial Class CreateAccountForm
         Panel1.Controls.Add(Label4)
         Panel1.Controls.Add(txtCreateUsername)
         Panel1.Dock = DockStyle.Fill
-        Panel1.Location = New Point(470, 3)
+        Panel1.Location = New Point(536, 4)
+        Panel1.Margin = New Padding(3, 4, 3, 4)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(461, 480)
+        Panel1.Size = New Size(528, 640)
         Panel1.TabIndex = 1
         ' 
         ' btnCreateAccount
@@ -120,9 +120,10 @@ Partial Class CreateAccountForm
         btnCreateAccount.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnCreateAccount.AutoSize = True
         btnCreateAccount.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        btnCreateAccount.Location = New Point(377, 328)
+        btnCreateAccount.Location = New Point(425, 437)
+        btnCreateAccount.Margin = New Padding(3, 4, 3, 4)
         btnCreateAccount.Name = "btnCreateAccount"
-        btnCreateAccount.Size = New Size(75, 30)
+        btnCreateAccount.Size = New Size(93, 45)
         btnCreateAccount.TabIndex = 0
         btnCreateAccount.Text = "Create"
         btnCreateAccount.UseVisualStyleBackColor = True
@@ -131,28 +132,30 @@ Partial Class CreateAccountForm
         ' 
         txtCreateEmail.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         txtCreateEmail.Font = New Font("Segoe UI", 11F)
-        txtCreateEmail.Location = New Point(160, 190)
+        txtCreateEmail.Location = New Point(183, 253)
+        txtCreateEmail.Margin = New Padding(3, 4, 3, 4)
         txtCreateEmail.Name = "txtCreateEmail"
         txtCreateEmail.PlaceholderText = "Enter your email here"
-        txtCreateEmail.Size = New Size(292, 27)
+        txtCreateEmail.Size = New Size(334, 32)
         txtCreateEmail.TabIndex = 1
         ' 
         ' Label7
         ' 
         Label7.AutoSize = True
         Label7.Font = New Font("Microsoft Sans Serif", 13.25F, FontStyle.Bold)
-        Label7.Location = New Point(71, 117)
+        Label7.Location = New Point(81, 156)
         Label7.Name = "Label7"
-        Label7.Size = New Size(206, 22)
+        Label7.Size = New Size(265, 29)
         Label7.TabIndex = 0
         Label7.Text = "Create Your Acccount"
         ' 
         ' chkPassword
         ' 
         chkPassword.AutoSize = True
-        chkPassword.Location = New Point(160, 289)
+        chkPassword.Location = New Point(183, 385)
+        chkPassword.Margin = New Padding(3, 4, 3, 4)
         chkPassword.Name = "chkPassword"
-        chkPassword.Size = New Size(108, 19)
+        chkPassword.Size = New Size(132, 24)
         chkPassword.TabIndex = 0
         chkPassword.Text = "Show Password"
         chkPassword.UseVisualStyleBackColor = True
@@ -161,9 +164,9 @@ Partial Class CreateAccountForm
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label1.Location = New Point(104, 194)
+        Label1.Location = New Point(119, 259)
         Label1.Name = "Label1"
-        Label1.Size = New Size(50, 18)
+        Label1.Size = New Size(62, 24)
         Label1.TabIndex = 0
         Label1.Text = "Email"
         ' 
@@ -171,10 +174,11 @@ Partial Class CreateAccountForm
         ' 
         txtConfirmPassword.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         txtConfirmPassword.Font = New Font("Segoe UI", 11F)
-        txtConfirmPassword.Location = New Point(160, 256)
+        txtConfirmPassword.Location = New Point(183, 341)
+        txtConfirmPassword.Margin = New Padding(3, 4, 3, 4)
         txtConfirmPassword.Name = "txtConfirmPassword"
         txtConfirmPassword.PlaceholderText = "Enter your confirm password here"
-        txtConfirmPassword.Size = New Size(292, 27)
+        txtConfirmPassword.Size = New Size(334, 32)
         txtConfirmPassword.TabIndex = 1
         txtConfirmPassword.UseSystemPasswordChar = True
         ' 
@@ -182,10 +186,11 @@ Partial Class CreateAccountForm
         ' 
         txtCreatePassword.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         txtCreatePassword.Font = New Font("Segoe UI", 11F)
-        txtCreatePassword.Location = New Point(160, 223)
+        txtCreatePassword.Location = New Point(183, 297)
+        txtCreatePassword.Margin = New Padding(3, 4, 3, 4)
         txtCreatePassword.Name = "txtCreatePassword"
         txtCreatePassword.PlaceholderText = "Enter your password here"
-        txtCreatePassword.Size = New Size(292, 27)
+        txtCreatePassword.Size = New Size(334, 32)
         txtCreatePassword.TabIndex = 1
         txtCreatePassword.UseSystemPasswordChar = True
         ' 
@@ -193,9 +198,9 @@ Partial Class CreateAccountForm
         ' 
         Label5.AutoSize = True
         Label5.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label5.Location = New Point(71, 227)
+        Label5.Location = New Point(81, 303)
         Label5.Name = "Label5"
-        Label5.Size = New Size(83, 18)
+        Label5.Size = New Size(100, 24)
         Label5.TabIndex = 0
         Label5.Text = "Password"
         ' 
@@ -203,9 +208,9 @@ Partial Class CreateAccountForm
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label3.Location = New Point(6, 261)
+        Label3.Location = New Point(7, 348)
         Label3.Name = "Label3"
-        Label3.Size = New Size(148, 18)
+        Label3.Size = New Size(178, 24)
         Label3.TabIndex = 0
         Label3.Text = "Confirm Password"
         ' 
@@ -213,9 +218,9 @@ Partial Class CreateAccountForm
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label4.Location = New Point(69, 161)
+        Label4.Location = New Point(79, 215)
         Label4.Name = "Label4"
-        Label4.Size = New Size(85, 18)
+        Label4.Size = New Size(105, 24)
         Label4.TabIndex = 0
         Label4.Text = "Username"
         ' 
@@ -223,24 +228,24 @@ Partial Class CreateAccountForm
         ' 
         txtCreateUsername.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         txtCreateUsername.Font = New Font("Segoe UI", 11F)
-        txtCreateUsername.Location = New Point(160, 157)
+        txtCreateUsername.Location = New Point(183, 209)
+        txtCreateUsername.Margin = New Padding(3, 4, 3, 4)
         txtCreateUsername.Name = "txtCreateUsername"
         txtCreateUsername.PlaceholderText = "Enter your username here"
-        txtCreateUsername.Size = New Size(292, 27)
+        txtCreateUsername.Size = New Size(334, 32)
         txtCreateUsername.TabIndex = 1
         ' 
         ' CreateAccountForm
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
-        ClientSize = New Size(934, 486)
+        ClientSize = New Size(1067, 648)
         Controls.Add(mainTableLayoutPanel)
-        Margin = New Padding(3, 2, 3, 2)
-        MinimumSize = New Size(702, 460)
+        MinimumSize = New Size(800, 598)
         Name = "CreateAccountForm"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Create Account"
+        Text = "ReadNest, Your Personal Library"
         mainTableLayoutPanel.ResumeLayout(False)
         leftPanel.ResumeLayout(False)
         leftPanel.PerformLayout()

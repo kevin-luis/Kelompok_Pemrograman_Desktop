@@ -78,9 +78,9 @@ Partial Class StatisticForm
         Label2.Font = New Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold)
         Label2.ForeColor = SystemColors.ControlText
         Label2.ImageAlign = ContentAlignment.TopRight
-        Label2.Location = New Point(14, 21)
+        Label2.Location = New Point(16, 28)
         Label2.Name = "Label2"
-        Label2.Size = New Size(159, 26)
+        Label2.Size = New Size(201, 32)
         Label2.TabIndex = 49
         Label2.Text = "Book Statistic"
         ' 
@@ -91,9 +91,9 @@ Partial Class StatisticForm
         Label5.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
         Label5.ForeColor = SystemColors.ControlText
         Label5.ImageAlign = ContentAlignment.TopRight
-        Label5.Location = New Point(85, 88)
+        Label5.Location = New Point(97, 117)
         Label5.Name = "Label5"
-        Label5.Size = New Size(170, 22)
+        Label5.Size = New Size(200, 26)
         Label5.TabIndex = 50
         Label5.Text = "Total Books Read"
         ' 
@@ -104,9 +104,9 @@ Partial Class StatisticForm
         Label6.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
         Label6.ForeColor = SystemColors.ControlText
         Label6.ImageAlign = ContentAlignment.TopRight
-        Label6.Location = New Point(54, 150)
+        Label6.Location = New Point(62, 200)
         Label6.Name = "Label6"
-        Label6.Size = New Size(198, 22)
+        Label6.Size = New Size(233, 26)
         Label6.TabIndex = 51
         Label6.Text = "Total Borrowed Book"
         ' 
@@ -117,31 +117,37 @@ Partial Class StatisticForm
         Label7.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
         Label7.ForeColor = SystemColors.ControlText
         Label7.ImageAlign = ContentAlignment.TopRight
-        Label7.Location = New Point(66, 117)
+        Label7.Location = New Point(75, 156)
         Label7.Name = "Label7"
-        Label7.Size = New Size(186, 22)
+        Label7.Size = New Size(218, 26)
         Label7.TabIndex = 52
         Label7.Text = "Total Reading Time"
         ' 
         ' txtTotalBooksRead
         ' 
-        txtTotalBooksRead.Location = New Point(266, 86)
+        txtTotalBooksRead.Location = New Point(304, 115)
+        txtTotalBooksRead.Margin = New Padding(3, 4, 3, 4)
         txtTotalBooksRead.Name = "txtTotalBooksRead"
-        txtTotalBooksRead.Size = New Size(100, 23)
+        txtTotalBooksRead.ReadOnly = True
+        txtTotalBooksRead.Size = New Size(114, 27)
         txtTotalBooksRead.TabIndex = 53
         ' 
         ' txtTotalReadingTime
         ' 
-        txtTotalReadingTime.Location = New Point(266, 115)
+        txtTotalReadingTime.Location = New Point(304, 153)
+        txtTotalReadingTime.Margin = New Padding(3, 4, 3, 4)
         txtTotalReadingTime.Name = "txtTotalReadingTime"
-        txtTotalReadingTime.Size = New Size(100, 23)
+        txtTotalReadingTime.ReadOnly = True
+        txtTotalReadingTime.Size = New Size(114, 27)
         txtTotalReadingTime.TabIndex = 54
         ' 
         ' txtTotalFavoriteBooks
         ' 
-        txtTotalFavoriteBooks.Location = New Point(266, 182)
+        txtTotalFavoriteBooks.Location = New Point(304, 243)
+        txtTotalFavoriteBooks.Margin = New Padding(3, 4, 3, 4)
         txtTotalFavoriteBooks.Name = "txtTotalFavoriteBooks"
-        txtTotalFavoriteBooks.Size = New Size(100, 23)
+        txtTotalFavoriteBooks.ReadOnly = True
+        txtTotalFavoriteBooks.Size = New Size(114, 27)
         txtTotalFavoriteBooks.TabIndex = 55
         ' 
         ' pbBB
@@ -149,9 +155,10 @@ Partial Class StatisticForm
         pbBB.BackColor = SystemColors.Info
         pbBB.BackgroundImage = CType(resources.GetObject("pbBB.BackgroundImage"), Image)
         pbBB.BackgroundImageLayout = ImageLayout.Stretch
-        pbBB.Location = New Point(12, 252)
+        pbBB.Location = New Point(14, 336)
+        pbBB.Margin = New Padding(3, 4, 3, 4)
         pbBB.Name = "pbBB"
-        pbBB.Size = New Size(28, 28)
+        pbBB.Size = New Size(32, 37)
         pbBB.TabIndex = 72
         pbBB.TabStop = False
         ' 
@@ -161,9 +168,9 @@ Partial Class StatisticForm
         lblBB.BackColor = SystemColors.Info
         lblBB.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblBB.ImageAlign = ContentAlignment.TopRight
-        lblBB.Location = New Point(46, 260)
+        lblBB.Location = New Point(53, 347)
         lblBB.Name = "lblBB"
-        lblBB.Size = New Size(130, 18)
+        lblBB.Size = New Size(158, 24)
         lblBB.TabIndex = 71
         lblBB.Text = "Book Borrowing"
         ' 
@@ -173,9 +180,9 @@ Partial Class StatisticForm
         lblstatistic.BackColor = SystemColors.Info
         lblstatistic.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblstatistic.ImageAlign = ContentAlignment.TopRight
-        lblstatistic.Location = New Point(46, 294)
+        lblstatistic.Location = New Point(53, 392)
         lblstatistic.Name = "lblstatistic"
-        lblstatistic.Size = New Size(96, 18)
+        lblstatistic.Size = New Size(113, 24)
         lblstatistic.TabIndex = 70
         lblstatistic.Text = "My Statistic"
         ' 
@@ -184,9 +191,10 @@ Partial Class StatisticForm
         pbStatistic.BackColor = SystemColors.Info
         pbStatistic.BackgroundImage = CType(resources.GetObject("pbStatistic.BackgroundImage"), Image)
         pbStatistic.BackgroundImageLayout = ImageLayout.Stretch
-        pbStatistic.Location = New Point(12, 286)
+        pbStatistic.Location = New Point(14, 381)
+        pbStatistic.Margin = New Padding(3, 4, 3, 4)
         pbStatistic.Name = "pbStatistic"
-        pbStatistic.Size = New Size(28, 28)
+        pbStatistic.Size = New Size(32, 37)
         pbStatistic.TabIndex = 69
         pbStatistic.TabStop = False
         ' 
@@ -196,9 +204,9 @@ Partial Class StatisticForm
         lblDiscover.BackColor = SystemColors.Info
         lblDiscover.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblDiscover.ImageAlign = ContentAlignment.TopRight
-        lblDiscover.Location = New Point(46, 122)
+        lblDiscover.Location = New Point(53, 163)
         lblDiscover.Name = "lblDiscover"
-        lblDiscover.Size = New Size(75, 18)
+        lblDiscover.Size = New Size(91, 24)
         lblDiscover.TabIndex = 68
         lblDiscover.Text = "Discover"
         ' 
@@ -207,9 +215,10 @@ Partial Class StatisticForm
         pbDiscover.BackColor = SystemColors.Info
         pbDiscover.BackgroundImage = CType(resources.GetObject("pbDiscover.BackgroundImage"), Image)
         pbDiscover.BackgroundImageLayout = ImageLayout.Stretch
-        pbDiscover.Location = New Point(12, 114)
+        pbDiscover.Location = New Point(14, 152)
+        pbDiscover.Margin = New Padding(3, 4, 3, 4)
         pbDiscover.Name = "pbDiscover"
-        pbDiscover.Size = New Size(28, 28)
+        pbDiscover.Size = New Size(32, 37)
         pbDiscover.TabIndex = 67
         pbDiscover.TabStop = False
         ' 
@@ -219,9 +228,9 @@ Partial Class StatisticForm
         lblMenu.BackColor = SystemColors.Info
         lblMenu.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblMenu.ImageAlign = ContentAlignment.TopRight
-        lblMenu.Location = New Point(12, 85)
+        lblMenu.Location = New Point(14, 113)
         lblMenu.Name = "lblMenu"
-        lblMenu.Size = New Size(49, 18)
+        lblMenu.Size = New Size(63, 24)
         lblMenu.TabIndex = 66
         lblMenu.Text = "Menu"
         ' 
@@ -231,9 +240,9 @@ Partial Class StatisticForm
         lblFavorite.BackColor = SystemColors.Info
         lblFavorite.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblFavorite.ImageAlign = ContentAlignment.TopRight
-        lblFavorite.Location = New Point(46, 227)
+        lblFavorite.Location = New Point(53, 303)
         lblFavorite.Name = "lblFavorite"
-        lblFavorite.Size = New Size(69, 18)
+        lblFavorite.Size = New Size(85, 24)
         lblFavorite.TabIndex = 65
         lblFavorite.Text = "Favorite"
         ' 
@@ -243,9 +252,9 @@ Partial Class StatisticForm
         lblNotes.BackColor = SystemColors.Info
         lblNotes.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblNotes.ImageAlign = ContentAlignment.TopRight
-        lblNotes.Location = New Point(46, 191)
+        lblNotes.Location = New Point(53, 255)
         lblNotes.Name = "lblNotes"
-        lblNotes.Size = New Size(80, 18)
+        lblNotes.Size = New Size(97, 24)
         lblNotes.TabIndex = 64
         lblNotes.Text = "My Notes"
         ' 
@@ -255,9 +264,9 @@ Partial Class StatisticForm
         lblCategory.BackColor = SystemColors.Info
         lblCategory.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblCategory.ImageAlign = ContentAlignment.TopRight
-        lblCategory.Location = New Point(46, 156)
+        lblCategory.Location = New Point(53, 208)
         lblCategory.Name = "lblCategory"
-        lblCategory.Size = New Size(76, 18)
+        lblCategory.Size = New Size(93, 24)
         lblCategory.TabIndex = 63
         lblCategory.Text = "Category"
         ' 
@@ -268,9 +277,9 @@ Partial Class StatisticForm
         Label1.Font = New Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label1.ForeColor = SystemColors.ControlText
         Label1.ImageAlign = ContentAlignment.TopRight
-        Label1.Location = New Point(12, 25)
+        Label1.Location = New Point(14, 33)
         Label1.Name = "Label1"
-        Label1.Size = New Size(144, 31)
+        Label1.Size = New Size(177, 39)
         Label1.TabIndex = 62
         Label1.Text = "ReadNest"
         ' 
@@ -279,9 +288,10 @@ Partial Class StatisticForm
         pbFavorite.BackColor = SystemColors.Info
         pbFavorite.BackgroundImage = CType(resources.GetObject("pbFavorite.BackgroundImage"), Image)
         pbFavorite.BackgroundImageLayout = ImageLayout.Stretch
-        pbFavorite.Location = New Point(12, 218)
+        pbFavorite.Location = New Point(14, 291)
+        pbFavorite.Margin = New Padding(3, 4, 3, 4)
         pbFavorite.Name = "pbFavorite"
-        pbFavorite.Size = New Size(28, 28)
+        pbFavorite.Size = New Size(32, 37)
         pbFavorite.TabIndex = 61
         pbFavorite.TabStop = False
         ' 
@@ -290,9 +300,10 @@ Partial Class StatisticForm
         pbNotes.BackColor = SystemColors.Info
         pbNotes.BackgroundImage = CType(resources.GetObject("pbNotes.BackgroundImage"), Image)
         pbNotes.BackgroundImageLayout = ImageLayout.Stretch
-        pbNotes.Location = New Point(12, 182)
+        pbNotes.Location = New Point(14, 243)
+        pbNotes.Margin = New Padding(3, 4, 3, 4)
         pbNotes.Name = "pbNotes"
-        pbNotes.Size = New Size(28, 28)
+        pbNotes.Size = New Size(32, 37)
         pbNotes.TabIndex = 60
         pbNotes.TabStop = False
         ' 
@@ -301,9 +312,10 @@ Partial Class StatisticForm
         pbCategory.BackColor = SystemColors.Info
         pbCategory.BackgroundImage = CType(resources.GetObject("pbCategory.BackgroundImage"), Image)
         pbCategory.BackgroundImageLayout = ImageLayout.Stretch
-        pbCategory.Location = New Point(12, 148)
+        pbCategory.Location = New Point(14, 197)
+        pbCategory.Margin = New Padding(3, 4, 3, 4)
         pbCategory.Name = "pbCategory"
-        pbCategory.Size = New Size(28, 28)
+        pbCategory.Size = New Size(32, 37)
         pbCategory.TabIndex = 59
         pbCategory.TabStop = False
         ' 
@@ -312,6 +324,7 @@ Partial Class StatisticForm
         SplitContainer1.Dock = DockStyle.Fill
         SplitContainer1.FixedPanel = FixedPanel.Panel1
         SplitContainer1.Location = New Point(0, 0)
+        SplitContainer1.Margin = New Padding(3, 4, 3, 4)
         SplitContainer1.Name = "SplitContainer1"
         ' 
         ' SplitContainer1.Panel1
@@ -325,8 +338,9 @@ Partial Class StatisticForm
         SplitContainer1.Panel2.Controls.Add(cbProfile)
         SplitContainer1.Panel2.Controls.Add(Panel1)
         SplitContainer1.Panel2.Controls.Add(pbProfile)
-        SplitContainer1.Size = New Size(934, 486)
-        SplitContainer1.SplitterDistance = 186
+        SplitContainer1.Size = New Size(1067, 648)
+        SplitContainer1.SplitterDistance = 213
+        SplitContainer1.SplitterWidth = 5
         SplitContainer1.TabIndex = 73
         ' 
         ' lblWishlist
@@ -335,9 +349,9 @@ Partial Class StatisticForm
         lblWishlist.BackColor = SystemColors.Info
         lblWishlist.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblWishlist.ImageAlign = ContentAlignment.TopRight
-        lblWishlist.Location = New Point(46, 330)
+        lblWishlist.Location = New Point(53, 440)
         lblWishlist.Name = "lblWishlist"
-        lblWishlist.Size = New Size(68, 18)
+        lblWishlist.Size = New Size(81, 24)
         lblWishlist.TabIndex = 75
         lblWishlist.Text = "Wishlist"
         ' 
@@ -346,9 +360,10 @@ Partial Class StatisticForm
         pbWishlist.BackColor = SystemColors.Info
         pbWishlist.BackgroundImage = CType(resources.GetObject("pbWishlist.BackgroundImage"), Image)
         pbWishlist.BackgroundImageLayout = ImageLayout.Stretch
-        pbWishlist.Location = New Point(12, 322)
+        pbWishlist.Location = New Point(14, 429)
+        pbWishlist.Margin = New Padding(3, 4, 3, 4)
         pbWishlist.Name = "pbWishlist"
-        pbWishlist.Size = New Size(28, 28)
+        pbWishlist.Size = New Size(32, 37)
         pbWishlist.TabIndex = 74
         pbWishlist.TabStop = False
         ' 
@@ -358,8 +373,9 @@ Partial Class StatisticForm
         PictureBox2.BorderStyle = BorderStyle.FixedSingle
         PictureBox2.Dock = DockStyle.Fill
         PictureBox2.Location = New Point(0, 0)
+        PictureBox2.Margin = New Padding(3, 4, 3, 4)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(186, 486)
+        PictureBox2.Size = New Size(213, 648)
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
         ' 
@@ -371,9 +387,10 @@ Partial Class StatisticForm
         cbProfile.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         cbProfile.FormattingEnabled = True
         cbProfile.Items.AddRange(New Object() {"Profile", "View Profile", "Logout"})
-        cbProfile.Location = New Point(618, 25)
+        cbProfile.Location = New Point(705, 33)
+        cbProfile.Margin = New Padding(3, 4, 3, 4)
         cbProfile.Name = "cbProfile"
-        cbProfile.Size = New Size(97, 26)
+        cbProfile.Size = New Size(110, 32)
         cbProfile.TabIndex = 74
         ' 
         ' Panel1
@@ -390,9 +407,10 @@ Partial Class StatisticForm
         Panel1.Controls.Add(Label6)
         Panel1.Controls.Add(txtTotalBooksRead)
         Panel1.Controls.Add(txtTotalReadingTime)
-        Panel1.Location = New Point(75, 114)
+        Panel1.Location = New Point(86, 152)
+        Panel1.Margin = New Padding(3, 4, 3, 4)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(422, 292)
+        Panel1.Size = New Size(482, 389)
         Panel1.TabIndex = 0
         ' 
         ' Label4
@@ -402,9 +420,9 @@ Partial Class StatisticForm
         Label4.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
         Label4.ForeColor = SystemColors.ControlText
         Label4.ImageAlign = ContentAlignment.TopRight
-        Label4.Location = New Point(38, 217)
+        Label4.Location = New Point(43, 289)
         Label4.Name = "Label4"
-        Label4.Size = New Size(214, 22)
+        Label4.Size = New Size(254, 26)
         Label4.TabIndex = 60
         Label4.Text = "Average Reading Time"
         ' 
@@ -415,42 +433,47 @@ Partial Class StatisticForm
         Label3.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
         Label3.ForeColor = SystemColors.ControlText
         Label3.ImageAlign = ContentAlignment.TopRight
-        Label3.Location = New Point(108, 183)
+        Label3.Location = New Point(123, 244)
         Label3.Name = "Label3"
-        Label3.Size = New Size(144, 22)
+        Label3.Size = New Size(171, 26)
         Label3.TabIndex = 59
         Label3.Text = "Favorite Books"
         ' 
         ' txtTotalBooksBorrowed
         ' 
-        txtTotalBooksBorrowed.Location = New Point(266, 149)
+        txtTotalBooksBorrowed.Location = New Point(304, 199)
+        txtTotalBooksBorrowed.Margin = New Padding(3, 4, 3, 4)
         txtTotalBooksBorrowed.Name = "txtTotalBooksBorrowed"
-        txtTotalBooksBorrowed.Size = New Size(100, 23)
+        txtTotalBooksBorrowed.ReadOnly = True
+        txtTotalBooksBorrowed.Size = New Size(114, 27)
         txtTotalBooksBorrowed.TabIndex = 58
         ' 
         ' txtAvReadingTime
         ' 
-        txtAvReadingTime.Location = New Point(266, 216)
+        txtAvReadingTime.Location = New Point(304, 288)
+        txtAvReadingTime.Margin = New Padding(3, 4, 3, 4)
         txtAvReadingTime.Name = "txtAvReadingTime"
-        txtAvReadingTime.Size = New Size(100, 23)
+        txtAvReadingTime.ReadOnly = True
+        txtAvReadingTime.Size = New Size(114, 27)
         txtAvReadingTime.TabIndex = 56
         ' 
         ' pbProfile
         ' 
         pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
         pbProfile.BackgroundImageLayout = ImageLayout.Stretch
-        pbProfile.Location = New Point(584, 23)
+        pbProfile.Location = New Point(667, 31)
+        pbProfile.Margin = New Padding(3, 4, 3, 4)
         pbProfile.Name = "pbProfile"
-        pbProfile.Size = New Size(28, 28)
+        pbProfile.Size = New Size(32, 37)
         pbProfile.TabIndex = 57
         pbProfile.TabStop = False
         ' 
         ' StatisticForm
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
-        ClientSize = New Size(934, 486)
+        ClientSize = New Size(1067, 648)
         Controls.Add(pbBB)
         Controls.Add(lblBB)
         Controls.Add(lblstatistic)
@@ -466,9 +489,10 @@ Partial Class StatisticForm
         Controls.Add(pbNotes)
         Controls.Add(pbCategory)
         Controls.Add(SplitContainer1)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "StatisticForm"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Form5"
+        Text = "ReadNest, Your Personal Library"
         CType(pbBB, ComponentModel.ISupportInitialize).EndInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).EndInit()
         CType(pbDiscover, ComponentModel.ISupportInitialize).EndInit()

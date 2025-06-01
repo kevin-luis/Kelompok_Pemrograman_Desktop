@@ -39,20 +39,19 @@ Partial Class BookNotesForm
         pnlHeader.Controls.Add(btnAddNote)
         pnlHeader.Dock = DockStyle.Top
         pnlHeader.Location = New Point(0, 0)
-        pnlHeader.Margin = New Padding(4, 3, 4, 3)
+        pnlHeader.Margin = New Padding(5, 4, 5, 4)
         pnlHeader.Name = "pnlHeader"
-        pnlHeader.Size = New Size(565, 69)
+        pnlHeader.Size = New Size(646, 92)
         pnlHeader.TabIndex = 0
         ' 
         ' lblTitle
         ' 
-        lblTitle.AutoSize = False
         lblTitle.Font = New Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblTitle.ForeColor = Color.Black
-        lblTitle.Location = New Point(14, 23)
-        lblTitle.Margin = New Padding(4, 0, 4, 0)
+        lblTitle.Location = New Point(16, 31)
+        lblTitle.Margin = New Padding(5, 0, 5, 0)
         lblTitle.Name = "lblTitle"
-        lblTitle.Size = New Size(350, 22)
+        lblTitle.Size = New Size(400, 29)
         lblTitle.TabIndex = 0
         lblTitle.Text = "Book Notes"
         lblTitle.TextAlign = ContentAlignment.MiddleLeft
@@ -65,10 +64,10 @@ Partial Class BookNotesForm
         btnAddNote.FlatStyle = FlatStyle.Flat
         btnAddNote.Font = New Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnAddNote.ForeColor = Color.White
-        btnAddNote.Location = New Point(456, 17)
-        btnAddNote.Margin = New Padding(4, 3, 4, 3)
+        btnAddNote.Location = New Point(521, 23)
+        btnAddNote.Margin = New Padding(5, 4, 5, 4)
         btnAddNote.Name = "btnAddNote"
-        btnAddNote.Size = New Size(93, 35)
+        btnAddNote.Size = New Size(106, 47)
         btnAddNote.TabIndex = 1
         btnAddNote.Text = "+ Add Note"
         btnAddNote.UseVisualStyleBackColor = False
@@ -79,10 +78,10 @@ Partial Class BookNotesForm
         pnlMain.Controls.Add(flNotes)
         pnlMain.Controls.Add(lblEmptyMessage)
         pnlMain.Dock = DockStyle.Fill
-        pnlMain.Location = New Point(0, 69)
-        pnlMain.Margin = New Padding(4, 3, 4, 3)
+        pnlMain.Location = New Point(0, 92)
+        pnlMain.Margin = New Padding(5, 4, 5, 4)
         pnlMain.Name = "pnlMain"
-        pnlMain.Size = New Size(565, 440)
+        pnlMain.Size = New Size(646, 587)
         pnlMain.TabIndex = 1
         ' 
         ' flNotes
@@ -91,22 +90,22 @@ Partial Class BookNotesForm
         flNotes.BackColor = Color.WhiteSmoke
         flNotes.Dock = DockStyle.Fill
         flNotes.Location = New Point(0, 0)
-        flNotes.Margin = New Padding(4, 3, 4, 3)
+        flNotes.Margin = New Padding(5, 4, 5, 4)
         flNotes.Name = "flNotes"
-        flNotes.Padding = New Padding(12, 12, 12, 12)
-        flNotes.Size = New Size(565, 440)
+        flNotes.Padding = New Padding(14, 16, 14, 16)
+        flNotes.Size = New Size(646, 587)
         flNotes.TabIndex = 0
         ' 
         ' lblEmptyMessage
         ' 
         lblEmptyMessage.Anchor = AnchorStyles.None
         lblEmptyMessage.AutoSize = True
-        lblEmptyMessage.Font = New Font("Arial", 12.0F, FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        lblEmptyMessage.Font = New Font("Arial", 12F, FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         lblEmptyMessage.ForeColor = Color.Gray
-        lblEmptyMessage.Location = New Point(177, 210)
-        lblEmptyMessage.Margin = New Padding(4, 0, 4, 0)
+        lblEmptyMessage.Location = New Point(202, 280)
+        lblEmptyMessage.Margin = New Padding(5, 0, 5, 0)
         lblEmptyMessage.Name = "lblEmptyMessage"
-        lblEmptyMessage.Size = New Size(211, 19)
+        lblEmptyMessage.Size = New Size(267, 24)
         lblEmptyMessage.TabIndex = 1
         lblEmptyMessage.Text = "No notes found for this book."
         lblEmptyMessage.TextAlign = ContentAlignment.MiddleCenter
@@ -114,18 +113,18 @@ Partial Class BookNotesForm
         ' 
         ' BookNotesForm
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(565, 509)
+        ClientSize = New Size(646, 679)
         Controls.Add(pnlMain)
         Controls.Add(pnlHeader)
         FormBorderStyle = FormBorderStyle.FixedDialog
-        Margin = New Padding(4, 3, 4, 3)
+        Margin = New Padding(5, 4, 5, 4)
         MaximizeBox = False
-        MinimumSize = New Size(581, 548)
+        MinimumSize = New Size(661, 715)
         Name = "BookNotesForm"
         StartPosition = FormStartPosition.CenterParent
-        Text = "Book Notes"
+        Text = "MyBookNote"
         pnlHeader.ResumeLayout(False)
         pnlMain.ResumeLayout(False)
         pnlMain.PerformLayout()
