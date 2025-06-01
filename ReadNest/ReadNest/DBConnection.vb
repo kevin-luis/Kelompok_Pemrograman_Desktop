@@ -158,6 +158,19 @@ Public Class DBConnection
         Return result > 0
     End Function
 
+    ' Delete book
+    Public Function HapusBuku(bookId As Integer) As Boolean
+        Dim query As String = "DELETE FROM books WHERE BookId = @bookId"
+
+        Dim parameters As New Dictionary(Of String, Object) From {
+        {"@bookId", bookId}
+    }
+
+        Dim result = ExecuteNonQueryWithParams(query, parameters)
+        Return result > 0
+    End Function
+
+
     ' Get categories
     Public Function GetCategories() As DataTable
         Dim query As String = "SELECT CategoryId, CategoryName FROM categories ORDER BY CategoryName"

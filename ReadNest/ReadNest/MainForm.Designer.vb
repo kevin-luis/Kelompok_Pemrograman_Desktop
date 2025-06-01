@@ -41,7 +41,7 @@ Partial Class MainForm
         pbStatistic = New PictureBox()
         lblstatistic = New Label()
         btnAddNewBook = New Button()
-        pbAddNewBook = New PictureBox()
+        pbDeleteBook = New PictureBox()
         lblBB = New Label()
         pbBB = New PictureBox()
         Label5 = New Label()
@@ -58,7 +58,7 @@ Partial Class MainForm
         CType(pbDiscover, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).BeginInit()
-        CType(pbAddNewBook, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbDeleteBook, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbBB, ComponentModel.ISupportInitialize).BeginInit()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer1.Panel1.SuspendLayout()
@@ -287,17 +287,17 @@ Partial Class MainForm
         btnAddNewBook.Text = "Add New Book"
         btnAddNewBook.UseVisualStyleBackColor = True
         ' 
-        ' pbAddNewBook
+        ' pbDeleteBook
         ' 
-        pbAddNewBook.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        pbAddNewBook.BackgroundImage = CType(resources.GetObject("pbAddNewBook.BackgroundImage"), Image)
-        pbAddNewBook.BackgroundImageLayout = ImageLayout.Stretch
-        pbAddNewBook.Location = New Point(799, 120)
-        pbAddNewBook.Margin = New Padding(3, 4, 3, 4)
-        pbAddNewBook.Name = "pbAddNewBook"
-        pbAddNewBook.Size = New Size(30, 35)
-        pbAddNewBook.TabIndex = 27
-        pbAddNewBook.TabStop = False
+        pbDeleteBook.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        pbDeleteBook.BackgroundImage = CType(resources.GetObject("pbDeleteBook.BackgroundImage"), Image)
+        pbDeleteBook.BackgroundImageLayout = ImageLayout.Zoom
+        pbDeleteBook.Location = New Point(799, 120)
+        pbDeleteBook.Margin = New Padding(3, 4, 3, 4)
+        pbDeleteBook.Name = "pbDeleteBook"
+        pbDeleteBook.Size = New Size(30, 35)
+        pbDeleteBook.TabIndex = 27
+        pbDeleteBook.TabStop = False
         ' 
         ' lblBB
         ' 
@@ -422,7 +422,7 @@ Partial Class MainForm
         panelRight.Controls.Add(cbProfile)
         panelRight.Controls.Add(Label5)
         panelRight.Controls.Add(btnAddNewBook)
-        panelRight.Controls.Add(pbAddNewBook)
+        panelRight.Controls.Add(pbDeleteBook)
         panelRight.Dock = DockStyle.Fill
         panelRight.Location = New Point(0, 0)
         panelRight.Margin = New Padding(3, 4, 3, 4)
@@ -464,7 +464,7 @@ Partial Class MainForm
         CType(pbDiscover, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).EndInit()
-        CType(pbAddNewBook, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbDeleteBook, ComponentModel.ISupportInitialize).EndInit()
         CType(pbBB, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.Panel1.ResumeLayout(False)
         SplitContainer1.Panel1.PerformLayout()
@@ -494,7 +494,7 @@ Partial Class MainForm
     Friend WithEvents pbStatistic As PictureBox
     Friend WithEvents lblstatistic As Label
     Friend WithEvents btnAddNewBook As Button
-    Friend WithEvents pbAddNewBook As PictureBox
+    Friend WithEvents pbDeleteBook As PictureBox
     Friend WithEvents lblBB As Label
     Friend WithEvents pbBB As PictureBox
     Friend WithEvents Label5 As Label
