@@ -287,20 +287,22 @@ Public Class DBConnection
     End Function
 
     ' Update reading progress
-    Public Function UpdateReadingProgressAbsolute(userId As Integer, bookId As Integer, lastPage As Integer, totalDurationMinutes As Integer) As Boolean
+    Public Function UpdateReadingProgressAbsolute(userId As Integer, bookId As Integer, lastPage As Integer, readDurationSeconds As Integer, progressPercent As Double) As Boolean
         Dim query As String = "
-    INSERT INTO userbookprogress (UserId, BookId, LastPage, ReadDuration, LastOpened)
-    VALUES (@userId, @bookId, @lastPage, @duration, NOW())
+    INSERT INTO userbookprogress (UserId, BookId, LastPage, ReadDuration, ProgressPercent, LastOpened)
+    VALUES (@userId, @bookId, @lastPage, @duration, @progressPercent, NOW())
     ON DUPLICATE KEY UPDATE
         LastPage = @lastPage,
         ReadDuration = @duration,
+        ProgressPercent = @progressPercent,
         LastOpened = NOW();"
 
         Dim parameters As New Dictionary(Of String, Object) From {
         {"@userId", userId},
         {"@bookId", bookId},
         {"@lastPage", lastPage},
-        {"@duration", totalDurationMinutes}
+        {"@duration", readDurationSeconds},
+        {"@progressPercent", progressPercent}
     }
 
         Dim result = ExecuteNonQueryWithParams(query, parameters)
@@ -309,13 +311,13 @@ Public Class DBConnection
 
     ' Get reading progress
     Public Function GetReadingProgress(userId As Integer, bookId As Integer) As DataRow
-        Dim query As String = "SELECT LastPage, ReadDuration, LastOpened FROM userbookprogress 
+        Dim query As String = "SELECT LastPage, ReadDuration, ProgressPercent, LastOpened FROM userbookprogress 
                            WHERE UserId = @userId AND BookId = @bookId"
 
         Dim parameters As New Dictionary(Of String, Object) From {
-            {"@userId", userId},
-            {"@bookId", bookId}
-        }
+        {"@userId", userId},
+        {"@bookId", bookId}
+    }
 
         Dim dt = ExecuteQueryWithParams(query, parameters)
         If dt IsNot Nothing AndAlso dt.Rows.Count > 0 Then

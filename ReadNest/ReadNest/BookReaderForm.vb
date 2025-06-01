@@ -16,8 +16,6 @@ Public Class BookReaderForm
     Private _pageCheckTimer As New Timer()
     Private db As New DBConnection()
 
-
-
     Public Sub New(bookId As Integer, userId As Integer)
         InitializeComponent()
         _bookId = bookId
@@ -251,7 +249,6 @@ Public Class BookReaderForm
 
     Private Sub SaveReadingProgress()
         Static isCurrentlySaving As Boolean = False
-        ' Prevent multiple simultaneous saves
         If isCurrentlySaving Then Return
         isCurrentlySaving = True
         Try
@@ -259,19 +256,19 @@ Public Class BookReaderForm
                 _currentPage = _pdfViewer.Renderer.Page + 1
             End If
 
-            ' Hitung total waktu dalam detik
             Dim totalSecondsToSave As Integer = _totalSecondsFromDB
-
-            ' Selalu tambahkan waktu sesi yang sudah berjalan sejak _sessionStartTime
-            ' Ini akan menangkap waktu baik saat timer berjalan maupun sudah dihentikan
             Dim currentSessionSeconds As Integer = CInt(DateTime.Now.Subtract(_sessionStartTime).TotalSeconds)
             totalSecondsToSave += currentSessionSeconds
 
+            ' Hitung progress persentase
+            Dim progressPercent As Double = 0
+            If _pdfDocument IsNot Nothing AndAlso _pdfDocument.PageCount > 0 Then
+                progressPercent = (_currentPage / _pdfDocument.PageCount) * 100
+            End If
+
             Dim db As New DBConnection()
-            If db.UpdateReadingProgressAbsolute(_userId, _bookId, _currentPage, totalSecondsToSave) Then
-                ' Update _totalSecondsFromDB dengan nilai yang baru disimpan
+            If db.UpdateReadingProgressAbsolute(_userId, _bookId, _currentPage, totalSecondsToSave, progressPercent) Then
                 _totalSecondsFromDB = totalSecondsToSave
-                ' Reset session start time untuk menghindari double counting
                 _sessionStartTime = DateTime.Now
             End If
         Catch ex As Exception
@@ -280,6 +277,7 @@ Public Class BookReaderForm
             isCurrentlySaving = False
         End Try
     End Sub
+
 
     Private Sub BookReaderForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         ' Hentikan timer terlebih dahulu
