@@ -179,7 +179,7 @@ Public Class AddNewBookForm
 
     Private Sub btnUploadFile_Click(sender As Object, e As EventArgs) Handles btnUploadFile.Click
         Using openFileDialog As New OpenFileDialog()
-            openFileDialog.Filter = "Book Files (*.pdf;*.epub)|*.pdf;*.epub"
+            openFileDialog.Filter = "Book Files (*.pdf)|*.pdf"
             openFileDialog.RestoreDirectory = True
 
             If openFileDialog.ShowDialog() = DialogResult.OK Then

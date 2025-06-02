@@ -2,7 +2,6 @@
 Imports System.IO
 Imports System.Diagnostics
 Imports PdfiumViewer
-Imports VersOne.Epub
 
 Public Class BookReaderForm
     Private _bookId As Integer
@@ -81,10 +80,8 @@ Public Class BookReaderForm
 
             If extension = ".pdf" Then
                 ShowPdf()
-            ElseIf extension = ".epub" Then
-                ShowEpub()
             Else
-                MessageBox.Show("File format not supported. Only PDF and EPUB.", "Error")
+                MessageBox.Show("File format not supported. Only PDF.", "Error")
                 Me.Close()
             End If
         Catch ex As Exception
@@ -140,33 +137,6 @@ Public Class BookReaderForm
         _pageCheckTimer.Interval = 250
         _pageCheckTimer.Enabled = True
         AddHandler _pageCheckTimer.Tick, AddressOf PageCheckTimer_Tick
-    End Sub
-
-    Private Sub ShowEpub()
-        Try
-            lblNoDocument.Visible = False
-
-            Dim book As EpubBook = EpubReader.ReadBook(_filePath)
-            Dim content As New RichTextBox() With {
-                .Dock = DockStyle.Fill,
-                .ReadOnly = True,
-                .Font = New Font("Segoe UI", 10)
-            }
-
-            Dim fullText As String = ""
-            For Each chapter As EpubLocalTextContentFile In book.ReadingOrder
-                fullText += StripHtmlTags(chapter.Content) & vbCrLf & vbCrLf
-            Next
-
-            content.Text = fullText
-            pnlDocumentView.Controls.Clear()
-            pnlDocumentView.Controls.Add(content)
-
-            SetControlsEnabled(False) ' Disable PDF controls for EPUB
-            tslPageInfo.Text = "EPUB Content"
-        Catch ex As Exception
-            MessageBox.Show("Failed to load EPUB: " & ex.Message, "Error")
-        End Try
     End Sub
 
     Private Sub SetControlsEnabled(isPdf As Boolean)
