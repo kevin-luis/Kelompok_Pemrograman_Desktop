@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\",
+  "WorkspaceRootPath": "A:\\Kulyeah\\Semester 6\\Pemrograman Desktop\\Tugas Akhir\\Kelompok_Pemrograman_Desktop\\ReadNest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\kelompok_pemrograman_desktop\\readnest\\readnest\\adminform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\adminform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|a:\\kulyeah\\semester 6\\pemrograman desktop\\tugas akhir\\kelompok_pemrograman_desktop\\readnest\\readnest\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|c:\\users\\lenovo_thinkpad\\onedrive\\documents\\semester 6\\pemrograman desktop\\kelompok_pemrograman_desktop\\readnest\\readnest\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|a:\\kulyeah\\semester 6\\pemrograman desktop\\tugas akhir\\kelompok_pemrograman_desktop\\readnest\\readnest\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|a:\\kulyeah\\semester 6\\pemrograman desktop\\tugas akhir\\kelompok_pemrograman_desktop\\readnest\\readnest\\adminform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{1632300A-210C-43DA-AA32-80D877CBF8E0}|ReadNest\\ReadNest.vbproj|solutionrelative:readnest\\adminform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,19 +30,32 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MainForm.vb",
+              "DocumentMoniker": "A:\\Kulyeah\\Semester 6\\Pemrograman Desktop\\Tugas Akhir\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\MainForm.vb",
+              "RelativeDocumentMoniker": "ReadNest\\MainForm.vb",
+              "ToolTip": "A:\\Kulyeah\\Semester 6\\Pemrograman Desktop\\Tugas Akhir\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\MainForm.vb",
+              "RelativeToolTip": "ReadNest\\MainForm.vb",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAqwMcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-06-02T16:58:06.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "AdminForm.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\AdminForm.vb",
+              "DocumentMoniker": "A:\\Kulyeah\\Semester 6\\Pemrograman Desktop\\Tugas Akhir\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\AdminForm.vb",
               "RelativeDocumentMoniker": "ReadNest\\AdminForm.vb",
-              "ToolTip": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\AdminForm.vb [Design]",
+              "ToolTip": "A:\\Kulyeah\\Semester 6\\Pemrograman Desktop\\Tugas Akhir\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\AdminForm.vb [Design]",
               "RelativeToolTip": "ReadNest\\AdminForm.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-06-02T11:37:04.57Z",
@@ -48,10 +65,10 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MainForm.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\MainForm.vb",
+              "DocumentMoniker": "A:\\Kulyeah\\Semester 6\\Pemrograman Desktop\\Tugas Akhir\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\MainForm.vb",
               "RelativeDocumentMoniker": "ReadNest\\MainForm.vb",
-              "ToolTip": "C:\\Users\\LENOVO_THINKPAD\\OneDrive\\Documents\\SEMESTER 6\\Pemrograman Desktop\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\MainForm.vb [Design]*",
-              "RelativeToolTip": "ReadNest\\MainForm.vb [Design]*",
+              "ToolTip": "A:\\Kulyeah\\Semester 6\\Pemrograman Desktop\\Tugas Akhir\\Kelompok_Pemrograman_Desktop\\ReadNest\\ReadNest\\MainForm.vb [Design]",
+              "RelativeToolTip": "ReadNest\\MainForm.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-06-02T04:11:26.012Z",
               "EditorCaption": " [Design]"
