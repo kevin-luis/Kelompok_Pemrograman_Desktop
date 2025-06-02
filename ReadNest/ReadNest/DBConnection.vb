@@ -627,4 +627,12 @@ Public Class DBConnection
     End Function
 
 
+    ' Get all users (username and email)
+    Public Function GetAllUsers() As DataTable
+        Dim query As String = "SELECT Username, Email FROM users ORDER BY Username"
+        ' Tidak memerlukan parameter untuk query ini
+        Return ExecuteQueryWithParams(query, New Dictionary(Of String, Object))
+    End Function
+
+
 End Class
