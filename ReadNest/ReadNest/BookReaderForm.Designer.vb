@@ -39,12 +39,6 @@ Partial Class BookReaderForm
         pnlDocumentContainer = New Panel()
         pnlDocumentView = New Panel()
         lblNoDocument = New Label()
-        pnlSearch = New Panel()
-        txtSearch = New TextBox()
-        btnPrevSearch = New Button()
-        btnNextSearch = New Button()
-        btnCloseSearch = New Button()
-        lblSearchResults = New Label()
         pnlHeader = New Panel()
         tlsReaderTools = New ToolStrip()
         tsbOpenDocument = New ToolStripButton()
@@ -58,30 +52,18 @@ Partial Class BookReaderForm
         tscbZoom = New ToolStripTextBox()
         tsbZoomIn = New ToolStripButton()
         toolStripSeparator2 = New ToolStripSeparator()
-        tsbHighlight = New ToolStripDropDownButton()
+        tsbNote = New ToolStripButton()
+        toolStripSeparator3 = New ToolStripSeparator()
+        tsbPrint = New ToolStripButton()
+        menuSettings = New ToolStripDropDownButton()
+        helpToolStripMenuItem1 = New ToolStripMenuItem()
+        aboutToolStripMenuItem1 = New ToolStripMenuItem()
         cmsHighlighting = New ContextMenuStrip(components)
         yellowHighlightToolStripMenuItem = New ToolStripMenuItem()
         blueHighlightToolStripMenuItem = New ToolStripMenuItem()
         greenHighlightToolStripMenuItem = New ToolStripMenuItem()
         pinkHighlightToolStripMenuItem = New ToolStripMenuItem()
         removeHighlightToolStripMenuItem = New ToolStripMenuItem()
-        toolStripMenuItem1 = New ToolStripSeparator()
-        addNoteToolStripMenuItem = New ToolStripMenuItem()
-        copyTextToolStripMenuItem = New ToolStripMenuItem()
-        tsbNote = New ToolStripButton()
-        toolStripSeparator3 = New ToolStripSeparator()
-        tsbSearch = New ToolStripButton()
-        tsbViewMode = New ToolStripDropDownButton()
-        singlePageToolStripMenuItem1 = New ToolStripMenuItem()
-        twoPagesToolStripMenuItem1 = New ToolStripMenuItem()
-        cmbTheme = New ToolStripDropDownButton()
-        lightModeToolStripMenuItem = New ToolStripMenuItem()
-        darkModeToolStripMenuItem = New ToolStripMenuItem()
-        sepiaToolStripMenuItem = New ToolStripMenuItem()
-        menuSettings = New ToolStripDropDownButton()
-        preferencesToolStripMenuItem = New ToolStripMenuItem()
-        helpToolStripMenuItem1 = New ToolStripMenuItem()
-        aboutToolStripMenuItem1 = New ToolStripMenuItem()
         pnlFooter = New Panel()
         statusPanel = New Panel()
         pnlProgressContainer = New Panel()
@@ -104,7 +86,6 @@ Partial Class BookReaderForm
         pnlSidebarHeader.SuspendLayout()
         pnlDocumentContainer.SuspendLayout()
         pnlDocumentView.SuspendLayout()
-        pnlSearch.SuspendLayout()
         pnlHeader.SuspendLayout()
         tlsReaderTools.SuspendLayout()
         cmsHighlighting.SuspendLayout()
@@ -119,16 +100,16 @@ Partial Class BookReaderForm
         pnlMainContainer.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         pnlMainContainer.BackColor = Color.White
         pnlMainContainer.ColumnCount = 2
-        pnlMainContainer.ColumnStyles.Add(New ColumnStyle(SizeType.Absolute, 262F))
+        pnlMainContainer.ColumnStyles.Add(New ColumnStyle(SizeType.Absolute, 299F))
         pnlMainContainer.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
         pnlMainContainer.Controls.Add(pnlSidebar, 0, 0)
         pnlMainContainer.Controls.Add(pnlDocumentContainer, 1, 0)
-        pnlMainContainer.Location = New Point(0, 45)
+        pnlMainContainer.Location = New Point(0, 60)
         pnlMainContainer.Margin = New Padding(0)
         pnlMainContainer.Name = "pnlMainContainer"
         pnlMainContainer.RowCount = 1
         pnlMainContainer.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
-        pnlMainContainer.Size = New Size(1050, 562)
+        pnlMainContainer.Size = New Size(1200, 749)
         pnlMainContainer.TabIndex = 2
         ' 
         ' pnlSidebar
@@ -140,7 +121,7 @@ Partial Class BookReaderForm
         pnlSidebar.Location = New Point(0, 0)
         pnlSidebar.Margin = New Padding(0)
         pnlSidebar.Name = "pnlSidebar"
-        pnlSidebar.Size = New Size(262, 562)
+        pnlSidebar.Size = New Size(299, 749)
         pnlSidebar.TabIndex = 0
         pnlSidebar.Visible = False
         ' 
@@ -152,11 +133,11 @@ Partial Class BookReaderForm
         tbcSidebar.Controls.Add(tabOutline)
         tbcSidebar.Controls.Add(tabAnnotations)
         tbcSidebar.ItemSize = New Size(90, 35)
-        tbcSidebar.Location = New Point(0, 38)
+        tbcSidebar.Location = New Point(0, 51)
         tbcSidebar.Margin = New Padding(0)
         tbcSidebar.Name = "tbcSidebar"
         tbcSidebar.SelectedIndex = 0
-        tbcSidebar.Size = New Size(262, 525)
+        tbcSidebar.Size = New Size(299, 700)
         tbcSidebar.SizeMode = TabSizeMode.Fixed
         tbcSidebar.TabIndex = 1
         ' 
@@ -167,7 +148,7 @@ Partial Class BookReaderForm
         tabBookmarks.Location = New Point(4, 39)
         tabBookmarks.Margin = New Padding(0)
         tabBookmarks.Name = "tabBookmarks"
-        tabBookmarks.Size = New Size(254, 482)
+        tabBookmarks.Size = New Size(291, 657)
         tabBookmarks.TabIndex = 0
         tabBookmarks.Text = "Bookmarks"
         ' 
@@ -183,11 +164,11 @@ Partial Class BookReaderForm
         trvBookmarks.Indent = 15
         trvBookmarks.ItemHeight = 30
         trvBookmarks.Location = New Point(0, 0)
-        trvBookmarks.Margin = New Padding(13, 11, 13, 11)
+        trvBookmarks.Margin = New Padding(15)
         trvBookmarks.Name = "trvBookmarks"
         trvBookmarks.ShowLines = False
         trvBookmarks.ShowPlusMinus = False
-        trvBookmarks.Size = New Size(254, 482)
+        trvBookmarks.Size = New Size(291, 657)
         trvBookmarks.TabIndex = 0
         ' 
         ' tabOutline
@@ -197,7 +178,7 @@ Partial Class BookReaderForm
         tabOutline.Location = New Point(4, 39)
         tabOutline.Margin = New Padding(0)
         tabOutline.Name = "tabOutline"
-        tabOutline.Size = New Size(254, 482)
+        tabOutline.Size = New Size(291, 657)
         tabOutline.TabIndex = 1
         tabOutline.Text = "Outline"
         ' 
@@ -213,11 +194,11 @@ Partial Class BookReaderForm
         trvOutline.Indent = 15
         trvOutline.ItemHeight = 30
         trvOutline.Location = New Point(0, 0)
-        trvOutline.Margin = New Padding(13, 11, 13, 11)
+        trvOutline.Margin = New Padding(15)
         trvOutline.Name = "trvOutline"
         trvOutline.ShowLines = False
         trvOutline.ShowPlusMinus = False
-        trvOutline.Size = New Size(254, 482)
+        trvOutline.Size = New Size(291, 657)
         trvOutline.TabIndex = 0
         ' 
         ' tabAnnotations
@@ -227,7 +208,7 @@ Partial Class BookReaderForm
         tabAnnotations.Location = New Point(4, 39)
         tabAnnotations.Margin = New Padding(0)
         tabAnnotations.Name = "tabAnnotations"
-        tabAnnotations.Size = New Size(254, 482)
+        tabAnnotations.Size = New Size(291, 657)
         tabAnnotations.TabIndex = 2
         tabAnnotations.Text = "Annotations"
         ' 
@@ -240,9 +221,9 @@ Partial Class BookReaderForm
         lstAnnotations.ForeColor = Color.FromArgb(CByte(50), CByte(50), CByte(50))
         lstAnnotations.FullRowSelect = True
         lstAnnotations.Location = New Point(0, 0)
-        lstAnnotations.Margin = New Padding(4)
+        lstAnnotations.Margin = New Padding(5)
         lstAnnotations.Name = "lstAnnotations"
-        lstAnnotations.Size = New Size(254, 482)
+        lstAnnotations.Size = New Size(291, 657)
         lstAnnotations.TabIndex = 0
         lstAnnotations.UseCompatibleStateImageBehavior = False
         lstAnnotations.View = View.List
@@ -256,7 +237,7 @@ Partial Class BookReaderForm
         pnlSidebarHeader.Location = New Point(0, 0)
         pnlSidebarHeader.Margin = New Padding(0)
         pnlSidebarHeader.Name = "pnlSidebarHeader"
-        pnlSidebarHeader.Size = New Size(262, 38)
+        pnlSidebarHeader.Size = New Size(299, 51)
         pnlSidebarHeader.TabIndex = 2
         ' 
         ' lblSidebarTitle
@@ -264,9 +245,9 @@ Partial Class BookReaderForm
         lblSidebarTitle.AutoSize = True
         lblSidebarTitle.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
         lblSidebarTitle.ForeColor = Color.FromArgb(CByte(60), CByte(60), CByte(60))
-        lblSidebarTitle.Location = New Point(18, 9)
+        lblSidebarTitle.Location = New Point(21, 12)
         lblSidebarTitle.Name = "lblSidebarTitle"
-        lblSidebarTitle.Size = New Size(59, 21)
+        lblSidebarTitle.Size = New Size(73, 28)
         lblSidebarTitle.TabIndex = 1
         lblSidebarTitle.Text = "Details"
         ' 
@@ -280,10 +261,10 @@ Partial Class BookReaderForm
         btnCloseSidebar.FlatStyle = FlatStyle.Flat
         btnCloseSidebar.Font = New Font("Segoe UI", 12F)
         btnCloseSidebar.ForeColor = Color.FromArgb(CByte(60), CByte(60), CByte(60))
-        btnCloseSidebar.Location = New Point(228, 4)
+        btnCloseSidebar.Location = New Point(261, 5)
         btnCloseSidebar.Margin = New Padding(0)
         btnCloseSidebar.Name = "btnCloseSidebar"
-        btnCloseSidebar.Size = New Size(35, 30)
+        btnCloseSidebar.Size = New Size(40, 40)
         btnCloseSidebar.TabIndex = 0
         btnCloseSidebar.Text = "×"
         btnCloseSidebar.UseVisualStyleBackColor = False
@@ -291,12 +272,11 @@ Partial Class BookReaderForm
         ' pnlDocumentContainer
         ' 
         pnlDocumentContainer.Controls.Add(pnlDocumentView)
-        pnlDocumentContainer.Controls.Add(pnlSearch)
         pnlDocumentContainer.Dock = DockStyle.Fill
-        pnlDocumentContainer.Location = New Point(262, 0)
+        pnlDocumentContainer.Location = New Point(299, 0)
         pnlDocumentContainer.Margin = New Padding(0)
         pnlDocumentContainer.Name = "pnlDocumentContainer"
-        pnlDocumentContainer.Size = New Size(788, 562)
+        pnlDocumentContainer.Size = New Size(901, 749)
         pnlDocumentContainer.TabIndex = 1
         ' 
         ' pnlDocumentView
@@ -307,7 +287,7 @@ Partial Class BookReaderForm
         pnlDocumentView.Location = New Point(0, 0)
         pnlDocumentView.Margin = New Padding(0)
         pnlDocumentView.Name = "pnlDocumentView"
-        pnlDocumentView.Size = New Size(788, 524)
+        pnlDocumentView.Size = New Size(901, 749)
         pnlDocumentView.TabIndex = 0
         ' 
         ' lblNoDocument
@@ -316,102 +296,13 @@ Partial Class BookReaderForm
         lblNoDocument.BackColor = Color.Transparent
         lblNoDocument.Font = New Font("Segoe UI Light", 14F)
         lblNoDocument.ForeColor = Color.FromArgb(CByte(150), CByte(150), CByte(150))
-        lblNoDocument.Location = New Point(88, 150)
-        lblNoDocument.Margin = New Padding(4, 0, 4, 0)
+        lblNoDocument.Location = New Point(101, 225)
+        lblNoDocument.Margin = New Padding(5, 0, 5, 0)
         lblNoDocument.Name = "lblNoDocument"
-        lblNoDocument.Size = New Size(612, 225)
+        lblNoDocument.Size = New Size(699, 300)
         lblNoDocument.TabIndex = 0
         lblNoDocument.Text = "Open a document to begin reading" & vbCrLf & vbCrLf & "Click the folder icon or press Ctrl+O"
         lblNoDocument.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' pnlSearch
-        ' 
-        pnlSearch.BackColor = Color.FromArgb(CByte(248), CByte(249), CByte(250))
-        pnlSearch.Controls.Add(txtSearch)
-        pnlSearch.Controls.Add(btnPrevSearch)
-        pnlSearch.Controls.Add(btnNextSearch)
-        pnlSearch.Controls.Add(btnCloseSearch)
-        pnlSearch.Controls.Add(lblSearchResults)
-        pnlSearch.Dock = DockStyle.Bottom
-        pnlSearch.Location = New Point(0, 524)
-        pnlSearch.Margin = New Padding(0)
-        pnlSearch.Name = "pnlSearch"
-        pnlSearch.Size = New Size(788, 38)
-        pnlSearch.TabIndex = 1
-        pnlSearch.Visible = False
-        ' 
-        ' txtSearch
-        ' 
-        txtSearch.BorderStyle = BorderStyle.FixedSingle
-        txtSearch.Font = New Font("Segoe UI", 10F)
-        txtSearch.Location = New Point(13, 9)
-        txtSearch.Margin = New Padding(13, 9, 4, 4)
-        txtSearch.Name = "txtSearch"
-        txtSearch.Size = New Size(245, 25)
-        txtSearch.TabIndex = 0
-        ' 
-        ' btnPrevSearch
-        ' 
-        btnPrevSearch.BackColor = Color.FromArgb(CByte(240), CByte(240), CByte(240))
-        btnPrevSearch.Enabled = False
-        btnPrevSearch.FlatAppearance.BorderColor = Color.FromArgb(CByte(200), CByte(200), CByte(200))
-        btnPrevSearch.FlatStyle = FlatStyle.Flat
-        btnPrevSearch.Font = New Font("Segoe UI", 9F)
-        btnPrevSearch.ForeColor = Color.FromArgb(CByte(60), CByte(60), CByte(60))
-        btnPrevSearch.Location = New Point(267, 9)
-        btnPrevSearch.Margin = New Padding(4)
-        btnPrevSearch.Name = "btnPrevSearch"
-        btnPrevSearch.Size = New Size(52, 22)
-        btnPrevSearch.TabIndex = 1
-        btnPrevSearch.Text = "◀"
-        btnPrevSearch.UseVisualStyleBackColor = False
-        ' 
-        ' btnNextSearch
-        ' 
-        btnNextSearch.BackColor = Color.FromArgb(CByte(240), CByte(240), CByte(240))
-        btnNextSearch.Enabled = False
-        btnNextSearch.FlatAppearance.BorderColor = Color.FromArgb(CByte(200), CByte(200), CByte(200))
-        btnNextSearch.FlatStyle = FlatStyle.Flat
-        btnNextSearch.Font = New Font("Segoe UI", 9F)
-        btnNextSearch.ForeColor = Color.FromArgb(CByte(60), CByte(60), CByte(60))
-        btnNextSearch.Location = New Point(328, 9)
-        btnNextSearch.Margin = New Padding(4)
-        btnNextSearch.Name = "btnNextSearch"
-        btnNextSearch.Size = New Size(52, 22)
-        btnNextSearch.TabIndex = 2
-        btnNextSearch.Text = "▶"
-        btnNextSearch.UseVisualStyleBackColor = False
-        ' 
-        ' btnCloseSearch
-        ' 
-        btnCloseSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        btnCloseSearch.BackColor = Color.Transparent
-        btnCloseSearch.FlatAppearance.BorderSize = 0
-        btnCloseSearch.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(230), CByte(230), CByte(230))
-        btnCloseSearch.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(240), CByte(240), CByte(240))
-        btnCloseSearch.FlatStyle = FlatStyle.Flat
-        btnCloseSearch.Font = New Font("Segoe UI", 12F)
-        btnCloseSearch.ForeColor = Color.FromArgb(CByte(60), CByte(60), CByte(60))
-        btnCloseSearch.Location = New Point(752, 4)
-        btnCloseSearch.Margin = New Padding(0)
-        btnCloseSearch.Name = "btnCloseSearch"
-        btnCloseSearch.Size = New Size(35, 30)
-        btnCloseSearch.TabIndex = 4
-        btnCloseSearch.Text = "×"
-        btnCloseSearch.UseVisualStyleBackColor = False
-        ' 
-        ' lblSearchResults
-        ' 
-        lblSearchResults.AutoSize = True
-        lblSearchResults.Font = New Font("Segoe UI", 10F)
-        lblSearchResults.ForeColor = Color.FromArgb(CByte(60), CByte(60), CByte(60))
-        lblSearchResults.Location = New Point(389, 11)
-        lblSearchResults.Margin = New Padding(4, 0, 4, 0)
-        lblSearchResults.Name = "lblSearchResults"
-        lblSearchResults.Size = New Size(111, 19)
-        lblSearchResults.TabIndex = 3
-        lblSearchResults.Text = "No results found"
-        lblSearchResults.Visible = False
         ' 
         ' pnlHeader
         ' 
@@ -421,7 +312,7 @@ Partial Class BookReaderForm
         pnlHeader.Location = New Point(0, 0)
         pnlHeader.Margin = New Padding(0)
         pnlHeader.Name = "pnlHeader"
-        pnlHeader.Size = New Size(1050, 45)
+        pnlHeader.Size = New Size(1200, 60)
         pnlHeader.TabIndex = 4
         ' 
         ' tlsReaderTools
@@ -432,12 +323,12 @@ Partial Class BookReaderForm
         tlsReaderTools.Font = New Font("Segoe UI", 10F)
         tlsReaderTools.GripStyle = ToolStripGripStyle.Hidden
         tlsReaderTools.ImageScalingSize = New Size(20, 20)
-        tlsReaderTools.Items.AddRange(New ToolStripItem() {tsbOpenDocument, tsbToggleSidebar, toolStripSeparator4, tsbPrevPage, tslPageInfo, tsbNextPage, toolStripSeparator1, tsbZoomOut, tscbZoom, tsbZoomIn, toolStripSeparator2, tsbHighlight, tsbNote, toolStripSeparator3, tsbSearch, tsbViewMode, cmbTheme, menuSettings})
+        tlsReaderTools.Items.AddRange(New ToolStripItem() {tsbOpenDocument, tsbToggleSidebar, toolStripSeparator4, tsbPrevPage, tslPageInfo, tsbNextPage, toolStripSeparator1, tsbZoomOut, tscbZoom, tsbZoomIn, toolStripSeparator2, tsbNote, toolStripSeparator3, tsbPrint, menuSettings})
         tlsReaderTools.Location = New Point(0, 0)
         tlsReaderTools.Name = "tlsReaderTools"
-        tlsReaderTools.Padding = New Padding(4, 0, 4, 0)
+        tlsReaderTools.Padding = New Padding(5, 0, 5, 0)
         tlsReaderTools.RenderMode = ToolStripRenderMode.System
-        tlsReaderTools.Size = New Size(1050, 45)
+        tlsReaderTools.Size = New Size(1200, 60)
         tlsReaderTools.TabIndex = 0
         tlsReaderTools.Text = "toolStrip1"
         ' 
@@ -467,7 +358,7 @@ Partial Class BookReaderForm
         ' 
         toolStripSeparator4.Margin = New Padding(10, 0, 10, 0)
         toolStripSeparator4.Name = "toolStripSeparator4"
-        toolStripSeparator4.Size = New Size(6, 45)
+        toolStripSeparator4.Size = New Size(6, 60)
         ' 
         ' tsbPrevPage
         ' 
@@ -507,7 +398,7 @@ Partial Class BookReaderForm
         ' 
         toolStripSeparator1.Margin = New Padding(10, 0, 10, 0)
         toolStripSeparator1.Name = "toolStripSeparator1"
-        toolStripSeparator1.Size = New Size(6, 45)
+        toolStripSeparator1.Size = New Size(6, 60)
         ' 
         ' tsbZoomOut
         ' 
@@ -526,7 +417,7 @@ Partial Class BookReaderForm
         tscbZoom.BackColor = SystemColors.MenuBar
         tscbZoom.Name = "tscbZoom"
         tscbZoom.ReadOnly = True
-        tscbZoom.Size = New Size(53, 45)
+        tscbZoom.Size = New Size(60, 60)
         ' 
         ' tsbZoomIn
         ' 
@@ -544,79 +435,7 @@ Partial Class BookReaderForm
         ' 
         toolStripSeparator2.Margin = New Padding(10, 0, 10, 0)
         toolStripSeparator2.Name = "toolStripSeparator2"
-        toolStripSeparator2.Size = New Size(6, 45)
-        ' 
-        ' tsbHighlight
-        ' 
-        tsbHighlight.AutoSize = False
-        tsbHighlight.DisplayStyle = ToolStripItemDisplayStyle.Image
-        tsbHighlight.DropDown = cmsHighlighting
-        tsbHighlight.Enabled = False
-        tsbHighlight.Image = CType(resources.GetObject("tsbHighlight.Image"), Image)
-        tsbHighlight.ImageTransparentColor = Color.Magenta
-        tsbHighlight.Margin = New Padding(5, 0, 5, 0)
-        tsbHighlight.Name = "tsbHighlight"
-        tsbHighlight.Size = New Size(40, 40)
-        tsbHighlight.Text = "Highlight"
-        ' 
-        ' cmsHighlighting
-        ' 
-        cmsHighlighting.ImageScalingSize = New Size(20, 20)
-        cmsHighlighting.Items.AddRange(New ToolStripItem() {yellowHighlightToolStripMenuItem, blueHighlightToolStripMenuItem, greenHighlightToolStripMenuItem, pinkHighlightToolStripMenuItem, removeHighlightToolStripMenuItem, toolStripMenuItem1, addNoteToolStripMenuItem, copyTextToolStripMenuItem})
-        cmsHighlighting.Name = "cmsHighlighting"
-        cmsHighlighting.OwnerItem = tsbHighlight
-        cmsHighlighting.Size = New Size(171, 164)
-        ' 
-        ' yellowHighlightToolStripMenuItem
-        ' 
-        yellowHighlightToolStripMenuItem.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(230))
-        yellowHighlightToolStripMenuItem.Name = "yellowHighlightToolStripMenuItem"
-        yellowHighlightToolStripMenuItem.Size = New Size(170, 22)
-        yellowHighlightToolStripMenuItem.Text = "Yellow Highlight"
-        ' 
-        ' blueHighlightToolStripMenuItem
-        ' 
-        blueHighlightToolStripMenuItem.BackColor = Color.FromArgb(CByte(230), CByte(240), CByte(255))
-        blueHighlightToolStripMenuItem.Name = "blueHighlightToolStripMenuItem"
-        blueHighlightToolStripMenuItem.Size = New Size(170, 22)
-        blueHighlightToolStripMenuItem.Text = "Blue Highlight"
-        ' 
-        ' greenHighlightToolStripMenuItem
-        ' 
-        greenHighlightToolStripMenuItem.BackColor = Color.FromArgb(CByte(230), CByte(255), CByte(230))
-        greenHighlightToolStripMenuItem.Name = "greenHighlightToolStripMenuItem"
-        greenHighlightToolStripMenuItem.Size = New Size(170, 22)
-        greenHighlightToolStripMenuItem.Text = "Green Highlight"
-        ' 
-        ' pinkHighlightToolStripMenuItem
-        ' 
-        pinkHighlightToolStripMenuItem.BackColor = Color.FromArgb(CByte(255), CByte(230), CByte(250))
-        pinkHighlightToolStripMenuItem.Name = "pinkHighlightToolStripMenuItem"
-        pinkHighlightToolStripMenuItem.Size = New Size(170, 22)
-        pinkHighlightToolStripMenuItem.Text = "Pink Highlight"
-        ' 
-        ' removeHighlightToolStripMenuItem
-        ' 
-        removeHighlightToolStripMenuItem.Name = "removeHighlightToolStripMenuItem"
-        removeHighlightToolStripMenuItem.Size = New Size(170, 22)
-        removeHighlightToolStripMenuItem.Text = "Remove Highlight"
-        ' 
-        ' toolStripMenuItem1
-        ' 
-        toolStripMenuItem1.Name = "toolStripMenuItem1"
-        toolStripMenuItem1.Size = New Size(167, 6)
-        ' 
-        ' addNoteToolStripMenuItem
-        ' 
-        addNoteToolStripMenuItem.Name = "addNoteToolStripMenuItem"
-        addNoteToolStripMenuItem.Size = New Size(170, 22)
-        addNoteToolStripMenuItem.Text = "Add Note"
-        ' 
-        ' copyTextToolStripMenuItem
-        ' 
-        copyTextToolStripMenuItem.Name = "copyTextToolStripMenuItem"
-        copyTextToolStripMenuItem.Size = New Size(170, 22)
-        copyTextToolStripMenuItem.Text = "Copy Text"
+        toolStripSeparator2.Size = New Size(6, 60)
         ' 
         ' tsbNote
         ' 
@@ -634,86 +453,26 @@ Partial Class BookReaderForm
         ' 
         toolStripSeparator3.Margin = New Padding(10, 0, 10, 0)
         toolStripSeparator3.Name = "toolStripSeparator3"
-        toolStripSeparator3.Size = New Size(6, 45)
+        toolStripSeparator3.Size = New Size(6, 60)
         ' 
-        ' tsbSearch
+        ' tsbPrint
         ' 
-        tsbSearch.AutoSize = False
-        tsbSearch.DisplayStyle = ToolStripItemDisplayStyle.Image
-        tsbSearch.Enabled = False
-        tsbSearch.Image = CType(resources.GetObject("tsbSearch.Image"), Image)
-        tsbSearch.ImageTransparentColor = Color.Magenta
-        tsbSearch.Margin = New Padding(5, 0, 5, 0)
-        tsbSearch.Name = "tsbSearch"
-        tsbSearch.Size = New Size(40, 40)
-        tsbSearch.Text = "Search"
-        ' 
-        ' tsbViewMode
-        ' 
-        tsbViewMode.AutoSize = False
-        tsbViewMode.DisplayStyle = ToolStripItemDisplayStyle.Image
-        tsbViewMode.DropDownItems.AddRange(New ToolStripItem() {singlePageToolStripMenuItem1, twoPagesToolStripMenuItem1})
-        tsbViewMode.Enabled = False
-        tsbViewMode.Image = CType(resources.GetObject("tsbViewMode.Image"), Image)
-        tsbViewMode.ImageTransparentColor = Color.Magenta
-        tsbViewMode.Margin = New Padding(5, 0, 5, 0)
-        tsbViewMode.Name = "tsbViewMode"
-        tsbViewMode.Size = New Size(40, 40)
-        tsbViewMode.Text = "View Mode"
-        ' 
-        ' singlePageToolStripMenuItem1
-        ' 
-        singlePageToolStripMenuItem1.Checked = True
-        singlePageToolStripMenuItem1.CheckState = CheckState.Checked
-        singlePageToolStripMenuItem1.Name = "singlePageToolStripMenuItem1"
-        singlePageToolStripMenuItem1.Size = New Size(148, 24)
-        singlePageToolStripMenuItem1.Text = "Single Page"
-        ' 
-        ' twoPagesToolStripMenuItem1
-        ' 
-        twoPagesToolStripMenuItem1.Name = "twoPagesToolStripMenuItem1"
-        twoPagesToolStripMenuItem1.Size = New Size(148, 24)
-        twoPagesToolStripMenuItem1.Text = "Two Pages"
-        ' 
-        ' cmbTheme
-        ' 
-        cmbTheme.AutoSize = False
-        cmbTheme.DisplayStyle = ToolStripItemDisplayStyle.Image
-        cmbTheme.DropDownItems.AddRange(New ToolStripItem() {lightModeToolStripMenuItem, darkModeToolStripMenuItem, sepiaToolStripMenuItem})
-        cmbTheme.Enabled = False
-        cmbTheme.Image = CType(resources.GetObject("cmbTheme.Image"), Image)
-        cmbTheme.ImageTransparentColor = Color.Magenta
-        cmbTheme.Margin = New Padding(5, 0, 5, 0)
-        cmbTheme.Name = "cmbTheme"
-        cmbTheme.Size = New Size(40, 40)
-        cmbTheme.Text = "Theme"
-        ' 
-        ' lightModeToolStripMenuItem
-        ' 
-        lightModeToolStripMenuItem.Checked = True
-        lightModeToolStripMenuItem.CheckState = CheckState.Checked
-        lightModeToolStripMenuItem.Name = "lightModeToolStripMenuItem"
-        lightModeToolStripMenuItem.Size = New Size(149, 24)
-        lightModeToolStripMenuItem.Text = "Light Mode"
-        ' 
-        ' darkModeToolStripMenuItem
-        ' 
-        darkModeToolStripMenuItem.Name = "darkModeToolStripMenuItem"
-        darkModeToolStripMenuItem.Size = New Size(149, 24)
-        darkModeToolStripMenuItem.Text = "Dark Mode"
-        ' 
-        ' sepiaToolStripMenuItem
-        ' 
-        sepiaToolStripMenuItem.Name = "sepiaToolStripMenuItem"
-        sepiaToolStripMenuItem.Size = New Size(149, 24)
-        sepiaToolStripMenuItem.Text = "Sepia"
+        tsbPrint.AutoSize = False
+        tsbPrint.DisplayStyle = ToolStripItemDisplayStyle.Image
+        tsbPrint.Enabled = False
+        tsbPrint.Image = CType(resources.GetObject("tsbPrint.Image"), Image)
+        tsbPrint.ImageTransparentColor = Color.Magenta
+        tsbPrint.Margin = New Padding(5, 0, 5, 0)
+        tsbPrint.Name = "tsbPrint"
+        tsbPrint.Size = New Size(40, 40)
+        tsbPrint.Text = "Print"
         ' 
         ' menuSettings
         ' 
         menuSettings.Alignment = ToolStripItemAlignment.Right
         menuSettings.AutoSize = False
         menuSettings.DisplayStyle = ToolStripItemDisplayStyle.Image
-        menuSettings.DropDownItems.AddRange(New ToolStripItem() {preferencesToolStripMenuItem, helpToolStripMenuItem1, aboutToolStripMenuItem1})
+        menuSettings.DropDownItems.AddRange(New ToolStripItem() {helpToolStripMenuItem1, aboutToolStripMenuItem1})
         menuSettings.Image = CType(resources.GetObject("menuSettings.Image"), Image)
         menuSettings.ImageTransparentColor = Color.Magenta
         menuSettings.Margin = New Padding(5, 0, 10, 0)
@@ -721,33 +480,68 @@ Partial Class BookReaderForm
         menuSettings.Size = New Size(40, 40)
         menuSettings.Text = "Settings"
         ' 
-        ' preferencesToolStripMenuItem
-        ' 
-        preferencesToolStripMenuItem.Name = "preferencesToolStripMenuItem"
-        preferencesToolStripMenuItem.Size = New Size(148, 24)
-        preferencesToolStripMenuItem.Text = "Preferences"
-        ' 
         ' helpToolStripMenuItem1
         ' 
         helpToolStripMenuItem1.Name = "helpToolStripMenuItem1"
-        helpToolStripMenuItem1.Size = New Size(148, 24)
+        helpToolStripMenuItem1.Size = New Size(224, 28)
         helpToolStripMenuItem1.Text = "Help"
         ' 
         ' aboutToolStripMenuItem1
         ' 
         aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1"
-        aboutToolStripMenuItem1.Size = New Size(148, 24)
+        aboutToolStripMenuItem1.Size = New Size(224, 28)
         aboutToolStripMenuItem1.Text = "About"
+        ' 
+        ' cmsHighlighting
+        ' 
+        cmsHighlighting.ImageScalingSize = New Size(20, 20)
+        cmsHighlighting.Items.AddRange(New ToolStripItem() {yellowHighlightToolStripMenuItem, blueHighlightToolStripMenuItem, greenHighlightToolStripMenuItem, pinkHighlightToolStripMenuItem, removeHighlightToolStripMenuItem})
+        cmsHighlighting.Name = "cmsHighlighting"
+        cmsHighlighting.Size = New Size(199, 124)
+        ' 
+        ' yellowHighlightToolStripMenuItem
+        ' 
+        yellowHighlightToolStripMenuItem.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(230))
+        yellowHighlightToolStripMenuItem.Name = "yellowHighlightToolStripMenuItem"
+        yellowHighlightToolStripMenuItem.Size = New Size(198, 24)
+        yellowHighlightToolStripMenuItem.Text = "Yellow Highlight"
+        ' 
+        ' blueHighlightToolStripMenuItem
+        ' 
+        blueHighlightToolStripMenuItem.BackColor = Color.FromArgb(CByte(230), CByte(240), CByte(255))
+        blueHighlightToolStripMenuItem.Name = "blueHighlightToolStripMenuItem"
+        blueHighlightToolStripMenuItem.Size = New Size(198, 24)
+        blueHighlightToolStripMenuItem.Text = "Blue Highlight"
+        ' 
+        ' greenHighlightToolStripMenuItem
+        ' 
+        greenHighlightToolStripMenuItem.BackColor = Color.FromArgb(CByte(230), CByte(255), CByte(230))
+        greenHighlightToolStripMenuItem.Name = "greenHighlightToolStripMenuItem"
+        greenHighlightToolStripMenuItem.Size = New Size(198, 24)
+        greenHighlightToolStripMenuItem.Text = "Green Highlight"
+        ' 
+        ' pinkHighlightToolStripMenuItem
+        ' 
+        pinkHighlightToolStripMenuItem.BackColor = Color.FromArgb(CByte(255), CByte(230), CByte(250))
+        pinkHighlightToolStripMenuItem.Name = "pinkHighlightToolStripMenuItem"
+        pinkHighlightToolStripMenuItem.Size = New Size(198, 24)
+        pinkHighlightToolStripMenuItem.Text = "Pink Highlight"
+        ' 
+        ' removeHighlightToolStripMenuItem
+        ' 
+        removeHighlightToolStripMenuItem.Name = "removeHighlightToolStripMenuItem"
+        removeHighlightToolStripMenuItem.Size = New Size(198, 24)
+        removeHighlightToolStripMenuItem.Text = "Remove Highlight"
         ' 
         ' pnlFooter
         ' 
         pnlFooter.BackColor = Color.FromArgb(CByte(248), CByte(249), CByte(250))
         pnlFooter.Controls.Add(statusPanel)
         pnlFooter.Dock = DockStyle.Bottom
-        pnlFooter.Location = New Point(0, 608)
+        pnlFooter.Location = New Point(0, 811)
         pnlFooter.Margin = New Padding(0)
         pnlFooter.Name = "pnlFooter"
-        pnlFooter.Size = New Size(1050, 30)
+        pnlFooter.Size = New Size(1200, 40)
         pnlFooter.TabIndex = 5
         ' 
         ' statusPanel
@@ -756,10 +550,10 @@ Partial Class BookReaderForm
         statusPanel.Controls.Add(pnlReadingStats)
         statusPanel.Dock = DockStyle.Fill
         statusPanel.Location = New Point(0, 0)
-        statusPanel.Margin = New Padding(4)
+        statusPanel.Margin = New Padding(5)
         statusPanel.Name = "statusPanel"
-        statusPanel.Padding = New Padding(18, 4, 18, 4)
-        statusPanel.Size = New Size(1050, 30)
+        statusPanel.Padding = New Padding(21, 5, 21, 5)
+        statusPanel.Size = New Size(1200, 40)
         statusPanel.TabIndex = 0
         ' 
         ' pnlProgressContainer
@@ -767,10 +561,10 @@ Partial Class BookReaderForm
         pnlProgressContainer.Controls.Add(progressBar)
         pnlProgressContainer.Controls.Add(lblProgressPercentage)
         pnlProgressContainer.Dock = DockStyle.Left
-        pnlProgressContainer.Location = New Point(18, 4)
-        pnlProgressContainer.Margin = New Padding(4)
+        pnlProgressContainer.Location = New Point(21, 5)
+        pnlProgressContainer.Margin = New Padding(5)
         pnlProgressContainer.Name = "pnlProgressContainer"
-        pnlProgressContainer.Size = New Size(612, 22)
+        pnlProgressContainer.Size = New Size(699, 30)
         pnlProgressContainer.TabIndex = 0
         ' 
         ' progressBar
@@ -778,10 +572,10 @@ Partial Class BookReaderForm
         progressBar.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         progressBar.BackColor = Color.White
         progressBar.ForeColor = Color.FromArgb(CByte(0), CByte(120), CByte(212))
-        progressBar.Location = New Point(0, 4)
-        progressBar.Margin = New Padding(0, 4, 0, 0)
+        progressBar.Location = New Point(0, 5)
+        progressBar.Margin = New Padding(0, 5, 0, 0)
         progressBar.Name = "progressBar"
-        progressBar.Size = New Size(569, 19)
+        progressBar.Size = New Size(650, 25)
         progressBar.Style = ProgressBarStyle.Continuous
         progressBar.TabIndex = 0
         ' 
@@ -790,10 +584,10 @@ Partial Class BookReaderForm
         lblProgressPercentage.Dock = DockStyle.Right
         lblProgressPercentage.Font = New Font("Segoe UI", 9F)
         lblProgressPercentage.ForeColor = Color.FromArgb(CByte(60), CByte(60), CByte(60))
-        lblProgressPercentage.Location = New Point(568, 0)
+        lblProgressPercentage.Location = New Point(649, 0)
         lblProgressPercentage.Margin = New Padding(0)
         lblProgressPercentage.Name = "lblProgressPercentage"
-        lblProgressPercentage.Size = New Size(44, 22)
+        lblProgressPercentage.Size = New Size(50, 30)
         lblProgressPercentage.TabIndex = 1
         lblProgressPercentage.Text = "0%"
         lblProgressPercentage.TextAlign = ContentAlignment.MiddleRight
@@ -803,10 +597,10 @@ Partial Class BookReaderForm
         pnlReadingStats.Controls.Add(btnTimerControl)
         pnlReadingStats.Controls.Add(lblTimerDisplay)
         pnlReadingStats.Dock = DockStyle.Right
-        pnlReadingStats.Location = New Point(813, 4)
-        pnlReadingStats.Margin = New Padding(4)
+        pnlReadingStats.Location = New Point(929, 5)
+        pnlReadingStats.Margin = New Padding(5)
         pnlReadingStats.Name = "pnlReadingStats"
-        pnlReadingStats.Size = New Size(219, 22)
+        pnlReadingStats.Size = New Size(250, 30)
         pnlReadingStats.TabIndex = 1
         ' 
         ' btnTimerControl
@@ -817,10 +611,10 @@ Partial Class BookReaderForm
         btnTimerControl.FlatStyle = FlatStyle.Flat
         btnTimerControl.Font = New Font("Segoe UI", 9F)
         btnTimerControl.ForeColor = Color.FromArgb(CByte(60), CByte(60), CByte(60))
-        btnTimerControl.Location = New Point(167, 0)
-        btnTimerControl.Margin = New Padding(4)
+        btnTimerControl.Location = New Point(191, 0)
+        btnTimerControl.Margin = New Padding(5)
         btnTimerControl.Name = "btnTimerControl"
-        btnTimerControl.Size = New Size(52, 22)
+        btnTimerControl.Size = New Size(59, 30)
         btnTimerControl.TabIndex = 1
         btnTimerControl.Text = "▶"
         btnTimerControl.UseVisualStyleBackColor = False
@@ -833,7 +627,7 @@ Partial Class BookReaderForm
         lblTimerDisplay.Location = New Point(0, 0)
         lblTimerDisplay.Margin = New Padding(0)
         lblTimerDisplay.Name = "lblTimerDisplay"
-        lblTimerDisplay.Size = New Size(158, 22)
+        lblTimerDisplay.Size = New Size(181, 30)
         lblTimerDisplay.TabIndex = 0
         lblTimerDisplay.Text = "Reading Time: 00:00:00"
         lblTimerDisplay.TextAlign = ContentAlignment.MiddleLeft
@@ -849,36 +643,36 @@ Partial Class BookReaderForm
         ' 
         ' SearchDialog1
         ' 
-        SearchDialog1.Location = New Point(945, 9)
-        SearchDialog1.Margin = New Padding(4)
+        SearchDialog1.Location = New Point(1080, 12)
+        SearchDialog1.Margin = New Padding(5)
         SearchDialog1.Name = "SearchDialog1"
-        SearchDialog1.Size = New Size(47, 29)
+        SearchDialog1.Size = New Size(53, 37)
         SearchDialog1.TabIndex = 0
         SearchDialog1.Text = ""
         SearchDialog1.Visible = False
         ' 
         ' BookmarkDialog1
         ' 
-        BookmarkDialog1.Location = New Point(1011, 9)
-        BookmarkDialog1.Margin = New Padding(4)
+        BookmarkDialog1.Location = New Point(1155, 12)
+        BookmarkDialog1.Margin = New Padding(5)
         BookmarkDialog1.Name = "BookmarkDialog1"
-        BookmarkDialog1.Size = New Size(14, 23)
+        BookmarkDialog1.Size = New Size(15, 27)
         BookmarkDialog1.TabIndex = 0
         BookmarkDialog1.Visible = False
         ' 
         ' BookReaderForm
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
-        ClientSize = New Size(1050, 638)
+        ClientSize = New Size(1200, 851)
         Controls.Add(pnlMainContainer)
         Controls.Add(pnlHeader)
         Controls.Add(pnlFooter)
         Controls.Add(SearchDialog1)
         Controls.Add(BookmarkDialog1)
-        Margin = New Padding(4)
-        MinimumSize = New Size(702, 460)
+        Margin = New Padding(5)
+        MinimumSize = New Size(800, 598)
         Name = "BookReaderForm"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Book Reader"
@@ -892,8 +686,6 @@ Partial Class BookReaderForm
         pnlSidebarHeader.PerformLayout()
         pnlDocumentContainer.ResumeLayout(False)
         pnlDocumentView.ResumeLayout(False)
-        pnlSearch.ResumeLayout(False)
-        pnlSearch.PerformLayout()
         pnlHeader.ResumeLayout(False)
         tlsReaderTools.ResumeLayout(False)
         tlsReaderTools.PerformLayout()
@@ -921,12 +713,6 @@ Partial Class BookReaderForm
     Friend WithEvents pnlDocumentContainer As Panel
     Friend WithEvents pnlDocumentView As Panel
     Friend WithEvents lblNoDocument As Label
-    Friend WithEvents pnlSearch As Panel
-    Friend WithEvents txtSearch As TextBox
-    Friend WithEvents btnPrevSearch As Button
-    Friend WithEvents btnNextSearch As Button
-    Friend WithEvents btnCloseSearch As Button
-    Friend WithEvents lblSearchResults As Label
     Friend WithEvents pnlHeader As Panel
     Friend WithEvents tlsReaderTools As ToolStrip
     Friend WithEvents tsbOpenDocument As ToolStripButton
@@ -939,28 +725,16 @@ Partial Class BookReaderForm
     Friend WithEvents tsbZoomOut As ToolStripButton
     Friend WithEvents tsbZoomIn As ToolStripButton
     Friend WithEvents toolStripSeparator2 As ToolStripSeparator
-    Friend WithEvents tsbHighlight As ToolStripDropDownButton
     Friend WithEvents cmsHighlighting As ContextMenuStrip
     Friend WithEvents yellowHighlightToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents blueHighlightToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents greenHighlightToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents pinkHighlightToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents removeHighlightToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents toolStripMenuItem1 As ToolStripSeparator
-    Friend WithEvents addNoteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents copyTextToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents tsbNote As ToolStripButton
     Friend WithEvents toolStripSeparator3 As ToolStripSeparator
-    Friend WithEvents tsbSearch As ToolStripButton
-    Friend WithEvents tsbViewMode As ToolStripDropDownButton
-    Friend WithEvents singlePageToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents twoPagesToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents cmbTheme As ToolStripDropDownButton
-    Friend WithEvents lightModeToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents darkModeToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents sepiaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents tsbPrint As ToolStripButton
     Friend WithEvents menuSettings As ToolStripDropDownButton
-    Friend WithEvents preferencesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents helpToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents aboutToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents pnlFooter As Panel

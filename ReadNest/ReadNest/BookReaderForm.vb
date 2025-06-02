@@ -1,4 +1,6 @@
-﻿Imports System.IO
+﻿Imports System.Drawing.Printing
+Imports System.IO
+Imports System.Diagnostics
 Imports PdfiumViewer
 Imports VersOne.Epub
 
@@ -173,13 +175,10 @@ Public Class BookReaderForm
         tscbZoom.Enabled = isPdf
         tsbZoomIn.Enabled = isPdf
         tsbZoomOut.Enabled = isPdf
-        tsbViewMode.Enabled = isPdf
 
         ' Always enabled
-        tsbHighlight.Enabled = True
         tsbNote.Enabled = True
-        tsbSearch.Enabled = True
-        cmbTheme.Enabled = True
+        tsbPrint.Enabled = True
     End Sub
 
     Private Function StripHtmlTags(html As String) As String
@@ -281,7 +280,6 @@ Public Class BookReaderForm
         End Try
     End Sub
 
-
     Private Sub BookReaderForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         ' Hentikan timer terlebih dahulu
         If ReadingTimer IsNot Nothing AndAlso ReadingTimer.Enabled Then
@@ -342,15 +340,6 @@ Public Class BookReaderForm
         pnlSidebar.Visible = False
     End Sub
 
-    Private Sub tsbSearch_Click(sender As Object, e As EventArgs) Handles tsbSearch.Click
-        pnlSearch.Visible = Not pnlSearch.Visible
-        If pnlSearch.Visible Then txtSearch.Focus()
-    End Sub
-
-    Private Sub btnCloseSearch_Click(sender As Object, e As EventArgs) Handles btnCloseSearch.Click
-        pnlSearch.Visible = False
-    End Sub
-
     Private Sub tsbOpenDocument_Click(sender As Object, e As EventArgs) Handles tsbOpenDocument.Click
         Dim home As New MainForm()
         home.Show()
@@ -362,4 +351,110 @@ Public Class BookReaderForm
         Dim bookNotesForm As New BookNotesForm(_bookId)
         bookNotesForm.ShowDialog()
     End Sub
+
+    Private Sub tsbPrint_Click(sender As Object, e As EventArgs) Handles tsbPrint.Click
+        If _pdfDocument Is Nothing Then
+            MessageBox.Show("No PDF document loaded to print.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Return
+        End If
+
+        Try
+            ' Create print document
+            Dim printDocument = _pdfDocument.CreatePrintDocument()
+
+            ' Configure default print settings
+            printDocument.PrinterSettings.FromPage = 1
+            printDocument.PrinterSettings.ToPage = _pdfDocument.PageCount
+            printDocument.PrinterSettings.MinimumPage = 1
+            printDocument.PrinterSettings.MaximumPage = _pdfDocument.PageCount
+
+            ' Show print preview
+            Using printPreview As New PrintPreviewDialog()
+                printPreview.Document = printDocument
+                printPreview.WindowState = FormWindowState.Maximized
+                printPreview.Text = "Print Preview - " & Me.Text
+
+                ' Add custom print button
+                Dim tsPrint As New ToolStripButton("Print...")
+                AddHandler tsPrint.Click, Sub(s, ev)
+                                              ShowPrintDialog(printDocument)
+                                          End Sub
+
+                ' Add to existing toolbar (requires accessing internal controls)
+                Dim toolStrip As ToolStrip = Nothing
+                For Each ctrl As Control In printPreview.Controls
+                    If TypeOf ctrl Is ToolStrip Then
+                        toolStrip = DirectCast(ctrl, ToolStrip)
+                        Exit For
+                    End If
+                Next
+
+                If toolStrip IsNot Nothing Then
+                    toolStrip.Items.Add(New ToolStripSeparator())
+                    toolStrip.Items.Add(tsPrint)
+                End If
+
+                printPreview.ShowDialog()
+            End Using
+        Catch ex As Exception
+            MessageBox.Show($"Failed to print document: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub ShowPrintDialog(printDocument As Printing.PrintDocument)
+        Using printDialog As New PrintDialog()
+            printDialog.Document = printDocument
+            printDialog.AllowSomePages = True
+
+            If printDialog.ShowDialog() = DialogResult.OK Then
+                ' Handle page range using reflection
+                If printDialog.PrinterSettings.PrintRange = PrintRange.SomePages Then
+                    Try
+                        Dim pageRangeType = printDocument.GetType().Assembly.GetType("PdfiumViewer.PdfPrintRange")
+                        Dim pageRange = Activator.CreateInstance(pageRangeType,
+                                                           printDialog.PrinterSettings.FromPage - 1,
+                                                           printDialog.PrinterSettings.ToPage - 1)
+
+                        Dim pageRangeProp = printDocument.GetType().GetProperty("PageRange")
+                        pageRangeProp.SetValue(printDocument, pageRange)
+                    Catch ex As Exception
+                        MessageBox.Show("Could not set page range: " & ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    End Try
+                End If
+
+                ' Print the document
+                printDocument.Print()
+            End If
+        End Using
+    End Sub
+
+    Private Sub helpToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles helpToolStripMenuItem1.Click
+        Dim message As String = "Silakan kunjungi repository GitHub berikut untuk bantuan atau informasi lebih lanjut:" & vbCrLf &
+                            "https://github.com/kevin-luis/Kelompok_Pemrograman_Desktop" & vbCrLf & vbCrLf &
+                            "Klik OK untuk membuka repository GitHub di browser."
+
+        Dim result As DialogResult = MessageBox.Show(message, "Help & Support", MessageBoxButtons.OKCancel, MessageBoxIcon.Information)
+
+        If result = DialogResult.OK Then
+            Try
+                Process.Start(New ProcessStartInfo With {
+                .FileName = "https://github.com/kevin-luis/Kelompok_Pemrograman_Desktop",
+                .UseShellExecute = True
+            })
+            Catch ex As Exception
+                MessageBox.Show("Gagal membuka browser: " & ex.Message)
+            End Try
+        End If
+    End Sub
+
+
+    Private Sub aboutToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles aboutToolStripMenuItem1.Click
+        Dim appName As String = "ReadNest - Ebook Reader"
+        Dim version As String = "Versi 1.0.0"
+        Dim author As String = "Dikembangkan oleh Andrea Marie Baikole, Caesar Tresna Andika, Kevin Luis Banamtuan"
+        Dim message As String = $"{appName}{vbCrLf}{version}{vbCrLf}{vbCrLf}{author}{vbCrLf}{vbCrLf}Hak Cipta © 2025"
+
+        MessageBox.Show(message, "Tentang Aplikasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
 End Class
