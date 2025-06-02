@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2025 at 10:24 PM
+-- Generation Time: Jun 03, 2025 at 12:24 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -106,7 +106,7 @@ CREATE TABLE `notes` (
   `UserId` int(11) NOT NULL,
   `Title` varchar(255) NOT NULL,
   `Content` text NOT NULL,
-  `BookId` varchar(50) DEFAULT NULL,
+  `BookId` int(11) DEFAULT NULL,
   `CreatedDate` datetime DEFAULT current_timestamp(),
   `ModifiedDate` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -175,6 +175,7 @@ CREATE TABLE `usersessions` (
 --
 ALTER TABLE `books`
   ADD PRIMARY KEY (`BookId`),
+  ADD UNIQUE KEY `idx_bookid` (`BookId`),
   ADD KEY `CategoryId` (`CategoryId`),
   ADD KEY `UserId` (`UserId`);
 
@@ -269,10 +270,38 @@ ALTER TABLE `users`
 --
 
 --
+-- Constraints for table `books`
+--
+ALTER TABLE `books`
+  ADD CONSTRAINT `fk_books_category` FOREIGN KEY (`CategoryId`) REFERENCES `categories` (`CategoryId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_books_user` FOREIGN KEY (`UserId`) REFERENCES `users` (`UserId`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `borrowers`
+--
+ALTER TABLE `borrowers`
+  ADD CONSTRAINT `fk_borrowers_book` FOREIGN KEY (`BookId`) REFERENCES `books` (`BookId`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `notes`
 --
 ALTER TABLE `notes`
-  ADD CONSTRAINT `FK_notes_UserId` FOREIGN KEY (`UserId`) REFERENCES `users` (`UserId`) ON DELETE CASCADE;
+  ADD CONSTRAINT `FK_notes_UserId` FOREIGN KEY (`UserId`) REFERENCES `users` (`UserId`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_notes_book` FOREIGN KEY (`BookId`) REFERENCES `books` (`BookId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_notes_user` FOREIGN KEY (`UserId`) REFERENCES `users` (`UserId`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `userbookprogress`
+--
+ALTER TABLE `userbookprogress`
+  ADD CONSTRAINT `fk_progress_book` FOREIGN KEY (`BookId`) REFERENCES `books` (`BookId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_progress_user` FOREIGN KEY (`UserId`) REFERENCES `users` (`UserId`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `usersessions`
+--
+ALTER TABLE `usersessions`
+  ADD CONSTRAINT `fk_sessions_user` FOREIGN KEY (`UserId`) REFERENCES `users` (`UserId`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
