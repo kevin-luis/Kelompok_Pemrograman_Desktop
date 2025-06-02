@@ -73,9 +73,10 @@ Partial Class MainForm
         pbCategory.BackColor = SystemColors.Info
         pbCategory.BackgroundImage = CType(resources.GetObject("pbCategory.BackgroundImage"), Image)
         pbCategory.BackgroundImageLayout = ImageLayout.Stretch
-        pbCategory.Location = New Point(12, 148)
+        pbCategory.Location = New Point(14, 197)
+        pbCategory.Margin = New Padding(3, 4, 3, 4)
         pbCategory.Name = "pbCategory"
-        pbCategory.Size = New Size(28, 28)
+        pbCategory.Size = New Size(32, 37)
         pbCategory.TabIndex = 2
         pbCategory.TabStop = False
         ' 
@@ -84,9 +85,10 @@ Partial Class MainForm
         pbNotes.BackColor = SystemColors.Info
         pbNotes.BackgroundImage = CType(resources.GetObject("pbNotes.BackgroundImage"), Image)
         pbNotes.BackgroundImageLayout = ImageLayout.Stretch
-        pbNotes.Location = New Point(12, 182)
+        pbNotes.Location = New Point(14, 243)
+        pbNotes.Margin = New Padding(3, 4, 3, 4)
         pbNotes.Name = "pbNotes"
-        pbNotes.Size = New Size(28, 28)
+        pbNotes.Size = New Size(32, 37)
         pbNotes.TabIndex = 3
         pbNotes.TabStop = False
         ' 
@@ -95,9 +97,10 @@ Partial Class MainForm
         pbFavorite.BackColor = SystemColors.Info
         pbFavorite.BackgroundImage = CType(resources.GetObject("pbFavorite.BackgroundImage"), Image)
         pbFavorite.BackgroundImageLayout = ImageLayout.Stretch
-        pbFavorite.Location = New Point(12, 218)
+        pbFavorite.Location = New Point(14, 291)
+        pbFavorite.Margin = New Padding(3, 4, 3, 4)
         pbFavorite.Name = "pbFavorite"
-        pbFavorite.Size = New Size(28, 28)
+        pbFavorite.Size = New Size(32, 37)
         pbFavorite.TabIndex = 5
         pbFavorite.TabStop = False
         ' 
@@ -108,9 +111,9 @@ Partial Class MainForm
         Label1.Font = New Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = SystemColors.ControlText
         Label1.ImageAlign = ContentAlignment.TopRight
-        Label1.Location = New Point(12, 25)
+        Label1.Location = New Point(14, 33)
         Label1.Name = "Label1"
-        Label1.Size = New Size(144, 31)
+        Label1.Size = New Size(177, 39)
         Label1.TabIndex = 6
         Label1.Text = "ReadNest"
         ' 
@@ -120,9 +123,9 @@ Partial Class MainForm
         lblCategory.BackColor = SystemColors.Info
         lblCategory.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblCategory.ImageAlign = ContentAlignment.TopRight
-        lblCategory.Location = New Point(46, 156)
+        lblCategory.Location = New Point(53, 208)
         lblCategory.Name = "lblCategory"
-        lblCategory.Size = New Size(76, 18)
+        lblCategory.Size = New Size(93, 24)
         lblCategory.TabIndex = 7
         lblCategory.Text = "Category"
         ' 
@@ -132,9 +135,9 @@ Partial Class MainForm
         lblNotes.BackColor = SystemColors.Info
         lblNotes.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblNotes.ImageAlign = ContentAlignment.TopRight
-        lblNotes.Location = New Point(46, 191)
+        lblNotes.Location = New Point(53, 255)
         lblNotes.Name = "lblNotes"
-        lblNotes.Size = New Size(80, 18)
+        lblNotes.Size = New Size(97, 24)
         lblNotes.TabIndex = 8
         lblNotes.Text = "My Notes"
         ' 
@@ -144,9 +147,9 @@ Partial Class MainForm
         lblFavorite.BackColor = SystemColors.Info
         lblFavorite.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblFavorite.ImageAlign = ContentAlignment.TopRight
-        lblFavorite.Location = New Point(46, 227)
+        lblFavorite.Location = New Point(53, 303)
         lblFavorite.Name = "lblFavorite"
-        lblFavorite.Size = New Size(69, 18)
+        lblFavorite.Size = New Size(85, 24)
         lblFavorite.TabIndex = 9
         lblFavorite.Text = "Favorite"
         ' 
@@ -156,9 +159,9 @@ Partial Class MainForm
         lblMenu.BackColor = SystemColors.Info
         lblMenu.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblMenu.ImageAlign = ContentAlignment.TopRight
-        lblMenu.Location = New Point(12, 85)
+        lblMenu.Location = New Point(14, 113)
         lblMenu.Name = "lblMenu"
-        lblMenu.Size = New Size(49, 18)
+        lblMenu.Size = New Size(63, 24)
         lblMenu.TabIndex = 13
         lblMenu.Text = "Menu"
         ' 
@@ -167,9 +170,10 @@ Partial Class MainForm
         btnSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnSearch.AutoSize = True
         btnSearch.Font = New Font("Microsoft Sans Serif", 9.25F, FontStyle.Bold)
-        btnSearch.Location = New Point(421, 55)
+        btnSearch.Location = New Point(480, 73)
+        btnSearch.Margin = New Padding(3, 4, 3, 4)
         btnSearch.Name = "btnSearch"
-        btnSearch.Size = New Size(86, 30)
+        btnSearch.Size = New Size(98, 40)
         btnSearch.TabIndex = 14
         btnSearch.Text = "Search"
         btnSearch.UseVisualStyleBackColor = True
@@ -178,10 +182,11 @@ Partial Class MainForm
         ' 
         txtSearchBook.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         txtSearchBook.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtSearchBook.Location = New Point(14, 56)
+        txtSearchBook.Location = New Point(16, 75)
+        txtSearchBook.Margin = New Padding(3, 4, 3, 4)
         txtSearchBook.Name = "txtSearchBook"
         txtSearchBook.PlaceholderText = "Find your book here"
-        txtSearchBook.Size = New Size(401, 24)
+        txtSearchBook.Size = New Size(457, 29)
         txtSearchBook.TabIndex = 15
         ' 
         ' pbProfile
@@ -189,9 +194,10 @@ Partial Class MainForm
         pbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
         pbProfile.BackgroundImageLayout = ImageLayout.Stretch
-        pbProfile.Location = New Point(576, 22)
+        pbProfile.Location = New Point(657, 29)
+        pbProfile.Margin = New Padding(3, 4, 3, 4)
         pbProfile.Name = "pbProfile"
-        pbProfile.Size = New Size(28, 28)
+        pbProfile.Size = New Size(32, 37)
         pbProfile.TabIndex = 17
         pbProfile.TabStop = False
         ' 
@@ -202,9 +208,9 @@ Partial Class MainForm
         Label2.Font = New Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold)
         Label2.ForeColor = SystemColors.ControlText
         Label2.ImageAlign = ContentAlignment.TopRight
-        Label2.Location = New Point(14, 25)
+        Label2.Location = New Point(16, 33)
         Label2.Name = "Label2"
-        Label2.Size = New Size(216, 26)
+        Label2.Size = New Size(273, 32)
         Label2.TabIndex = 19
         Label2.Text = "Discover your book"
         ' 
@@ -213,9 +219,10 @@ Partial Class MainForm
         pbDiscover.BackColor = SystemColors.Info
         pbDiscover.BackgroundImage = CType(resources.GetObject("pbDiscover.BackgroundImage"), Image)
         pbDiscover.BackgroundImageLayout = ImageLayout.Stretch
-        pbDiscover.Location = New Point(12, 114)
+        pbDiscover.Location = New Point(14, 152)
+        pbDiscover.Margin = New Padding(3, 4, 3, 4)
         pbDiscover.Name = "pbDiscover"
-        pbDiscover.Size = New Size(28, 28)
+        pbDiscover.Size = New Size(32, 37)
         pbDiscover.TabIndex = 20
         pbDiscover.TabStop = False
         ' 
@@ -225,9 +232,9 @@ Partial Class MainForm
         lblDiscover.BackColor = SystemColors.Info
         lblDiscover.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblDiscover.ImageAlign = ContentAlignment.TopRight
-        lblDiscover.Location = New Point(46, 122)
+        lblDiscover.Location = New Point(53, 163)
         lblDiscover.Name = "lblDiscover"
-        lblDiscover.Size = New Size(75, 18)
+        lblDiscover.Size = New Size(91, 24)
         lblDiscover.TabIndex = 21
         lblDiscover.Text = "Discover"
         ' 
@@ -237,8 +244,9 @@ Partial Class MainForm
         PictureBox2.BorderStyle = BorderStyle.FixedSingle
         PictureBox2.Dock = DockStyle.Fill
         PictureBox2.Location = New Point(0, 0)
+        PictureBox2.Margin = New Padding(3, 4, 3, 4)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(186, 490)
+        PictureBox2.Size = New Size(213, 653)
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
         ' 
@@ -247,9 +255,10 @@ Partial Class MainForm
         pbStatistic.BackColor = SystemColors.Info
         pbStatistic.BackgroundImage = CType(resources.GetObject("pbStatistic.BackgroundImage"), Image)
         pbStatistic.BackgroundImageLayout = ImageLayout.Stretch
-        pbStatistic.Location = New Point(12, 286)
+        pbStatistic.Location = New Point(14, 381)
+        pbStatistic.Margin = New Padding(3, 4, 3, 4)
         pbStatistic.Name = "pbStatistic"
-        pbStatistic.Size = New Size(28, 28)
+        pbStatistic.Size = New Size(32, 37)
         pbStatistic.TabIndex = 23
         pbStatistic.TabStop = False
         ' 
@@ -259,9 +268,9 @@ Partial Class MainForm
         lblstatistic.BackColor = SystemColors.Info
         lblstatistic.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblstatistic.ImageAlign = ContentAlignment.TopRight
-        lblstatistic.Location = New Point(46, 294)
+        lblstatistic.Location = New Point(53, 392)
         lblstatistic.Name = "lblstatistic"
-        lblstatistic.Size = New Size(96, 18)
+        lblstatistic.Size = New Size(113, 24)
         lblstatistic.TabIndex = 24
         lblstatistic.Text = "My Statistic"
         ' 
@@ -270,9 +279,10 @@ Partial Class MainForm
         btnAddNewBook.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnAddNewBook.AutoSize = True
         btnAddNewBook.Font = New Font("Microsoft Sans Serif", 10F, FontStyle.Bold)
-        btnAddNewBook.Location = New Point(558, 88)
+        btnAddNewBook.Location = New Point(637, 117)
+        btnAddNewBook.Margin = New Padding(3, 4, 3, 4)
         btnAddNewBook.Name = "btnAddNewBook"
-        btnAddNewBook.Size = New Size(141, 30)
+        btnAddNewBook.Size = New Size(161, 40)
         btnAddNewBook.TabIndex = 26
         btnAddNewBook.Text = "Add New Book"
         btnAddNewBook.UseVisualStyleBackColor = True
@@ -283,9 +293,9 @@ Partial Class MainForm
         lblBB.BackColor = SystemColors.Info
         lblBB.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblBB.ImageAlign = ContentAlignment.TopRight
-        lblBB.Location = New Point(46, 260)
+        lblBB.Location = New Point(53, 347)
         lblBB.Name = "lblBB"
-        lblBB.Size = New Size(130, 18)
+        lblBB.Size = New Size(158, 24)
         lblBB.TabIndex = 28
         lblBB.Text = "Book Borrowing"
         ' 
@@ -294,9 +304,10 @@ Partial Class MainForm
         pbBB.BackColor = SystemColors.Info
         pbBB.BackgroundImage = CType(resources.GetObject("pbBB.BackgroundImage"), Image)
         pbBB.BackgroundImageLayout = ImageLayout.Stretch
-        pbBB.Location = New Point(12, 252)
+        pbBB.Location = New Point(14, 336)
+        pbBB.Margin = New Padding(3, 4, 3, 4)
         pbBB.Name = "pbBB"
-        pbBB.Size = New Size(28, 28)
+        pbBB.Size = New Size(32, 37)
         pbBB.TabIndex = 29
         pbBB.TabStop = False
         ' 
@@ -307,9 +318,9 @@ Partial Class MainForm
         Label5.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
         Label5.ForeColor = SystemColors.ControlText
         Label5.ImageAlign = ContentAlignment.TopRight
-        Label5.Location = New Point(14, 99)
+        Label5.Location = New Point(16, 132)
         Label5.Name = "Label5"
-        Label5.Size = New Size(151, 22)
+        Label5.Size = New Size(181, 26)
         Label5.TabIndex = 30
         Label5.Text = "Your Books List"
         ' 
@@ -321,9 +332,10 @@ Partial Class MainForm
         cbProfile.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         cbProfile.FormattingEnabled = True
         cbProfile.Items.AddRange(New Object() {"Profile", "View Profile", "Logout"})
-        cbProfile.Location = New Point(610, 23)
+        cbProfile.Location = New Point(696, 31)
+        cbProfile.Margin = New Padding(3, 4, 3, 4)
         cbProfile.Name = "cbProfile"
-        cbProfile.Size = New Size(97, 26)
+        cbProfile.Size = New Size(110, 32)
         cbProfile.TabIndex = 32
         ' 
         ' SplitContainer1
@@ -331,7 +343,8 @@ Partial Class MainForm
         SplitContainer1.Dock = DockStyle.Fill
         SplitContainer1.FixedPanel = FixedPanel.Panel1
         SplitContainer1.Location = New Point(0, 0)
-        SplitContainer1.MinimumSize = New Size(920, 490)
+        SplitContainer1.Margin = New Padding(3, 4, 3, 4)
+        SplitContainer1.MinimumSize = New Size(1051, 653)
         SplitContainer1.Name = "SplitContainer1"
         ' 
         ' SplitContainer1.Panel1
@@ -358,8 +371,9 @@ Partial Class MainForm
         ' SplitContainer1.Panel2
         ' 
         SplitContainer1.Panel2.Controls.Add(panelRight)
-        SplitContainer1.Size = New Size(934, 490)
-        SplitContainer1.SplitterDistance = 186
+        SplitContainer1.Size = New Size(1067, 653)
+        SplitContainer1.SplitterDistance = 213
+        SplitContainer1.SplitterWidth = 5
         SplitContainer1.TabIndex = 33
         ' 
         ' pbWishlist
@@ -367,9 +381,10 @@ Partial Class MainForm
         pbWishlist.BackColor = SystemColors.Info
         pbWishlist.BackgroundImage = CType(resources.GetObject("pbWishlist.BackgroundImage"), Image)
         pbWishlist.BackgroundImageLayout = ImageLayout.Stretch
-        pbWishlist.Location = New Point(12, 319)
+        pbWishlist.Location = New Point(14, 425)
+        pbWishlist.Margin = New Padding(3, 4, 3, 4)
         pbWishlist.Name = "pbWishlist"
-        pbWishlist.Size = New Size(28, 28)
+        pbWishlist.Size = New Size(32, 37)
         pbWishlist.TabIndex = 30
         pbWishlist.TabStop = False
         ' 
@@ -379,9 +394,9 @@ Partial Class MainForm
         lblWishlist.BackColor = SystemColors.Info
         lblWishlist.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblWishlist.ImageAlign = ContentAlignment.TopRight
-        lblWishlist.Location = New Point(46, 327)
+        lblWishlist.Location = New Point(53, 436)
         lblWishlist.Name = "lblWishlist"
-        lblWishlist.Size = New Size(68, 18)
+        lblWishlist.Size = New Size(81, 24)
         lblWishlist.TabIndex = 31
         lblWishlist.Text = "Wishlist"
         ' 
@@ -398,9 +413,10 @@ Partial Class MainForm
         panelRight.Controls.Add(pbDeleteBook)
         panelRight.Dock = DockStyle.Fill
         panelRight.Location = New Point(0, 0)
+        panelRight.Margin = New Padding(3, 4, 3, 4)
         panelRight.Name = "panelRight"
-        panelRight.Padding = New Padding(10)
-        panelRight.Size = New Size(744, 490)
+        panelRight.Padding = New Padding(11, 13, 11, 13)
+        panelRight.Size = New Size(849, 653)
         panelRight.TabIndex = 1
         ' 
         ' flowBooks
@@ -408,10 +424,11 @@ Partial Class MainForm
         flowBooks.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         flowBooks.AutoScroll = True
         flowBooks.BackColor = Color.White
-        flowBooks.Location = New Point(14, 124)
+        flowBooks.Location = New Point(16, 165)
+        flowBooks.Margin = New Padding(3, 4, 3, 4)
         flowBooks.Name = "flowBooks"
-        flowBooks.Padding = New Padding(9, 8, 9, 8)
-        flowBooks.Size = New Size(719, 353)
+        flowBooks.Padding = New Padding(10, 11, 10, 11)
+        flowBooks.Size = New Size(821, 471)
         flowBooks.TabIndex = 33
         ' 
         ' pbDeleteBook
@@ -419,22 +436,24 @@ Partial Class MainForm
         pbDeleteBook.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         pbDeleteBook.BackgroundImage = CType(resources.GetObject("pbDeleteBook.BackgroundImage"), Image)
         pbDeleteBook.BackgroundImageLayout = ImageLayout.Zoom
-        pbDeleteBook.Location = New Point(700, 90)
+        pbDeleteBook.Location = New Point(799, 120)
+        pbDeleteBook.Margin = New Padding(3, 4, 3, 4)
         pbDeleteBook.Name = "pbDeleteBook"
-        pbDeleteBook.Size = New Size(26, 26)
+        pbDeleteBook.Size = New Size(30, 35)
         pbDeleteBook.TabIndex = 27
         pbDeleteBook.TabStop = False
         ' 
         ' MainForm
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         BackColor = Color.White
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(934, 486)
+        ClientSize = New Size(1067, 648)
         Controls.Add(SplitContainer1)
-        MinimumSize = New Size(800, 492)
+        Margin = New Padding(3, 4, 3, 4)
+        MinimumSize = New Size(912, 640)
         Name = "MainForm"
         StartPosition = FormStartPosition.CenterScreen
         Text = "ReadNest, Your Personal Library"

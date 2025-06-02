@@ -164,23 +164,27 @@ Public Class MainForm
             flowBooks.Controls.Clear()
 
             Dim db As New DBConnection()
-            Dim query As String = "SELECT BookId, Title, Author, PhotoPath FROM books " &
-                                    "WHERE Title LIKE @search OR Author LIKE @search"
+            Dim query As String = "
+            SELECT b.BookId, b.Title, b.Author, b.PhotoPath
+            FROM books b
+            LEFT JOIN categories c ON b.CategoryId = c.CategoryId
+            WHERE b.Title LIKE @search OR b.Author LIKE @search OR c.CategoryName LIKE @search
+        "
 
             Dim parameters As New Dictionary(Of String, Object) From {
-                {"@search", $"%{searchTerm}%"}
-            }
+            {"@search", $"%{searchTerm}%"}
+        }
 
             Dim books As DataTable = db.ExecuteQueryWithParams(query, parameters)
 
             If books IsNot Nothing AndAlso books.Rows.Count > 0 Then
                 For Each row As DataRow In books.Rows
                     Dim bookCard As New BookCard(
-                            Convert.ToInt32(row("BookId")),
-                            row("Title").ToString(),
-                            row("Author").ToString(),
-                            If(IsDBNull(row("PhotoPath")), "", row("PhotoPath").ToString())
-                        )
+                    Convert.ToInt32(row("BookId")),
+                    row("Title").ToString(),
+                    row("Author").ToString(),
+                    If(IsDBNull(row("PhotoPath")), "", row("PhotoPath").ToString())
+                )
                     flowBooks.Controls.Add(bookCard)
                 Next
             Else
@@ -188,11 +192,12 @@ Public Class MainForm
             End If
         Catch ex As Exception
             MessageBox.Show($"Gagal mencari buku: {ex.Message}", "Error",
-                           MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
             flowBooks.ResumeLayout()
         End Try
     End Sub
+
 
     Private Function CreateNoBooksLabel() As Label
         Return New Label() With {

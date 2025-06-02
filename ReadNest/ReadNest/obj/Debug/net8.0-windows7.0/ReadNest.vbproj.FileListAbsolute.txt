@@ -238,3 +238,27 @@ C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelom
 C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.AdminForm.resources
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Azure.Core.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Azure.Identity.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\System.Windows.Forms.DataVisualization.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Microsoft.Bcl.AsyncInterfaces.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Microsoft.Data.SqlClient.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Microsoft.Identity.Client.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Microsoft.Identity.Client.Extensions.Msal.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Microsoft.IdentityModel.Logging.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Microsoft.IdentityModel.Protocols.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Microsoft.IdentityModel.Tokens.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\System.IdentityModel.Tokens.Jwt.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\System.Runtime.Caching.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\WinForms.DataVisualization.Utilities.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\WinForms.DataVisualization.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.AdminForm.resources
