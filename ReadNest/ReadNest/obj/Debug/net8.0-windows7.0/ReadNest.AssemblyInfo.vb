@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("ReadNest"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+59c38905da8acad7b622870bc71e52ba2d008f4a"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06c84fec28231f811e6f30617f21e30c768b21fd"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("ReadNest"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("ReadNest"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _

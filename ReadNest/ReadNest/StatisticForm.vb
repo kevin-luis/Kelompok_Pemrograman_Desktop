@@ -24,7 +24,7 @@ Public Class StatisticForm
 
             ' Pastikan TextBox benar-benar ada di form dengan nama yang tepat
             txtTotalBooksRead.Text = stats("read").ToString()
-            txtTotalReadingTime.Text = stats("reading").ToString()
+            txtTotalReadingTime.Text = $"{stats("reading").ToString()} menit"
             txtTotalBooksBorrowed.Text = stats("borrowed").ToString()
             txtTotalFavoriteBooks.Text = stats("favorite").ToString()
 
