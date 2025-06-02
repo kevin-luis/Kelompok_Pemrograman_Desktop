@@ -214,3 +214,27 @@ C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelom
 A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.AddEditNoteForm.resources
 A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.BookNotesForm.resources
 A:\Kulyeah\Semester 6\Pemrograman Desktop\Tugas Akhir\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.EditProfile.resources
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Azure.Core.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Azure.Identity.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\System.Windows.Forms.DataVisualization.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Microsoft.Data.SqlClient.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Microsoft.Identity.Client.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\System.Runtime.Caching.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\WinForms.DataVisualization.Utilities.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\WinForms.DataVisualization.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\bin\Debug\net8.0-windows7.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\LENOVO_THINKPAD\OneDrive\Documents\SEMESTER 6\Pemrograman Desktop\Kelompok_Pemrograman_Desktop\ReadNest\ReadNest\obj\Debug\net8.0-windows7.0\ReadNest.AdminForm.resources

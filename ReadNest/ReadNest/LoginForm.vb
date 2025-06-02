@@ -22,14 +22,18 @@ Public Class LoginForm
 
         If userData IsNot Nothing AndAlso userData.Rows.Count > 0 Then
             Dim userId = Convert.ToInt32(userData.Rows(0)("UserId"))
+            ' Ambil username asli dari database jika perlu untuk case-sensitive comparison,
+            ' atau gunakan username input jika case-insensitivity sudah cukup.
+            ' Untuk contoh ini, kita gunakan username input yang sudah di-trim.
+            Dim actualUsername As String = userData.Rows(0)("Username").ToString() ' Asumsi ada kolom Username di userData
 
             Dim sessionId = db.CreatePersistentSession(userId)
 
             If Not String.IsNullOrEmpty(sessionId) Then
                 SessionHelper.CurrentUser = New User With {
-                .userId = userId,
-                .username = username
-            }
+                    .UserId = userId,
+                    .Username = actualUsername ' Simpan username asli dari DB
+                }
                 SessionHelper.SessionToken = sessionId
 
                 My.Settings.UserId = userId
@@ -37,11 +41,23 @@ Public Class LoginForm
                 My.Settings.Save()
 
                 MessageBox.Show("Login berhasil! Session akan tetap aktif selama 1 bulan.", "Informasi",
-                          MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                Dim mainForm As New MainForm()
-                mainForm.Show()
-                Me.Hide()
+                ' --- MODIFIKASI DIMULAI DI SINI ---
+                ' Cek apakah username adalah "Admin" atau "admin"
+                If actualUsername.Equals("Admin", StringComparison.OrdinalIgnoreCase) Then
+                    ' Jika username adalah Admin (case-insensitive)
+                    Dim adminForm As New AdminForm() ' Pastikan Anda sudah memiliki AdminForm
+                    adminForm.Show()
+                    Me.Hide()
+                Else
+                    ' Jika bukan Admin, buka MainForm seperti biasa
+                    Dim mainForm As New MainForm()
+                    mainForm.Show()
+                    Me.Hide()
+                End If
+                ' --- MODIFIKASI SELESAI ---
+
             Else
                 MessageBox.Show("Gagal membuat session", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
@@ -52,8 +68,8 @@ Public Class LoginForm
 
     Private Sub linkCreateAccount_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linkCreateAccount.LinkClicked
         Dim formBaru As New CreateAccountForm
-        formBaru.Show
-        Hide
+        formBaru.Show()
+        Hide()
     End Sub
 
     Private Sub chkPassword_CheckedChanged(sender As Object, e As EventArgs) Handles chkPassword.CheckedChanged
