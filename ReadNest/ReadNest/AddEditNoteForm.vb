@@ -49,7 +49,16 @@
     Private Sub AddEditNoteForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Console.WriteLine($"Form Load - isEditing: {isEditing}, noteId: '{noteId}', preselectedBookId: '{preselectedBookId}'")
 
-        ' Load books for dropdown
+        ' Check if user is authenticated
+        Dim currentUserId As Integer = SessionHelper.CurrentUser.UserId
+        If currentUserId <= 0 Then
+            MessageBox.Show("User tidak teridentifikasi. Silakan login ulang.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Me.DialogResult = DialogResult.Cancel
+            Me.Close()
+            Return
+        End If
+
+        ' Load books for dropdown (only books owned by current user)
         LoadBooksToComboBox()
 
         If isEditing AndAlso Not String.IsNullOrEmpty(noteId) Then
@@ -71,8 +80,20 @@
             cbBooks.Items.Clear()
             cbBooks.Items.Add(New BookItem("", "-- Tidak Ada Buku --"))
 
-            Dim query As String = "SELECT BookId, Title FROM books ORDER BY Title"
-            Dim dt As DataTable = db.ExecuteQueryWithParams(query, New Dictionary(Of String, Object))
+            ' Get current user ID
+            Dim currentUserId As Integer = SessionHelper.CurrentUser.UserId
+            If currentUserId <= 0 Then
+                Console.WriteLine("Cannot load books - user not authenticated")
+                Return
+            End If
+
+            ' Only load books owned by current user
+            Dim query As String = "SELECT BookId, Title FROM books WHERE UserId = @UserId ORDER BY Title"
+            Dim parameters As New Dictionary(Of String, Object) From {
+                {"@UserId", currentUserId}
+            }
+
+            Dim dt As DataTable = db.ExecuteQueryWithParams(query, parameters)
 
             If dt IsNot Nothing Then
                 For Each row As DataRow In dt.Rows
@@ -100,6 +121,13 @@
                 Return
             End If
 
+            ' Get current user ID for security check
+            Dim currentUserId As Integer = SessionHelper.CurrentUser.UserId
+            If currentUserId <= 0 Then
+                MessageBox.Show("User tidak teridentifikasi. Silakan login ulang.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+
             ' Convert string noteId to integer
             Dim noteIdInt As Integer
             If Not Integer.TryParse(noteId, noteIdInt) Then
@@ -107,19 +135,21 @@
                 Return
             End If
 
-            Dim query As String = "SELECT Title, Content, BookId FROM notes WHERE NoteId = @NoteId"
+            ' Load note data only if it belongs to current user
+            Dim query As String = "SELECT Title, Content, BookId FROM notes WHERE NoteId = @NoteId AND UserId = @UserId"
             Dim parameters As New Dictionary(Of String, Object) From {
-                {"@NoteId", noteIdInt}
+                {"@NoteId", noteIdInt},
+                {"@UserId", currentUserId}
             }
 
-            Console.WriteLine($"Executing query with noteId as integer: {noteIdInt}")
+            Console.WriteLine($"Executing query with noteId as integer: {noteIdInt} and userId: {currentUserId}")
 
             Dim dt As DataTable = db.ExecuteQueryWithParams(query, parameters)
             If dt IsNot Nothing AndAlso dt.Rows.Count > 0 Then
                 Dim row As DataRow = dt.Rows(0)
                 Dim title As String = If(IsDBNull(row("Title")), "", row("Title").ToString())
                 Dim content As String = If(IsDBNull(row("Content")), "", row("Content").ToString())
-                ' PERBAIKAN: Konversi BookId ke string untuk consistency
+                ' Convert BookId to string for consistency
                 Dim bookId As String = If(IsDBNull(row("BookId")), "", row("BookId").ToString())
 
                 Console.WriteLine($"Loaded data - Title: '{title}', Content length: {content.Length}, BookId: '{bookId}'")
@@ -137,7 +167,9 @@
 
                 Console.WriteLine("Note data loaded successfully")
             Else
-                MessageBox.Show($"No note found with ID: {noteIdInt}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show($"Note tidak ditemukan atau bukan milik Anda.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Me.DialogResult = DialogResult.Cancel
+                Me.Close()
             End If
         Catch ex As Exception
             MessageBox.Show("Error loading note data: " & ex.Message & vbCrLf & vbCrLf & "Stack Trace: " & ex.StackTrace,
@@ -160,7 +192,9 @@
                 End If
             Next
 
-            Console.WriteLine($"Book with ID '{bookId}' not found in combobox")
+            Console.WriteLine($"Book with ID '{bookId}' not found in combobox - may not belong to current user")
+            ' If book not found (possibly doesn't belong to current user), select "no book"
+            cbBooks.SelectedIndex = 0
         Catch ex As Exception
             Console.WriteLine($"Error selecting book: {ex.Message}")
         End Try
@@ -194,6 +228,13 @@
             Return
         End If
 
+        ' Check if user is authenticated
+        Dim currentUserId As Integer = SessionHelper.CurrentUser.UserId
+        If currentUserId <= 0 Then
+            MessageBox.Show("User tidak teridentifikasi. Silakan login ulang.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
         Try
             If isEditing Then
                 UpdateNote()
@@ -211,17 +252,19 @@
 
     Private Sub InsertNote()
         Dim selectedBookId As String = GetSelectedBookId()
+        Dim currentUserId As Integer = SessionHelper.CurrentUser.UserId
 
-        ' PERBAIKAN: Handle BookId dengan benar (bisa string atau int tergantung database schema)
-        Dim query As String = "INSERT INTO notes (Title, Content, BookId, CreatedDate) VALUES (@Title, @Content, @BookId, NOW())"
+        ' Insert note with current user's ID
+        Dim query As String = "INSERT INTO notes (UserId, Title, Content, BookId, CreatedDate, ModifiedDate) VALUES (@UserId, @Title, @Content, @BookId, NOW(), NOW())"
 
         Dim parameters As New Dictionary(Of String, Object) From {
+            {"@UserId", currentUserId},
             {"@Title", txtTitle.Text.Trim()},
             {"@Content", txtContent.Text.Trim()},
             {"@BookId", If(String.IsNullOrEmpty(selectedBookId), Nothing, selectedBookId)}
         }
 
-        Console.WriteLine($"Inserting note with BookId: '{selectedBookId}'")
+        Console.WriteLine($"Inserting note with UserId: {currentUserId} and BookId: '{selectedBookId}'")
 
         Dim result As Integer = db.ExecuteNonQueryWithParams(query, parameters)
 
@@ -234,29 +277,32 @@
 
     Private Sub UpdateNote()
         Dim selectedBookId As String = GetSelectedBookId()
+        Dim currentUserId As Integer = SessionHelper.CurrentUser.UserId
 
         Dim noteIdInt As Integer
         If Not Integer.TryParse(noteId, noteIdInt) Then
             Throw New Exception($"Invalid Note ID format: '{noteId}'. Expected integer.")
         End If
 
-        Dim query As String = "UPDATE notes SET Title = @Title, Content = @Content, BookId = @BookId, ModifiedDate = NOW() WHERE NoteId = @NoteId"
+        ' Update note only if it belongs to current user
+        Dim query As String = "UPDATE notes SET Title = @Title, Content = @Content, BookId = @BookId, ModifiedDate = NOW() WHERE NoteId = @NoteId AND UserId = @UserId"
 
         Dim parameters As New Dictionary(Of String, Object) From {
             {"@NoteId", noteIdInt},
+            {"@UserId", currentUserId},
             {"@Title", txtTitle.Text.Trim()},
             {"@Content", txtContent.Text.Trim()},
             {"@BookId", If(String.IsNullOrEmpty(selectedBookId), Nothing, selectedBookId)}
         }
 
-        Console.WriteLine($"Updating note {noteIdInt} with BookId: '{selectedBookId}'")
+        Console.WriteLine($"Updating note {noteIdInt} with UserId: {currentUserId} and BookId: '{selectedBookId}'")
 
         Dim result As Integer = db.ExecuteNonQueryWithParams(query, parameters)
 
         If result > 0 Then
             MessageBox.Show("Note berhasil diperbarui!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
-            Throw New Exception("Gagal memperbarui note di database.")
+            Throw New Exception("Gagal memperbarui note di database atau note bukan milik Anda.")
         End If
     End Sub
 
@@ -275,6 +321,14 @@
                 Case DialogResult.Yes
                     If String.IsNullOrWhiteSpace(txtTitle.Text) OrElse String.IsNullOrWhiteSpace(txtContent.Text) Then
                         MessageBox.Show("Judul dan isi note tidak boleh kosong!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                        e.Cancel = True
+                        Return
+                    End If
+
+                    ' Check if user is authenticated
+                    Dim currentUserId As Integer = SessionHelper.CurrentUser.UserId
+                    If currentUserId <= 0 Then
+                        MessageBox.Show("User tidak teridentifikasi. Silakan login ulang.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         e.Cancel = True
                         Return
                     End If

@@ -10,6 +10,14 @@
         Me.Hide()
     End Sub
 
+    Private Sub SetupProfileComboBox()
+        cbProfile.Items.Clear()
+        cbProfile.Items.Add("Profile")
+        cbProfile.Items.Add("View Profile")
+        cbProfile.Items.Add("Logout")
+        cbProfile.SelectedIndex = 0
+    End Sub
+
     Private Sub lblDiscover_Click(sender As Object, e As EventArgs) Handles lblDiscover.Click, pbDiscover.Click
         NavigateToForm(New MainForm())
     End Sub
@@ -73,6 +81,7 @@
         ' Setup FlowLayoutPanel untuk scroll
         SetupFlowLayoutPanel()
         LoadNotes()
+        SetupProfileComboBox()
     End Sub
 
     Private Sub SetupFlowLayoutPanel()
@@ -90,27 +99,50 @@
         Try
             flNotes.Controls.Clear()
 
-            ' Modified query to join with books table to get book title
+            ' Get current user ID
+            Dim currentUserId As Integer = SessionHelper.CurrentUser.UserId
+            If currentUserId <= 0 Then
+                MessageBox.Show("User tidak teridentifikasi. Silakan login ulang.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+
+            ' Modified query to only load notes for current user and join with books table
             Dim query As String = "SELECT n.NoteId, n.Title, n.Content, n.BookId, b.Title as BookTitle " &
-                             "FROM notes n " &
-                             "LEFT JOIN books b ON n.BookId = b.BookId " &
-                             "ORDER BY n.NoteId DESC"
-            Dim parameters As New Dictionary(Of String, Object)
+                                "FROM notes n " &
+                                "LEFT JOIN books b ON n.BookId = b.BookId " &
+                                "WHERE n.UserId = @UserId " &
+                                "ORDER BY n.NoteId DESC"
+
+            Dim parameters As New Dictionary(Of String, Object) From {
+                {"@UserId", currentUserId}
+            }
 
             Dim dt As DataTable = db.ExecuteQueryWithParams(query, parameters)
 
             If dt IsNot Nothing Then
                 For Each row As DataRow In dt.Rows
                     Dim noteCard As Panel = CreateNoteCard(
-                    row("NoteId").ToString(),
-                    If(IsDBNull(row("Title")), "", row("Title").ToString()),
-                    If(IsDBNull(row("Content")), "", row("Content").ToString()),
-                    If(IsDBNull(row("BookId")), "", row("BookId").ToString()),
-                    If(IsDBNull(row("BookTitle")), "", row("BookTitle").ToString())
-                )
+                        row("NoteId").ToString(),
+                        If(IsDBNull(row("Title")), "", row("Title").ToString()),
+                        If(IsDBNull(row("Content")), "", row("Content").ToString()),
+                        If(IsDBNull(row("BookId")), "", row("BookId").ToString()),
+                        If(IsDBNull(row("BookTitle")), "", row("BookTitle").ToString())
+                    )
                     flNotes.Controls.Add(noteCard)
                 Next
             End If
+
+            ' Show message if no notes found
+            If flNotes.Controls.Count = 0 Then
+                Dim lblNoNotes As New Label()
+                lblNoNotes.Text = "Belum ada catatan. Klik tombol 'Tambah Note' untuk membuat catatan pertama Anda."
+                lblNoNotes.Font = New Font("Arial", 12, FontStyle.Italic)
+                lblNoNotes.ForeColor = Color.Gray
+                lblNoNotes.TextAlign = ContentAlignment.MiddleCenter
+                lblNoNotes.Dock = DockStyle.Fill
+                flNotes.Controls.Add(lblNoNotes)
+            End If
+
         Catch ex As Exception
             MessageBox.Show("Error loading notes: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -267,9 +299,18 @@
 
         If result = DialogResult.Yes Then
             Try
-                Dim query As String = "DELETE FROM notes WHERE NoteId = @NoteId"
+                ' Get current user ID for security check
+                Dim currentUserId As Integer = SessionHelper.CurrentUser.UserId
+                If currentUserId <= 0 Then
+                    MessageBox.Show("User tidak teridentifikasi. Silakan login ulang.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+
+                ' Delete only if the note belongs to current user
+                Dim query As String = "DELETE FROM notes WHERE NoteId = @NoteId AND UserId = @UserId"
                 Dim parameters As New Dictionary(Of String, Object) From {
-                    {"@NoteId", noteId}
+                    {"@NoteId", noteId},
+                    {"@UserId", currentUserId}
                 }
 
                 Dim deleteResult As Integer = db.ExecuteNonQueryWithParams(query, parameters)
@@ -278,7 +319,7 @@
                     LoadNotes() ' Refresh the notes list
                     MessageBox.Show("Note berhasil dihapus!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MessageBox.Show("Gagal menghapus note!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("Gagal menghapus note! Note mungkin tidak ditemukan atau bukan milik Anda.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
             Catch ex As Exception
                 MessageBox.Show("Error deleting note: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

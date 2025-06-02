@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2025 at 09:06 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Waktu pembuatan: 02 Jun 2025 pada 06.27
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `readnest`
+-- Database: `readnest3`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `books`
+-- Struktur dari tabel `books`
 --
 
 CREATE TABLE `books` (
@@ -46,7 +46,7 @@ CREATE TABLE `books` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `books`
+-- Dumping data untuk tabel `books`
 --
 
 INSERT INTO `books` (`BookId`, `UserId`, `CategoryId`, `Title`, `Description`, `Pages`, `Author`, `LastSeen`, `ReadDuration`, `IsFavorite`, `IsWishlist`, `Status`, `CreatedAt`, `PhotoPath`, `FilePath`) VALUES
@@ -58,7 +58,7 @@ INSERT INTO `books` (`BookId`, `UserId`, `CategoryId`, `Title`, `Description`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `borrowers`
+-- Struktur dari tabel `borrowers`
 --
 
 CREATE TABLE `borrowers` (
@@ -73,7 +73,7 @@ CREATE TABLE `borrowers` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Struktur dari tabel `categories`
 --
 
 CREATE TABLE `categories` (
@@ -82,7 +82,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `categories`
+-- Dumping data untuk tabel `categories`
 --
 
 INSERT INTO `categories` (`CategoryId`, `CategoryName`) VALUES
@@ -98,11 +98,12 @@ INSERT INTO `categories` (`CategoryId`, `CategoryName`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `notes`
+-- Struktur dari tabel `notes`
 --
 
 CREATE TABLE `notes` (
   `NoteId` int(11) NOT NULL,
+  `UserId` int(11) NOT NULL,
   `Title` varchar(255) NOT NULL,
   `Content` text NOT NULL,
   `BookId` varchar(50) DEFAULT NULL,
@@ -110,10 +111,11 @@ CREATE TABLE `notes` (
   `ModifiedDate` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `userbookprogress`
+-- Struktur dari tabel `userbookprogress`
 --
 
 CREATE TABLE `userbookprogress` (
@@ -126,10 +128,18 @@ CREATE TABLE `userbookprogress` (
   `ProgressPercent` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `userbookprogress`
+--
+
+INSERT INTO `userbookprogress` (`ProgressId`, `UserId`, `BookId`, `LastPage`, `ReadDuration`, `LastOpened`, `ProgressPercent`) VALUES
+(1, 3, 9, 10, 29, '2025-06-02 02:58:19', 41.6667),
+(2, 3, 10, 6, 97, '2025-06-02 04:14:27', 25);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -141,7 +151,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`UserId`, `Username`, `Email`, `Password`, `CreatedAt`) VALUES
@@ -152,7 +162,7 @@ INSERT INTO `users` (`UserId`, `Username`, `Email`, `Password`, `CreatedAt`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usersessions`
+-- Struktur dari tabel `usersessions`
 --
 
 CREATE TABLE `usersessions` (
@@ -166,11 +176,20 @@ CREATE TABLE `usersessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data untuk tabel `usersessions`
+--
+
+INSERT INTO `usersessions` (`SessionId`, `UserId`, `LoginTime`, `ExpiryTime`, `LastActivity`, `IsActive`, `IsPersistent`) VALUES
+('1f952d6f-d078-4144-9460-b0ba3bd30333', 3, '2025-06-02 11:17:48', '2025-07-02 11:17:48', '2025-06-02 11:26:46', 1, 1),
+('5577fbd9-86ac-48b1-abc0-df00945abbd1', 2, '2025-06-02 11:14:52', '2025-07-02 11:14:52', '2025-06-02 11:14:56', 0, 1),
+('b80111b9-b79b-493b-9fee-d8cc4a5217ac', 3, '2025-06-02 09:55:27', '2025-07-02 09:55:27', '2025-06-02 11:14:29', 0, 1);
+
+--
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `books`
+-- Indeks untuk tabel `books`
 --
 ALTER TABLE `books`
   ADD PRIMARY KEY (`BookId`),
@@ -178,29 +197,30 @@ ALTER TABLE `books`
   ADD KEY `UserId` (`UserId`);
 
 --
--- Indexes for table `borrowers`
+-- Indeks untuk tabel `borrowers`
 --
 ALTER TABLE `borrowers`
   ADD PRIMARY KEY (`BorrowerId`),
   ADD KEY `BookId` (`BookId`);
 
 --
--- Indexes for table `categories`
+-- Indeks untuk tabel `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`CategoryId`),
   ADD UNIQUE KEY `CategoryName` (`CategoryName`);
 
 --
--- Indexes for table `notes`
+-- Indeks untuk tabel `notes`
 --
 ALTER TABLE `notes`
   ADD PRIMARY KEY (`NoteId`),
+  ADD KEY `FK_notes_UserId` (`UserId`),
   ADD KEY `IX_notes_BookId` (`BookId`),
   ADD KEY `IX_notes_CreatedDate` (`CreatedDate`);
 
 --
--- Indexes for table `userbookprogress`
+-- Indeks untuk tabel `userbookprogress`
 --
 ALTER TABLE `userbookprogress`
   ADD PRIMARY KEY (`ProgressId`),
@@ -208,7 +228,7 @@ ALTER TABLE `userbookprogress`
   ADD KEY `BookId` (`BookId`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`UserId`),
@@ -216,51 +236,61 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `Email` (`Email`);
 
 --
--- Indexes for table `usersessions`
+-- Indeks untuk tabel `usersessions`
 --
 ALTER TABLE `usersessions`
   ADD PRIMARY KEY (`SessionId`),
   ADD KEY `UserId` (`UserId`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `books`
+-- AUTO_INCREMENT untuk tabel `books`
 --
 ALTER TABLE `books`
-  MODIFY `BookId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `BookId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `borrowers`
+-- AUTO_INCREMENT untuk tabel `borrowers`
 --
 ALTER TABLE `borrowers`
   MODIFY `BorrowerId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT untuk tabel `categories`
 --
 ALTER TABLE `categories`
   MODIFY `CategoryId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `notes`
+-- AUTO_INCREMENT untuk tabel `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `NoteId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `NoteId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `userbookprogress`
+-- AUTO_INCREMENT untuk tabel `userbookprogress`
 --
 ALTER TABLE `userbookprogress`
-  MODIFY `ProgressId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ProgressId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
   MODIFY `UserId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `notes`
+--
+ALTER TABLE `notes`
+  ADD CONSTRAINT `FK_notes_UserId` FOREIGN KEY (`UserId`) REFERENCES `users` (`UserId`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
