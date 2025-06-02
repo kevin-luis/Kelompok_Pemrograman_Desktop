@@ -26,13 +26,7 @@ Partial Class BookReaderForm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BookReaderForm))
         pnlMainContainer = New TableLayoutPanel()
         pnlSidebar = New Panel()
-        tbcSidebar = New TabControl()
-        tabBookmarks = New TabPage()
-        trvBookmarks = New TreeView()
-        tabOutline = New TabPage()
-        trvOutline = New TreeView()
-        tabAnnotations = New TabPage()
-        lstAnnotations = New ListView()
+        lstNotes = New ListBox()
         pnlSidebarHeader = New Panel()
         lblSidebarTitle = New Label()
         btnCloseSidebar = New Button()
@@ -79,10 +73,6 @@ Partial Class BookReaderForm
         ToolTip1 = New ToolTip(components)
         pnlMainContainer.SuspendLayout()
         pnlSidebar.SuspendLayout()
-        tbcSidebar.SuspendLayout()
-        tabBookmarks.SuspendLayout()
-        tabOutline.SuspendLayout()
-        tabAnnotations.SuspendLayout()
         pnlSidebarHeader.SuspendLayout()
         pnlDocumentContainer.SuspendLayout()
         pnlDocumentView.SuspendLayout()
@@ -115,7 +105,7 @@ Partial Class BookReaderForm
         ' pnlSidebar
         ' 
         pnlSidebar.BackColor = Color.FromArgb(CByte(248), CByte(249), CByte(250))
-        pnlSidebar.Controls.Add(tbcSidebar)
+        pnlSidebar.Controls.Add(lstNotes)
         pnlSidebar.Controls.Add(pnlSidebarHeader)
         pnlSidebar.Dock = DockStyle.Fill
         pnlSidebar.Location = New Point(0, 0)
@@ -125,108 +115,14 @@ Partial Class BookReaderForm
         pnlSidebar.TabIndex = 0
         pnlSidebar.Visible = False
         ' 
-        ' tbcSidebar
+        ' lstNotes
         ' 
-        tbcSidebar.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        tbcSidebar.Appearance = TabAppearance.FlatButtons
-        tbcSidebar.Controls.Add(tabBookmarks)
-        tbcSidebar.Controls.Add(tabOutline)
-        tbcSidebar.Controls.Add(tabAnnotations)
-        tbcSidebar.ItemSize = New Size(90, 35)
-        tbcSidebar.Location = New Point(0, 51)
-        tbcSidebar.Margin = New Padding(0)
-        tbcSidebar.Name = "tbcSidebar"
-        tbcSidebar.SelectedIndex = 0
-        tbcSidebar.Size = New Size(299, 700)
-        tbcSidebar.SizeMode = TabSizeMode.Fixed
-        tbcSidebar.TabIndex = 1
-        ' 
-        ' tabBookmarks
-        ' 
-        tabBookmarks.BackColor = Color.FromArgb(CByte(248), CByte(249), CByte(250))
-        tabBookmarks.Controls.Add(trvBookmarks)
-        tabBookmarks.Location = New Point(4, 39)
-        tabBookmarks.Margin = New Padding(0)
-        tabBookmarks.Name = "tabBookmarks"
-        tabBookmarks.Size = New Size(291, 657)
-        tabBookmarks.TabIndex = 0
-        tabBookmarks.Text = "Bookmarks"
-        ' 
-        ' trvBookmarks
-        ' 
-        trvBookmarks.BackColor = Color.FromArgb(CByte(248), CByte(249), CByte(250))
-        trvBookmarks.BorderStyle = BorderStyle.None
-        trvBookmarks.Dock = DockStyle.Fill
-        trvBookmarks.Font = New Font("Segoe UI", 10F)
-        trvBookmarks.ForeColor = Color.FromArgb(CByte(50), CByte(50), CByte(50))
-        trvBookmarks.FullRowSelect = True
-        trvBookmarks.HideSelection = False
-        trvBookmarks.Indent = 15
-        trvBookmarks.ItemHeight = 30
-        trvBookmarks.Location = New Point(0, 0)
-        trvBookmarks.Margin = New Padding(15)
-        trvBookmarks.Name = "trvBookmarks"
-        trvBookmarks.ShowLines = False
-        trvBookmarks.ShowPlusMinus = False
-        trvBookmarks.Size = New Size(291, 657)
-        trvBookmarks.TabIndex = 0
-        ' 
-        ' tabOutline
-        ' 
-        tabOutline.BackColor = Color.FromArgb(CByte(248), CByte(249), CByte(250))
-        tabOutline.Controls.Add(trvOutline)
-        tabOutline.Location = New Point(4, 39)
-        tabOutline.Margin = New Padding(0)
-        tabOutline.Name = "tabOutline"
-        tabOutline.Size = New Size(291, 657)
-        tabOutline.TabIndex = 1
-        tabOutline.Text = "Outline"
-        ' 
-        ' trvOutline
-        ' 
-        trvOutline.BackColor = Color.FromArgb(CByte(248), CByte(249), CByte(250))
-        trvOutline.BorderStyle = BorderStyle.None
-        trvOutline.Dock = DockStyle.Fill
-        trvOutline.Font = New Font("Segoe UI", 10F)
-        trvOutline.ForeColor = Color.FromArgb(CByte(50), CByte(50), CByte(50))
-        trvOutline.FullRowSelect = True
-        trvOutline.HideSelection = False
-        trvOutline.Indent = 15
-        trvOutline.ItemHeight = 30
-        trvOutline.Location = New Point(0, 0)
-        trvOutline.Margin = New Padding(15)
-        trvOutline.Name = "trvOutline"
-        trvOutline.ShowLines = False
-        trvOutline.ShowPlusMinus = False
-        trvOutline.Size = New Size(291, 657)
-        trvOutline.TabIndex = 0
-        ' 
-        ' tabAnnotations
-        ' 
-        tabAnnotations.BackColor = Color.FromArgb(CByte(248), CByte(249), CByte(250))
-        tabAnnotations.Controls.Add(lstAnnotations)
-        tabAnnotations.Location = New Point(4, 39)
-        tabAnnotations.Margin = New Padding(0)
-        tabAnnotations.Name = "tabAnnotations"
-        tabAnnotations.Size = New Size(291, 657)
-        tabAnnotations.TabIndex = 2
-        tabAnnotations.Text = "Annotations"
-        ' 
-        ' lstAnnotations
-        ' 
-        lstAnnotations.BackColor = Color.FromArgb(CByte(248), CByte(249), CByte(250))
-        lstAnnotations.BorderStyle = BorderStyle.None
-        lstAnnotations.Dock = DockStyle.Fill
-        lstAnnotations.Font = New Font("Segoe UI", 10F)
-        lstAnnotations.ForeColor = Color.FromArgb(CByte(50), CByte(50), CByte(50))
-        lstAnnotations.FullRowSelect = True
-        lstAnnotations.Location = New Point(0, 0)
-        lstAnnotations.Margin = New Padding(5)
-        lstAnnotations.Name = "lstAnnotations"
-        lstAnnotations.Size = New Size(291, 657)
-        lstAnnotations.TabIndex = 0
-        lstAnnotations.UseCompatibleStateImageBehavior = False
-        lstAnnotations.View = View.List
+        lstNotes.Dock = DockStyle.Fill
+        lstNotes.FormattingEnabled = True
+        lstNotes.Location = New Point(0, 51)
+        lstNotes.Name = "lstNotes"
+        lstNotes.Size = New Size(299, 698)
+        lstNotes.TabIndex = 3
         ' 
         ' pnlSidebarHeader
         ' 
@@ -352,7 +248,7 @@ Partial Class BookReaderForm
         tsbToggleSidebar.Margin = New Padding(5, 0, 5, 0)
         tsbToggleSidebar.Name = "tsbToggleSidebar"
         tsbToggleSidebar.Size = New Size(40, 40)
-        tsbToggleSidebar.Text = "Toggle Sidebar"
+        tsbToggleSidebar.Text = "Note List"
         ' 
         ' toolStripSeparator4
         ' 
@@ -483,13 +379,13 @@ Partial Class BookReaderForm
         ' helpToolStripMenuItem1
         ' 
         helpToolStripMenuItem1.Name = "helpToolStripMenuItem1"
-        helpToolStripMenuItem1.Size = New Size(224, 28)
+        helpToolStripMenuItem1.Size = New Size(141, 28)
         helpToolStripMenuItem1.Text = "Help"
         ' 
         ' aboutToolStripMenuItem1
         ' 
         aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1"
-        aboutToolStripMenuItem1.Size = New Size(224, 28)
+        aboutToolStripMenuItem1.Size = New Size(141, 28)
         aboutToolStripMenuItem1.Text = "About"
         ' 
         ' cmsHighlighting
@@ -678,10 +574,6 @@ Partial Class BookReaderForm
         Text = "Book Reader"
         pnlMainContainer.ResumeLayout(False)
         pnlSidebar.ResumeLayout(False)
-        tbcSidebar.ResumeLayout(False)
-        tabBookmarks.ResumeLayout(False)
-        tabOutline.ResumeLayout(False)
-        tabAnnotations.ResumeLayout(False)
         pnlSidebarHeader.ResumeLayout(False)
         pnlSidebarHeader.PerformLayout()
         pnlDocumentContainer.ResumeLayout(False)
@@ -700,13 +592,6 @@ Partial Class BookReaderForm
 
     Friend WithEvents pnlMainContainer As TableLayoutPanel
     Friend WithEvents pnlSidebar As Panel
-    Friend WithEvents tbcSidebar As TabControl
-    Friend WithEvents tabBookmarks As TabPage
-    Friend WithEvents trvBookmarks As TreeView
-    Friend WithEvents tabOutline As TabPage
-    Friend WithEvents trvOutline As TreeView
-    Friend WithEvents tabAnnotations As TabPage
-    Friend WithEvents lstAnnotations As ListView
     Friend WithEvents pnlSidebarHeader As Panel
     Friend WithEvents lblSidebarTitle As Label
     Friend WithEvents btnCloseSidebar As Button
@@ -751,4 +636,5 @@ Partial Class BookReaderForm
     Friend WithEvents BookmarkDialog1 As TextBox
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents tscbZoom As ToolStripTextBox
+    Friend WithEvents lstNotes As ListBox
 End Class
