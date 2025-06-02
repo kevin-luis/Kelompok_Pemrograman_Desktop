@@ -1,18 +1,24 @@
 ﻿Imports System.Configuration
 Imports ReadNest.My.MySettings
 
+Public Enum AutoLoginStatus ' Anda bisa letakkan ini di sini atau di file terpisah
+    NoLoginOrExpired
+    UserLoggedIn
+    AdminLoggedIn
+End Enum
+
 Public Class SessionHelper
     Public Shared Property CurrentUser As User
     Public Shared Property SessionToken As String
 
     Public Shared Sub CreatePersistentSession(userId As Integer, username As String)
         Dim db As New DBConnection
-        SessionToken = db.CreatePersistentSession(userId)
+        SessionToken = db.CreatePersistentSession(userId) ' Ini memanggil fungsi di DBConnection
 
         If Not String.IsNullOrEmpty(SessionToken) Then
             CurrentUser = New User With {
-                .UserId = userId,
-                .Username = username
+                .userId = userId,
+                .username = username
             }
 
             ' Simpan ke settings aplikasi
@@ -22,29 +28,39 @@ Public Class SessionHelper
         End If
     End Sub
 
-    Public Shared Function AutoLogin() As Boolean
+    ' MODIFIKASI FUNGSI AutoLogin
+    Public Shared Function AutoLogin() As AutoLoginStatus ' Mengembalikan Enum baru
         If Not String.IsNullOrEmpty(My.Settings.SessionToken) AndAlso My.Settings.UserId > 0 Then
             Dim db As New DBConnection
-            Dim dt = db.ValidatePersistentSession(My.Settings.SessionToken)
+            Dim dtUserData = db.ValidatePersistentSession(My.Settings.SessionToken)
 
-            If dt?.Rows.Count > 0 Then
+            If dtUserData IsNot Nothing AndAlso dtUserData.Rows.Count > 0 Then
                 CurrentUser = New User With {
-                .UserId = My.Settings.UserId,
-                .Username = dt.Rows(0)("Username").ToString()
-            }
+                    .UserId = My.Settings.UserId,
+                    .Username = dtUserData.Rows(0)("Username").ToString() ' Ambil username dari hasil validasi
+                }
                 SessionToken = My.Settings.SessionToken
-                Return True
+
+                ' Cek apakah pengguna yang auto-login adalah Admin
+                If CurrentUser.Username.Equals("Admin", StringComparison.OrdinalIgnoreCase) Then
+                    Return AutoLoginStatus.AdminLoggedIn
+                Else
+                    Return AutoLoginStatus.UserLoggedIn
+                End If
             Else
+                ' Sesi tidak valid atau sudah expired
                 ClearSavedSession()
+                Return AutoLoginStatus.NoLoginOrExpired
             End If
         End If
-        Return False
+        ' Tidak ada sesi yang tersimpan
+        Return AutoLoginStatus.NoLoginOrExpired
     End Function
 
     Public Shared Sub EndSession()
         If Not String.IsNullOrEmpty(SessionToken) Then
             Dim db As New DBConnection
-            db.EndUserSession(SessionToken)
+            db.EndUserSession(SessionToken) ' Memanggil fungsi di DBConnection
             SessionToken = Nothing
             CurrentUser = Nothing
             ClearSavedSession()
@@ -54,7 +70,7 @@ Public Class SessionHelper
     Public Shared Sub UpdateActivity()
         If Not String.IsNullOrEmpty(SessionToken) Then
             Dim db As New DBConnection
-            db.UpdateSessionActivity(SessionToken)
+            db.UpdateSessionActivity(SessionToken) ' Memanggil fungsi di DBConnection
         End If
     End Sub
 
@@ -65,6 +81,7 @@ Public Class SessionHelper
     End Sub
 End Class
 
+' Kelas User tetap sama
 Public Class User
     Public Property UserId As Integer
     Public Property Username As String

@@ -626,13 +626,59 @@ Public Class DBConnection
         Return stats
     End Function
 
-
-    ' Get all users (username and email)
-    Public Function GetAllUsers() As DataTable
-        Dim query As String = "SELECT Username, Email FROM users ORDER BY Username"
+    ' Get all books with category name
+    Public Function GetAllBooksWithDetails() As DataTable
+        Dim query As String = "SELECT b.BookId, b.Title, b.Author, c.CategoryName, b.PhotoPath, b.FilePath " &
+                              "FROM books b " &
+                              "LEFT JOIN categories c ON b.CategoryId = c.CategoryId " &
+                              "ORDER BY b.Title"
         ' Tidak memerlukan parameter untuk query ini
         Return ExecuteQueryWithParams(query, New Dictionary(Of String, Object))
     End Function
 
+
+
+    ' Get all users (UserId, Username, and Email)
+    Public Function GetAllUsers() As DataTable
+        ' Modifikasi query untuk menyertakan UserId
+        Dim query As String = "SELECT UserId, Username, Email FROM users ORDER BY Username"
+        Return ExecuteQueryWithParams(query, New Dictionary(Of String, Object))
+    End Function
+
+    ' Delete user by UserId
+    Public Function HapusUser(userId As Integer) As Boolean
+        ' PENTING: Pertimbangkan apa yang terjadi pada buku atau data lain
+        ' yang terkait dengan pengguna ini. Apakah Anda ingin menghapusnya juga (cascade delete)
+        ' atau mengatur UserId menjadi NULL, atau mencegah penghapusan jika ada data terkait?
+        ' Untuk contoh ini, kita hanya menghapus dari tabel users.
+        ' Anda mungkin perlu menghapus sesi pengguna juga jika ada.
+
+        ' Contoh: Hapus sesi persisten pengguna terlebih dahulu jika ada
+        Dim deleteSessionsQuery As String = "DELETE FROM usersessions WHERE UserId = @userId"
+        Dim sessionParams As New Dictionary(Of String, Object) From {
+            {"@userId", userId}
+        }
+        ExecuteNonQueryWithParams(deleteSessionsQuery, sessionParams) ' Tidak perlu cek hasil untuk ini, usahakan saja
+
+        ' Hapus progres buku pengguna
+        Dim deleteProgressQuery As String = "DELETE FROM userbookprogress WHERE UserId = @userId"
+        ExecuteNonQueryWithParams(deleteProgressQuery, sessionParams)
+
+        ' Hapus buku yang dimiliki pengguna (jika kebijakan Anda demikian)
+        ' Dim deleteUserBooksQuery As String = "DELETE FROM books WHERE UserId = @userId"
+        ' ExecuteNonQueryWithParams(deleteUserBooksQuery, sessionParams)
+        ' ATAU, jika buku bisa ada tanpa pemilik atau dialihkan:
+        ' Dim updateUserBooksQuery As String = "UPDATE books SET UserId = NULL WHERE UserId = @userId" ' Contoh jika UserId bisa NULL
+        ' ExecuteNonQueryWithParams(updateUserBooksQuery, sessionParams)
+
+
+        ' Hapus pengguna dari tabel users
+        Dim query As String = "DELETE FROM users WHERE UserId = @userId"
+        Dim parameters As New Dictionary(Of String, Object) From {
+            {"@userId", userId}
+        }
+        Dim result = ExecuteNonQueryWithParams(query, parameters)
+        Return result > 0
+    End Function
 
 End Class
