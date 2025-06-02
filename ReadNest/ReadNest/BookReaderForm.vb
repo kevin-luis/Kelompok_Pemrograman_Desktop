@@ -27,6 +27,7 @@ Public Class BookReaderForm
     Private Sub BookReaderForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadReadingProgress() ' Pindah ke atas sebelum LoadBookFile
         LoadBookFile()
+        LoadNotesForBook()
 
         ' Mulai sesi baca baru
         _sessionStartTime = DateTime.Now
@@ -457,4 +458,37 @@ Public Class BookReaderForm
         MessageBox.Show(message, "Tentang Aplikasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
+    Private Sub LoadNotesForBook()
+        Try
+            Dim dt As DataTable = db.GetNotesByBookId(_bookId)
+
+            lstNotes.Items.Clear()
+            If dt.Rows.Count > 0 Then
+                For Each row As DataRow In dt.Rows
+                    Dim title As String = row("Title").ToString()
+                    Dim contentPreview As String = row("Content").ToString()
+
+                    If contentPreview.Length > 50 Then
+                        contentPreview = contentPreview.Substring(0, 50) & "..."
+                    End If
+
+                    lstNotes.Items.Add($"{title}: {contentPreview}")
+                Next
+            Else
+                lstNotes.Items.Add("No notes for this book.")
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Failed to load notes: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub lstNotes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstNotes.SelectedIndexChanged
+        Dim selectedIndex As Integer = lstNotes.SelectedIndex
+        If selectedIndex >= 0 Then
+            Dim dt As DataTable = db.GetNotesByBookId(_bookId)
+            Dim content As String = dt.Rows(selectedIndex)("Content").ToString()
+            MessageBox.Show(content, "Note Detail")
+        End If
+    End Sub
 End Class
