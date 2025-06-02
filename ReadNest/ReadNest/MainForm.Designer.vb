@@ -41,7 +41,6 @@ Partial Class MainForm
         pbStatistic = New PictureBox()
         lblstatistic = New Label()
         btnAddNewBook = New Button()
-        pbDeleteBook = New PictureBox()
         lblBB = New Label()
         pbBB = New PictureBox()
         Label5 = New Label()
@@ -51,6 +50,7 @@ Partial Class MainForm
         lblWishlist = New Label()
         panelRight = New Panel()
         flowBooks = New FlowLayoutPanel()
+        pbDeleteBook = New PictureBox()
         CType(pbCategory, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbNotes, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbFavorite, ComponentModel.ISupportInitialize).BeginInit()
@@ -58,7 +58,6 @@ Partial Class MainForm
         CType(pbDiscover, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).BeginInit()
-        CType(pbDeleteBook, ComponentModel.ISupportInitialize).BeginInit()
         CType(pbBB, ComponentModel.ISupportInitialize).BeginInit()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer1.Panel1.SuspendLayout()
@@ -66,6 +65,7 @@ Partial Class MainForm
         SplitContainer1.SuspendLayout()
         CType(pbWishlist, ComponentModel.ISupportInitialize).BeginInit()
         panelRight.SuspendLayout()
+        CType(pbDeleteBook, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' pbCategory
@@ -277,17 +277,6 @@ Partial Class MainForm
         btnAddNewBook.Text = "Add New Book"
         btnAddNewBook.UseVisualStyleBackColor = True
         ' 
-        ' pbDeleteBook
-        ' 
-        pbDeleteBook.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        pbDeleteBook.BackgroundImage = CType(resources.GetObject("pbDeleteBook.BackgroundImage"), Image)
-        pbDeleteBook.BackgroundImageLayout = ImageLayout.Zoom
-        pbDeleteBook.Location = New Point(700, 90)
-        pbDeleteBook.Name = "pbDeleteBook"
-        pbDeleteBook.Size = New Size(26, 26)
-        pbDeleteBook.TabIndex = 27
-        pbDeleteBook.TabStop = False
-        ' 
         ' lblBB
         ' 
         lblBB.AutoSize = True
@@ -425,6 +414,17 @@ Partial Class MainForm
         flowBooks.Size = New Size(719, 353)
         flowBooks.TabIndex = 33
         ' 
+        ' pbDeleteBook
+        ' 
+        pbDeleteBook.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        pbDeleteBook.BackgroundImage = CType(resources.GetObject("pbDeleteBook.BackgroundImage"), Image)
+        pbDeleteBook.BackgroundImageLayout = ImageLayout.Zoom
+        pbDeleteBook.Location = New Point(700, 90)
+        pbDeleteBook.Name = "pbDeleteBook"
+        pbDeleteBook.Size = New Size(26, 26)
+        pbDeleteBook.TabIndex = 27
+        pbDeleteBook.TabStop = False
+        ' 
         ' MainForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -445,7 +445,6 @@ Partial Class MainForm
         CType(pbDiscover, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(pbStatistic, ComponentModel.ISupportInitialize).EndInit()
-        CType(pbDeleteBook, ComponentModel.ISupportInitialize).EndInit()
         CType(pbBB, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.Panel1.ResumeLayout(False)
         SplitContainer1.Panel1.PerformLayout()
@@ -455,6 +454,7 @@ Partial Class MainForm
         CType(pbWishlist, ComponentModel.ISupportInitialize).EndInit()
         panelRight.ResumeLayout(False)
         panelRight.PerformLayout()
+        CType(pbDeleteBook, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
 
     End Sub
@@ -475,7 +475,6 @@ Partial Class MainForm
     Friend WithEvents pbStatistic As PictureBox
     Friend WithEvents lblstatistic As Label
     Friend WithEvents btnAddNewBook As Button
-    Friend WithEvents pbDeleteBook As PictureBox
     Friend WithEvents lblBB As Label
     Friend WithEvents pbBB As PictureBox
     Friend WithEvents Label5 As Label
@@ -487,4 +486,5 @@ Partial Class MainForm
     Friend WithEvents MySqlCommand1 As MySql.Data.MySqlClient.MySqlCommand
     Friend WithEvents pbWishlist As PictureBox
     Friend WithEvents lblWishlist As Label
+    Friend WithEvents pbDeleteBook As PictureBox
 End Class

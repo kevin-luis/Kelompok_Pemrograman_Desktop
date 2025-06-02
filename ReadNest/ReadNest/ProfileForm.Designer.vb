@@ -72,10 +72,9 @@ Partial Class ProfileForm
         pbBB.BackColor = SystemColors.Info
         pbBB.BackgroundImage = CType(resources.GetObject("pbBB.BackgroundImage"), Image)
         pbBB.BackgroundImageLayout = ImageLayout.Stretch
-        pbBB.Location = New Point(14, 336)
-        pbBB.Margin = New Padding(3, 4, 3, 4)
+        pbBB.Location = New Point(12, 252)
         pbBB.Name = "pbBB"
-        pbBB.Size = New Size(32, 37)
+        pbBB.Size = New Size(28, 28)
         pbBB.TabIndex = 87
         pbBB.TabStop = False
         ' 
@@ -85,9 +84,9 @@ Partial Class ProfileForm
         lblBB.BackColor = SystemColors.Info
         lblBB.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblBB.ImageAlign = ContentAlignment.TopRight
-        lblBB.Location = New Point(53, 347)
+        lblBB.Location = New Point(46, 260)
         lblBB.Name = "lblBB"
-        lblBB.Size = New Size(158, 24)
+        lblBB.Size = New Size(130, 18)
         lblBB.TabIndex = 86
         lblBB.Text = "Book Borrowing"
         ' 
@@ -97,9 +96,9 @@ Partial Class ProfileForm
         lblstatistic.BackColor = SystemColors.Info
         lblstatistic.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblstatistic.ImageAlign = ContentAlignment.TopRight
-        lblstatistic.Location = New Point(53, 392)
+        lblstatistic.Location = New Point(46, 294)
         lblstatistic.Name = "lblstatistic"
-        lblstatistic.Size = New Size(113, 24)
+        lblstatistic.Size = New Size(96, 18)
         lblstatistic.TabIndex = 85
         lblstatistic.Text = "My Statistic"
         ' 
@@ -108,10 +107,9 @@ Partial Class ProfileForm
         pbStatistic.BackColor = SystemColors.Info
         pbStatistic.BackgroundImage = CType(resources.GetObject("pbStatistic.BackgroundImage"), Image)
         pbStatistic.BackgroundImageLayout = ImageLayout.Stretch
-        pbStatistic.Location = New Point(14, 381)
-        pbStatistic.Margin = New Padding(3, 4, 3, 4)
+        pbStatistic.Location = New Point(12, 286)
         pbStatistic.Name = "pbStatistic"
-        pbStatistic.Size = New Size(32, 37)
+        pbStatistic.Size = New Size(28, 28)
         pbStatistic.TabIndex = 84
         pbStatistic.TabStop = False
         ' 
@@ -121,9 +119,9 @@ Partial Class ProfileForm
         lblDiscover.BackColor = SystemColors.Info
         lblDiscover.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblDiscover.ImageAlign = ContentAlignment.TopRight
-        lblDiscover.Location = New Point(53, 163)
+        lblDiscover.Location = New Point(46, 122)
         lblDiscover.Name = "lblDiscover"
-        lblDiscover.Size = New Size(91, 24)
+        lblDiscover.Size = New Size(75, 18)
         lblDiscover.TabIndex = 83
         lblDiscover.Text = "Discover"
         ' 
@@ -132,10 +130,9 @@ Partial Class ProfileForm
         pbDiscover.BackColor = SystemColors.Info
         pbDiscover.BackgroundImage = CType(resources.GetObject("pbDiscover.BackgroundImage"), Image)
         pbDiscover.BackgroundImageLayout = ImageLayout.Stretch
-        pbDiscover.Location = New Point(14, 152)
-        pbDiscover.Margin = New Padding(3, 4, 3, 4)
+        pbDiscover.Location = New Point(12, 114)
         pbDiscover.Name = "pbDiscover"
-        pbDiscover.Size = New Size(32, 37)
+        pbDiscover.Size = New Size(28, 28)
         pbDiscover.TabIndex = 82
         pbDiscover.TabStop = False
         ' 
@@ -145,9 +142,9 @@ Partial Class ProfileForm
         lblMenu.BackColor = SystemColors.Info
         lblMenu.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblMenu.ImageAlign = ContentAlignment.TopRight
-        lblMenu.Location = New Point(14, 113)
+        lblMenu.Location = New Point(12, 85)
         lblMenu.Name = "lblMenu"
-        lblMenu.Size = New Size(63, 24)
+        lblMenu.Size = New Size(49, 18)
         lblMenu.TabIndex = 81
         lblMenu.Text = "Menu"
         ' 
@@ -157,9 +154,9 @@ Partial Class ProfileForm
         lblFavorite.BackColor = SystemColors.Info
         lblFavorite.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblFavorite.ImageAlign = ContentAlignment.TopRight
-        lblFavorite.Location = New Point(53, 303)
+        lblFavorite.Location = New Point(46, 227)
         lblFavorite.Name = "lblFavorite"
-        lblFavorite.Size = New Size(85, 24)
+        lblFavorite.Size = New Size(69, 18)
         lblFavorite.TabIndex = 80
         lblFavorite.Text = "Favorite"
         ' 
@@ -169,9 +166,9 @@ Partial Class ProfileForm
         lblNotes.BackColor = SystemColors.Info
         lblNotes.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblNotes.ImageAlign = ContentAlignment.TopRight
-        lblNotes.Location = New Point(53, 255)
+        lblNotes.Location = New Point(46, 191)
         lblNotes.Name = "lblNotes"
-        lblNotes.Size = New Size(97, 24)
+        lblNotes.Size = New Size(80, 18)
         lblNotes.TabIndex = 79
         lblNotes.Text = "My Notes"
         ' 
@@ -181,9 +178,9 @@ Partial Class ProfileForm
         lblCategory.BackColor = SystemColors.Info
         lblCategory.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblCategory.ImageAlign = ContentAlignment.TopRight
-        lblCategory.Location = New Point(53, 208)
+        lblCategory.Location = New Point(46, 156)
         lblCategory.Name = "lblCategory"
-        lblCategory.Size = New Size(93, 24)
+        lblCategory.Size = New Size(76, 18)
         lblCategory.TabIndex = 78
         lblCategory.Text = "Category"
         ' 
@@ -194,9 +191,9 @@ Partial Class ProfileForm
         Label1.Font = New Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label1.ForeColor = SystemColors.ControlText
         Label1.ImageAlign = ContentAlignment.TopRight
-        Label1.Location = New Point(14, 33)
+        Label1.Location = New Point(12, 25)
         Label1.Name = "Label1"
-        Label1.Size = New Size(177, 39)
+        Label1.Size = New Size(144, 31)
         Label1.TabIndex = 77
         Label1.Text = "ReadNest"
         ' 
@@ -205,10 +202,9 @@ Partial Class ProfileForm
         pbFavorite.BackColor = SystemColors.Info
         pbFavorite.BackgroundImage = CType(resources.GetObject("pbFavorite.BackgroundImage"), Image)
         pbFavorite.BackgroundImageLayout = ImageLayout.Stretch
-        pbFavorite.Location = New Point(14, 291)
-        pbFavorite.Margin = New Padding(3, 4, 3, 4)
+        pbFavorite.Location = New Point(12, 218)
         pbFavorite.Name = "pbFavorite"
-        pbFavorite.Size = New Size(32, 37)
+        pbFavorite.Size = New Size(28, 28)
         pbFavorite.TabIndex = 76
         pbFavorite.TabStop = False
         ' 
@@ -217,10 +213,9 @@ Partial Class ProfileForm
         pbNotes.BackColor = SystemColors.Info
         pbNotes.BackgroundImage = CType(resources.GetObject("pbNotes.BackgroundImage"), Image)
         pbNotes.BackgroundImageLayout = ImageLayout.Stretch
-        pbNotes.Location = New Point(14, 243)
-        pbNotes.Margin = New Padding(3, 4, 3, 4)
+        pbNotes.Location = New Point(12, 182)
         pbNotes.Name = "pbNotes"
-        pbNotes.Size = New Size(32, 37)
+        pbNotes.Size = New Size(28, 28)
         pbNotes.TabIndex = 75
         pbNotes.TabStop = False
         ' 
@@ -229,10 +224,9 @@ Partial Class ProfileForm
         pbCategory.BackColor = SystemColors.Info
         pbCategory.BackgroundImage = CType(resources.GetObject("pbCategory.BackgroundImage"), Image)
         pbCategory.BackgroundImageLayout = ImageLayout.Stretch
-        pbCategory.Location = New Point(14, 197)
-        pbCategory.Margin = New Padding(3, 4, 3, 4)
+        pbCategory.Location = New Point(12, 148)
         pbCategory.Name = "pbCategory"
-        pbCategory.Size = New Size(32, 37)
+        pbCategory.Size = New Size(28, 28)
         pbCategory.TabIndex = 74
         pbCategory.TabStop = False
         ' 
@@ -241,7 +235,6 @@ Partial Class ProfileForm
         SplitContainer1.Dock = DockStyle.Fill
         SplitContainer1.FixedPanel = FixedPanel.Panel1
         SplitContainer1.Location = New Point(0, 0)
-        SplitContainer1.Margin = New Padding(3, 4, 3, 4)
         SplitContainer1.Name = "SplitContainer1"
         ' 
         ' SplitContainer1.Panel1
@@ -254,9 +247,8 @@ Partial Class ProfileForm
         ' SplitContainer1.Panel2
         ' 
         SplitContainer1.Panel2.Controls.Add(Panel2)
-        SplitContainer1.Size = New Size(1067, 648)
-        SplitContainer1.SplitterDistance = 213
-        SplitContainer1.SplitterWidth = 5
+        SplitContainer1.Size = New Size(934, 486)
+        SplitContainer1.SplitterDistance = 186
         SplitContainer1.TabIndex = 88
         ' 
         ' pbWishlist
@@ -264,10 +256,9 @@ Partial Class ProfileForm
         pbWishlist.BackColor = SystemColors.Info
         pbWishlist.BackgroundImage = CType(resources.GetObject("pbWishlist.BackgroundImage"), Image)
         pbWishlist.BackgroundImageLayout = ImageLayout.Stretch
-        pbWishlist.Location = New Point(14, 427)
-        pbWishlist.Margin = New Padding(3, 4, 3, 4)
+        pbWishlist.Location = New Point(12, 320)
         pbWishlist.Name = "pbWishlist"
-        pbWishlist.Size = New Size(32, 37)
+        pbWishlist.Size = New Size(28, 28)
         pbWishlist.TabIndex = 89
         pbWishlist.TabStop = False
         ' 
@@ -277,9 +268,9 @@ Partial Class ProfileForm
         lblWishlist.BackColor = SystemColors.Info
         lblWishlist.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblWishlist.ImageAlign = ContentAlignment.TopRight
-        lblWishlist.Location = New Point(53, 440)
+        lblWishlist.Location = New Point(46, 330)
         lblWishlist.Name = "lblWishlist"
-        lblWishlist.Size = New Size(81, 24)
+        lblWishlist.Size = New Size(68, 18)
         lblWishlist.TabIndex = 90
         lblWishlist.Text = "Wishlist"
         ' 
@@ -289,9 +280,8 @@ Partial Class ProfileForm
         PictureBox2.BorderStyle = BorderStyle.FixedSingle
         PictureBox2.Dock = DockStyle.Fill
         PictureBox2.Location = New Point(0, 0)
-        PictureBox2.Margin = New Padding(3, 4, 3, 4)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(213, 648)
+        PictureBox2.Size = New Size(186, 486)
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
         ' 
@@ -300,9 +290,8 @@ Partial Class ProfileForm
         Panel2.Controls.Add(Panel1)
         Panel2.Dock = DockStyle.Fill
         Panel2.Location = New Point(0, 0)
-        Panel2.Margin = New Padding(3, 4, 3, 4)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(849, 648)
+        Panel2.Size = New Size(744, 486)
         Panel2.TabIndex = 2
         ' 
         ' Panel1
@@ -317,10 +306,9 @@ Partial Class ProfileForm
         Panel1.Controls.Add(Label4)
         Panel1.Controls.Add(Label3)
         Panel1.Controls.Add(Label2)
-        Panel1.Location = New Point(149, 113)
-        Panel1.Margin = New Padding(3, 4, 3, 4)
+        Panel1.Location = New Point(130, 85)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(437, 416)
+        Panel1.Size = New Size(383, 312)
         Panel1.TabIndex = 1
         ' 
         ' PbEditProfile
@@ -328,10 +316,9 @@ Partial Class ProfileForm
         PbEditProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
         PbEditProfile.BackgroundImage = CType(resources.GetObject("PbEditProfile.BackgroundImage"), Image)
         PbEditProfile.BackgroundImageLayout = ImageLayout.Stretch
-        PbEditProfile.Location = New Point(380, 15)
-        PbEditProfile.Margin = New Padding(3, 4, 3, 4)
+        PbEditProfile.Location = New Point(333, 11)
         PbEditProfile.Name = "PbEditProfile"
-        PbEditProfile.Size = New Size(32, 37)
+        PbEditProfile.Size = New Size(28, 28)
         PbEditProfile.TabIndex = 59
         PbEditProfile.TabStop = False
         ' 
@@ -343,9 +330,9 @@ Partial Class ProfileForm
         BtnEditProfile.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         BtnEditProfile.ForeColor = SystemColors.ControlText
         BtnEditProfile.ImageAlign = ContentAlignment.TopRight
-        BtnEditProfile.Location = New Point(322, 21)
+        BtnEditProfile.Location = New Point(283, 16)
         BtnEditProfile.Name = "BtnEditProfile"
-        BtnEditProfile.Size = New Size(55, 25)
+        BtnEditProfile.Size = New Size(46, 20)
         BtnEditProfile.TabIndex = 58
         BtnEditProfile.Text = "Edit "
         ' 
@@ -353,22 +340,20 @@ Partial Class ProfileForm
         ' 
         ProfileEmail.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         ProfileEmail.Font = New Font("Segoe UI", 11F)
-        ProfileEmail.Location = New Point(126, 189)
-        ProfileEmail.Margin = New Padding(3, 4, 3, 4)
+        ProfileEmail.Location = New Point(110, 142)
         ProfileEmail.Name = "ProfileEmail"
         ProfileEmail.ReadOnly = True
-        ProfileEmail.Size = New Size(286, 32)
+        ProfileEmail.Size = New Size(252, 27)
         ProfileEmail.TabIndex = 56
         ' 
         ' ProfileUsername
         ' 
         ProfileUsername.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         ProfileUsername.Font = New Font("Segoe UI", 11F)
-        ProfileUsername.Location = New Point(126, 145)
-        ProfileUsername.Margin = New Padding(3, 4, 3, 4)
+        ProfileUsername.Location = New Point(110, 109)
         ProfileUsername.Name = "ProfileUsername"
         ProfileUsername.ReadOnly = True
-        ProfileUsername.Size = New Size(286, 32)
+        ProfileUsername.Size = New Size(252, 27)
         ProfileUsername.TabIndex = 55
         ' 
         ' Label4
@@ -379,9 +364,9 @@ Partial Class ProfileForm
         Label4.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label4.ForeColor = SystemColors.ControlText
         Label4.ImageAlign = ContentAlignment.TopRight
-        Label4.Location = New Point(58, 196)
+        Label4.Location = New Point(51, 147)
         Label4.Name = "Label4"
-        Label4.Size = New Size(65, 25)
+        Label4.Size = New Size(53, 20)
         Label4.TabIndex = 52
         Label4.Text = "Email"
         ' 
@@ -393,9 +378,9 @@ Partial Class ProfileForm
         Label3.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label3.ForeColor = SystemColors.ControlText
         Label3.ImageAlign = ContentAlignment.TopRight
-        Label3.Location = New Point(16, 152)
+        Label3.Location = New Point(14, 114)
         Label3.Name = "Label3"
-        Label3.Size = New Size(110, 25)
+        Label3.Size = New Size(91, 20)
         Label3.TabIndex = 51
         Label3.Text = "Username"
         ' 
@@ -407,18 +392,18 @@ Partial Class ProfileForm
         Label2.Font = New Font("Microsoft Sans Serif", 13F, FontStyle.Bold)
         Label2.ForeColor = SystemColors.ControlText
         Label2.ImageAlign = ContentAlignment.TopRight
-        Label2.Location = New Point(16, 15)
+        Label2.Location = New Point(14, 11)
         Label2.Name = "Label2"
-        Label2.Size = New Size(81, 26)
+        Label2.Size = New Size(68, 22)
         Label2.TabIndex = 50
         Label2.Text = "Profile"
         ' 
         ' ProfileForm
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
-        ClientSize = New Size(1067, 648)
+        ClientSize = New Size(934, 486)
         Controls.Add(pbBB)
         Controls.Add(lblBB)
         Controls.Add(lblstatistic)
@@ -434,7 +419,6 @@ Partial Class ProfileForm
         Controls.Add(pbNotes)
         Controls.Add(pbCategory)
         Controls.Add(SplitContainer1)
-        Margin = New Padding(3, 4, 3, 4)
         Name = "ProfileForm"
         StartPosition = FormStartPosition.CenterScreen
         Text = "ReadNest, Your Personal Library"

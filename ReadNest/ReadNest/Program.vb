@@ -6,12 +6,21 @@ Module Program
         Application.SetCompatibleTextRenderingDefault(False)
 
         ' Cek session sebelum menampilkan form manapun
-        If SessionHelper.AutoLogin() Then
-            ' Jika ada session valid, langsung ke MainForm
-            Application.Run(New MainForm())
-        Else
-            ' Jika tidak ada session, tampilkan LoginForm
-            Application.Run(New LoginForm())
-        End If
+        ' Panggil SessionHelper.AutoLogin() yang sekarang mengembalikan AutoLoginStatus
+        Dim loginStatus As AutoLoginStatus = SessionHelper.AutoLogin()
+
+        Select Case loginStatus
+            Case AutoLoginStatus.AdminLoggedIn
+                ' Jika Admin yang auto-login, buka AdminForm
+                Application.Run(New AdminForm())
+            Case AutoLoginStatus.UserLoggedIn
+                ' Jika pengguna biasa yang auto-login, buka MainForm
+                Application.Run(New MainForm())
+            Case AutoLoginStatus.NoLoginOrExpired
+                ' Jika tidak ada sesi atau sesi expired, tampilkan LoginForm
+                Application.Run(New LoginForm())
+            Case Else ' Penanganan untuk kasus yang tidak diharapkan (seharusnya tidak terjadi)
+                Application.Run(New LoginForm())
+        End Select
     End Sub
 End Module
