@@ -81,6 +81,7 @@ Public Class StatisticForm
         NavigateToForm(New WishlistForm())
     End Sub
     '============ PROFILE MENU ============'
+
     Private Sub cbProfile_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProfile.SelectedIndexChanged
         If cbProfile.SelectedIndex = -1 Then Exit Sub
 
