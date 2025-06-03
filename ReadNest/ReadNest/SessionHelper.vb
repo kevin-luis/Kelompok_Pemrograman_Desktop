@@ -1,7 +1,7 @@
 ﻿Imports System.Configuration
 Imports ReadNest.My.MySettings
 
-Public Enum AutoLoginStatus ' Anda bisa letakkan ini di sini atau di file terpisah
+Public Enum AutoLoginStatus
     NoLoginOrExpired
     UserLoggedIn
     AdminLoggedIn

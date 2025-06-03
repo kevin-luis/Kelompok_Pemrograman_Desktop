@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FavoriteForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FavoriteForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FavoriteForm))
         Label2 = New Label()
@@ -343,17 +343,15 @@ Partial Class FavoriteForm
         ' 
         ' cbProfile
         ' 
-        cbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         cbProfile.DropDownStyle = ComboBoxStyle.DropDownList
-        cbProfile.FlatStyle = FlatStyle.Flat
         cbProfile.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         cbProfile.FormattingEnabled = True
         cbProfile.Items.AddRange(New Object() {"Profile", "View Profile", "Logout"})
-        cbProfile.Location = New Point(696, 31)
+        cbProfile.Location = New Point(697, 33)
         cbProfile.Margin = New Padding(3, 4, 3, 4)
         cbProfile.Name = "cbProfile"
         cbProfile.Size = New Size(110, 32)
-        cbProfile.TabIndex = 73
+        cbProfile.TabIndex = 47
         ' 
         ' flowBookFavorite
         ' 
@@ -364,12 +362,12 @@ Partial Class FavoriteForm
         flowBookFavorite.Margin = New Padding(3, 4, 3, 4)
         flowBookFavorite.Name = "flowBookFavorite"
         flowBookFavorite.Padding = New Padding(10, 11, 10, 11)
-        flowBookFavorite.Size = New Size(820, 512)
+        flowBookFavorite.Size = New Size(819, 512)
         flowBookFavorite.TabIndex = 34
         ' 
         ' FavoriteForm
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         ClientSize = New Size(1067, 648)

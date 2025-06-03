@@ -69,9 +69,9 @@ Partial Class WishlistForm
         Label2.Font = New Font("Microsoft Sans Serif", 13.2F, FontStyle.Bold)
         Label2.ForeColor = SystemColors.ControlText
         Label2.ImageAlign = ContentAlignment.TopRight
-        Label2.Location = New Point(16, 44)
+        Label2.Location = New Point(14, 33)
         Label2.Name = "Label2"
-        Label2.Size = New Size(260, 26)
+        Label2.Size = New Size(217, 22)
         Label2.TabIndex = 46
         Label2.Text = "Your Wishlist Book List"
         ' 
@@ -79,10 +79,9 @@ Partial Class WishlistForm
         ' 
         pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
         pbProfile.BackgroundImageLayout = ImageLayout.Stretch
-        pbProfile.Location = New Point(658, 33)
-        pbProfile.Margin = New Padding(3, 4, 3, 4)
+        pbProfile.Location = New Point(576, 25)
         pbProfile.Name = "pbProfile"
-        pbProfile.Size = New Size(32, 37)
+        pbProfile.Size = New Size(28, 28)
         pbProfile.TabIndex = 44
         pbProfile.TabStop = False
         ' 
@@ -90,10 +89,9 @@ Partial Class WishlistForm
         ' 
         btnSearchFavoriteBook.AutoSize = True
         btnSearchFavoriteBook.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        btnSearchFavoriteBook.Location = New Point(480, 79)
-        btnSearchFavoriteBook.Margin = New Padding(3, 4, 3, 4)
+        btnSearchFavoriteBook.Location = New Point(420, 59)
         btnSearchFavoriteBook.Name = "btnSearchFavoriteBook"
-        btnSearchFavoriteBook.Size = New Size(98, 45)
+        btnSearchFavoriteBook.Size = New Size(86, 34)
         btnSearchFavoriteBook.TabIndex = 42
         btnSearchFavoriteBook.Text = "Search"
         btnSearchFavoriteBook.UseVisualStyleBackColor = True
@@ -101,11 +99,10 @@ Partial Class WishlistForm
         ' txtSearchFavoriteBook
         ' 
         txtSearchFavoriteBook.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        txtSearchFavoriteBook.Location = New Point(18, 79)
-        txtSearchFavoriteBook.Margin = New Padding(3, 4, 3, 4)
+        txtSearchFavoriteBook.Location = New Point(16, 59)
         txtSearchFavoriteBook.Name = "txtSearchFavoriteBook"
         txtSearchFavoriteBook.PlaceholderText = "Find your wishlist book here"
-        txtSearchFavoriteBook.Size = New Size(454, 29)
+        txtSearchFavoriteBook.Size = New Size(398, 24)
         txtSearchFavoriteBook.TabIndex = 43
         ' 
         ' pbBB
@@ -113,10 +110,9 @@ Partial Class WishlistForm
         pbBB.BackColor = SystemColors.Info
         pbBB.BackgroundImage = CType(resources.GetObject("pbBB.BackgroundImage"), Image)
         pbBB.BackgroundImageLayout = ImageLayout.Stretch
-        pbBB.Location = New Point(14, 336)
-        pbBB.Margin = New Padding(3, 4, 3, 4)
+        pbBB.Location = New Point(12, 252)
         pbBB.Name = "pbBB"
-        pbBB.Size = New Size(32, 37)
+        pbBB.Size = New Size(28, 28)
         pbBB.TabIndex = 71
         pbBB.TabStop = False
         ' 
@@ -126,9 +122,9 @@ Partial Class WishlistForm
         lblBB.BackColor = SystemColors.Info
         lblBB.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblBB.ImageAlign = ContentAlignment.TopRight
-        lblBB.Location = New Point(53, 347)
+        lblBB.Location = New Point(46, 260)
         lblBB.Name = "lblBB"
-        lblBB.Size = New Size(158, 24)
+        lblBB.Size = New Size(130, 18)
         lblBB.TabIndex = 70
         lblBB.Text = "Book Borrowing"
         ' 
@@ -138,9 +134,9 @@ Partial Class WishlistForm
         lblstatistic.BackColor = SystemColors.Info
         lblstatistic.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblstatistic.ImageAlign = ContentAlignment.TopRight
-        lblstatistic.Location = New Point(53, 392)
+        lblstatistic.Location = New Point(46, 294)
         lblstatistic.Name = "lblstatistic"
-        lblstatistic.Size = New Size(113, 24)
+        lblstatistic.Size = New Size(96, 18)
         lblstatistic.TabIndex = 69
         lblstatistic.Text = "My Statistic"
         ' 
@@ -149,10 +145,9 @@ Partial Class WishlistForm
         pbStatistic.BackColor = SystemColors.Info
         pbStatistic.BackgroundImage = CType(resources.GetObject("pbStatistic.BackgroundImage"), Image)
         pbStatistic.BackgroundImageLayout = ImageLayout.Stretch
-        pbStatistic.Location = New Point(14, 381)
-        pbStatistic.Margin = New Padding(3, 4, 3, 4)
+        pbStatistic.Location = New Point(12, 286)
         pbStatistic.Name = "pbStatistic"
-        pbStatistic.Size = New Size(32, 37)
+        pbStatistic.Size = New Size(28, 28)
         pbStatistic.TabIndex = 68
         pbStatistic.TabStop = False
         ' 
@@ -162,9 +157,9 @@ Partial Class WishlistForm
         lblDiscover.BackColor = SystemColors.Info
         lblDiscover.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblDiscover.ImageAlign = ContentAlignment.TopRight
-        lblDiscover.Location = New Point(53, 163)
+        lblDiscover.Location = New Point(46, 122)
         lblDiscover.Name = "lblDiscover"
-        lblDiscover.Size = New Size(91, 24)
+        lblDiscover.Size = New Size(75, 18)
         lblDiscover.TabIndex = 67
         lblDiscover.Text = "Discover"
         ' 
@@ -173,10 +168,9 @@ Partial Class WishlistForm
         pbDiscover.BackColor = SystemColors.Info
         pbDiscover.BackgroundImage = CType(resources.GetObject("pbDiscover.BackgroundImage"), Image)
         pbDiscover.BackgroundImageLayout = ImageLayout.Stretch
-        pbDiscover.Location = New Point(14, 152)
-        pbDiscover.Margin = New Padding(3, 4, 3, 4)
+        pbDiscover.Location = New Point(12, 114)
         pbDiscover.Name = "pbDiscover"
-        pbDiscover.Size = New Size(32, 37)
+        pbDiscover.Size = New Size(28, 28)
         pbDiscover.TabIndex = 66
         pbDiscover.TabStop = False
         ' 
@@ -186,9 +180,9 @@ Partial Class WishlistForm
         lblMenu.BackColor = SystemColors.Info
         lblMenu.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lblMenu.ImageAlign = ContentAlignment.TopRight
-        lblMenu.Location = New Point(14, 113)
+        lblMenu.Location = New Point(12, 85)
         lblMenu.Name = "lblMenu"
-        lblMenu.Size = New Size(63, 24)
+        lblMenu.Size = New Size(49, 18)
         lblMenu.TabIndex = 65
         lblMenu.Text = "Menu"
         ' 
@@ -198,9 +192,9 @@ Partial Class WishlistForm
         lblFavorite.BackColor = SystemColors.Info
         lblFavorite.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblFavorite.ImageAlign = ContentAlignment.TopRight
-        lblFavorite.Location = New Point(53, 303)
+        lblFavorite.Location = New Point(46, 227)
         lblFavorite.Name = "lblFavorite"
-        lblFavorite.Size = New Size(85, 24)
+        lblFavorite.Size = New Size(69, 18)
         lblFavorite.TabIndex = 64
         lblFavorite.Text = "Favorite"
         ' 
@@ -210,9 +204,9 @@ Partial Class WishlistForm
         lblNotes.BackColor = SystemColors.Info
         lblNotes.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblNotes.ImageAlign = ContentAlignment.TopRight
-        lblNotes.Location = New Point(53, 255)
+        lblNotes.Location = New Point(46, 191)
         lblNotes.Name = "lblNotes"
-        lblNotes.Size = New Size(97, 24)
+        lblNotes.Size = New Size(80, 18)
         lblNotes.TabIndex = 63
         lblNotes.Text = "My Notes"
         ' 
@@ -222,9 +216,9 @@ Partial Class WishlistForm
         lblCategory.BackColor = SystemColors.Info
         lblCategory.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblCategory.ImageAlign = ContentAlignment.TopRight
-        lblCategory.Location = New Point(53, 208)
+        lblCategory.Location = New Point(46, 156)
         lblCategory.Name = "lblCategory"
-        lblCategory.Size = New Size(93, 24)
+        lblCategory.Size = New Size(76, 18)
         lblCategory.TabIndex = 62
         lblCategory.Text = "Category"
         ' 
@@ -235,9 +229,9 @@ Partial Class WishlistForm
         Label1.Font = New Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label1.ForeColor = SystemColors.ControlText
         Label1.ImageAlign = ContentAlignment.TopRight
-        Label1.Location = New Point(14, 33)
+        Label1.Location = New Point(12, 25)
         Label1.Name = "Label1"
-        Label1.Size = New Size(177, 39)
+        Label1.Size = New Size(144, 31)
         Label1.TabIndex = 61
         Label1.Text = "ReadNest"
         ' 
@@ -246,10 +240,9 @@ Partial Class WishlistForm
         pbFavorite.BackColor = SystemColors.Info
         pbFavorite.BackgroundImage = CType(resources.GetObject("pbFavorite.BackgroundImage"), Image)
         pbFavorite.BackgroundImageLayout = ImageLayout.Stretch
-        pbFavorite.Location = New Point(14, 291)
-        pbFavorite.Margin = New Padding(3, 4, 3, 4)
+        pbFavorite.Location = New Point(12, 218)
         pbFavorite.Name = "pbFavorite"
-        pbFavorite.Size = New Size(32, 37)
+        pbFavorite.Size = New Size(28, 28)
         pbFavorite.TabIndex = 60
         pbFavorite.TabStop = False
         ' 
@@ -258,10 +251,9 @@ Partial Class WishlistForm
         pbNotes.BackColor = SystemColors.Info
         pbNotes.BackgroundImage = CType(resources.GetObject("pbNotes.BackgroundImage"), Image)
         pbNotes.BackgroundImageLayout = ImageLayout.Stretch
-        pbNotes.Location = New Point(14, 243)
-        pbNotes.Margin = New Padding(3, 4, 3, 4)
+        pbNotes.Location = New Point(12, 182)
         pbNotes.Name = "pbNotes"
-        pbNotes.Size = New Size(32, 37)
+        pbNotes.Size = New Size(28, 28)
         pbNotes.TabIndex = 59
         pbNotes.TabStop = False
         ' 
@@ -270,10 +262,9 @@ Partial Class WishlistForm
         pbCategory.BackColor = SystemColors.Info
         pbCategory.BackgroundImage = CType(resources.GetObject("pbCategory.BackgroundImage"), Image)
         pbCategory.BackgroundImageLayout = ImageLayout.Stretch
-        pbCategory.Location = New Point(14, 197)
-        pbCategory.Margin = New Padding(3, 4, 3, 4)
+        pbCategory.Location = New Point(12, 148)
         pbCategory.Name = "pbCategory"
-        pbCategory.Size = New Size(32, 37)
+        pbCategory.Size = New Size(28, 28)
         pbCategory.TabIndex = 58
         pbCategory.TabStop = False
         ' 
@@ -282,7 +273,6 @@ Partial Class WishlistForm
         SplitContainer1.Dock = DockStyle.Fill
         SplitContainer1.FixedPanel = FixedPanel.Panel1
         SplitContainer1.Location = New Point(0, 0)
-        SplitContainer1.Margin = New Padding(3, 4, 3, 4)
         SplitContainer1.Name = "SplitContainer1"
         ' 
         ' SplitContainer1.Panel1
@@ -300,9 +290,8 @@ Partial Class WishlistForm
         SplitContainer1.Panel2.Controls.Add(txtSearchFavoriteBook)
         SplitContainer1.Panel2.Controls.Add(btnSearchFavoriteBook)
         SplitContainer1.Panel2.Controls.Add(pbProfile)
-        SplitContainer1.Size = New Size(1067, 648)
-        SplitContainer1.SplitterDistance = 213
-        SplitContainer1.SplitterWidth = 5
+        SplitContainer1.Size = New Size(934, 486)
+        SplitContainer1.SplitterDistance = 186
         SplitContainer1.TabIndex = 72
         ' 
         ' lblWishlist
@@ -311,9 +300,9 @@ Partial Class WishlistForm
         lblWishlist.BackColor = SystemColors.Info
         lblWishlist.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         lblWishlist.ImageAlign = ContentAlignment.TopRight
-        lblWishlist.Location = New Point(53, 435)
+        lblWishlist.Location = New Point(46, 326)
         lblWishlist.Name = "lblWishlist"
-        lblWishlist.Size = New Size(81, 24)
+        lblWishlist.Size = New Size(68, 18)
         lblWishlist.TabIndex = 71
         lblWishlist.Text = "Wishlist"
         ' 
@@ -322,10 +311,9 @@ Partial Class WishlistForm
         pbWishlist.BackColor = SystemColors.Info
         pbWishlist.BackgroundImage = CType(resources.GetObject("pbWishlist.BackgroundImage"), Image)
         pbWishlist.BackgroundImageLayout = ImageLayout.Stretch
-        pbWishlist.Location = New Point(14, 424)
-        pbWishlist.Margin = New Padding(3, 4, 3, 4)
+        pbWishlist.Location = New Point(12, 318)
         pbWishlist.Name = "pbWishlist"
-        pbWishlist.Size = New Size(32, 37)
+        pbWishlist.Size = New Size(28, 28)
         pbWishlist.TabIndex = 70
         pbWishlist.TabStop = False
         ' 
@@ -335,9 +323,8 @@ Partial Class WishlistForm
         PictureBox2.BorderStyle = BorderStyle.FixedSingle
         PictureBox2.Dock = DockStyle.Fill
         PictureBox2.Location = New Point(0, 0)
-        PictureBox2.Margin = New Padding(3, 4, 3, 4)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(213, 648)
+        PictureBox2.Size = New Size(186, 486)
         PictureBox2.TabIndex = 22
         PictureBox2.TabStop = False
         ' 
@@ -349,10 +336,9 @@ Partial Class WishlistForm
         cbProfile.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         cbProfile.FormattingEnabled = True
         cbProfile.Items.AddRange(New Object() {"Profile", "View Profile", "Logout"})
-        cbProfile.Location = New Point(696, 31)
-        cbProfile.Margin = New Padding(3, 4, 3, 4)
+        cbProfile.Location = New Point(610, 25)
         cbProfile.Name = "cbProfile"
-        cbProfile.Size = New Size(110, 32)
+        cbProfile.Size = New Size(97, 26)
         cbProfile.TabIndex = 73
         ' 
         ' flowBookWishlist
@@ -360,19 +346,18 @@ Partial Class WishlistForm
         flowBookWishlist.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         flowBookWishlist.AutoScroll = True
         flowBookWishlist.BackColor = Color.White
-        flowBookWishlist.Location = New Point(16, 123)
-        flowBookWishlist.Margin = New Padding(3, 4, 3, 4)
+        flowBookWishlist.Location = New Point(14, 92)
         flowBookWishlist.Name = "flowBookWishlist"
-        flowBookWishlist.Padding = New Padding(10, 11, 10, 11)
-        flowBookWishlist.Size = New Size(820, 512)
+        flowBookWishlist.Padding = New Padding(9, 8, 9, 8)
+        flowBookWishlist.Size = New Size(718, 384)
         flowBookWishlist.TabIndex = 34
         ' 
         ' WishlistForm
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
-        ClientSize = New Size(1067, 648)
+        ClientSize = New Size(934, 486)
         Controls.Add(pbBB)
         Controls.Add(lblBB)
         Controls.Add(lblstatistic)
@@ -388,7 +373,6 @@ Partial Class WishlistForm
         Controls.Add(pbNotes)
         Controls.Add(pbCategory)
         Controls.Add(SplitContainer1)
-        Margin = New Padding(3, 4, 3, 4)
         Name = "WishlistForm"
         StartPosition = FormStartPosition.CenterScreen
         Text = "ReadNest, Your Personal Library"
