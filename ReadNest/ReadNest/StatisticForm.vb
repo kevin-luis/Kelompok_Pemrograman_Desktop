@@ -15,7 +15,10 @@ Public Class StatisticForm
         ' Set "Profile" sebagai item yang tampil pertama kali
         cbProfile.SelectedIndex = 0
     End Sub
-
+    Private Sub StatisticForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If isNavigating Then Return
+        Application.Exit()
+    End Sub
     Private Sub LoadStatistics()
         Try
             Dim db As New DBConnection()

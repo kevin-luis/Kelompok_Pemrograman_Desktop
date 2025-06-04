@@ -111,7 +111,10 @@ Public Class FavoriteForm
         ' Set "Profile" sebagai item yang tampil pertama kali
         cbProfile.SelectedIndex = 0
     End Sub
-
+    Private Sub FavoriteForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If isNavigating Then Return
+        Application.Exit()
+    End Sub
     Private Sub btnSearchFavoriteBook_Click(sender As Object, e As EventArgs) Handles btnSearchFavoriteBook.Click
         LoadFavoriteBooks(txtSearchFavoriteBook.Text.Trim())
     End Sub

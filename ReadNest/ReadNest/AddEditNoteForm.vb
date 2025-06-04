@@ -254,15 +254,16 @@
         Dim selectedBookId As String = GetSelectedBookId()
         Dim currentUserId As Integer = SessionHelper.CurrentUser.UserId
 
-        ' Insert note with current user's ID
-        Dim query As String = "INSERT INTO notes (UserId, Title, Content, BookId, CreatedDate, ModifiedDate) VALUES (@UserId, @Title, @Content, @BookId, NOW(), NOW())"
+        Dim query As String = "
+INSERT INTO notes (UserId, Title, Content, BookId, CreatedDate, ModifiedDate) 
+VALUES (@UserId, @Title, @Content, @BookId, datetime('now'), datetime('now'))"
 
         Dim parameters As New Dictionary(Of String, Object) From {
-            {"@UserId", currentUserId},
-            {"@Title", txtTitle.Text.Trim()},
-            {"@Content", txtContent.Text.Trim()},
-            {"@BookId", If(String.IsNullOrEmpty(selectedBookId), Nothing, selectedBookId)}
-        }
+        {"@UserId", currentUserId},
+        {"@Title", txtTitle.Text.Trim()},
+        {"@Content", txtContent.Text.Trim()},
+        {"@BookId", If(String.IsNullOrEmpty(selectedBookId), Nothing, selectedBookId)}
+    }
 
         Console.WriteLine($"Inserting note with UserId: {currentUserId} and BookId: '{selectedBookId}'")
 
@@ -284,16 +285,18 @@
             Throw New Exception($"Invalid Note ID format: '{noteId}'. Expected integer.")
         End If
 
-        ' Update note only if it belongs to current user
-        Dim query As String = "UPDATE notes SET Title = @Title, Content = @Content, BookId = @BookId, ModifiedDate = NOW() WHERE NoteId = @NoteId AND UserId = @UserId"
+        ' Gunakan datetime('now') jika SQLite, NOW() jika MySQL
+        Dim query As String = "UPDATE notes 
+        SET Title = @Title, Content = @Content, BookId = @BookId, ModifiedDate = datetime('now') 
+        WHERE NoteId = @NoteId AND UserId = @UserId"
 
         Dim parameters As New Dictionary(Of String, Object) From {
-            {"@NoteId", noteIdInt},
-            {"@UserId", currentUserId},
-            {"@Title", txtTitle.Text.Trim()},
-            {"@Content", txtContent.Text.Trim()},
-            {"@BookId", If(String.IsNullOrEmpty(selectedBookId), Nothing, selectedBookId)}
-        }
+        {"@NoteId", noteIdInt},
+        {"@UserId", currentUserId},
+        {"@Title", txtTitle.Text.Trim()},
+        {"@Content", txtContent.Text.Trim()},
+        {"@BookId", If(String.IsNullOrEmpty(selectedBookId), Nothing, selectedBookId)}
+    }
 
         Console.WriteLine($"Updating note {noteIdInt} with UserId: {currentUserId} and BookId: '{selectedBookId}'")
 

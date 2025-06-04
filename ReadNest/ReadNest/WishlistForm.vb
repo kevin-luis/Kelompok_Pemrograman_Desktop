@@ -3,7 +3,7 @@
 Public Class WishlistForm
     Private isNavigating As Boolean = False
 
-    Private Sub FavoriteForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub WishlistForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadFavoriteBooks()
 
         ' Contoh jika Anda mengisi ComboBox secara programatik
@@ -15,6 +15,11 @@ Public Class WishlistForm
 
         ' Set "Profile" sebagai item yang tampil pertama kali
         cbProfile.SelectedIndex = 0
+    End Sub
+
+    Private Sub WishlistForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If isNavigating Then Return
+        Application.Exit()
     End Sub
 
     Private Sub btnSearchFavoriteBook_Click(sender As Object, e As EventArgs) Handles btnSearchFavoriteBook.Click
@@ -108,13 +113,13 @@ Public Class WishlistForm
     End Sub
 
     '============ PROFILE MENU ============'
-    Private Sub cbProfile_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProfile.SelectedIndexChanged
+    Private Sub cbProfile_SelectedIndexChanged(sender As Object, e As EventArgs)
         If cbProfile.SelectedIndex = -1 Then Exit Sub
 
         ' Simpan teks item yang dipilih karena SelectedIndex bisa berubah atau form bisa tertutup.
         Dim currentSelectedItemText As String
         If cbProfile.SelectedItem IsNot Nothing Then
-            currentSelectedItemText = cbProfile.SelectedItem.ToString()
+            currentSelectedItemText = cbProfile.SelectedItem.ToString
         Else
             ' Ini seharusnya tidak terjadi jika SelectedIndex bukan -1,
             ' tapi sebagai tindakan pencegahan.
@@ -123,23 +128,23 @@ Public Class WishlistForm
 
         Select Case currentSelectedItemText
             Case "View Profile"
-                NavigateToForm(New ProfileForm())
+                NavigateToForm(New ProfileForm)
             ' Reset ke default ("Profile") akan ditangani oleh baris terakhir dari event handler ini.
 
             Case "Logout"
-                Dim result As DialogResult = MessageBox.Show("Apakah Anda yakin ingin logout?",
+                Dim result = MessageBox.Show("Apakah Anda yakin ingin logout?",
                                                         "Konfirmasi Logout",
                                                         MessageBoxButtons.YesNo,
                                                         MessageBoxIcon.Question)
                 If result = DialogResult.Yes Then
                     ' Hapus session
-                    SessionHelper.EndSession()
-                    SessionHelper.ClearSavedSession()
+                    SessionHelper.EndSession
+                    SessionHelper.ClearSavedSession
 
                     ' isNavigating = True ' Pastikan variabel ini (jika masih digunakan) di-handle dengan benar
-                    Dim loginForm As New LoginForm()
-                    loginForm.Show()
-                    Me.Close()
+                    Dim loginForm As New LoginForm
+                    loginForm.Show
+                    Close
                     Exit Sub ' PENTING: Keluar dari Sub setelah Me.Close() untuk menghindari error.
                 Else
                     ' Jika pengguna memilih "No" untuk logout, ComboBox akan direset
@@ -165,5 +170,4 @@ Public Class WishlistForm
             ' Namun, ini biasanya tidak diperlukan jika item sudah di-setup dengan benar.
         End If
     End Sub
-
 End Class

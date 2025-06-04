@@ -453,7 +453,7 @@ Partial Class MainForm
         ClientSize = New Size(1067, 648)
         Controls.Add(SplitContainer1)
         Margin = New Padding(3, 4, 3, 4)
-        MinimumSize = New Size(912, 640)
+        MinimumSize = New Size(912, 638)
         Name = "MainForm"
         StartPosition = FormStartPosition.CenterScreen
         Text = "ReadNest, Your Personal Library"
