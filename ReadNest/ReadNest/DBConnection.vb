@@ -1,21 +1,19 @@
 ﻿Imports System.IO
-Imports MySql.Data.MySqlClient
+Imports System.Data.SQLite
 Imports System.Security.Cryptography
 Imports System.Text
 
 Public Class DBConnection
-    Private ReadOnly strConn As String = "server=localhost;userid=root;password=;database=readnest"
-    Private ReadOnly connectionProvider As Func(Of MySqlConnection) = Function() New MySqlConnection(strConn)
+    Private ReadOnly strConn As String = "Data Source=readnest.db;Version=3;"
+    Private ReadOnly connectionProvider As Func(Of SQLiteConnection) = Function() New SQLiteConnection(strConn)
 
-    ' Central error handler
     Private Function HandleError(ex As Exception, message As String) As Boolean
         MessageBox.Show($"{message}: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Return False
     End Function
 
-    ' Helper method that creates a connection, performs an action, and disposes connection
-    Private Function WithConnection(Of T)(action As Func(Of MySqlConnection, T)) As T
-        Using conn As New MySqlConnection(strConn)
+    Private Function WithConnection(Of T)(action As Func(Of SQLiteConnection, T)) As T
+        Using conn As New SQLiteConnection(strConn)
             Try
                 conn.Open()
                 Return action(conn)
@@ -26,10 +24,9 @@ Public Class DBConnection
         End Using
     End Function
 
-    ' Helper method for non-query operations
     Public Function ExecuteNonQueryWithParams(query As String, parameters As Dictionary(Of String, Object)) As Integer
         Return WithConnection(Function(conn)
-                                  Using cmd As New MySqlCommand(query, conn)
+                                  Using cmd As New SQLiteCommand(query, conn)
                                       For Each param In parameters
                                           cmd.Parameters.AddWithValue(param.Key, If(param.Value Is Nothing, DBNull.Value, param.Value))
                                       Next
@@ -38,15 +35,14 @@ Public Class DBConnection
                               End Function)
     End Function
 
-    ' Helper method for query operations
     Public Function ExecuteQueryWithParams(query As String, parameters As Dictionary(Of String, Object)) As DataTable
         Return WithConnection(Function(conn)
                                   Dim dt As New DataTable()
-                                  Using cmd As New MySqlCommand(query, conn)
+                                  Using cmd As New SQLiteCommand(query, conn)
                                       For Each param In parameters
                                           cmd.Parameters.AddWithValue(param.Key, If(param.Value Is Nothing, DBNull.Value, param.Value))
                                       Next
-                                      Using da As New MySqlDataAdapter(cmd)
+                                      Using da As New SQLiteDataAdapter(cmd)
                                           da.Fill(dt)
                                       End Using
                                       Return dt
@@ -111,7 +107,7 @@ Public Class DBConnection
         }
 
         Return WithConnection(Function(conn)
-                                  Using cmd As New MySqlCommand(query, conn)
+                                  Using cmd As New SQLiteCommand(query, conn)
                                       cmd.Parameters.AddWithValue("@email", email)
                                       Dim count = Convert.ToInt32(cmd.ExecuteScalar())
                                       Return count > 0
@@ -127,7 +123,7 @@ Public Class DBConnection
         }
 
         Return WithConnection(Function(conn)
-                                  Using cmd As New MySqlCommand(query, conn)
+                                  Using cmd As New SQLiteCommand(query, conn)
                                       cmd.Parameters.AddWithValue("@username", username)
                                       Dim count = Convert.ToInt32(cmd.ExecuteScalar())
                                       Return count > 0
@@ -137,22 +133,22 @@ Public Class DBConnection
 
     ' Add book
     Public Function TambahBuku(userId As Integer, title As String, author As String, categoryId As Integer,
-                     pages As Integer, description As String, photoPath As String, filePath As String) As Boolean
+                 pages As Integer, description As String, photoPath As String, filePath As String) As Boolean
         Dim query As String = "INSERT INTO books (UserId, Title, Author, CategoryId, Pages, Description, " &
-                  "PhotoPath, FilePath, Status, CreatedAt, ReadDuration, IsFavorite, IsWishlist) " &
-                  "VALUES (@userId, @title, @author, @categoryId, @pages, @description, " &
-                  "@photoPath, @filePath, 'Available', NOW(), 0, 0, 0)"
+              "PhotoPath, FilePath, Status, CreatedAt, ReadDuration, IsFavorite, IsWishlist) " &
+              "VALUES (@userId, @title, @author, @categoryId, @pages, @description, " &
+              "@photoPath, @filePath, 'Available', datetime('now'), 0, 0, 0)"
 
         Dim parameters As New Dictionary(Of String, Object) From {
-            {"@userId", userId},
-            {"@title", title},
-            {"@author", author},
-            {"@categoryId", If(categoryId = 0, Nothing, categoryId)},
-            {"@pages", pages},
-            {"@description", description},
-            {"@photoPath", If(String.IsNullOrEmpty(photoPath), Nothing, photoPath)},
-            {"@filePath", If(String.IsNullOrEmpty(filePath), Nothing, filePath)}
-        }
+        {"@userId", userId},
+        {"@title", title},
+        {"@author", author},
+        {"@categoryId", If(categoryId = 0, DBNull.Value, categoryId)},
+        {"@pages", pages},
+        {"@description", description},
+        {"@photoPath", If(String.IsNullOrEmpty(photoPath), DBNull.Value, photoPath)},
+        {"@filePath", If(String.IsNullOrEmpty(filePath), DBNull.Value, filePath)}
+    }
 
         Dim result = ExecuteNonQueryWithParams(query, parameters)
         Return result > 0
@@ -284,16 +280,16 @@ Public Class DBConnection
         End Try
     End Function
 
-    ' Update reading progress
+    ' Update reading progress 
     Public Function UpdateReadingProgressAbsolute(userId As Integer, bookId As Integer, lastPage As Integer, readDurationSeconds As Integer, progressPercent As Double) As Boolean
         Dim query As String = "
-    INSERT INTO userbookprogress (UserId, BookId, LastPage, ReadDuration, ProgressPercent, LastOpened)
-    VALUES (@userId, @bookId, @lastPage, @duration, @progressPercent, NOW())
-    ON DUPLICATE KEY UPDATE
-        LastPage = @lastPage,
-        ReadDuration = @duration,
-        ProgressPercent = @progressPercent,
-        LastOpened = NOW();"
+INSERT INTO userbookprogress (UserId, BookId, LastPage, ReadDuration, ProgressPercent, LastOpened)
+VALUES (@userId, @bookId, @lastPage, @duration, @progressPercent, datetime('now'))
+ON CONFLICT(UserId, BookId) DO UPDATE SET
+    LastPage = excluded.LastPage,
+    ReadDuration = excluded.ReadDuration,
+    ProgressPercent = excluded.ProgressPercent,
+    LastOpened = datetime('now');"
 
         Dim parameters As New Dictionary(Of String, Object) From {
         {"@userId", userId},
@@ -370,51 +366,60 @@ Public Class DBConnection
 
     ' Update session activity
     Public Function UpdateSessionActivity(sessionId As String) As Boolean
-        Dim query As String = "UPDATE usersessions SET LastActivity = NOW() WHERE SessionId = @sessionId"
+        Dim currentTime As DateTime = DateTime.Now
+
+        Dim query As String = "UPDATE usersessions SET LastActivity = @currentTime WHERE SessionId = @sessionId"
 
         Dim parameters As New Dictionary(Of String, Object) From {
-            {"@sessionId", sessionId}
-        }
+        {"@sessionId", sessionId},
+        {"@currentTime", currentTime}
+    }
 
         Dim result = ExecuteNonQueryWithParams(query, parameters)
         Return result > 0
     End Function
 
-    ' Create persistent session
     Public Function CreatePersistentSession(userId As Integer) As String
         Dim sessionId = Guid.NewGuid().ToString()
         Dim expiryDate = DateTime.Now.AddMonths(1) ' 1 bulan masa berlaku
+        Dim loginTime = DateTime.Now
+        Dim lastActivity = DateTime.Now
 
         Dim query As String = "INSERT INTO usersessions 
                         (SessionId, UserId, LoginTime, ExpiryTime, LastActivity, IsActive, IsPersistent) 
-                        VALUES (@sessionId, @userId, NOW(), @expiryDate, NOW(), 1, 1)"
+                        VALUES (@sessionId, @userId, @loginTime, @expiryDate, @lastActivity, 1, 1)"
 
         Dim parameters As New Dictionary(Of String, Object) From {
-            {"@sessionId", sessionId},
-            {"@userId", userId},
-            {"@expiryDate", expiryDate}
-        }
+        {"@sessionId", sessionId},
+        {"@userId", userId},
+        {"@loginTime", loginTime},
+        {"@expiryDate", expiryDate},
+        {"@lastActivity", lastActivity}
+    }
 
         Dim result = ExecuteNonQueryWithParams(query, parameters)
         If result > 0 Then
             Return sessionId
+        Else
+            Return Nothing
         End If
-
-        Return Nothing
     End Function
 
     ' Validate persistent session
     Public Function ValidatePersistentSession(sessionId As String) As DataTable
+        Dim currentTime As DateTime = DateTime.Now
+
         Dim query As String = "SELECT u.UserId, u.Username FROM usersessions s 
-                   JOIN users u ON s.UserId = u.UserId
-                   WHERE s.SessionId = @sessionId 
-                   AND s.IsActive = 1 
-                   AND s.IsPersistent = 1
-                   AND s.ExpiryTime > NOW()"
+                           JOIN users u ON s.UserId = u.UserId
+                           WHERE s.SessionId = @sessionId 
+                           AND s.IsActive = 1 
+                           AND s.IsPersistent = 1 
+                           AND s.ExpiryTime > @currentTime"
 
         Dim parameters As New Dictionary(Of String, Object) From {
-            {"@sessionId", sessionId}
-        }
+        {"@sessionId", sessionId},
+        {"@currentTime", currentTime}
+    }
 
         Return ExecuteQueryWithParams(query, parameters)
     End Function
@@ -447,17 +452,27 @@ Public Class DBConnection
     End Function
 
     Public Function MarkBookAsReturned(borrowerId As Integer) As Boolean
-        Dim query As String = "UPDATE borrowers SET IsReturned = 1, ReturnDate = NOW() 
-                         WHERE BorrowerId = @borrowerId;
-                         UPDATE books SET Status = 'Available' 
-                         WHERE BookId = (SELECT BookId FROM borrowers WHERE BorrowerId = @borrowerId)"
+        Dim currentTime As DateTime = DateTime.Now
+        Dim success As Boolean = True
 
-        Dim parameters As New Dictionary(Of String, Object) From {
-            {"@borrowerId", borrowerId}
-        }
+        ' Query pertama: update status pengembalian
+        Dim query1 As String = "UPDATE borrowers SET IsReturned = 1, ReturnDate = @returnDate WHERE BorrowerId = @borrowerId"
+        Dim parameters1 As New Dictionary(Of String, Object) From {
+        {"@borrowerId", borrowerId},
+        {"@returnDate", currentTime}
+    }
+        Dim result1 = ExecuteNonQueryWithParams(query1, parameters1)
+        If result1 <= 0 Then success = False
 
-        Dim result = ExecuteNonQueryWithParams(query, parameters)
-        Return result > 0
+        ' Query kedua: update status buku jadi "Available"
+        Dim query2 As String = "UPDATE books SET Status = 'Available' WHERE BookId = (SELECT BookId FROM borrowers WHERE BorrowerId = @borrowerId)"
+        Dim parameters2 As New Dictionary(Of String, Object) From {
+        {"@borrowerId", borrowerId}
+    }
+        Dim result2 = ExecuteNonQueryWithParams(query2, parameters2)
+        If result2 <= 0 Then success = False
+
+        Return success
     End Function
 
     ' Update user profile (username dan email saja)
@@ -499,28 +514,29 @@ Public Class DBConnection
 
     ' Add new note
     Public Function AddNote(title As String, content As String, Optional bookId As String = Nothing) As Boolean
-        Dim query As String = "INSERT INTO notes (Title, Content, BookId, CreatedDate) VALUES (@Title, @Content, @BookId, NOW())"
+        Dim query As String = "INSERT INTO notes (Title, Content, BookId, CreatedDate) VALUES (@Title, @Content, @BookId, @CreatedDate)"
 
         Dim parameters As New Dictionary(Of String, Object) From {
-            {"@Title", title},
-            {"@Content", content},
-            {"@BookId", If(String.IsNullOrWhiteSpace(bookId), Nothing, bookId)}
-        }
+        {"@Title", title},
+        {"@Content", content},
+        {"@BookId", If(String.IsNullOrWhiteSpace(bookId), DBNull.Value, bookId)},
+        {"@CreatedDate", DateTime.Now}
+    }
 
         Dim result = ExecuteNonQueryWithParams(query, parameters)
         Return result > 0
     End Function
 
-    ' Update existing note
+    ' Update existing note 
     Public Function UpdateNote(noteId As Integer, title As String, content As String, Optional bookId As String = Nothing) As Boolean
-        Dim query As String = "UPDATE notes SET Title = @Title, Content = @Content, BookId = @BookId, ModifiedDate = NOW() WHERE NoteId = @NoteId"
+        Dim query As String = "UPDATE notes SET Title = @Title, Content = @Content, BookId = @BookId, ModifiedDate = datetime('now') WHERE NoteId = @NoteId"
 
         Dim parameters As New Dictionary(Of String, Object) From {
-            {"@NoteId", noteId},
-            {"@Title", title},
-            {"@Content", content},
-            {"@BookId", If(String.IsNullOrWhiteSpace(bookId), Nothing, bookId)}
-        }
+        {"@NoteId", noteId},
+        {"@Title", title},
+        {"@Content", content},
+        {"@BookId", If(String.IsNullOrWhiteSpace(bookId), DBNull.Value, bookId)}
+    }
 
         Dim result = ExecuteNonQueryWithParams(query, parameters)
         Return result > 0

@@ -344,14 +344,15 @@ Partial Class FavoriteForm
         ' cbProfile
         ' 
         cbProfile.DropDownStyle = ComboBoxStyle.DropDownList
+        cbProfile.FlatStyle = FlatStyle.Flat
         cbProfile.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         cbProfile.FormattingEnabled = True
         cbProfile.Items.AddRange(New Object() {"Profile", "View Profile", "Logout"})
-        cbProfile.Location = New Point(697, 33)
+        cbProfile.Location = New Point(696, 38)
         cbProfile.Margin = New Padding(3, 4, 3, 4)
         cbProfile.Name = "cbProfile"
         cbProfile.Size = New Size(110, 32)
-        cbProfile.TabIndex = 47
+        cbProfile.TabIndex = 32
         ' 
         ' flowBookFavorite
         ' 

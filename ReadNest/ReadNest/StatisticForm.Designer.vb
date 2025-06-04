@@ -381,17 +381,16 @@ Partial Class StatisticForm
         ' 
         ' cbProfile
         ' 
-        cbProfile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         cbProfile.DropDownStyle = ComboBoxStyle.DropDownList
         cbProfile.FlatStyle = FlatStyle.Flat
         cbProfile.Font = New Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold)
         cbProfile.FormattingEnabled = True
         cbProfile.Items.AddRange(New Object() {"Profile", "View Profile", "Logout"})
-        cbProfile.Location = New Point(696, 33)
+        cbProfile.Location = New Point(696, 38)
         cbProfile.Margin = New Padding(3, 4, 3, 4)
         cbProfile.Name = "cbProfile"
         cbProfile.Size = New Size(110, 32)
-        cbProfile.TabIndex = 74
+        cbProfile.TabIndex = 32
         ' 
         ' Panel1
         ' 
@@ -461,7 +460,7 @@ Partial Class StatisticForm
         ' 
         pbProfile.BackgroundImage = CType(resources.GetObject("pbProfile.BackgroundImage"), Image)
         pbProfile.BackgroundImageLayout = ImageLayout.Stretch
-        pbProfile.Location = New Point(658, 33)
+        pbProfile.Location = New Point(657, 29)
         pbProfile.Margin = New Padding(3, 4, 3, 4)
         pbProfile.Name = "pbProfile"
         pbProfile.Size = New Size(32, 37)
@@ -470,7 +469,7 @@ Partial Class StatisticForm
         ' 
         ' StatisticForm
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         ClientSize = New Size(1067, 648)

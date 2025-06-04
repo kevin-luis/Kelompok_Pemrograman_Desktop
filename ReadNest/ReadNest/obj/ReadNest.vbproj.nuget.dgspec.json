@@ -71,6 +71,10 @@
               "target": "Package",
               "version": "[2018.4.8.256, )"
             },
+            "System.Data.SQLite": {
+              "target": "Package",
+              "version": "[1.0.119, )"
+            },
             "VersOne.Epub": {
               "target": "Package",
               "version": "[3.3.3, )"

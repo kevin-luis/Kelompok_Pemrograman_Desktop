@@ -1,4 +1,5 @@
 ﻿Public Class CategoryForm
+    Private isNavigating As Boolean = False
     'Untuk Tombol navigasi di menu'
     Private Sub lblDiscover_Click(sender As Object, e As EventArgs) Handles lblDiscover.Click
         Dim formBaru As New MainForm()
@@ -95,6 +96,10 @@
                     Me.Hide() ' Tutup form saat ini
                 End If
         End Select
+    End Sub
+    Private Sub CategoryForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If isNavigating Then Return
+        Application.Exit()
     End Sub
 
     Private Sub btnBiography_Click(sender As Object, e As EventArgs) Handles btnBiography.Click
