@@ -452,6 +452,7 @@ Partial Class MainForm
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1067, 648)
         Controls.Add(SplitContainer1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(3, 4, 3, 4)
         MinimumSize = New Size(912, 638)
         Name = "MainForm"

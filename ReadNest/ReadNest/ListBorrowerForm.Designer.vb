@@ -373,6 +373,7 @@ Partial Class ListBorrowerForm
         Controls.Add(pbNotes)
         Controls.Add(pbCategory)
         Controls.Add(SplitContainer1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(3, 4, 3, 4)
         Name = "ListBorrowerForm"
         StartPosition = FormStartPosition.CenterScreen

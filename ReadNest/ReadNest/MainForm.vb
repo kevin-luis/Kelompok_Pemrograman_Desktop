@@ -88,7 +88,6 @@ Public Class MainForm
     Private Sub lblWishlist_Click(sender As Object, e As EventArgs) Handles lblWishlist.Click
         NavigateToForm(New WishlistForm())
     End Sub
-    '============ PROFILE MENU ============'
 
     '============ PROFILE MENU ============'
     Private Sub cbProfile_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProfile.SelectedIndexChanged
@@ -110,29 +109,22 @@ Public Class MainForm
             ' Reset ke default ("Profile") akan ditangani oleh baris terakhir dari event handler ini.
 
             Case "Logout"
-                Dim result As DialogResult = MessageBox.Show("Apakah Anda yakin ingin logout?",
-                                                        "Konfirmasi Logout",
-                                                        MessageBoxButtons.YesNo,
-                                                        MessageBoxIcon.Question)
-                If result = DialogResult.Yes Then
-                    ' Hapus session
+                If MessageBox.Show("Apakah Anda yakin ingin logout?",
+                       "Konfirmasi Logout",
+                       MessageBoxButtons.YesNo,
+                       MessageBoxIcon.Question) = DialogResult.Yes Then
+
                     SessionHelper.EndSession()
                     SessionHelper.ClearSavedSession()
 
-                    ' isNavigating = True ' Pastikan variabel ini (jika masih digunakan) di-handle dengan benar
+                    ' Satu baris ini menonaktifkan handler FormClosing
+                    RemoveHandler Me.FormClosing, AddressOf MainForm_FormClosing
+
                     Dim loginForm As New LoginForm()
                     loginForm.Show()
-                    Me.Close()
-                    Exit Sub ' PENTING: Keluar dari Sub setelah Me.Close() untuk menghindari error.
-                Else
-                    ' Jika pengguna memilih "No" untuk logout, ComboBox akan direset
-                    ' ke "Profile" oleh baris terakhir dari event handler ini.
+                    Me.Close()       ' Tidak ada dialog kedua
                 End If
-                ' Case "Profile" 
-                ' Jika "Profile" (item di indeks 0) dipilih oleh pengguna, event ini akan aktif.
-                ' Select Case ini tidak akan menemukan match untuk "Profile" (kecuali Anda menambahkannya).
-                ' Kemudian, baris terakhir akan menjalankan cbProfile.SelectedIndex = 0.
-                ' Jika sudah 0, tidak ada perubahan dan event tidak akan terpicu lagi. Ini adalah perilaku yang diharapkan.
+
         End Select
 
         ' Reset ComboBox ke item default (indeks 0, yang seharusnya "Profile")

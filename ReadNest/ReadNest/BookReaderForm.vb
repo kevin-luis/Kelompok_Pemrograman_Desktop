@@ -8,14 +8,15 @@ Public Class BookReaderForm
     Private _userId As Integer
     Private _filePath As String
     Private _currentPage As Integer = 1
-    Private _totalSecondsFromDB As Integer = 0 ' Ganti dari _totalMinutesFromDB
+    Private _totalSecondsFromDB As Integer = 0
     Private _sessionStartTime As DateTime
     Private _lastAutoSaveTime As DateTime = DateTime.MinValue
     Private _pdfDocument As PdfDocument
     Private _pdfViewer As PdfViewer
-    Private _lastTrackedPage As Integer = -1
+    Private _lastTrackedPage As Integer = 0
     Private _pageCheckTimer As New Timer()
     Private db As New DBConnection()
+    Private _isTimerPaused As Boolean = False
 
     Public Sub New(bookId As Integer, userId As Integer)
         InitializeComponent()
@@ -24,18 +25,21 @@ Public Class BookReaderForm
     End Sub
 
     Private Sub BookReaderForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadReadingProgress() ' Pindah ke atas sebelum LoadBookFile
+        LoadReadingProgress()
         LoadBookFile()
         LoadNotesForBook()
 
-        ' Mulai sesi baca baru
-        _sessionStartTime = DateTime.Now
-        _lastAutoSaveTime = DateTime.Now
-
-        ' Initialize UI
-        UpdateTimerDisplay()
-        btnTimerControl.Text = "⏸" ' Timer otomatis berjalan
-        ReadingTimer.Start()
+        If Not _isTimerPaused Then
+            _sessionStartTime = DateTime.Now
+            _lastAutoSaveTime = DateTime.Now
+            UpdateTimerDisplay()
+            btnTimerControl.Text = "⏸"
+            ReadingTimer.Start()
+        Else
+            ' Jika pause, hanya update display tanpa start timer
+            UpdateTimerDisplay()
+            btnTimerControl.Text = "▶"
+        End If
     End Sub
 
     Private Sub LoadReadingProgress()
@@ -45,7 +49,7 @@ Public Class BookReaderForm
 
             If progressRow IsNot Nothing Then
                 If Not IsDBNull(progressRow("ReadDuration")) Then
-                    _totalSecondsFromDB = Convert.ToInt32(progressRow("ReadDuration")) ' langsung detik
+                    _totalSecondsFromDB = Convert.ToInt32(progressRow("ReadDuration"))
                 End If
 
                 If Not IsDBNull(progressRow("LastPage")) Then
@@ -116,7 +120,7 @@ Public Class BookReaderForm
 
                                           ' Go to last saved page SETELAH viewer siap
                                           If _currentPage > 0 AndAlso _currentPage <= _pdfDocument.PageCount Then
-                                              _pdfViewer.Renderer.Page = _currentPage - 1
+                                              _pdfViewer.Renderer.Page = _currentPage
                                               _lastTrackedPage = _currentPage
                                               tslPageInfo.Text = $"{_currentPage} / {_pdfDocument.PageCount}"
 
@@ -152,11 +156,6 @@ Public Class BookReaderForm
         tsbPrint.Enabled = True
     End Sub
 
-    Private Function StripHtmlTags(html As String) As String
-        Dim noHtml As String = System.Text.RegularExpressions.Regex.Replace(html, "<.*?>", String.Empty)
-        Return System.Net.WebUtility.HtmlDecode(noHtml)
-    End Function
-
     Private Sub PageCheckTimer_Tick(sender As Object, e As EventArgs)
         If _pdfViewer IsNot Nothing AndAlso _pdfDocument IsNot Nothing Then
             Dim currentPage As Integer = _pdfViewer.Renderer.Page + 1
@@ -175,19 +174,26 @@ Public Class BookReaderForm
     End Sub
 
     Private Sub ReadingTimer_Tick(sender As Object, e As EventArgs) Handles ReadingTimer.Tick
-        UpdateTimerDisplay()
+        ' ✅ Perbaikan: Hanya update jika tidak pause
+        If Not _isTimerPaused Then
+            UpdateTimerDisplay()
 
-        ' Auto save setiap 30 detik
-        If DateTime.Now.Subtract(_lastAutoSaveTime).TotalSeconds >= 30 Then
-            SaveReadingProgress()
-            _lastAutoSaveTime = DateTime.Now
+            ' Auto save setiap 30 detik
+            If DateTime.Now.Subtract(_lastAutoSaveTime).TotalSeconds >= 30 Then
+                SaveReadingProgress()
+                _lastAutoSaveTime = DateTime.Now
+            End If
         End If
     End Sub
 
     Private Sub UpdateTimerDisplay()
-        ' Tetap pakai totalSeconds dari cache dan waktu sesi
-        Dim currentSessionSeconds As Integer = CInt(DateTime.Now.Subtract(_sessionStartTime).TotalSeconds)
-        Dim totalSeconds As Integer = _totalSecondsFromDB + currentSessionSeconds
+        Dim totalSeconds As Integer = _totalSecondsFromDB
+
+        ' ✅ Perbaikan: Hanya tambahkan session time jika timer TIDAK pause
+        If Not _isTimerPaused AndAlso ReadingTimer.Enabled Then
+            Dim currentSessionSeconds As Integer = CInt(DateTime.Now.Subtract(_sessionStartTime).TotalSeconds)
+            totalSeconds += currentSessionSeconds
+        End If
 
         ' Convert ke hours:minutes:seconds
         Dim hours As Integer = totalSeconds \ 3600
@@ -197,21 +203,27 @@ Public Class BookReaderForm
         lblTimerDisplay.Text = $"Reading Time: {hours:00}:{minutes:00}:{seconds:00}"
     End Sub
 
-
     Private Sub btnTimerControl_Click(sender As Object, e As EventArgs) Handles btnTimerControl.Click
         If ReadingTimer.Enabled Then
-            ' Pause - simpan progress dan hentikan timer
-            SaveReadingProgress()
-
-            ' Update _totalSecondsFromDB dengan waktu sesi saat ini
+            ' ✅ PAUSE - Simpan waktu sesi saat ini ke database
             Dim currentSessionSeconds As Integer = CInt(DateTime.Now.Subtract(_sessionStartTime).TotalSeconds)
             _totalSecondsFromDB += currentSessionSeconds
 
+            ' Set flag pause
+            _isTimerPaused = True
+
+            ' Simpan progress dengan waktu yang sudah diakumulasi
+            SaveReadingProgress()
+
+            ' Stop timer
             ReadingTimer.Stop()
             btnTimerControl.Text = "▶"
+
         Else
-            ' Resume - mulai sesi baru dari waktu sekarang
+            ' ✅ RESUME - Mulai sesi baru
+            _isTimerPaused = False
             _sessionStartTime = DateTime.Now
+            _lastAutoSaveTime = DateTime.Now
             ReadingTimer.Start()
             btnTimerControl.Text = "⏸"
         End If
@@ -221,14 +233,19 @@ Public Class BookReaderForm
         Static isCurrentlySaving As Boolean = False
         If isCurrentlySaving Then Return
         isCurrentlySaving = True
+
         Try
             If _pdfViewer IsNot Nothing AndAlso _pdfDocument IsNot Nothing Then
                 _currentPage = _pdfViewer.Renderer.Page + 1
             End If
 
             Dim totalSecondsToSave As Integer = _totalSecondsFromDB
-            Dim currentSessionSeconds As Integer = CInt(DateTime.Now.Subtract(_sessionStartTime).TotalSeconds)
-            totalSecondsToSave += currentSessionSeconds
+
+            ' ✅ Perbaikan: Hanya tambahkan session time jika timer TIDAK pause
+            If Not _isTimerPaused AndAlso ReadingTimer.Enabled Then
+                Dim currentSessionSeconds As Integer = CInt(DateTime.Now.Subtract(_sessionStartTime).TotalSeconds)
+                totalSecondsToSave += currentSessionSeconds
+            End If
 
             ' Hitung progress persentase
             Dim progressPercent As Double = 0
@@ -238,8 +255,12 @@ Public Class BookReaderForm
 
             Dim db As New DBConnection()
             If db.UpdateReadingProgressAbsolute(_userId, _bookId, _currentPage, totalSecondsToSave, progressPercent) Then
-                _totalSecondsFromDB = totalSecondsToSave
-                _sessionStartTime = DateTime.Now
+                ' ✅ Perbaikan: Update _totalSecondsFromDB dan reset session time hanya jika tidak pause
+                If Not _isTimerPaused Then
+                    _totalSecondsFromDB = totalSecondsToSave
+                    _sessionStartTime = DateTime.Now
+                End If
+
                 If progressPercent >= 100 Then
                     db.UpdateBookStatus(_bookId, "Finished")
                 End If
@@ -252,8 +273,10 @@ Public Class BookReaderForm
     End Sub
 
     Private Sub BookReaderForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        ' Hentikan timer terlebih dahulu
-        If ReadingTimer IsNot Nothing AndAlso ReadingTimer.Enabled Then
+        ' ✅ Perbaikan: Jika timer sedang berjalan, akumulasi waktu sebelum save
+        If ReadingTimer IsNot Nothing AndAlso ReadingTimer.Enabled AndAlso Not _isTimerPaused Then
+            Dim currentSessionSeconds As Integer = CInt(DateTime.Now.Subtract(_sessionStartTime).TotalSeconds)
+            _totalSecondsFromDB += currentSessionSeconds
             ReadingTimer.Stop()
         End If
 

@@ -22,6 +22,7 @@ Partial Class BookNotesForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BookNotesForm))
         pnlHeader = New Panel()
         lblTitle = New Label()
         btnAddNote = New Button()
@@ -119,6 +120,7 @@ Partial Class BookNotesForm
         Controls.Add(pnlMain)
         Controls.Add(pnlHeader)
         FormBorderStyle = FormBorderStyle.FixedDialog
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(5, 4, 5, 4)
         MaximizeBox = False
         MinimumSize = New Size(661, 715)

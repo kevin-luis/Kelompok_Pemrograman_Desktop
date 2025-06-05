@@ -86,7 +86,7 @@ Public Class LoginForm
         If result = DialogResult.No Then
             e.Cancel = True
         Else
-            Environment.Exit(0)
+            Environment.Exit(1)
         End If
     End Sub
 End Class

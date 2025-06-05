@@ -363,7 +363,7 @@ Partial Class WishlistForm
         flowBookWishlist.Margin = New Padding(3, 4, 3, 4)
         flowBookWishlist.Name = "flowBookWishlist"
         flowBookWishlist.Padding = New Padding(10, 11, 10, 11)
-        flowBookWishlist.Size = New Size(817, 512)
+        flowBookWishlist.Size = New Size(816, 512)
         flowBookWishlist.TabIndex = 34
         ' 
         ' WishlistForm
@@ -387,6 +387,7 @@ Partial Class WishlistForm
         Controls.Add(pbNotes)
         Controls.Add(pbCategory)
         Controls.Add(SplitContainer1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(3, 4, 3, 4)
         Name = "WishlistForm"
         StartPosition = FormStartPosition.CenterScreen

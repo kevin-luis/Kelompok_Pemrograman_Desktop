@@ -497,6 +497,7 @@ Partial Class CategoryForm
         BackColor = Color.White
         ClientSize = New Size(1067, 648)
         Controls.Add(SplitContainer1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(3, 4, 3, 4)
         Name = "CategoryForm"
         StartPosition = FormStartPosition.CenterScreen

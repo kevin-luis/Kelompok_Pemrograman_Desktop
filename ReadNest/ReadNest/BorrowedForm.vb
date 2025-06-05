@@ -50,8 +50,6 @@ Public Class BorrowForm
 
                 ' Auto-fill search textbox dengan judul buku
                 txtSearchBook.Text = row("Title").ToString()
-
-                MessageBox.Show("Book details loaded successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 MessageBox.Show("Book not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
