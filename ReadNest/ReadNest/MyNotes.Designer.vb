@@ -385,6 +385,7 @@ Partial Class Mynotes
         Controls.Add(pbNotes)
         Controls.Add(pbCategory)
         Controls.Add(SplitContainer1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(3, 4, 3, 4)
         Name = "Mynotes"
         StartPosition = FormStartPosition.CenterScreen

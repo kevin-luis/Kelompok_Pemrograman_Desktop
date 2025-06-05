@@ -242,6 +242,7 @@ Partial Class CreateAccountForm
         BackColor = Color.White
         ClientSize = New Size(1067, 648)
         Controls.Add(mainTableLayoutPanel)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MinimumSize = New Size(800, 598)
         Name = "CreateAccountForm"
         StartPosition = FormStartPosition.CenterScreen

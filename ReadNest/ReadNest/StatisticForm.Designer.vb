@@ -469,7 +469,7 @@ Partial Class StatisticForm
         ' 
         ' StatisticForm
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         ClientSize = New Size(1067, 648)
@@ -488,6 +488,7 @@ Partial Class StatisticForm
         Controls.Add(pbNotes)
         Controls.Add(pbCategory)
         Controls.Add(SplitContainer1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(3, 4, 3, 4)
         Name = "StatisticForm"
         StartPosition = FormStartPosition.CenterScreen

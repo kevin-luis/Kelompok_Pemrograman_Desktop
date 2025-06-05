@@ -22,6 +22,7 @@ Partial Class AddEditNoteForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddEditNoteForm))
         lblTitle = New Label()
         txtTitle = New TextBox()
         lblContent = New Label()
@@ -141,6 +142,7 @@ Partial Class AddEditNoteForm
         Controls.Add(txtTitle)
         Controls.Add(lblTitle)
         FormBorderStyle = FormBorderStyle.FixedDialog
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(5, 4, 5, 4)
         MaximizeBox = False
         MinimizeBox = False

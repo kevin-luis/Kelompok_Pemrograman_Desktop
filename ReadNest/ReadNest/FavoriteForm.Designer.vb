@@ -363,12 +363,12 @@ Partial Class FavoriteForm
         flowBookFavorite.Margin = New Padding(3, 4, 3, 4)
         flowBookFavorite.Name = "flowBookFavorite"
         flowBookFavorite.Padding = New Padding(10, 11, 10, 11)
-        flowBookFavorite.Size = New Size(819, 512)
+        flowBookFavorite.Size = New Size(818, 512)
         flowBookFavorite.TabIndex = 34
         ' 
         ' FavoriteForm
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         ClientSize = New Size(1067, 648)
@@ -387,6 +387,7 @@ Partial Class FavoriteForm
         Controls.Add(pbNotes)
         Controls.Add(pbCategory)
         Controls.Add(SplitContainer1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(3, 4, 3, 4)
         Name = "FavoriteForm"
         StartPosition = FormStartPosition.CenterScreen

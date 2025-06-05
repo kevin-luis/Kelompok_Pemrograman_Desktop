@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		ModuleNavigasi.vb = ModuleNavigasi.vb
 	EndProjectSection
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ReadNest", "..\..\App\ReadNest.vdproj", "{F394C8E6-E7E5-6FD6-5B7C-8EF62D76E65E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,8 @@ Global
 		{1632300A-210C-43DA-AA32-80D877CBF8E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1632300A-210C-43DA-AA32-80D877CBF8E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1632300A-210C-43DA-AA32-80D877CBF8E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F394C8E6-E7E5-6FD6-5B7C-8EF62D76E65E}.Debug|Any CPU.ActiveCfg = Debug
+		{F394C8E6-E7E5-6FD6-5B7C-8EF62D76E65E}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

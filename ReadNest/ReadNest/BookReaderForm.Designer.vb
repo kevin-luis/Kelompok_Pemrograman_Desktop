@@ -567,6 +567,7 @@ Partial Class BookReaderForm
         Controls.Add(pnlFooter)
         Controls.Add(SearchDialog1)
         Controls.Add(BookmarkDialog1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(5)
         MinimumSize = New Size(800, 598)
         Name = "BookReaderForm"

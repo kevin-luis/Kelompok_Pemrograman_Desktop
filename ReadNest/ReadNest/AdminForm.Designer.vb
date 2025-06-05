@@ -22,6 +22,7 @@ Partial Class AdminForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdminForm))
         Label1 = New Label()
         ListViewUser = New ListView()
         Label2 = New Label()
@@ -39,17 +40,18 @@ Partial Class AdminForm
         Label1.Font = New Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = SystemColors.ControlText
         Label1.ImageAlign = ContentAlignment.TopRight
-        Label1.Location = New Point(689, 9)
+        Label1.Location = New Point(787, 12)
         Label1.Name = "Label1"
-        Label1.Size = New Size(233, 31)
+        Label1.Size = New Size(289, 39)
         Label1.TabIndex = 7
         Label1.Text = "Admin ReadNest"
         ' 
         ' ListViewUser
         ' 
-        ListViewUser.Location = New Point(12, 100)
+        ListViewUser.Location = New Point(14, 133)
+        ListViewUser.Margin = New Padding(3, 4, 3, 4)
         ListViewUser.Name = "ListViewUser"
-        ListViewUser.Size = New Size(379, 197)
+        ListViewUser.Size = New Size(433, 261)
         ListViewUser.TabIndex = 8
         ListViewUser.UseCompatibleStateImageBehavior = False
         ' 
@@ -60,17 +62,18 @@ Partial Class AdminForm
         Label2.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold)
         Label2.ForeColor = SystemColors.ControlText
         Label2.ImageAlign = ContentAlignment.TopRight
-        Label2.Location = New Point(12, 77)
+        Label2.Location = New Point(14, 103)
         Label2.Name = "Label2"
-        Label2.Size = New Size(90, 20)
+        Label2.Size = New Size(108, 25)
         Label2.TabIndex = 9
         Label2.Text = "List Users"
         ' 
         ' ListViewAllBooks
         ' 
-        ListViewAllBooks.Location = New Point(414, 100)
+        ListViewAllBooks.Location = New Point(473, 133)
+        ListViewAllBooks.Margin = New Padding(3, 4, 3, 4)
         ListViewAllBooks.Name = "ListViewAllBooks"
-        ListViewAllBooks.Size = New Size(379, 197)
+        ListViewAllBooks.Size = New Size(433, 261)
         ListViewAllBooks.TabIndex = 10
         ListViewAllBooks.UseCompatibleStateImageBehavior = False
         ' 
@@ -81,45 +84,48 @@ Partial Class AdminForm
         Label3.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold)
         Label3.ForeColor = SystemColors.ControlText
         Label3.ImageAlign = ContentAlignment.TopRight
-        Label3.Location = New Point(414, 77)
+        Label3.Location = New Point(473, 103)
         Label3.Name = "Label3"
-        Label3.Size = New Size(93, 20)
+        Label3.Size = New Size(112, 25)
         Label3.TabIndex = 11
         Label3.Text = "List Books"
         ' 
         ' BtnDeleteUser
         ' 
-        BtnDeleteUser.Location = New Point(306, 303)
+        BtnDeleteUser.Location = New Point(350, 404)
+        BtnDeleteUser.Margin = New Padding(3, 4, 3, 4)
         BtnDeleteUser.Name = "BtnDeleteUser"
-        BtnDeleteUser.Size = New Size(85, 23)
+        BtnDeleteUser.Size = New Size(97, 31)
         BtnDeleteUser.TabIndex = 12
         BtnDeleteUser.Text = "Delete user"
         BtnDeleteUser.UseVisualStyleBackColor = True
         ' 
         ' BtnDeleteBook
         ' 
-        BtnDeleteBook.Location = New Point(695, 303)
+        BtnDeleteBook.Location = New Point(794, 404)
+        BtnDeleteBook.Margin = New Padding(3, 4, 3, 4)
         BtnDeleteBook.Name = "BtnDeleteBook"
-        BtnDeleteBook.Size = New Size(98, 23)
+        BtnDeleteBook.Size = New Size(112, 31)
         BtnDeleteBook.TabIndex = 13
         BtnDeleteBook.Text = "Delete book"
         BtnDeleteBook.UseVisualStyleBackColor = True
         ' 
         ' BtnLogout
         ' 
-        BtnLogout.Location = New Point(847, 451)
+        BtnLogout.Location = New Point(968, 601)
+        BtnLogout.Margin = New Padding(3, 4, 3, 4)
         BtnLogout.Name = "BtnLogout"
-        BtnLogout.Size = New Size(75, 23)
+        BtnLogout.Size = New Size(86, 31)
         BtnLogout.TabIndex = 14
         BtnLogout.Text = "Logout"
         BtnLogout.UseVisualStyleBackColor = True
         ' 
         ' AdminForm
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
-        ClientSize = New Size(934, 486)
+        ClientSize = New Size(1067, 648)
         Controls.Add(BtnLogout)
         Controls.Add(BtnDeleteBook)
         Controls.Add(BtnDeleteUser)
@@ -128,6 +134,8 @@ Partial Class AdminForm
         Controls.Add(Label2)
         Controls.Add(ListViewUser)
         Controls.Add(Label1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "AdminForm"
         StartPosition = FormStartPosition.CenterScreen
         Text = "AdminForm"
